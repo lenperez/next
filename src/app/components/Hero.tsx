@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Briefcase } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
 export function Hero() {
@@ -59,6 +59,7 @@ export function Hero() {
                 : "text-black/50 hover:text-black/80 hover:bg-black/5"
             }`}
           >
+            <Briefcase size={15} />
             <span>View Work</span>
             <motion.div
               animate={{ y: [0, 5, 0] }}

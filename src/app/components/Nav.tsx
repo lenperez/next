@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Briefcase, User, Mail } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
 const links = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "#work", icon: Briefcase },
+  { label: "About", href: "#about", icon: User },
+  { label: "Contact", href: "#contact", icon: Mail },
 ];
 
 export function Nav() {
@@ -47,20 +47,24 @@ export function Nav() {
         {/* Desktop links & Theme Switcher */}
         <div className="hidden md:flex items-center gap-6">
           <ul className="flex items-center gap-6">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  className={`transition-all text-sm tracking-wider uppercase px-4 py-1.5 rounded-full ${
-                    isDark
-                      ? "text-white/60 hover:text-white hover:bg-white/10"
-                      : "text-black/60 hover:text-black hover:bg-black/5"
-                  }`}
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
+            {links.map((l) => {
+              const Icon = l.icon;
+              return (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    className={`inline-flex items-center gap-2 transition-all text-sm tracking-wider uppercase px-4 py-1.5 rounded-full ${
+                      isDark
+                        ? "text-white/60 hover:text-white hover:bg-white/10"
+                        : "text-black/60 hover:text-black hover:bg-black/5"
+                    }`}
+                  >
+                    <Icon size={15} />
+                    <span>{l.label}</span>
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Theme Switcher Button */}
@@ -122,19 +126,23 @@ export function Nav() {
             }`}
           >
             <ul className="px-6 py-4 flex flex-col gap-4">
-              {links.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className={`text-sm tracking-wider uppercase ${
-                      isDark ? "text-white/70 hover:text-white" : "text-black/70 hover:text-black"
-                    }`}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
+              {links.map((l) => {
+                const Icon = l.icon;
+                return (
+                  <li key={l.href}>
+                    <a
+                      href={l.href}
+                      className={`inline-flex items-center gap-2.5 text-sm tracking-wider uppercase ${
+                        isDark ? "text-white/70 hover:text-white" : "text-black/70 hover:text-black"
+                      }`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <Icon size={16} />
+                      <span>{l.label}</span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </motion.div>
         )}
