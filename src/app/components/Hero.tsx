@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowDown, Briefcase } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
 export function Hero() {
@@ -16,7 +16,7 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.7 }}
           className="text-blue-400 tracking-[0.35em] uppercase text-xs mb-6 font-semibold"
         >
-          UX &amp; Product Design Thinker
+          UX | Product | Design | Thinker
         </motion.p>
 
         <motion.h1
@@ -59,10 +59,9 @@ export function Hero() {
                 : "text-black/50 hover:text-black/80 hover:bg-black/5"
             }`}
           >
-            <Briefcase size={15} />
             <span>View Work</span>
             <motion.div
-              animate={{ y: [0, 5, 0] }}
+              animate={{ opacity: [1, 0.5, 1] }}
               transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
             >
               <ArrowDown size={16} />

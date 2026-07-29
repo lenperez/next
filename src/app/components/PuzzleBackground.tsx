@@ -35,32 +35,60 @@ const PUZZLE_PIECES = [
 
 function PuzzlePiece({ size, stroke }: { size: number; stroke: string }) {
   const d = `
-    M 0,0 L 33,0
-    C 36,0 38,-1 38,-9 C 38,-18 43,-27 50,-27
-    C 57,-27 62,-18 62,-9 C 62,-1 64,0 67,0
-    L 100,0 L 100,33
-    C 100,36 101,38 109,38 C 118,38 127,43 127,50
-    C 127,57 118,62 109,62 C 101,62 100,64 100,67
-    L 100,100 L 67,100
-    C 64,100 62,101 62,109 C 62,118 57,127 50,127
-    C 43,127 38,118 38,109 C 38,101 36,100 33,100
-    L 0,100 L 0,67
-    C 0,64 -1,62 -9,62 C -18,62 -27,57 -27,50
-    C -27,43 -18,38 -9,38 C -1,38 0,36 0,33 Z
+    M 10,0
+    L 35,0
+    C 38,0 41,1 43,4
+    C 34,10 37,27 50,27
+    C 63,27 66,10 57,4
+    C 59,1 62,0 65,0
+    L 90,0
+    C 96,0 100,4 100,10
+    L 100,35
+    C 100,38 101,41 104,43
+    C 110,34 127,37 127,50
+    C 127,63 110,66 104,57
+    C 101,59 100,62 100,65
+    L 100,90
+    C 100,96 96,100 90,100
+    L 65,100
+    C 62,100 59,99 57,96
+    C 66,90 63,73 50,73
+    C 37,73 34,90 43,96
+    C 41,99 38,100 35,100
+    L 10,100
+    C 4,100 0,96 0,90
+    L 0,65
+    C 0,62 -1,59 -4,57
+    C -10,66 -27,63 -27,50
+    C -27,37 -10,34 -4,43
+    C -1,41 0,38 0,35
+    L 0,10
+    C 0,4 4,0 10,0
+    Z
   `;
   return (
-    <svg width={size * 1.6} height={size * 1.6} viewBox="-30 -30 160 160" fill="none">
-      <path d={d} stroke={stroke} strokeWidth={140 / size} fill="none" strokeLinejoin="round" strokeLinecap="round" />
+    <svg width={size * 1.5} height={size * 1.5} viewBox="-35 -10 170 120" fill="none">
+      <path
+        d={d}
+        stroke={stroke}
+        strokeWidth={1.8}
+        fill="none"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
 
 export function PuzzleBackground() {
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const { isDark } = useTheme();
 
   // Pieces drift upward at 0.5× scroll speed — parallax depth effect
   const puzzleY = useTransform(scrollY, v => -v * 0.5);
+
+  // Enlarge by 50% at top (1.5), scaling to 3.0 as user scrolls to bottom
+  const puzzleScale = useTransform(scrollYProgress, [0, 1], [1.5, 3.0]);
 
   return (
     <>
@@ -70,24 +98,25 @@ export function PuzzleBackground() {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-blue-900/15 blur-[100px]" />
       </div>
 
-      {/* Puzzle pieces — 0.5× parallax */}
+      {/* Puzzle pieces — 0.5× parallax & scroll scale */}
       <motion.div
         className="fixed inset-0 pointer-events-none overflow-visible"
         style={{ zIndex: 0, y: puzzleY }}
       >
         {PUZZLE_PIECES.map((p, i) => (
-          <div
+          <motion.div
             key={i}
             className={`absolute ${p.mobileHidden ? "hidden md:block" : ""}`}
             style={{
               left: p.x,
               top: p.y,
-              opacity: isDark ? p.opacity : p.opacity * 1.5,
-              transform: `rotate(${p.rotate}deg)`,
+              opacity: (isDark ? p.opacity : p.opacity * 1.5) * 0.5,
+              rotate: p.rotate,
+              scale: puzzleScale,
             }}
           >
             <PuzzlePiece size={p.size} stroke={isDark ? "white" : "#000000"} />
-          </div>
+          </motion.div>
         ))}
       </motion.div>
     </>

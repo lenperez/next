@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Sun, Moon, Briefcase, User, Mail } from "lucide-react";
+import { Menu, X, Briefcase, User, Mail } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
 const links = [
@@ -12,7 +12,7 @@ const links = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { toggleTheme, isDark } = useTheme();
+  const { isDark } = useTheme();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -66,44 +66,10 @@ export function Nav() {
               );
             })}
           </ul>
-
-          {/* Theme Switcher Button */}
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle Theme"
-            title={isDark ? "Switch to Light Theme" : "Switch to Dark Theme"}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs tracking-wider uppercase font-medium transition-all border ${
-              isDark
-                ? "bg-white/5 hover:bg-white/10 border-white/10 text-white/80 hover:text-white"
-                : "bg-black/5 hover:bg-black/10 border-black/10 text-black/80 hover:text-black"
-            }`}
-          >
-            {isDark ? (
-              <>
-                <Sun size={14} className="text-amber-400" />
-                <span>Light</span>
-              </>
-            ) : (
-              <>
-                <Moon size={14} className="text-blue-400" />
-                <span>Dark</span>
-              </>
-            )}
-          </button>
         </div>
 
         {/* Mobile menu controls */}
         <div className="flex md:hidden items-center gap-3">
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle Theme"
-            className={`p-2 rounded-full transition-colors ${
-              isDark ? "text-white/80 hover:text-white bg-white/5" : "text-black/80 hover:text-black bg-black/5"
-            }`}
-          >
-            {isDark ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-blue-400" />}
-          </button>
-
           <button
             className={`p-2 transition-colors ${
               isDark ? "text-white/70 hover:text-white" : "text-black/70 hover:text-black"
