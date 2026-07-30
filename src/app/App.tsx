@@ -412,7 +412,7 @@ function PortfolioContent() {
                 className={`${isDark ? "text-white" : "text-black"} transition-colors`}
                 style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", fontWeight: 700, letterSpacing: "-0.02em" }}
               >
-                Additional Interactive Work
+                Interactive Pieces
               </h2>
               <motion.div animate={{ rotate: openSection === "additional" ? 180 : 0 }} transition={{ duration: 0.3 }}>
                 <ChevronDown size={20} className={isDark ? "text-white/40" : "text-black/40"} />
@@ -461,7 +461,7 @@ function PortfolioContent() {
                 className={`${isDark ? "text-white" : "text-black"} transition-colors`}
                 style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", fontWeight: 700, letterSpacing: "-0.02em" }}
               >
-                Graphic Work
+                Visual Design Pieces
               </h2>
               <motion.div animate={{ rotate: openSection === "graphic" ? 180 : 0 }} transition={{ duration: 0.3 }}>
                 <ChevronDown size={20} className={isDark ? "text-white/40" : "text-black/40"} />
