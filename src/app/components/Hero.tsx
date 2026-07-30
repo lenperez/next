@@ -16,7 +16,7 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.7 }}
           className="text-blue-400 tracking-[0.35em] uppercase text-xs mb-6 font-semibold"
         >
-          UX | Product | Design | Thinker
+          UX • Product • Design • Thinker
         </motion.p>
 
         <motion.h1
