@@ -15,7 +15,13 @@ function figmaAssetResolver() {
   }
 }
 
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
+
 export default defineConfig({
+  base: '/', // Ensure clean routing for lenperez.com
   plugins: [
     figmaAssetResolver(),
     react(),
@@ -32,4 +38,9 @@ export default defineConfig({
     allowedHosts: true,
   },
   assetsInclude: ['**/*.svg', '**/*.csv'],
-})
+  build: {
+    // Transpiles output to be compatible with iOS Safari & modern WebKit
+    target: ['es2020', 'safari14'],
+  },
+});
+
