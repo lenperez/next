@@ -1,8 +1,6 @@
-import { motion, useScroll, useTransform } from "motion/react";
 import { useTheme } from "../context/ThemeContext";
 
-// Pieces are distributed across ~300vh of vertical space so some are always
-// in the viewport as the user scrolls. mobileHidden halves the count on small screens.
+// Pieces distributed across vertical space
 const PUZZLE_PIECES = [
   // — Hero band (0–100vh) —
   { x: "5%",   y: "8vh",   size: 72, rotate: 15,  opacity: 0.07, mobileHidden: false },
@@ -27,7 +25,7 @@ const PUZZLE_PIECES = [
   // — About / Contact band (200–300vh) —
   { x: "12%",  y: "215vh", size: 80, rotate: 130, opacity: 0.06, mobileHidden: false },
   { x: "70%",  y: "205vh", size: 50, rotate: -80, opacity: 0.05, mobileHidden: true  },
-  { x: "40%",  y: "240vh", size: 64, rotate: 25,  opacity: 0.07, mobileHidden: false },
+  { x: "40%",  y: "240vh", size: 25, rotate: 25,  opacity: 0.07, mobileHidden: false },
   { x: "88%",  y: "260vh", size: 44, rotate: 155, opacity: 0.05, mobileHidden: true  },
   { x: "5%",   y: "280vh", size: 56, rotate: -45, opacity: 0.06, mobileHidden: false },
   { x: "60%",  y: "270vh", size: 72, rotate: 70,  opacity: 0.06, mobileHidden: true  },
@@ -81,45 +79,36 @@ function PuzzlePiece({ size, stroke }: { size: number; stroke: string }) {
 }
 
 export function PuzzleBackground() {
-  const { scrollY, scrollYProgress } = useScroll();
   const { isDark } = useTheme();
-
-  // Pieces drift upward at 0.5× scroll speed — parallax depth effect
-  const puzzleY = useTransform(scrollY, v => -v * 0.5);
-
-  // Enlarge by 50% at top (1.5), scaling to 3.0 as user scrolls to bottom
-  const puzzleScale = useTransform(scrollYProgress, [0, 1], [1.5, 3.0]);
 
   return (
     <>
-      {/* Orbs — truly static */}
+      {/* Background gradient orbs */}
       <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }}>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-blue-800/15 blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-blue-900/15 blur-[100px]" />
       </div>
 
-      {/* Puzzle pieces — 0.5× parallax & scroll scale */}
-      <motion.div
-        className="fixed inset-0 pointer-events-none overflow-visible"
-        style={{ zIndex: 0, y: puzzleY }}
+      {/* Pure CSS static/absolute container for puzzle pieces — eliminates WebKit scroll thread locks */}
+      <div
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+        style={{ zIndex: 0 }}
       >
         {PUZZLE_PIECES.map((p, i) => (
-          <motion.div
+          <div
             key={i}
             className={`absolute ${p.mobileHidden ? "hidden md:block" : ""}`}
             style={{
               left: p.x,
               top: p.y,
               opacity: (isDark ? p.opacity : p.opacity * 1.5) * 0.5,
-              rotate: p.rotate,
-              scale: puzzleScale,
+              transform: `rotate(${p.rotate}deg) scale(1.8)`,
             }}
           >
             <PuzzlePiece size={p.size} stroke={isDark ? "white" : "#000000"} />
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </>
   );
 }
-
