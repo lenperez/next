@@ -330,7 +330,7 @@ function PortfolioContent() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
+    <div className={`relative w-full min-h-screen overflow-x-hidden transition-colors duration-300 ${
       isDark ? "bg-[#0a0a0a] text-white" : "bg-[#F5F5F5] text-black"
     }`}>
       <PuzzleBackground />

@@ -1,33 +1,37 @@
 import { useTheme } from "../context/ThemeContext";
 
 const PUZZLE_PIECES = [
-  // — Hero section (0–30%) —
-  { x: "5%",   y: "3%",   size: 64, rotate: 15,  opacity: 0.07, mobileHidden: false },
-  { x: "18%",  y: "8%",   size: 44, rotate: -30, opacity: 0.05, mobileHidden: true  },
-  { x: "80%",  y: "3%",   size: 80, rotate: 50,  opacity: 0.07, mobileHidden: false },
-  { x: "88%",  y: "14%",  size: 48, rotate: -10, opacity: 0.05, mobileHidden: true  },
-  { x: "68%",  y: "25%",  size: 88, rotate: 110, opacity: 0.07, mobileHidden: false },
-  { x: "10%",  y: "22%",  size: 58, rotate: 80,  opacity: 0.06, mobileHidden: true  },
-  { x: "52%",  y: "29%",  size: 52, rotate: -55, opacity: 0.05, mobileHidden: false },
-  { x: "38%",  y: "2%",   size: 40, rotate: 120, opacity: 0.05, mobileHidden: true  },
-  { x: "91%",  y: "27%",  size: 54, rotate: 30,  opacity: 0.05, mobileHidden: false },
-  { x: "2%",   y: "15%",  size: 72, rotate: -70, opacity: 0.06, mobileHidden: true  },
-  { x: "58%",  y: "7%",   size: 36, rotate: 170, opacity: 0.05, mobileHidden: false },
-  { x: "28%",  y: "27%",  size: 46, rotate: -20, opacity: 0.06, mobileHidden: true  },
-  // — Work section (30–70%) —
-  { x: "7%",   y: "38%", size: 54, rotate: 40,  opacity: 0.06, mobileHidden: false },
-  { x: "45%",  y: "35%", size: 44, rotate: -15, opacity: 0.05, mobileHidden: true  },
-  { x: "75%",  y: "44%", size: 70, rotate: 95,  opacity: 0.07, mobileHidden: false },
-  { x: "20%",  y: "54%", size: 48, rotate: -60, opacity: 0.05, mobileHidden: true  },
-  { x: "85%",  y: "59%", size: 40, rotate: 200, opacity: 0.05, mobileHidden: false },
-  { x: "55%",  y: "50%", size: 60, rotate: -35, opacity: 0.06, mobileHidden: true  },
-  // — About & Contact section (70–100%) —
-  { x: "12%",  y: "72%", size: 72, rotate: 130, opacity: 0.06, mobileHidden: false },
-  { x: "70%",  y: "69%", size: 46, rotate: -80, opacity: 0.05, mobileHidden: true  },
-  { x: "40%",  y: "80%", size: 58, rotate: 25,  opacity: 0.07, mobileHidden: false },
-  { x: "88%",  y: "87%", size: 40, rotate: 155, opacity: 0.05, mobileHidden: true  },
-  { x: "5%",   y: "93%", size: 50, rotate: -45, opacity: 0.06, mobileHidden: false },
-  { x: "60%",  y: "90%", size: 64, rotate: 70,  opacity: 0.06, mobileHidden: true  },
+  // — Hero section (0–100vh) —
+  { x: "5%",   y: "8vh",   size: 64, rotate: 15,  opacity: 0.07, mobileHidden: false },
+  { x: "18%",  y: "22vh",  size: 44, rotate: -30, opacity: 0.05, mobileHidden: true  },
+  { x: "80%",  y: "12vh",  size: 80, rotate: 50,  opacity: 0.07, mobileHidden: false },
+  { x: "88%",  y: "38vh",  size: 48, rotate: -10, opacity: 0.05, mobileHidden: true  },
+  { x: "68%",  y: "65vh",  size: 88, rotate: 110, opacity: 0.07, mobileHidden: false },
+  { x: "10%",  y: "55vh",  size: 58, rotate: 80,  opacity: 0.06, mobileHidden: true  },
+  { x: "52%",  y: "85vh",  size: 52, rotate: -55, opacity: 0.05, mobileHidden: false },
+  { x: "38%",  y: "5vh",   size: 40, rotate: 120, opacity: 0.05, mobileHidden: true  },
+  { x: "91%",  y: "78vh",  size: 54, rotate: 30,  opacity: 0.05, mobileHidden: false },
+  { x: "2%",   y: "42vh",  size: 72, rotate: -70, opacity: 0.06, mobileHidden: true  },
+  { x: "58%",  y: "28vh",  size: 36, rotate: 170, opacity: 0.05, mobileHidden: false },
+  { x: "28%",  y: "70vh",  size: 46, rotate: -20, opacity: 0.06, mobileHidden: true  },
+
+  // — Work section (100vh–280vh) —
+  { x: "7%",   y: "115vh", size: 54, rotate: 40,  opacity: 0.06, mobileHidden: false },
+  { x: "45%",  y: "105vh", size: 44, rotate: -15, opacity: 0.05, mobileHidden: true  },
+  { x: "75%",  y: "140vh", size: 70, rotate: 95,  opacity: 0.07, mobileHidden: false },
+  { x: "20%",  y: "175vh", size: 48, rotate: -60, opacity: 0.05, mobileHidden: true  },
+  { x: "85%",  y: "210vh", size: 40, rotate: 200, opacity: 0.05, mobileHidden: false },
+  { x: "55%",  y: "190vh", size: 60, rotate: -35, opacity: 0.06, mobileHidden: true  },
+  { x: "12%",  y: "240vh", size: 64, rotate: 85,  opacity: 0.06, mobileHidden: false },
+  { x: "78%",  y: "265vh", size: 52, rotate: -40, opacity: 0.05, mobileHidden: true  },
+
+  // — About & Contact section (280vh–450vh) —
+  { x: "10%",  y: "300vh", size: 72, rotate: 130, opacity: 0.06, mobileHidden: false },
+  { x: "70%",  y: "320vh", size: 46, rotate: -80, opacity: 0.05, mobileHidden: true  },
+  { x: "40%",  y: "360vh", size: 58, rotate: 25,  opacity: 0.07, mobileHidden: false },
+  { x: "88%",  y: "390vh", size: 40, rotate: 155, opacity: 0.05, mobileHidden: true  },
+  { x: "5%",   y: "420vh", size: 50, rotate: -45, opacity: 0.06, mobileHidden: false },
+  { x: "60%",  y: "440vh", size: 64, rotate: 70,  opacity: 0.06, mobileHidden: true  },
 ];
 
 function PuzzlePiece({ size, stroke }: { size: number; stroke: string }) {
@@ -61,9 +65,9 @@ export function PuzzleBackground() {
         <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-blue-900/15 blur-[70px]" />
       </div>
 
-      {/* Absolute container matching document height for puzzle pieces */}
+      {/* Absolute container matching full document bounds for puzzle pieces */}
       <div
-        className="absolute inset-0 h-full w-full pointer-events-none overflow-hidden"
+        className="absolute inset-0 w-full pointer-events-none overflow-hidden"
         style={{ zIndex: 0 }}
       >
         {PUZZLE_PIECES.map((p, i) => (

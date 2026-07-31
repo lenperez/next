@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pieces — Len Perez UX Portfolio</title>
     <meta name="description" content="UX and Product Design portfolio for Len Perez showcasing case studies, interactive projects, and graphic design work." />
-    <style>html, body { height: 100%; margin: 0; background-color: #F5F5F5; color: #0a0a0a; } #root { height: 100%; }</style>
+    <style>
+      html, body { height: 100%; margin: 0; background-color: #0a0a0a; color: #ffffff; }
+      html.light, html.light body { background-color: #F5F5F5; color: #0a0a0a; }
+      #root { height: 100%; }
+    </style>
+    <script>
+      (function() {
+        try {
+          var userPref = localStorage.getItem('theme_preference');
+          var isDark = userPref ? userPref === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+            document.documentElement.style.backgroundColor = '#0a0a0a';
+            document.documentElement.style.color = '#ffffff';
+          } else {
+            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.backgroundColor = '#F5F5F5';
+            document.documentElement.style.color = '#0a0a0a';
+          }
+        } catch(e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

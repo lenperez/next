@@ -19,6 +19,8 @@ export function ImageWithFallback({
     <img
       src={error && fallbackSrc ? fallbackSrc : src}
       alt={alt}
+      loading="lazy"
+      decoding="async"
       referrerPolicy="no-referrer"
       onError={() => setError(true)}
       className={className}
