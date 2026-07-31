@@ -13,16 +13,28 @@ const ThemeContext = createContext<ThemeContextType>({
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
-    const saved = localStorage.getItem('theme');
-    if (saved !== null) {
-      return saved === 'dark';
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved !== null) {
+        return saved === 'dark';
+      }
+    } catch {
+      // Ignore localStorage restrictions in Safari private mode
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    try {
+      return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches ?? false;
+    } catch {
+      return false;
+    }
   });
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    try {
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch {
+      // Ignore localStorage restrictions in Safari private mode
+    }
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {

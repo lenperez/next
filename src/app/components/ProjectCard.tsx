@@ -57,10 +57,10 @@ function ProcessModal({
             ease: [0.16, 1, 0.3, 1],
           }}
           className={`
-            relative w-full h-full overflow-y-auto border
-            md:h-auto md:max-h-[85vh] md:max-w-[480px] md:rounded-2xl md:mx-4
+            relative w-full max-h-[90dvh] md:max-h-[85vh] overflow-y-auto border rounded-t-2xl md:rounded-2xl md:max-w-[480px] md:mx-4
             ${isDark ? "bg-[#111318] border-white/[0.08]" : "bg-white border-black/[0.1] shadow-2xl"}
           `}
+          style={{ overscrollBehavior: "contain", WebkitOverflowScrolling: "touch" }}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close button */}

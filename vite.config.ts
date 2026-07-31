@@ -34,7 +34,7 @@ export default defineConfig({
   },
   assetsInclude: ['**/*.svg', '**/*.csv'],
   build: {
-    target: 'es2015', // Broad iOS Safari compatibility
+    target: ['es2020', 'safari14'],
     cssTarget: 'safari14',
   },
 })
