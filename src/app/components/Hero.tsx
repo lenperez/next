@@ -7,9 +7,10 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center">
-
       {/* Foreground content — scrolls at normal 1× speed */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

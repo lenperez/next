@@ -6,9 +6,9 @@
     <title>Pieces — Len Perez UX Portfolio</title>
     <meta name="description" content="UX and Product Design portfolio for Len Perez showcasing case studies, interactive projects, and graphic design work." />
     <style>
-      html, body { height: 100%; margin: 0; background-color: #0a0a0a; color: #ffffff; }
+      html, body { min-h: 100%; margin: 0; background-color: #0a0a0a; color: #ffffff; }
       html.light, html.light body { background-color: #F5F5F5; color: #0a0a0a; }
-      #root { height: 100%; }
+      #root { min-height: 100vh; }
     </style>
     <script>
       (function() {
@@ -20,11 +20,19 @@
             document.documentElement.classList.remove('light');
             document.documentElement.style.backgroundColor = '#0a0a0a';
             document.documentElement.style.color = '#ffffff';
+            if (document.body) {
+              document.body.style.backgroundColor = '#0a0a0a';
+              document.body.style.color = '#ffffff';
+            }
           } else {
             document.documentElement.classList.add('light');
             document.documentElement.classList.remove('dark');
             document.documentElement.style.backgroundColor = '#F5F5F5';
             document.documentElement.style.color = '#0a0a0a';
+            if (document.body) {
+              document.body.style.backgroundColor = '#F5F5F5';
+              document.body.style.color = '#0a0a0a';
+            }
           }
         } catch(e) {}
       })();

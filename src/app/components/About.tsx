@@ -14,12 +14,12 @@ export function About() {
 
   return (
     <section id="about" className="py-28 px-6 relative" style={{ zIndex: 1 }}>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: "200px 0px" }}
+          transition={{ duration: 0.5 }}
           className="grid md:grid-cols-2 gap-16 items-center"
         >
           <div>
@@ -44,14 +44,14 @@ export function About() {
             {skills.map((skill, i) => (
               <motion.div
                 key={skill.label}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className={`backdrop-blur-[30px] rounded-xl p-5 border transition-all duration-300 ${
+                viewport={{ once: true, margin: "200px 0px" }}
+                transition={{ delay: i * 0.05, duration: 0.4 }}
+                className={`rounded-xl p-5 border transition-all duration-300 ${
                   isDark
-                    ? "bg-black/50 border-white/[0.06] hover:border-blue-700/30 hover:bg-black/60"
-                    : "bg-white/90 border-black/[0.08] shadow-sm hover:border-blue-700/30 hover:bg-white"
+                    ? "bg-[#111318]/90 border-white/[0.08] hover:border-blue-500/30 hover:bg-[#161a22]"
+                    : "bg-white/95 border-black/[0.08] shadow-sm hover:border-blue-500/30 hover:bg-white"
                 }`}
               >
                 <skill.icon size={20} className="text-blue-400 mb-3" />
@@ -69,4 +69,6 @@ export function About() {
     </section>
   );
 }
+
+
 

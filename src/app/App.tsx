@@ -10,6 +10,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
 
+
 const mainProjects: Project[] = [
 
   {
@@ -337,20 +338,20 @@ function PortfolioContent() {
       <Nav />
       <Hero />
 
-      <section id="work" className="py-28 px-6 relative" style={{ zIndex: 1 }}>
-        <div className="max-w-6xl mx-auto flex flex-col gap-4">
+      <section id="work" className="py-28 px-6 relative overflow-hidden" style={{ zIndex: 1 }}>
+        <div className="max-w-6xl mx-auto flex flex-col gap-4 relative z-10">
 
           {/* Case Studies panel */}
           <motion.div
             ref={caseStudiesRef}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className={`rounded-2xl overflow-hidden backdrop-blur-[30px] border transition-colors ${
+            viewport={{ once: true, margin: "200px 0px" }}
+            transition={{ duration: 0.5 }}
+            className={`rounded-2xl overflow-hidden border transition-colors ${
               isDark
-                ? "border-white/[0.06] bg-black/50"
-                : "border-black/[0.08] bg-white/80 shadow-sm"
+                ? "border-white/[0.08] bg-[#111318]/90"
+                : "border-black/[0.08] bg-white/95 shadow-sm"
             }`}
           >
             <button
@@ -394,12 +395,12 @@ function PortfolioContent() {
             ref={additionalRef}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className={`rounded-2xl overflow-hidden backdrop-blur-[30px] border transition-colors ${
+            viewport={{ once: true, margin: "200px 0px" }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className={`rounded-2xl overflow-hidden border transition-colors ${
               isDark
-                ? "border-white/[0.06] bg-black/50"
-                : "border-black/[0.08] bg-white/80 shadow-sm"
+                ? "border-white/[0.08] bg-[#111318]/90"
+                : "border-black/[0.08] bg-white/95 shadow-sm"
             }`}
           >
             <button
@@ -443,14 +444,15 @@ function PortfolioContent() {
             ref={graphicRef}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className={`rounded-2xl overflow-hidden backdrop-blur-[30px] border transition-colors ${
+            viewport={{ once: true, margin: "200px 0px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className={`rounded-2xl overflow-hidden border transition-colors ${
               isDark
-                ? "border-white/[0.06] bg-black/50"
-                : "border-black/[0.08] bg-white/80 shadow-sm"
+                ? "border-white/[0.08] bg-[#111318]/90"
+                : "border-black/[0.08] bg-white/95 shadow-sm"
             }`}
           >
+
             <button
               onClick={() => toggle("graphic", graphicRef)}
               className={`w-full flex items-center justify-between px-8 py-6 transition-colors ${

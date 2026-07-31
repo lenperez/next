@@ -1,37 +1,42 @@
 import { useTheme } from "../context/ThemeContext";
 
-const PUZZLE_PIECES = [
-  // — Hero section (0–100vh) —
-  { x: "5%",   y: "8vh",   size: 64, rotate: 15,  opacity: 0.07, mobileHidden: false },
-  { x: "18%",  y: "22vh",  size: 44, rotate: -30, opacity: 0.05, mobileHidden: true  },
-  { x: "80%",  y: "12vh",  size: 80, rotate: 50,  opacity: 0.07, mobileHidden: false },
-  { x: "88%",  y: "38vh",  size: 48, rotate: -10, opacity: 0.05, mobileHidden: true  },
-  { x: "68%",  y: "65vh",  size: 88, rotate: 110, opacity: 0.07, mobileHidden: false },
-  { x: "10%",  y: "55vh",  size: 58, rotate: 80,  opacity: 0.06, mobileHidden: true  },
-  { x: "52%",  y: "85vh",  size: 52, rotate: -55, opacity: 0.05, mobileHidden: false },
-  { x: "38%",  y: "5vh",   size: 40, rotate: 120, opacity: 0.05, mobileHidden: true  },
-  { x: "91%",  y: "78vh",  size: 54, rotate: 30,  opacity: 0.05, mobileHidden: false },
-  { x: "2%",   y: "42vh",  size: 72, rotate: -70, opacity: 0.06, mobileHidden: true  },
-  { x: "58%",  y: "28vh",  size: 36, rotate: 170, opacity: 0.05, mobileHidden: false },
-  { x: "28%",  y: "70vh",  size: 46, rotate: -20, opacity: 0.06, mobileHidden: true  },
+export interface PuzzlePieceData {
+  x: string;
+  y: string;
+  size: number;
+  rotate: number;
+  opacity: number;
+  mobileHidden?: boolean;
+}
 
-  // — Work section (100vh–280vh) —
-  { x: "7%",   y: "115vh", size: 54, rotate: 40,  opacity: 0.06, mobileHidden: false },
-  { x: "45%",  y: "105vh", size: 44, rotate: -15, opacity: 0.05, mobileHidden: true  },
-  { x: "75%",  y: "140vh", size: 70, rotate: 95,  opacity: 0.07, mobileHidden: false },
-  { x: "20%",  y: "175vh", size: 48, rotate: -60, opacity: 0.05, mobileHidden: true  },
-  { x: "85%",  y: "210vh", size: 40, rotate: 200, opacity: 0.05, mobileHidden: false },
-  { x: "55%",  y: "190vh", size: 60, rotate: -35, opacity: 0.06, mobileHidden: true  },
-  { x: "12%",  y: "240vh", size: 64, rotate: 85,  opacity: 0.06, mobileHidden: false },
-  { x: "78%",  y: "265vh", size: 52, rotate: -40, opacity: 0.05, mobileHidden: true  },
+const ALL_PUZZLE_PIECES: PuzzlePieceData[] = [
+  // Top / Hero region (0% - 20% of page)
+  { x: "4%",   y: "1.5%", size: 64, rotate: 15,  opacity: 0.08, mobileHidden: false },
+  { x: "82%",  y: "2.5%", size: 76, rotate: 50,  opacity: 0.08, mobileHidden: false },
+  { x: "18%",  y: "6%",   size: 44, rotate: -30, opacity: 0.06, mobileHidden: true  },
+  { x: "88%",  y: "10%",  size: 52, rotate: -10, opacity: 0.06, mobileHidden: true  },
+  { x: "8%",   y: "14%",  size: 58, rotate: 80,  opacity: 0.07, mobileHidden: false },
+  { x: "72%",  y: "18%",  size: 70, rotate: 110, opacity: 0.08, mobileHidden: false },
 
-  // — About & Contact section (280vh–450vh) —
-  { x: "10%",  y: "300vh", size: 72, rotate: 130, opacity: 0.06, mobileHidden: false },
-  { x: "70%",  y: "320vh", size: 46, rotate: -80, opacity: 0.05, mobileHidden: true  },
-  { x: "40%",  y: "360vh", size: 58, rotate: 25,  opacity: 0.07, mobileHidden: false },
-  { x: "88%",  y: "390vh", size: 40, rotate: 155, opacity: 0.05, mobileHidden: true  },
-  { x: "5%",   y: "420vh", size: 50, rotate: -45, opacity: 0.06, mobileHidden: false },
-  { x: "60%",  y: "440vh", size: 64, rotate: 70,  opacity: 0.06, mobileHidden: true  },
+  // Work section region (20% - 60% of page)
+  { x: "5%",   y: "24%",  size: 52, rotate: -55, opacity: 0.07, mobileHidden: false },
+  { x: "88%",  y: "29%",  size: 60, rotate: 30,  opacity: 0.06, mobileHidden: false },
+  { x: "12%",  y: "35%",  size: 68, rotate: 40,  opacity: 0.07, mobileHidden: false },
+  { x: "78%",  y: "41%",  size: 74, rotate: 95,  opacity: 0.08, mobileHidden: false },
+  { x: "3%",   y: "47%",  size: 48, rotate: -60, opacity: 0.06, mobileHidden: true  },
+  { x: "85%",  y: "53%",  size: 56, rotate: 200, opacity: 0.07, mobileHidden: false },
+  { x: "10%",  y: "58%",  size: 64, rotate: 85,  opacity: 0.07, mobileHidden: false },
+
+  // About section region (60% - 85% of page)
+  { x: "80%",  y: "64%",  size: 52, rotate: -40, opacity: 0.06, mobileHidden: true  },
+  { x: "5%",   y: "70%",  size: 72, rotate: 130, opacity: 0.07, mobileHidden: false },
+  { x: "86%",  y: "76%",  size: 46, rotate: -80, opacity: 0.06, mobileHidden: true  },
+  { x: "8%",   y: "82%",  size: 58, rotate: 25,  opacity: 0.07, mobileHidden: false },
+
+  // Contact section region (85% - 98% of page)
+  { x: "85%",  y: "88%",  size: 66, rotate: 155, opacity: 0.07, mobileHidden: false },
+  { x: "4%",   y: "93%",  size: 54, rotate: -45, opacity: 0.07, mobileHidden: false },
+  { x: "75%",  y: "97%",  size: 60, rotate: 70,  opacity: 0.06, mobileHidden: false },
 ];
 
 function PuzzlePiece({ size, stroke }: { size: number; stroke: string }) {
@@ -40,13 +45,13 @@ function PuzzlePiece({ size, stroke }: { size: number; stroke: string }) {
   `;
   return (
     <svg
-      width={size * 1.3}
-      height={size * 1.3}
+      width={size}
+      height={size}
       viewBox="-35 -10 170 120"
       fill="none"
-      className="block max-w-full"
+      className="block"
     >
-      <path d={d} stroke={stroke} strokeWidth={1.8} fill="none" strokeLinejoin="round" strokeLinecap="round" />
+      <path d={d} stroke={stroke} strokeWidth={2} fill="none" strokeLinejoin="round" strokeLinecap="round" />
     </svg>
   );
 }
@@ -56,35 +61,35 @@ export function PuzzleBackground() {
 
   return (
     <>
-      {/* Fixed GPU-accelerated ambient orbs */}
-      <div
-        className="fixed inset-0 pointer-events-none overflow-hidden"
-        style={{ zIndex: 0, transform: "translateZ(0)" }}
-      >
-        <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-blue-800/15 blur-[80px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-blue-900/15 blur-[70px]" />
+      {/* Subtle top ambient glow */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div
+          className={`absolute -top-40 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full pointer-events-none transition-opacity duration-500 ${
+            isDark ? "bg-blue-900/15" : "bg-blue-500/10"
+          }`}
+          style={{ filter: "blur(80px)" }}
+        />
       </div>
 
-      {/* Absolute container matching full document bounds for puzzle pieces */}
-      <div
-        className="absolute inset-0 w-full pointer-events-none overflow-hidden"
-        style={{ zIndex: 0 }}
-      >
-        {PUZZLE_PIECES.map((p, i) => (
+      {/* Document-level puzzle pieces spanning top to bottom */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
+        {ALL_PUZZLE_PIECES.map((p, i) => (
           <div
             key={i}
             className={`absolute ${p.mobileHidden ? "hidden md:block" : ""}`}
             style={{
               left: p.x,
               top: p.y,
-              opacity: (isDark ? p.opacity : p.opacity * 1.5) * 0.5,
+              opacity: isDark ? p.opacity : p.opacity * 1.4,
               transform: `rotate(${p.rotate}deg)`,
             }}
           >
-            <PuzzlePiece size={p.size} stroke={isDark ? "white" : "#000000"} />
+            <PuzzlePiece size={p.size} stroke={isDark ? "#ffffff" : "#000000"} />
           </div>
         ))}
       </div>
     </>
   );
 }
+
+
