@@ -16,7 +16,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: '/', // Custom domain routing
+  base: '/',
   plugins: [
     figmaAssetResolver(),
     react(),
@@ -34,20 +34,7 @@ export default defineConfig({
   },
   assetsInclude: ['**/*.svg', '**/*.csv'],
   build: {
-    // Ensures transpilation compatibility with iOS Safari & modern WebKit
-    target: ['es2020', 'safari14'],
-    // Splits giant JS bundle into smaller chunks to prevent mobile Safari main-thread blocking
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react')) return 'vendor-react'
-            if (id.includes('framer-motion') || id.includes('motion')) return 'vendor-motion'
-            if (id.includes('lucide-react')) return 'vendor-icons'
-            return 'vendor'
-          }
-        },
-      },
-    },
+    target: 'es2015', // Broad iOS Safari compatibility
+    cssTarget: 'safari14',
   },
 })

@@ -1,6 +1,5 @@
 import { useTheme } from "../context/ThemeContext";
 
-// Pieces distributed across vertical space
 const PUZZLE_PIECES = [
   // — Hero band (0–100vh) —
   { x: "5%",   y: "8vh",   size: 72, rotate: 15,  opacity: 0.07, mobileHidden: false },
@@ -25,7 +24,7 @@ const PUZZLE_PIECES = [
   // — About / Contact band (200–300vh) —
   { x: "12%",  y: "215vh", size: 80, rotate: 130, opacity: 0.06, mobileHidden: false },
   { x: "70%",  y: "205vh", size: 50, rotate: -80, opacity: 0.05, mobileHidden: true  },
-  { x: "40%",  y: "240vh", size: 25, rotate: 25,  opacity: 0.07, mobileHidden: false },
+  { x: "40%",  y: "240vh", size: 64, rotate: 25,  opacity: 0.07, mobileHidden: false },
   { x: "88%",  y: "260vh", size: 44, rotate: 155, opacity: 0.05, mobileHidden: true  },
   { x: "5%",   y: "280vh", size: 56, rotate: -45, opacity: 0.06, mobileHidden: false },
   { x: "60%",  y: "270vh", size: 72, rotate: 70,  opacity: 0.06, mobileHidden: true  },
@@ -33,47 +32,11 @@ const PUZZLE_PIECES = [
 
 function PuzzlePiece({ size, stroke }: { size: number; stroke: string }) {
   const d = `
-    M 10,0
-    L 35,0
-    C 38,0 41,1 43,4
-    C 34,10 37,27 50,27
-    C 63,27 66,10 57,4
-    C 59,1 62,0 65,0
-    L 90,0
-    C 96,0 100,4 100,10
-    L 100,35
-    C 100,38 101,41 104,43
-    C 110,34 127,37 127,50
-    C 127,63 110,66 104,57
-    C 101,59 100,62 100,65
-    L 100,90
-    C 100,96 96,100 90,100
-    L 65,100
-    C 62,100 59,99 57,96
-    C 66,90 63,73 50,73
-    C 37,73 34,90 43,96
-    C 41,99 38,100 35,100
-    L 10,100
-    C 4,100 0,96 0,90
-    L 0,65
-    C 0,62 -1,59 -4,57
-    C -10,66 -27,63 -27,50
-    C -27,37 -10,34 -4,43
-    C -1,41 0,38 0,35
-    L 0,10
-    C 0,4 4,0 10,0
-    Z
+    M 10,0 L 35,0 C 38,0 41,1 43,4 C 34,10 37,27 50,27 C 63,27 66,10 57,4 C 59,1 62,0 65,0 L 90,0 C 96,0 100,4 100,10 L 100,35 C 100,38 101,41 104,43 C 110,34 127,37 127,50 C 127,63 110,66 104,57 C 101,59 100,62 100,65 L 100,90 C 100,96 96,100 90,100 L 65,100 C 62,100 59,99 57,96 C 66,90 63,73 50,73 C 37,73 34,90 43,96 C 41,99 38,100 35,100 L 10,100 C 4,100 0,96 0,90 L 0,65 C 0,62 -1,59 -4,57 C -10,66 -27,63 -27,50 C -27,37 -10,34 -4,43 C -1,41 0,38 0,35 L 0,10 C 0,4 4,0 10,0 Z
   `;
   return (
     <svg width={size * 1.5} height={size * 1.5} viewBox="-35 -10 170 120" fill="none">
-      <path
-        d={d}
-        stroke={stroke}
-        strokeWidth={1.8}
-        fill="none"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-      />
+      <path d={d} stroke={stroke} strokeWidth={1.8} fill="none" strokeLinejoin="round" strokeLinecap="round" />
     </svg>
   );
 }
@@ -82,33 +45,28 @@ export function PuzzleBackground() {
   const { isDark } = useTheme();
 
   return (
-    <>
-      {/* Background gradient orbs */}
-      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+    <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0, minHeight: '300vh' }}>
+      {/* Static orbs */}
+      <div className="sticky top-0 h-screen w-full pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-blue-800/15 blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-blue-900/15 blur-[100px]" />
       </div>
 
-      {/* Pure CSS static/absolute container for puzzle pieces — eliminates WebKit scroll thread locks */}
-      <div
-        className="absolute inset-0 pointer-events-none overflow-hidden"
-        style={{ zIndex: 0 }}
-      >
-        {PUZZLE_PIECES.map((p, i) => (
-          <div
-            key={i}
-            className={`absolute ${p.mobileHidden ? "hidden md:block" : ""}`}
-            style={{
-              left: p.x,
-              top: p.y,
-              opacity: (isDark ? p.opacity : p.opacity * 1.5) * 0.5,
-              transform: `rotate(${p.rotate}deg) scale(1.8)`,
-            }}
-          >
-            <PuzzlePiece size={p.size} stroke={isDark ? "white" : "#000000"} />
-          </div>
-        ))}
-      </div>
-    </>
+      {/* Puzzle pieces positioned down full document height */}
+      {PUZZLE_PIECES.map((p, i) => (
+        <div
+          key={i}
+          className={`absolute ${p.mobileHidden ? "hidden md:block" : ""}`}
+          style={{
+            left: p.x,
+            top: p.y,
+            opacity: (isDark ? p.opacity : p.opacity * 1.5) * 0.5,
+            transform: `rotate(${p.rotate}deg) scale(1.5)`,
+          }}
+        >
+          <PuzzlePiece size={p.size} stroke={isDark ? "white" : "#000000"} />
+        </div>
+      ))}
+    </div>
   );
 }
