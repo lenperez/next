@@ -61,13 +61,13 @@ export function PuzzleBackground() {
 
   return (
     <>
-      {/* Subtle top ambient glow */}
+      {/* Subtle centered ambient glow */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div
-          className={`absolute -top-40 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full pointer-events-none transition-opacity duration-500 ${
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none transition-opacity duration-500 ${
             isDark ? "bg-blue-900/15" : "bg-blue-500/10"
           }`}
-          style={{ filter: "blur(80px)" }}
+          style={{ filter: "blur(90px)" }}
         />
       </div>
 
