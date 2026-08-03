@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import faviconDark from '../../assets/favicon-dark.svg';
+import faviconLight from '../../assets/favicon-light.svg';
 
 type ThemeContextType = {
   isDark: boolean;
@@ -54,9 +56,19 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, [hasUserPreference]);
 
-  // Sync document theme classes and root background
+  // Sync document theme classes, root background, and favicon
   useEffect(() => {
     if (typeof window === 'undefined') return;
+
+    let link: HTMLLinkElement | null = document.querySelector("link[rel*='icon']");
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      link.type = 'image/svg+xml';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = isDark ? faviconDark : faviconLight;
+
     if (isDark) {
       document.documentElement.classList.add('dark');
       document.documentElement.style.backgroundColor = '#0a0a0a';
