@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pieces — Len Perez UX Portfolio</title>
     <meta name="description" content="UX and Product Design portfolio for Len Perez showcasing case studies, interactive projects, and graphic design work." />
-    <link id="favicon" rel="icon" type="image/svg+xml" href="/src/assets/favicon-dark.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon-dark.svg" />
+    <link rel="mask-icon" href="/favicon-dark.svg" color="#60A5FA" />
+    <link rel="apple-touch-icon" href="/favicon-dark.svg" />
     <style>
       html, body { min-h: 100%; margin: 0; background-color: #0a0a0a; color: #ffffff; }
       html.light, html.light body { background-color: #F5F5F5; color: #0a0a0a; }
@@ -16,10 +18,28 @@
         try {
           var userPref = localStorage.getItem('theme_preference');
           var isDark = userPref ? userPref === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-          var favicon = document.getElementById('favicon');
-          if (favicon) {
-            favicon.href = isDark ? '/src/assets/favicon-dark.svg' : '/src/assets/favicon-light.svg';
-          }
+          var iconPath = isDark ? '/favicon-dark.svg' : '/favicon-light.svg';
+          
+          var existingIcons = document.querySelectorAll("link[rel*='icon'], link[rel*='mask-icon']");
+          existingIcons.forEach(function(el) { el.remove(); });
+
+          var iconLink = document.createElement('link');
+          iconLink.rel = 'icon';
+          iconLink.type = 'image/svg+xml';
+          iconLink.setAttribute('sizes', 'any');
+          iconLink.href = iconPath;
+          document.head.appendChild(iconLink);
+
+          var maskLink = document.createElement('link');
+          maskLink.rel = 'mask-icon';
+          maskLink.href = iconPath;
+          maskLink.setAttribute('color', '#60A5FA');
+          document.head.appendChild(maskLink);
+
+          var touchLink = document.createElement('link');
+          touchLink.rel = 'apple-touch-icon';
+          touchLink.href = iconPath;
+          document.head.appendChild(touchLink);
           if (isDark) {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');

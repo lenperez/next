@@ -60,14 +60,43 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    let link: HTMLLinkElement | null = document.querySelector("link[rel*='icon']");
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'icon';
-      link.type = 'image/svg+xml';
-      document.getElementsByTagName('head')[0].appendChild(link);
-    }
-    link.href = isDark ? faviconDark : faviconLight;
+    const iconPath = isDark ? '/favicon-dark.svg' : '/favicon-light.svg';
+    const fallbackPath = isDark ? faviconDark : faviconLight;
+    const finalPath = iconPath || fallbackPath;
+
+    // Safari requires removing old favicon links and re-appending new elements to trigger icon re-render
+    const existingIcons = document.querySelectorAll("link[rel*='icon'], link[rel*='mask-icon']");
+    existingIcons.forEach(el => el.remove());
+
+    const head = document.getElementsByTagName('head')[0];
+
+    // Standard SVG icon (with sizes="any" required by Safari)
+    const iconLink = document.createElement('link');
+    iconLink.rel = 'icon';
+    iconLink.type = 'image/svg+xml';
+    iconLink.setAttribute('sizes', 'any');
+    iconLink.href = finalPath;
+    head.appendChild(iconLink);
+
+    // Shortcut icon fallback
+    const shortcutLink = document.createElement('link');
+    shortcutLink.rel = 'shortcut icon';
+    shortcutLink.type = 'image/svg+xml';
+    shortcutLink.href = finalPath;
+    head.appendChild(shortcutLink);
+
+    // Safari pinned tab mask-icon
+    const maskLink = document.createElement('link');
+    maskLink.rel = 'mask-icon';
+    maskLink.href = finalPath;
+    maskLink.setAttribute('color', '#60A5FA');
+    head.appendChild(maskLink);
+
+    // Apple touch icon
+    const touchLink = document.createElement('link');
+    touchLink.rel = 'apple-touch-icon';
+    touchLink.href = finalPath;
+    head.appendChild(touchLink);
 
     if (isDark) {
       document.documentElement.classList.add('dark');
