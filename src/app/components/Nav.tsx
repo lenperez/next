@@ -36,12 +36,20 @@ export function Nav() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
           href="#"
-          className={`tracking-[0.2em] uppercase text-sm transition-colors ${
-            isDark ? "text-white" : "text-black"
+          className={`inline-flex items-center gap-2 text-sm tracking-wider uppercase transition-colors ${
+            isDark
+              ? "text-white/60 hover:text-white"
+              : "text-black/60 hover:text-black"
           }`}
-          style={{ fontWeight: 600 }}
         >
-          Len Perez
+          <img
+            src={isDark ? "/favicon-dark.svg" : "/favicon-light.svg"}
+            alt="Favicon logo"
+            width={16}
+            height={16}
+            className="w-4 h-4 object-contain shrink-0"
+          />
+          <span>Len Perez</span>
         </a>
 
         {/* Desktop links & Theme Switcher */}
