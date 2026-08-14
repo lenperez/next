@@ -1,6 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import faviconDark from '../../assets/favicon-dark.svg';
-import faviconLight from '../../assets/favicon-light.svg';
 
 type ThemeContextType = {
   isDark: boolean;
@@ -60,9 +58,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const iconPath = isDark ? '/favicon-dark.svg' : '/favicon-light.svg';
-    const fallbackPath = isDark ? faviconDark : faviconLight;
-    const finalPath = iconPath || fallbackPath;
+    const finalPath = isDark ? '/favicon-dark.svg' : '/favicon-light.svg';
 
     // Safari requires removing old favicon links and re-appending new elements to trigger icon re-render
     const existingIcons = document.querySelectorAll("link[rel*='icon'], link[rel*='mask-icon']");
