@@ -324,7 +324,7 @@ function PortfolioContent() {
     setOpenSection(prev => prev === id ? "" : id);
     setTimeout(() => {
       if (ref.current) {
-        ref.current.style.scrollMarginTop = "64px";
+        ref.current.style.scrollMarginTop = "80px";
         ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }, 420);
@@ -332,176 +332,199 @@ function PortfolioContent() {
 
   return (
     <div className={`relative w-full min-h-screen overflow-x-hidden transition-colors duration-300 ${
-      isDark ? "bg-[#0a0a0a] text-white" : "bg-[#F5F5F5] text-black"
+      isDark ? "bg-[#0a0a0a] text-white" : "bg-[#F5F5F5] text-neutral-900"
     }`}>
       <PuzzleBackground />
       <Nav />
-      <Hero />
 
-      <section id="work" className="py-28 px-6 relative overflow-hidden" style={{ zIndex: 1 }}>
-        <div className="max-w-6xl mx-auto flex flex-col gap-4 relative z-10">
+      <main id="main-content" tabIndex={-1} className="outline-none">
+        <Hero />
 
-          {/* Case Studies panel */}
-          <motion.div
-            ref={caseStudiesRef}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "200px 0px" }}
-            transition={{ duration: 0.5 }}
-            className={`rounded-2xl overflow-hidden border transition-colors ${
-              isDark
-                ? "border-white/[0.08] bg-[#111318]/90"
-                : "border-black/[0.08] bg-white/95 shadow-sm"
-            }`}
-          >
-            <button
-              onClick={() => toggle("case-studies", caseStudiesRef)}
-              className={`w-full flex items-center justify-between px-8 py-6 transition-colors ${
-                isDark ? "hover:bg-white/[0.02]" : "hover:bg-black/[0.02]"
+        <section id="work" aria-label="Selected UX and Design Work" className="py-28 px-6 relative overflow-hidden" style={{ zIndex: 1 }}>
+          <div className="max-w-6xl mx-auto flex flex-col gap-4 relative z-10">
+
+            {/* Case Studies panel */}
+            <motion.div
+              ref={caseStudiesRef}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "200px 0px" }}
+              transition={{ duration: 0.5 }}
+              className={`rounded-2xl overflow-hidden border transition-colors ${
+                isDark
+                  ? "border-white/10 bg-[#111318]/90"
+                  : "border-black/10 bg-white/95 shadow-sm"
               }`}
             >
-              <h2
-                className={`${isDark ? "text-white" : "text-black"} transition-colors`}
-                style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", fontWeight: 700, letterSpacing: "-0.02em" }}
+              <button
+                id="accordion-case-studies"
+                type="button"
+                aria-expanded={openSection === "case-studies"}
+                aria-controls="panel-case-studies"
+                onClick={() => toggle("case-studies", caseStudiesRef)}
+                className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
+                }`}
               >
-                Case Studies
-              </h2>
-              <motion.div animate={{ rotate: openSection === "case-studies" ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                <ChevronDown size={20} className={isDark ? "text-white/40" : "text-black/40"} />
-              </motion.div>
-            </button>
-
-            <AnimatePresence initial={false}>
-              {openSection === "case-studies" && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden"
+                <h2
+                  className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
+                  style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
                 >
-                  <div className="flex flex-col gap-6 px-8 pb-8">
-                    {mainProjects.map((project, i) => (
-                      <ProjectCard key={project.id} project={project} index={i} />
-                    ))}
-                  </div>
+                  Case Studies
+                </h2>
+                <motion.div animate={{ rotate: openSection === "case-studies" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                  <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
                 </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+              </button>
 
-          {/* Additional Interactive Designs panel */}
-          <motion.div
-            ref={additionalRef}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "200px 0px" }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className={`rounded-2xl overflow-hidden border transition-colors ${
-              isDark
-                ? "border-white/[0.08] bg-[#111318]/90"
-                : "border-black/[0.08] bg-white/95 shadow-sm"
-            }`}
-          >
-            <button
-              onClick={() => toggle("additional", additionalRef)}
-              className={`w-full flex items-center justify-between px-8 py-6 transition-colors ${
-                isDark ? "hover:bg-white/[0.02]" : "hover:bg-black/[0.02]"
+              <AnimatePresence initial={false}>
+                {openSection === "case-studies" && (
+                  <motion.div
+                    id="panel-case-studies"
+                    role="region"
+                    aria-labelledby="accordion-case-studies"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="flex flex-col gap-6 px-6 sm:px-8 pb-8">
+                      {mainProjects.map((project, i) => (
+                        <ProjectCard key={project.id} project={project} index={i} />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+
+            {/* Additional Interactive Designs panel */}
+            <motion.div
+              ref={additionalRef}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "200px 0px" }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className={`rounded-2xl overflow-hidden border transition-colors ${
+                isDark
+                  ? "border-white/10 bg-[#111318]/90"
+                  : "border-black/10 bg-white/95 shadow-sm"
               }`}
             >
-              <h2
-                className={`${isDark ? "text-white" : "text-black"} transition-colors`}
-                style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", fontWeight: 700, letterSpacing: "-0.02em" }}
+              <button
+                id="accordion-additional"
+                type="button"
+                aria-expanded={openSection === "additional"}
+                aria-controls="panel-additional"
+                onClick={() => toggle("additional", additionalRef)}
+                className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
+                }`}
               >
-                Interactive Pieces
-              </h2>
-              <motion.div animate={{ rotate: openSection === "additional" ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                <ChevronDown size={20} className={isDark ? "text-white/40" : "text-black/40"} />
-              </motion.div>
-            </button>
-
-            <AnimatePresence initial={false}>
-              {openSection === "additional" && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden"
+                <h2
+                  className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
+                  style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
                 >
-                  <div className="flex flex-col gap-6 px-8 pb-8">
-                    {otherProjects.map((project, i) => (
-                      <ProjectCard key={project.id} project={project} index={i} />
-                    ))}
-                  </div>
+                  Interactive Pieces
+                </h2>
+                <motion.div animate={{ rotate: openSection === "additional" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                  <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
                 </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+              </button>
 
-          {/* Graphic Designs panel */}
-          <motion.div
-            ref={graphicRef}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "200px 0px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className={`rounded-2xl overflow-hidden border transition-colors ${
-              isDark
-                ? "border-white/[0.08] bg-[#111318]/90"
-                : "border-black/[0.08] bg-white/95 shadow-sm"
-            }`}
-          >
+              <AnimatePresence initial={false}>
+                {openSection === "additional" && (
+                  <motion.div
+                    id="panel-additional"
+                    role="region"
+                    aria-labelledby="accordion-additional"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="flex flex-col gap-6 px-6 sm:px-8 pb-8">
+                      {otherProjects.map((project, i) => (
+                        <ProjectCard key={project.id} project={project} index={i} />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
 
-            <button
-              onClick={() => toggle("graphic", graphicRef)}
-              className={`w-full flex items-center justify-between px-8 py-6 transition-colors ${
-                isDark ? "hover:bg-white/[0.02]" : "hover:bg-black/[0.02]"
+            {/* Graphic Designs panel */}
+            <motion.div
+              ref={graphicRef}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "200px 0px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className={`rounded-2xl overflow-hidden border transition-colors ${
+                isDark
+                  ? "border-white/10 bg-[#111318]/90"
+                  : "border-black/10 bg-white/95 shadow-sm"
               }`}
             >
-              <h2
-                className={`${isDark ? "text-white" : "text-black"} transition-colors`}
-                style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", fontWeight: 700, letterSpacing: "-0.02em" }}
+              <button
+                id="accordion-graphic"
+                type="button"
+                aria-expanded={openSection === "graphic"}
+                aria-controls="panel-graphic"
+                onClick={() => toggle("graphic", graphicRef)}
+                className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
+                }`}
               >
-                Visual Design Pieces
-              </h2>
-              <motion.div animate={{ rotate: openSection === "graphic" ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                <ChevronDown size={20} className={isDark ? "text-white/40" : "text-black/40"} />
-              </motion.div>
-            </button>
-
-            <AnimatePresence initial={false}>
-              {openSection === "graphic" && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden"
+                <h2
+                  className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
+                  style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
                 >
-                  <div className="flex flex-col gap-6 px-8 pb-8">
-                    {graphicProjects.map((project, i) => (
-                      <ProjectCard key={project.id} project={project} index={i} />
-                    ))}
-                  </div>
+                  Visual Design Pieces
+                </h2>
+                <motion.div animate={{ rotate: openSection === "graphic" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                  <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
                 </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+              </button>
 
-        </div>
-      </section>
+              <AnimatePresence initial={false}>
+                {openSection === "graphic" && (
+                  <motion.div
+                    id="panel-graphic"
+                    role="region"
+                    aria-labelledby="accordion-graphic"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="flex flex-col gap-6 px-6 sm:px-8 pb-8">
+                      {graphicProjects.map((project, i) => (
+                        <ProjectCard key={project.id} project={project} index={i} />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
 
-      <About />
-      <Contact />
+          </div>
+        </section>
+
+        <About />
+        <Contact />
+      </main>
 
       {/* Footer */}
-      <footer className={`border-t py-8 px-6 relative ${isDark ? "border-white/[0.05]" : "border-black/[0.08]"}`} style={{ zIndex: 1 }}>
+      <footer role="contentinfo" className={`border-t py-8 px-6 relative ${isDark ? "border-white/10" : "border-black/10"}`} style={{ zIndex: 1 }}>
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className={`${isDark ? "text-white/20" : "text-black/40"} text-sm tracking-wider`}>
+          <p className={`${isDark ? "text-white/70" : "text-neutral-700"} text-sm tracking-wider font-medium`}>
             Len Perez — UX Designer
           </p>
-          <p className={`${isDark ? "text-white/20" : "text-black/40"} text-xs`}>
+          <p className={`${isDark ? "text-white/60" : "text-neutral-600"} text-xs`}>
             Pieces — A Collection of Work
           </p>
         </div>

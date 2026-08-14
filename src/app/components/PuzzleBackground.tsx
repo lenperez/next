@@ -49,6 +49,9 @@ function PuzzlePiece({ size, stroke }: { size: number; stroke: string }) {
       height={size}
       viewBox="-35 -10 170 120"
       fill="none"
+      aria-hidden="true"
+      focusable="false"
+      role="presentation"
       className="block"
     >
       <path d={d} stroke={stroke} strokeWidth={2} fill="none" strokeLinejoin="round" strokeLinecap="round" />
@@ -60,9 +63,9 @@ export function PuzzleBackground() {
   const { isDark } = useTheme();
 
   return (
-    <>
+    <div aria-hidden="true" role="presentation">
       {/* Subtle centered ambient glow */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
         <div
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none transition-opacity duration-500 ${
             isDark ? "bg-blue-900/15" : "bg-blue-500/10"
@@ -72,7 +75,7 @@ export function PuzzleBackground() {
       </div>
 
       {/* Document-level puzzle pieces spanning top to bottom */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
+      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0" aria-hidden="true">
         {ALL_PUZZLE_PIECES.map((p, i) => (
           <div
             key={i}
@@ -88,7 +91,7 @@ export function PuzzleBackground() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

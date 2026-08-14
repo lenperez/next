@@ -16,3 +16,26 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Global Keyboard Navigation Focus Indicators (WCAG 2.4.7 Focus Visible & 2.4.11 Focus Appearance) */
+:focus-visible {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 3px !important;
+}
+
+html.dark :focus-visible {
+  outline: 2px solid #60a5fa !important;
+  outline-offset: 3px !important;
+}
+
+/* Accessibility: Respect user's prefers-reduced-motion system preference (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

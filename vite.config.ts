@@ -16,7 +16,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: './',
+  base: process.env.NODE_ENV === 'production' ? './' : '/',
   plugins: [
     figmaAssetResolver(),
     react(),

@@ -6,16 +6,14 @@ export function Hero() {
   const { isDark } = useTheme();
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center">
+    <section aria-label="Introduction" className="relative min-h-screen flex flex-col items-center justify-center">
       {/* Foreground content — scrolls at normal 1× speed */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.7 }}
-          className="text-blue-400 tracking-[0.35em] uppercase text-xs mb-6 font-semibold"
+          className={`${isDark ? "text-blue-400" : "text-blue-700"} tracking-[0.35em] uppercase text-xs mb-6 font-semibold transition-colors`}
         >
           UX • Product • Design • Thinker
         </motion.p>
@@ -24,7 +22,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className={`${isDark ? "text-white" : "text-black"} leading-none mb-6 transition-colors`}
+          className={`${isDark ? "text-white" : "text-neutral-900"} leading-none mb-6 transition-colors`}
           style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)", fontWeight: 700, letterSpacing: "-0.03em" }}
         >
           Pieces
@@ -34,6 +32,7 @@ export function Hero() {
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
+          aria-hidden="true"
           className="h-px w-24 bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto mb-6"
         />
 
@@ -41,7 +40,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.7 }}
-          className={`${isDark ? "text-white/50" : "text-black/60"} text-lg leading-relaxed max-w-xl mx-auto transition-colors`}
+          className={`${isDark ? "text-white/80" : "text-neutral-700"} text-lg leading-relaxed max-w-xl mx-auto transition-colors`}
         >
           A collection of work spanning research, interaction design, and high-fidelity product experiences.
         </motion.p>
@@ -54,10 +53,11 @@ export function Hero() {
         >
           <a
             href="#work"
-            className={`inline-flex items-center gap-2 text-sm tracking-widest uppercase transition-all px-5 py-2 rounded-full ${
+            aria-label="View Work - navigate to featured projects section"
+            className={`inline-flex items-center gap-2 text-sm tracking-widest uppercase font-medium transition-all px-5 py-2.5 rounded-full ${
               isDark
-                ? "text-white/40 hover:text-white/80 hover:bg-white/10"
-                : "text-black/50 hover:text-black/80 hover:bg-black/5"
+                ? "text-white/80 hover:text-white hover:bg-white/10"
+                : "text-neutral-800 hover:text-black hover:bg-black/5"
             }`}
           >
             <span>View Work</span>
@@ -65,7 +65,7 @@ export function Hero() {
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
             >
-              <ArrowDown size={16} />
+              <ArrowDown size={16} aria-hidden="true" />
             </motion.div>
           </a>
         </motion.div>
@@ -76,8 +76,9 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6 }}
+        aria-hidden="true"
         className={`absolute bottom-8 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] uppercase transition-colors ${
-          isDark ? "text-white/20" : "text-black/30"
+          isDark ? "text-white/40" : "text-neutral-600"
         }`}
       >
         Pieces — A Collection of Work
