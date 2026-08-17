@@ -42,7 +42,7 @@ export function Hero() {
           transition={{ delay: 0.9, duration: 0.7 }}
           className={`${isDark ? "text-white/80" : "text-neutral-700"} text-lg leading-relaxed max-w-xl mx-auto transition-colors`}
         >
-          A collection of work spanning research, interaction design, and high-fidelity product experiences.
+          A collection of work, spanning research, interaction design, and high-fidelity product experiences.
         </motion.p>
 
         <motion.div
