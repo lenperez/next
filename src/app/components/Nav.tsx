@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Briefcase, User, Mail, Sun, Moon } from "lucide-react";
+import { Menu, X, Briefcase, User, Mail, FileText, Sun, Moon } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
 const links = [
@@ -67,8 +67,8 @@ export function Nav() {
             <span>Len Perez</span>
           </a>
 
-          {/* Desktop links & Theme Switcher */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Desktop links, Resume & Theme Switcher */}
+          <div className="hidden md:flex items-center gap-3">
             <ul className="flex items-center gap-2" role="list">
               {links.map((l) => {
                 const Icon = l.icon;
@@ -88,6 +88,22 @@ export function Nav() {
                   </li>
                 );
               })}
+              <li>
+                <a
+                  href="/LenPerez_UXresume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Len Perez UX Resume (PDF in new tab)"
+                  className={`inline-flex items-center gap-2 transition-all text-sm tracking-wider uppercase font-normal px-4 py-2 rounded-full border ${
+                    isDark
+                      ? "text-blue-400 border-blue-500/30 hover:bg-blue-500/15 hover:text-blue-300 focus-visible:ring-2 focus-visible:ring-blue-400"
+                      : "text-blue-700 border-blue-600/30 hover:bg-blue-100 hover:text-blue-900 focus-visible:ring-2 focus-visible:ring-blue-600"
+                  }`}
+                >
+                  <FileText size={15} aria-hidden="true" />
+                  <span>RÉSUMÉ</span>
+                </a>
+              </li>
             </ul>
 
             {/* Theme Toggle Button */}
@@ -96,10 +112,10 @@ export function Nav() {
               onClick={toggleTheme}
               aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
               title={isDark ? "Switch to light theme" : "Switch to dark theme"}
-              className={`p-2 rounded-full transition-all flex items-center justify-center ${
+              className={`p-2 rounded-full transition-all flex items-center justify-center ml-1 border ${
                 isDark
-                  ? "text-white/75 hover:text-white hover:bg-white/10"
-                  : "text-neutral-700 hover:text-black hover:bg-black/5"
+                  ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10 hover:border-white/40 focus-visible:ring-2 focus-visible:ring-blue-400"
+                  : "border-black/15 text-neutral-700 hover:text-black hover:bg-black/5 hover:border-black/30 focus-visible:ring-2 focus-visible:ring-blue-600"
               }`}
             >
               {isDark ? (
@@ -116,8 +132,10 @@ export function Nav() {
               type="button"
               onClick={toggleTheme}
               aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-              className={`p-2.5 rounded-full transition-colors ${
-                isDark ? "text-white/75 hover:text-white" : "text-neutral-700 hover:text-black"
+              className={`p-2 rounded-full transition-colors border ${
+                isDark
+                  ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10"
+                  : "border-black/15 text-neutral-700 hover:text-black hover:bg-black/5"
               }`}
             >
               {isDark ? (
@@ -172,6 +190,22 @@ export function Nav() {
                     </li>
                   );
                 })}
+                <li>
+                  <a
+                    href="/LenPerez_UXresume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-3 text-sm tracking-wider uppercase font-normal p-2.5 rounded-lg w-full border ${
+                      isDark
+                        ? "text-blue-400 border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20"
+                        : "text-blue-700 border-blue-600/30 bg-blue-50 hover:bg-blue-100"
+                    }`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <FileText size={18} aria-hidden="true" />
+                    <span>RÉSUMÉ</span>
+                  </a>
+                </li>
               </ul>
             </motion.div>
           )}
