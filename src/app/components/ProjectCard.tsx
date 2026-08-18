@@ -304,20 +304,20 @@ export function ProjectCard({
               </div>
 
               <div className="flex items-center justify-between mt-6">
-                {/* Process Overview — accessible interactive button */}
+                {/* Quick Overview — accessible interactive button */}
                 <button
                   type="button"
                   onClick={() => setExpanded(!expanded)}
                   aria-expanded={expanded}
                   aria-controls={`process-steps-${project.id}`}
-                  aria-label={`${expanded ? "Collapse" : "Expand"} process steps for ${project.title}`}
+                  aria-label={`${expanded ? "Collapse" : "Expand"} quick overview for ${project.title}`}
                   className={`text-sm font-semibold flex items-center gap-2 px-4 py-2 rounded-full transition-all cursor-pointer ${
                     isDark
                       ? "text-blue-400 hover:bg-blue-500/15 hover:text-blue-300"
                       : "text-blue-700 hover:bg-blue-100 hover:text-blue-900"
                   }`}
                 >
-                  <span>{expanded ? "Collapse" : "Process Overview"}</span>
+                  <span>{expanded ? "Collapse" : "Quick Overview"}</span>
                   <motion.div
                     animate={{ rotate: expanded ? 180 : 0 }}
                     transition={{ duration: 0.3 }}

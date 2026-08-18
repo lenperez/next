@@ -94,10 +94,10 @@ export function Nav() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Open Len Perez UX Resume (PDF in new tab)"
-                  className={`inline-flex items-center gap-2 transition-all text-sm tracking-wider uppercase font-normal px-4 py-2 rounded-full border ${
+                  className={`inline-flex items-center gap-2 transition-all text-sm tracking-wider uppercase font-medium px-4 py-2 rounded-full border ${
                     isDark
-                      ? "text-blue-400 border-blue-500/30 hover:bg-blue-500/15 hover:text-blue-300 focus-visible:ring-2 focus-visible:ring-blue-400"
-                      : "text-blue-700 border-blue-600/30 hover:bg-blue-100 hover:text-blue-900 focus-visible:ring-2 focus-visible:ring-blue-600"
+                      ? "text-white/75 hover:text-white hover:bg-white/10 border-white/20 hover:border-white/40 focus-visible:ring-2 focus-visible:ring-blue-400"
+                      : "text-neutral-700 hover:text-black hover:bg-black/5 border-black/15 hover:border-black/30 focus-visible:ring-2 focus-visible:ring-blue-600"
                   }`}
                 >
                   <FileText size={15} aria-hidden="true" />
@@ -195,10 +195,10 @@ export function Nav() {
                     href="/LenPerez_UXresume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-3 text-sm tracking-wider uppercase font-normal p-2.5 rounded-lg w-full border ${
+                    className={`inline-flex items-center gap-3 text-sm tracking-wider uppercase font-medium p-2.5 rounded-lg w-full border ${
                       isDark
-                        ? "text-blue-400 border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20"
-                        : "text-blue-700 border-blue-600/30 bg-blue-50 hover:bg-blue-100"
+                        ? "text-white/80 hover:text-white hover:bg-white/10 border-white/20 hover:border-white/40"
+                        : "text-neutral-800 hover:text-black hover:bg-black/5 border-black/15 hover:border-black/30"
                     }`}
                     onClick={() => setMenuOpen(false)}
                   >
