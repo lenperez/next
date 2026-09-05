@@ -119,7 +119,7 @@ function ProcessModal({
         >
           {/* Sticky Close button: 0-height container so image flows flush to the top edge */}
           <div className="sticky top-0 z-30 flex justify-end pointer-events-none h-0 overflow-visible">
-            <div className="p-4">
+            <div className="p-3 sm:p-4">
               <Tooltip content="Close case study (Esc)" position="bottom">
                 <button
                   ref={closeBtnRef}
@@ -147,7 +147,7 @@ function ProcessModal({
             />
           </div>
 
-          <div className="px-6 py-8 sm:px-8 lg:px-12 flex-1">
+          <div className="px-3 py-6 sm:px-8 lg:px-12 flex-1">
             {/* Header */}
             <div className="flex items-center gap-3 mb-3">
               <span className={`text-xs tracking-widest uppercase px-3 py-1 rounded-full font-semibold ${
@@ -285,7 +285,7 @@ export function ProjectCard({
             </Tooltip>
 
             {/* Content */}
-            <div className="md:w-3/5 p-6 sm:p-8 flex flex-col justify-between">
+            <div className="md:w-3/5 px-3 py-6 sm:p-8 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className={`text-xs tracking-widest uppercase px-3 py-1 rounded-full font-semibold ${
@@ -379,7 +379,7 @@ export function ProjectCard({
                 }}
                 className="overflow-hidden"
               >
-                <div className={`border-t px-6 py-6 sm:px-8 sm:py-8 ${isDark ? "border-white/10" : "border-black/10"}`}>
+                <div className={`border-t px-3 py-6 sm:px-8 sm:py-8 ${isDark ? "border-white/10" : "border-black/10"}`}>
                   <p className={`${isDark ? "text-white/60" : "text-neutral-700"} text-xs font-bold tracking-widest uppercase mb-6`}>
                     Process &amp; Approach
                   </p>

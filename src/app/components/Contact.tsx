@@ -7,9 +7,9 @@ export function Contact() {
   const { isDark } = useTheme();
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-28 px-6 relative" style={{ zIndex: 1 }}>
+    <section id="contact" aria-labelledby="contact-heading" className="py-28 px-4 sm:px-7 relative" style={{ zIndex: 1 }}>
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className={`rounded-3xl p-12 md:p-20 relative overflow-hidden border transition-all ${
+        <div className={`rounded-3xl px-3 py-10 sm:p-12 md:p-20 relative overflow-hidden border transition-all ${
           isDark
             ? "bg-[#111318]/90 border-white/10"
             : "bg-white/95 border-black/10 shadow-sm"

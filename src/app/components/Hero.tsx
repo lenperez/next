@@ -9,14 +9,16 @@ export function Hero() {
   return (
     <section aria-label="Introduction" className="relative min-h-screen flex flex-col items-center justify-center">
       {/* Foreground content — scrolls at normal 1× speed */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-7 max-w-4xl mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.7 }}
-          className={`${isDark ? "text-blue-400" : "text-blue-700"} tracking-[0.35em] uppercase text-xs mb-6 font-semibold transition-colors`}
+          className={`${isDark ? "text-blue-400" : "text-blue-700"} tracking-[0.35em] uppercase text-xs mb-6 font-semibold transition-colors leading-relaxed sm:leading-normal`}
         >
-          UX • Product • Design • Thinker
+          <span className="block sm:inline">UX • Product</span>
+          <span className="hidden sm:inline"> • </span>
+          <span className="block sm:inline">Design • Thinker</span>
         </motion.p>
 
         <motion.h1
@@ -43,7 +45,7 @@ export function Hero() {
           transition={{ delay: 0.9, duration: 0.7 }}
           className={`${isDark ? "text-white/80" : "text-neutral-700"} text-lg leading-relaxed max-w-xl mx-auto transition-colors`}
         >
-          A collection of my work, spanning: user research,{" "}
+          Some of my work, spanning: user research,{" "}
           <span className="whitespace-nowrap">visual / interaction / ux design</span>, and
           high-fidelity product experiences.
         </motion.p>
@@ -82,11 +84,12 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6 }}
         aria-hidden="true"
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] uppercase transition-colors ${
+        className={`absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 w-full max-w-[92vw] text-center text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase font-medium transition-colors leading-relaxed sm:leading-normal ${
           isDark ? "text-white/40" : "text-neutral-600"
         }`}
       >
-        Pieces – A Collection of My Work
+        <span className="block sm:inline">Pieces –</span>{" "}
+        <span className="block sm:inline">A Collection of My Work</span>
       </motion.p>
     </section>
   );

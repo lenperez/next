@@ -341,7 +341,7 @@ function PortfolioContent() {
       <main id="main-content" tabIndex={-1} className="outline-none">
         <Hero />
 
-        <section id="work" aria-label="Selected UX and Design Work" className="py-28 px-6 relative overflow-hidden" style={{ zIndex: 1 }}>
+        <section id="work" aria-label="Selected UX and Design Work" className="py-28 px-4 sm:px-7 relative overflow-hidden" style={{ zIndex: 1 }}>
           <div className="max-w-6xl mx-auto flex flex-col gap-4 relative z-10">
 
             {/* Case Studies panel */}
@@ -364,7 +364,7 @@ function PortfolioContent() {
                   aria-expanded={openSection === "case-studies"}
                   aria-controls="panel-case-studies"
                   onClick={() => toggle("case-studies", caseStudiesRef)}
-                  className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  className={`w-full flex items-center justify-between px-3 sm:px-8 py-5 sm:py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
                     isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
                   }`}
                 >
@@ -392,7 +392,7 @@ function PortfolioContent() {
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="flex flex-col gap-6 px-6 sm:px-8 pb-8">
+                    <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
                       {mainProjects.map((project, i) => (
                         <ProjectCard key={project.id} project={project} index={i} />
                       ))}
@@ -422,7 +422,7 @@ function PortfolioContent() {
                   aria-expanded={openSection === "additional"}
                   aria-controls="panel-additional"
                   onClick={() => toggle("additional", additionalRef)}
-                  className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  className={`w-full flex items-center justify-between px-3 sm:px-8 py-5 sm:py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
                     isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
                   }`}
                 >
@@ -450,7 +450,7 @@ function PortfolioContent() {
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="flex flex-col gap-6 px-6 sm:px-8 pb-8">
+                    <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
                       {otherProjects.map((project, i) => (
                         <ProjectCard key={project.id} project={project} index={i} />
                       ))}
@@ -480,7 +480,7 @@ function PortfolioContent() {
                   aria-expanded={openSection === "graphic"}
                   aria-controls="panel-graphic"
                   onClick={() => toggle("graphic", graphicRef)}
-                  className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  className={`w-full flex items-center justify-between px-3 sm:px-8 py-5 sm:py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
                     isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
                   }`}
                 >
@@ -508,7 +508,7 @@ function PortfolioContent() {
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="flex flex-col gap-6 px-6 sm:px-8 pb-8">
+                    <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
                       {graphicProjects.map((project, i) => (
                         <ProjectCard key={project.id} project={project} index={i} />
                       ))}
@@ -526,7 +526,7 @@ function PortfolioContent() {
       </main>
 
       {/* Footer */}
-      <footer role="contentinfo" className={`border-t py-8 px-6 relative ${isDark ? "border-white/10" : "border-black/10"}`} style={{ zIndex: 1 }}>
+      <footer role="contentinfo" className={`border-t py-8 px-4 sm:px-7 relative ${isDark ? "border-white/10" : "border-black/10"}`} style={{ zIndex: 1 }}>
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className={`${isDark ? "text-white/70" : "text-neutral-700"} text-sm tracking-wider font-medium`}>
             Len Perez - Product • UX • Designer

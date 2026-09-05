@@ -47,7 +47,7 @@ export function Nav() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-7 h-16 flex items-center justify-between">
           <Tooltip content="Return to top" position="bottom">
             <a
               href="#"
@@ -184,7 +184,7 @@ export function Nav() {
                 isDark ? "bg-[#0a0a0a] border-white/10" : "bg-[#F5F5F5] border-black/10 shadow-lg"
               }`}
             >
-              <ul className="px-6 py-4 flex flex-col gap-3" role="list">
+              <ul className="px-4 sm:px-7 py-4 flex flex-col gap-3" role="list">
                 {links.map((l) => {
                   const Icon = l.icon;
                   return (

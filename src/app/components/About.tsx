@@ -13,7 +13,7 @@ export function About() {
   const { isDark } = useTheme();
 
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-28 px-6 relative" style={{ zIndex: 1 }}>
+    <section id="about" aria-labelledby="about-heading" className="py-28 px-4 sm:px-7 relative" style={{ zIndex: 1 }}>
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
