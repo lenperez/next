@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
+import { Tooltip } from "./Tooltip";
 
 export function Hero() {
   const { isDark } = useTheme();
@@ -42,7 +43,9 @@ export function Hero() {
           transition={{ delay: 0.9, duration: 0.7 }}
           className={`${isDark ? "text-white/80" : "text-neutral-700"} text-lg leading-relaxed max-w-xl mx-auto transition-colors`}
         >
-          A collection of work, spanning research, interaction design, and high-fidelity product experiences.
+          A collection of my work, spanning: user research,{" "}
+          <span className="whitespace-nowrap">visual / interaction / ux design</span>, and
+          high-fidelity product experiences.
         </motion.p>
 
         <motion.div
@@ -51,23 +54,25 @@ export function Hero() {
           transition={{ delay: 1.4, duration: 0.8 }}
           className="mt-12"
         >
-          <a
-            href="#work"
-            aria-label="View Work - navigate to featured projects section"
-            className={`inline-flex items-center gap-2 text-sm tracking-widest uppercase font-medium transition-all px-5 py-2.5 rounded-full ${
-              isDark
-                ? "text-white/80 hover:text-white hover:bg-white/10"
-                : "text-neutral-800 hover:text-black hover:bg-black/5"
-            }`}
-          >
-            <span>View Work</span>
-            <motion.div
-              animate={{ opacity: [1, 0.5, 1] }}
-              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+          <Tooltip content="Explore featured case studies and work" position="top">
+            <a
+              href="#work"
+              aria-label="View Work - navigate to featured projects section"
+              className={`inline-flex items-center gap-2 text-sm tracking-widest uppercase font-medium transition-all px-5 py-2.5 rounded-full ${
+                isDark
+                  ? "text-white/80 hover:text-white hover:bg-white/10"
+                  : "text-neutral-800 hover:text-black hover:bg-black/5"
+              }`}
             >
-              <ArrowDown size={16} aria-hidden="true" />
-            </motion.div>
-          </a>
+              <span>View Work</span>
+              <motion.div
+                animate={{ opacity: [1, 0.5, 1] }}
+                transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+              >
+                <ArrowDown size={16} aria-hidden="true" />
+              </motion.div>
+            </a>
+          </Tooltip>
         </motion.div>
       </div>
 
@@ -81,7 +86,7 @@ export function Hero() {
           isDark ? "text-white/40" : "text-neutral-600"
         }`}
       >
-        Pieces — A Collection of Work
+        Pieces – A Collection of My Work
       </motion.p>
     </section>
   );

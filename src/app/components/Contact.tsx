@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Mail, ExternalLink } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
+import { Tooltip } from "./Tooltip";
 
 export function Contact() {
   const { isDark } = useTheme();
@@ -53,15 +54,17 @@ export function Contact() {
               transition={{ delay: 0.15 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a
-                href="mailto:lenperez@gmail.com"
-                aria-label="Send email to lenperez@gmail.com (opens mail client)"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-sm font-semibold transition-colors shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-              >
-                <Mail size={18} aria-hidden="true" />
-                <span>lenperez@gmail.com</span>
-                <ExternalLink size={15} aria-hidden="true" className="opacity-75" />
-              </a>
+              <Tooltip content="Send an email to me@lenperez.com" position="top">
+                <a
+                  href="mailto:me@lenperez.com"
+                  aria-label="Send email to me@lenperez.com (opens mail client)"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-sm font-semibold transition-colors shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                >
+                  <Mail size={18} aria-hidden="true" />
+                  <span>me@lenperez.com</span>
+                  <ExternalLink size={15} aria-hidden="true" className="opacity-75" />
+                </a>
+              </Tooltip>
             </motion.div>
           </div>
         </div>

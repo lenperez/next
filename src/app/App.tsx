@@ -6,6 +6,7 @@ import { ProjectCard } from "./components/ProjectCard";
 import type { Project } from "./components/ProjectCard";
 import { PuzzleBackground } from "./components/PuzzleBackground";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
+import { Tooltip } from "./components/Tooltip";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
@@ -356,26 +357,28 @@ function PortfolioContent() {
                   : "border-black/10 bg-white/95 shadow-sm"
               }`}
             >
-              <button
-                id="accordion-case-studies"
-                type="button"
-                aria-expanded={openSection === "case-studies"}
-                aria-controls="panel-case-studies"
-                onClick={() => toggle("case-studies", caseStudiesRef)}
-                className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
-                  isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
-                }`}
-              >
-                <h2
-                  className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
-                  style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
+              <Tooltip content={openSection === "case-studies" ? "Collapse Case Studies" : "Expand Case Studies"} position="top">
+                <button
+                  id="accordion-case-studies"
+                  type="button"
+                  aria-expanded={openSection === "case-studies"}
+                  aria-controls="panel-case-studies"
+                  onClick={() => toggle("case-studies", caseStudiesRef)}
+                  className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                    isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
+                  }`}
                 >
-                  Case Studies
-                </h2>
-                <motion.div animate={{ rotate: openSection === "case-studies" ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                  <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
-                </motion.div>
-              </button>
+                  <h2
+                    className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
+                    style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
+                  >
+                    Case Studies
+                  </h2>
+                  <motion.div animate={{ rotate: openSection === "case-studies" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                    <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
+                  </motion.div>
+                </button>
+              </Tooltip>
 
               <AnimatePresence initial={false}>
                 {openSection === "case-studies" && (
@@ -412,26 +415,28 @@ function PortfolioContent() {
                   : "border-black/10 bg-white/95 shadow-sm"
               }`}
             >
-              <button
-                id="accordion-additional"
-                type="button"
-                aria-expanded={openSection === "additional"}
-                aria-controls="panel-additional"
-                onClick={() => toggle("additional", additionalRef)}
-                className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
-                  isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
-                }`}
-              >
-                <h2
-                  className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
-                  style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
+              <Tooltip content={openSection === "additional" ? "Collapse Interactive Pieces" : "Expand Interactive Pieces"} position="top">
+                <button
+                  id="accordion-additional"
+                  type="button"
+                  aria-expanded={openSection === "additional"}
+                  aria-controls="panel-additional"
+                  onClick={() => toggle("additional", additionalRef)}
+                  className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                    isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
+                  }`}
                 >
-                  Interactive Pieces
-                </h2>
-                <motion.div animate={{ rotate: openSection === "additional" ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                  <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
-                </motion.div>
-              </button>
+                  <h2
+                    className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
+                    style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
+                  >
+                    Interactive Pieces
+                  </h2>
+                  <motion.div animate={{ rotate: openSection === "additional" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                    <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
+                  </motion.div>
+                </button>
+              </Tooltip>
 
               <AnimatePresence initial={false}>
                 {openSection === "additional" && (
@@ -468,26 +473,28 @@ function PortfolioContent() {
                   : "border-black/10 bg-white/95 shadow-sm"
               }`}
             >
-              <button
-                id="accordion-graphic"
-                type="button"
-                aria-expanded={openSection === "graphic"}
-                aria-controls="panel-graphic"
-                onClick={() => toggle("graphic", graphicRef)}
-                className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
-                  isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
-                }`}
-              >
-                <h2
-                  className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
-                  style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
+              <Tooltip content={openSection === "graphic" ? "Collapse Visual Design Pieces" : "Expand Visual Design Pieces"} position="top">
+                <button
+                  id="accordion-graphic"
+                  type="button"
+                  aria-expanded={openSection === "graphic"}
+                  aria-controls="panel-graphic"
+                  onClick={() => toggle("graphic", graphicRef)}
+                  className={`w-full flex items-center justify-between px-8 py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                    isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
+                  }`}
                 >
-                  Visual Design Pieces
-                </h2>
-                <motion.div animate={{ rotate: openSection === "graphic" ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                  <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
-                </motion.div>
-              </button>
+                  <h2
+                    className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
+                    style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
+                  >
+                    Visual Design Pieces
+                  </h2>
+                  <motion.div animate={{ rotate: openSection === "graphic" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                    <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
+                  </motion.div>
+                </button>
+              </Tooltip>
 
               <AnimatePresence initial={false}>
                 {openSection === "graphic" && (
@@ -522,10 +529,10 @@ function PortfolioContent() {
       <footer role="contentinfo" className={`border-t py-8 px-6 relative ${isDark ? "border-white/10" : "border-black/10"}`} style={{ zIndex: 1 }}>
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className={`${isDark ? "text-white/70" : "text-neutral-700"} text-sm tracking-wider font-medium`}>
-            Len Perez — UX Designer
+            Len Perez - Product • UX • Designer
           </p>
           <p className={`${isDark ? "text-white/60" : "text-neutral-600"} text-xs`}>
-            Pieces — A Collection of Work
+            Pieces – A Collection of My Work
           </p>
         </div>
       </footer>

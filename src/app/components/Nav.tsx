@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Briefcase, User, Mail, FileText, Sun, Moon } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
+import { Tooltip } from "./Tooltip";
 
 const links = [
   { label: "Work", href: "#work", icon: Briefcase },
@@ -47,25 +48,27 @@ export function Nav() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a
-            href="#"
-            aria-label="Len Perez - UX Designer Home"
-            className={`inline-flex items-center gap-2.5 text-sm tracking-wider uppercase font-semibold transition-colors rounded-lg px-2 py-1 ${
-              isDark
-                ? "text-white/80 hover:text-white focus-visible:ring-2 focus-visible:ring-blue-400"
-                : "text-neutral-800 hover:text-black focus-visible:ring-2 focus-visible:ring-blue-600"
-            }`}
-          >
-            <img
-              src={isDark ? "/favicon-dark.svg" : "/favicon-light.svg"}
-              alt=""
-              aria-hidden="true"
-              width={18}
-              height={18}
-              className="w-4.5 h-4.5 object-contain shrink-0"
-            />
-            <span>Len Perez</span>
-          </a>
+          <Tooltip content="Return to top" position="bottom">
+            <a
+              href="#"
+              aria-label="Len Perez - UX Designer Home"
+              className={`inline-flex items-center gap-2.5 text-sm tracking-wider uppercase font-semibold transition-colors rounded-lg px-2 py-1 ${
+                isDark
+                  ? "text-white/80 hover:text-white focus-visible:ring-2 focus-visible:ring-blue-400"
+                  : "text-neutral-800 hover:text-black focus-visible:ring-2 focus-visible:ring-blue-600"
+              }`}
+            >
+              <img
+                src={isDark ? "/favicon-dark.svg" : "/favicon-light.svg"}
+                alt=""
+                aria-hidden="true"
+                width={18}
+                height={18}
+                className="w-4.5 h-4.5 object-contain shrink-0"
+              />
+              <span>Len Perez</span>
+            </a>
+          </Tooltip>
 
           {/* Desktop links, Resume & Theme Switcher */}
           <div className="hidden md:flex items-center gap-3">
@@ -74,89 +77,98 @@ export function Nav() {
                 const Icon = l.icon;
                 return (
                   <li key={l.href}>
-                    <a
-                      href={l.href}
-                      className={`inline-flex items-center gap-2 transition-all text-sm tracking-wider uppercase font-medium px-4 py-2 rounded-full ${
-                        isDark
-                          ? "text-white/75 hover:text-white hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-blue-400"
-                          : "text-neutral-700 hover:text-black hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-blue-600"
-                      }`}
-                    >
-                      <Icon size={15} aria-hidden="true" />
-                      <span>{l.label}</span>
-                    </a>
+                    <Tooltip content={`Navigate to ${l.label}`} position="bottom">
+                      <a
+                        href={l.href}
+                        className={`inline-flex items-center gap-2 transition-all text-sm tracking-wider uppercase font-medium px-4 py-2 rounded-full ${
+                          isDark
+                            ? "text-white/75 hover:text-white hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-blue-400"
+                            : "text-neutral-700 hover:text-black hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-blue-600"
+                        }`}
+                      >
+                        <Icon size={15} aria-hidden="true" />
+                        <span>{l.label}</span>
+                      </a>
+                    </Tooltip>
                   </li>
                 );
               })}
               <li>
-                <a
-                  href="/LenPerez_UXresume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Open Len Perez UX Resume (PDF in new tab)"
-                  className={`inline-flex items-center gap-2 transition-all text-sm tracking-wider uppercase font-medium px-4 py-2 rounded-full border ${
-                    isDark
-                      ? "text-white/75 hover:text-white hover:bg-white/10 border-white/20 hover:border-white/40 focus-visible:ring-2 focus-visible:ring-blue-400"
-                      : "text-neutral-700 hover:text-black hover:bg-black/5 border-black/15 hover:border-black/30 focus-visible:ring-2 focus-visible:ring-blue-600"
-                  }`}
-                >
-                  <FileText size={15} aria-hidden="true" />
-                  <span>RÉSUMÉ</span>
-                </a>
+                <Tooltip content="View résumé (PDF)" position="bottom">
+                  <a
+                    href="/LenPerez_UXresume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open Len Perez UX Resume (PDF in new tab)"
+                    className={`inline-flex items-center gap-2 transition-all text-sm tracking-wider uppercase font-medium px-4 py-2 rounded-full border ${
+                      isDark
+                        ? "text-white/75 hover:text-white hover:bg-white/10 border-white/20 hover:border-white/40 focus-visible:ring-2 focus-visible:ring-blue-400"
+                        : "text-neutral-700 hover:text-black hover:bg-black/5 border-black/15 hover:border-black/30 focus-visible:ring-2 focus-visible:ring-blue-600"
+                    }`}
+                  >
+                    <FileText size={15} aria-hidden="true" />
+                    <span>RÉSUMÉ</span>
+                  </a>
+                </Tooltip>
               </li>
             </ul>
 
             {/* Theme Toggle Button */}
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-              title={isDark ? "Switch to light theme" : "Switch to dark theme"}
-              className={`p-2 rounded-full transition-all flex items-center justify-center ml-1 border ${
-                isDark
-                  ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10 hover:border-white/40 focus-visible:ring-2 focus-visible:ring-blue-400"
-                  : "border-black/15 text-neutral-700 hover:text-black hover:bg-black/5 hover:border-black/30 focus-visible:ring-2 focus-visible:ring-blue-600"
-              }`}
-            >
-              {isDark ? (
-                <Sun size={18} aria-hidden="true" className="text-amber-400" />
-              ) : (
-                <Moon size={18} aria-hidden="true" className="text-blue-700" />
-              )}
-            </button>
+            <Tooltip content={isDark ? "Switch to light theme" : "Switch to dark theme"} position="bottom">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+                className={`p-2 rounded-full transition-all flex items-center justify-center ml-1 border ${
+                  isDark
+                    ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10 hover:border-white/40 focus-visible:ring-2 focus-visible:ring-blue-400"
+                    : "border-black/15 text-neutral-700 hover:text-black hover:bg-black/5 hover:border-black/30 focus-visible:ring-2 focus-visible:ring-blue-600"
+                }`}
+              >
+                {isDark ? (
+                  <Sun size={18} aria-hidden="true" className="text-amber-400" />
+                ) : (
+                  <Moon size={18} aria-hidden="true" className="text-blue-700" />
+                )}
+              </button>
+            </Tooltip>
           </div>
 
           {/* Mobile menu controls */}
           <div className="flex md:hidden items-center gap-2">
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-              className={`p-2 rounded-full transition-colors border ${
-                isDark
-                  ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10"
-                  : "border-black/15 text-neutral-700 hover:text-black hover:bg-black/5"
-              }`}
-            >
-              {isDark ? (
-                <Sun size={18} aria-hidden="true" className="text-amber-400" />
-              ) : (
-                <Moon size={18} aria-hidden="true" className="text-blue-700" />
-              )}
-            </button>
+            <Tooltip content={isDark ? "Switch to light theme" : "Switch to dark theme"} position="bottom">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+                className={`p-2 rounded-full transition-colors border ${
+                  isDark
+                    ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10"
+                    : "border-black/15 text-neutral-700 hover:text-black hover:bg-black/5"
+                }`}
+              >
+                {isDark ? (
+                  <Sun size={18} aria-hidden="true" className="text-amber-400" />
+                ) : (
+                  <Moon size={18} aria-hidden="true" className="text-blue-700" />
+                )}
+              </button>
+            </Tooltip>
 
-            <button
-              type="button"
-              aria-expanded={menuOpen}
-              aria-controls="mobile-navigation-menu"
-              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-              className={`p-2.5 rounded-lg transition-colors ${
-                isDark ? "text-white/80 hover:text-white hover:bg-white/10" : "text-neutral-800 hover:text-black hover:bg-black/5"
-              }`}
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
-            </button>
+            <Tooltip content={menuOpen ? "Close navigation menu" : "Open navigation menu"} position="bottom">
+              <button
+                type="button"
+                aria-expanded={menuOpen}
+                aria-controls="mobile-navigation-menu"
+                aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+                className={`p-2.5 rounded-lg transition-colors ${
+                  isDark ? "text-white/80 hover:text-white hover:bg-white/10" : "text-neutral-800 hover:text-black hover:bg-black/5"
+                }`}
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+              </button>
+            </Tooltip>
           </div>
         </div>
 
@@ -177,34 +189,38 @@ export function Nav() {
                   const Icon = l.icon;
                   return (
                     <li key={l.href}>
-                      <a
-                        href={l.href}
-                        className={`inline-flex items-center gap-3 text-sm tracking-wider uppercase font-medium p-2.5 rounded-lg w-full ${
-                          isDark ? "text-white/80 hover:text-white hover:bg-white/10" : "text-neutral-800 hover:text-black hover:bg-black/5"
-                        }`}
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        <Icon size={18} aria-hidden="true" />
-                        <span>{l.label}</span>
-                      </a>
+                      <Tooltip content={`Navigate to ${l.label}`} position="bottom">
+                        <a
+                          href={l.href}
+                          className={`inline-flex items-center gap-3 text-sm tracking-wider uppercase font-medium p-2.5 rounded-lg w-full ${
+                            isDark ? "text-white/80 hover:text-white hover:bg-white/10" : "text-neutral-800 hover:text-black hover:bg-black/5"
+                          }`}
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          <Icon size={18} aria-hidden="true" />
+                          <span>{l.label}</span>
+                        </a>
+                      </Tooltip>
                     </li>
                   );
                 })}
                 <li>
-                  <a
-                    href="/LenPerez_UXresume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-3 text-sm tracking-wider uppercase font-medium p-2.5 rounded-lg w-full border ${
-                      isDark
-                        ? "text-white/80 hover:text-white hover:bg-white/10 border-white/20 hover:border-white/40"
-                        : "text-neutral-800 hover:text-black hover:bg-black/5 border-black/15 hover:border-black/30"
-                    }`}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    <FileText size={18} aria-hidden="true" />
-                    <span>RÉSUMÉ</span>
-                  </a>
+                  <Tooltip content="View résumé (PDF)" position="bottom">
+                    <a
+                      href="/LenPerez_UXresume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-3 text-sm tracking-wider uppercase font-medium p-2.5 rounded-lg w-full border ${
+                        isDark
+                          ? "text-white/80 hover:text-white hover:bg-white/10 border-white/20 hover:border-white/40"
+                          : "text-neutral-800 hover:text-black hover:bg-black/5 border-black/15 hover:border-black/30"
+                      }`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <FileText size={18} aria-hidden="true" />
+                      <span>RÉSUMÉ</span>
+                    </a>
+                  </Tooltip>
                 </li>
               </ul>
             </motion.div>
