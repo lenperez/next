@@ -91,7 +91,7 @@ function ProcessModal({
   return createPortal(
     <AnimatePresence>
       <div
-        className={`fixed inset-0 z-50 backdrop-blur-sm flex items-end md:items-center justify-center p-0 md:p-4 ${
+        className={`fixed inset-0 z-50 backdrop-blur-sm flex items-center justify-center p-0 lg:p-6 ${
           isDark ? "bg-black/80" : "bg-black/50"
         }`}
         onClick={onClose}
@@ -102,46 +102,52 @@ function ProcessModal({
           aria-modal="true"
           aria-labelledby={`modal-title-${project.id}`}
           aria-describedby={`modal-synopsis-${project.id}`}
-          initial={{ opacity: 0, y: 40, scale: 0.98 }}
+          initial={{ opacity: 0, y: 30, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 40, scale: 0.98 }}
+          exit={{ opacity: 0, y: 30, scale: 0.98 }}
           transition={{
-            duration: 0.35,
+            duration: 0.3,
             ease: [0.16, 1, 0.3, 1],
           }}
           className={`
-            relative w-full max-h-[90dvh] md:max-h-[85vh] overflow-y-auto border rounded-t-2xl md:rounded-2xl md:max-w-[540px] shadow-2xl
-            ${isDark ? "bg-[#111318] border-white/15 text-white" : "bg-white border-black/15 text-neutral-900"}
+            relative w-full h-[100dvh] max-h-[100dvh] lg:h-auto lg:max-h-[85vh] lg:w-[75vw] lg:max-w-[75vw]
+            overflow-y-auto rounded-none lg:rounded-2xl border-0 lg:border shadow-2xl flex flex-col
+            ${isDark ? "bg-[#111318] lg:border-white/15 text-white" : "bg-white lg:border-black/15 text-neutral-900"}
           `}
           style={{ overscrollBehavior: "contain", WebkitOverflowScrolling: "touch" }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close button */}
-          <Tooltip content="Close case study (Esc)" position="bottom">
-            <button
-              ref={closeBtnRef}
-              type="button"
-              onClick={onClose}
-              aria-label={`Close modal for ${project.title}`}
-              className={`sticky top-4 right-4 ml-auto mr-4 mt-4 z-10 flex items-center justify-center w-9 h-9 rounded-full transition-all ${
-                isDark
-                  ? "bg-white/10 hover:bg-white/20 text-white focus-visible:ring-2 focus-visible:ring-blue-400"
-                  : "bg-black/10 hover:bg-black/20 text-neutral-900 focus-visible:ring-2 focus-visible:ring-blue-600"
-              }`}
-              style={{ float: "right" }}
-            >
-              <X size={18} aria-hidden="true" />
-            </button>
-          </Tooltip>
+          {/* Sticky Close button: 0-height container so image flows flush to the top edge */}
+          <div className="sticky top-0 z-30 flex justify-end pointer-events-none h-0 overflow-visible">
+            <div className="p-4">
+              <Tooltip content="Close case study (Esc)" position="bottom">
+                <button
+                  ref={closeBtnRef}
+                  type="button"
+                  onClick={onClose}
+                  aria-label={`Close modal for ${project.title}`}
+                  className={`pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full transition-all shadow-xl backdrop-blur-md border ${
+                    isDark
+                      ? "bg-[#111318]/80 hover:bg-[#1c202a] text-white border-white/25 focus-visible:ring-2 focus-visible:ring-blue-400"
+                      : "bg-white/80 hover:bg-neutral-100 text-neutral-900 border-black/15 focus-visible:ring-2 focus-visible:ring-blue-600"
+                  }`}
+                >
+                  <X size={20} aria-hidden="true" />
+                </button>
+              </Tooltip>
+            </div>
+          </div>
 
-          {/* Image */}
-          <ImageWithFallback
-            src={project.image}
-            alt={`Visual preview of ${project.title}`}
-            className="w-full h-52 object-cover"
-          />
+          {/* Image banner - flows flush to the very top */}
+          <div className="w-full h-56 sm:h-72 lg:h-80 xl:h-96 shrink-0 relative overflow-hidden lg:rounded-t-2xl">
+            <ImageWithFallback
+              src={project.image}
+              alt={`Visual preview of ${project.title}`}
+              className="w-full h-full object-cover lg:rounded-t-2xl"
+            />
+          </div>
 
-          <div className="px-6 py-6 sm:px-8">
+          <div className="px-6 py-8 sm:px-8 lg:px-12 flex-1">
             {/* Header */}
             <div className="flex items-center gap-3 mb-3">
               <span className={`text-xs tracking-widest uppercase px-3 py-1 rounded-full font-semibold ${
@@ -156,21 +162,21 @@ function ProcessModal({
 
             <h3
               id={`modal-title-${project.id}`}
-              className={`${isDark ? "text-white" : "text-neutral-900"} mb-1 transition-colors`}
+              className={`${isDark ? "text-white" : "text-neutral-900"} mb-1.5 transition-colors`}
               style={{
-                fontSize: "1.4rem",
+                fontSize: "clamp(1.4rem, 2.4vw, 2.2rem)",
                 fontWeight: 700,
                 letterSpacing: "-0.02em",
               }}
             >
               {project.title}
             </h3>
-            <p className={`${isDark ? "text-blue-400" : "text-blue-700"} text-xs font-semibold uppercase tracking-wider mb-3`}>
+            <p className={`${isDark ? "text-blue-400" : "text-blue-700"} text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4`}>
               {project.subtitle}
             </p>
             <p
               id={`modal-synopsis-${project.id}`}
-              className={`${isDark ? "text-white/80" : "text-neutral-700"} text-sm leading-relaxed mb-6 transition-colors`}
+              className={`${isDark ? "text-white/80" : "text-neutral-700"} text-sm sm:text-base leading-relaxed mb-8 max-w-4xl transition-colors`}
             >
               {project.synopsis}
             </p>
@@ -179,17 +185,17 @@ function ProcessModal({
             <p className={`${isDark ? "text-white/60" : "text-neutral-700"} text-xs font-bold tracking-widest uppercase mb-4`}>
               Process &amp; Approach
             </p>
-            <div className="flex flex-col gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 pb-4">
               {project.steps.map((step, i) => (
                 <div
                   key={step.label}
-                  className={`border rounded-xl p-4 transition-colors ${
+                  className={`border rounded-xl p-4 sm:p-5 transition-colors flex flex-col justify-start ${
                     isDark
                       ? "bg-white/[0.04] border-white/10"
                       : "bg-neutral-50 border-black/10"
                   }`}
                 >
-                  <div className="flex items-center gap-2.5 mb-1.5">
+                  <div className="flex items-center gap-2.5 mb-2">
                     <span className={`w-5 h-5 rounded-full text-[11px] flex items-center justify-center font-bold shrink-0 ${
                       isDark ? "bg-blue-600/30 text-blue-300" : "bg-blue-600 text-white"
                     }`} aria-hidden="true">
