@@ -45,7 +45,7 @@ export function Hero() {
           transition={{ delay: 0.9, duration: 0.7 }}
           className={`${isDark ? "text-white/80" : "text-neutral-700"} text-lg leading-relaxed max-w-xl mx-auto transition-colors`}
         >
-          Some of my work, spanning: user research,{" "}
+          Some of the work of Len Perez, spanning: user research,{" "}
           <span className="whitespace-nowrap">visual / interaction / ux design</span>, and
           high-fidelity product experiences.
         </motion.p>
