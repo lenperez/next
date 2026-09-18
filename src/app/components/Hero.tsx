@@ -60,19 +60,18 @@ export function Hero() {
             <a
               href="#work"
               aria-label="View Work - navigate to featured projects section"
-              className={`inline-flex items-center gap-2 text-sm tracking-widest uppercase font-medium transition-all px-5 py-2.5 rounded-full ${
+              className={`group inline-flex items-center text-sm tracking-widest uppercase font-medium transition-all px-5 py-2.5 rounded-full ${
                 isDark
                   ? "text-white/80 hover:text-white hover:bg-white/10"
                   : "text-neutral-800 hover:text-black hover:bg-black/5"
               }`}
             >
               <span>View Work</span>
-              <motion.div
-                animate={{ opacity: [1, 0.5, 1] }}
-                transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+              <span
+                className="inline-flex items-center transition-all duration-300 ease-out opacity-0 max-w-0 -translate-y-1 ml-0 overflow-hidden group-hover:opacity-100 group-hover:max-w-6 group-hover:translate-y-0 group-hover:ml-2 group-focus-visible:opacity-100 group-focus-visible:max-w-6 group-focus-visible:translate-y-0 group-focus-visible:ml-2"
               >
-                <ArrowDown size={16} aria-hidden="true" />
-              </motion.div>
+                <ArrowDown size={16} aria-hidden="true" className="shrink-0" />
+              </span>
             </a>
           </Tooltip>
         </motion.div>
