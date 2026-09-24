@@ -20,8 +20,7 @@ const mainProjects: Project[] = [
     subtitle: "eProcurement Redesign — End-to-End",
     tag: "UX / Product Design",
     year: "Case Study",
-    image:
-      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
+    image: "/Thumbnail_PurchasingPlatform.svg",
     synopsis:
       "Tasked with redesigning a complete eProcurement platform from search & browse through to checkout. The process starts with an understanding of timing and resources needed to completion with KPIs and strategic goals in place. Understanding the current site's pain-points and technical (development) challenges is key in setting the correct approach to interaction design and overall page structure.",
     steps: [
