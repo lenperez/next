@@ -1,0 +1,354 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 600" width="100%" height="100%" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <style>
+      .title-main { font-size: 28px; font-weight: 700; fill: #00838f; letter-spacing: -0.01em; }
+      .title-sub { font-size: 28px; font-weight: 300; fill: #26a69a; letter-spacing: -0.01em; }
+      .header-text { font-size: 9.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.05em; }
+      .week-text { font-size: 8.5px; font-weight: 700; fill: #ffffff; }
+      .task-text { font-size: 9.5px; font-weight: 700; }
+      .task-sub { font-size: 8.5px; font-weight: 500; fill: #4b5563; }
+      .bar-marker { font-size: 11px; font-weight: bold; fill: #111827; text-anchor: middle; dominant-baseline: central; }
+      .legend-text { font-size: 10.5px; fill: #00838f; font-weight: 700; }
+      .note-text { font-size: 9.5px; fill: #00838f; font-style: italic; }
+      .grid-line { stroke: #e5e7eb; stroke-width: 0.8; stroke-dasharray: 2 2; }
+      .grid-line-solid { stroke: #d1d5db; stroke-width: 1; }
+    </style>
+    <clipPath id="task-col-clip">
+      <rect x="0" y="0" width="234" height="312" />
+    </clipPath>
+  </defs>
+
+  <!-- Title -->
+  <text x="30" y="44">
+    <tspan class="title-main">Site Redesign </tspan>
+    <tspan class="title-sub">Schedule</tspan>
+  </text>
+
+  <!-- HEADER ROW 1: PHASE -->
+  <g transform="translate(30, 64)">
+    <rect x="0" y="0" width="235" height="22" fill="#9e9e9e" />
+    <text x="8" y="15" class="header-text">PHASE</text>
+    <rect x="235" y="0" width="157.5" height="22" fill="#9e9e9e" />
+    <rect x="392.5" y="0" width="682.5" height="22" fill="#9e9e9e" />
+    <text x="400.5" y="15" class="header-text">I: SHOPPING</text>
+    <line x1="235" y1="0" x2="235" y2="22" stroke="#ffffff" stroke-width="1.2" />
+    <line x1="392.5" y1="0" x2="392.5" y2="22" stroke="#ffffff" stroke-width="1.2" />
+  </g>
+
+  <!-- HEADER ROW 2: STAGE -->
+  <g transform="translate(30, 86)">
+    <rect x="0" y="0" width="235" height="22" fill="#545454" />
+    <text x="8" y="15" class="header-text">STAGE</text>
+
+    <!-- 0: STRATEGY (Weeks 1-3) -->
+    <rect x="235" y="0" width="157.5" height="22" fill="#545454" />
+    <text x="243" y="15" class="header-text">0: STRATEGY</text>
+
+    <!-- I: SEARCH & BROWSE (Weeks 4-8) -->
+    <rect x="392.5" y="0" width="262.5" height="22" fill="#545454" />
+    <text x="400.5" y="15" class="header-text">I: SEARCH &amp; BROWSE</text>
+
+    <!-- II: ONE PAGE CHECKOUT (Weeks 9-12) -->
+    <rect x="655" y="0" width="210" height="22" fill="#545454" />
+    <text x="663" y="15" class="header-text">II: ONE PAGE CHECKOUT</text>
+
+    <!-- III: CART (Weeks 13-16) -->
+    <rect x="865" y="0" width="210" height="22" fill="#545454" />
+    <text x="873" y="15" class="header-text">III: CART</text>
+
+    <line x1="235" y1="0" x2="235" y2="22" stroke="#ffffff" stroke-width="1.2" />
+    <line x1="392.5" y1="0" x2="392.5" y2="22" stroke="#ffffff" stroke-width="1.2" />
+    <line x1="655" y1="0" x2="655" y2="22" stroke="#ffffff" stroke-width="1.2" />
+    <line x1="865" y1="0" x2="865" y2="22" stroke="#ffffff" stroke-width="1.2" />
+  </g>
+
+  <!-- HEADER ROW 3: TASK & WEEKS -->
+  <g transform="translate(30, 108)">
+    <rect x="0" y="0" width="235" height="22" fill="#2b2b2b" />
+    <text x="8" y="15" class="header-text">TASK</text>
+
+    <!-- Week headers (16 weeks, 52.5px each, starting at 235) -->
+    <rect x="235" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="261.25" y="15" class="week-text" text-anchor="middle">WEEK 1</text>
+
+    <rect x="287.5" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="313.75" y="15" class="week-text" text-anchor="middle">WEEK 2</text>
+
+    <rect x="340" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="366.25" y="15" class="week-text" text-anchor="middle">WEEK 3</text>
+
+    <rect x="392.5" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="418.75" y="15" class="week-text" text-anchor="middle">WEEK 4</text>
+
+    <rect x="445" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="471.25" y="15" class="week-text" text-anchor="middle">WEEK 5</text>
+
+    <rect x="497.5" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="523.75" y="15" class="week-text" text-anchor="middle">WEEK 6</text>
+
+    <rect x="550" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="576.25" y="15" class="week-text" text-anchor="middle">WEEK 7</text>
+
+    <rect x="602.5" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="628.75" y="15" class="week-text" text-anchor="middle">WEEK 8</text>
+
+    <rect x="655" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="681.25" y="15" class="week-text" text-anchor="middle">WEEK 9</text>
+
+    <rect x="707.5" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="733.75" y="15" class="week-text" text-anchor="middle">WEEK 10</text>
+
+    <rect x="760" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="786.25" y="15" class="week-text" text-anchor="middle">WEEK 11</text>
+
+    <rect x="812.5" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="838.75" y="15" class="week-text" text-anchor="middle">WEEK 12</text>
+
+    <rect x="865" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="891.25" y="15" class="week-text" text-anchor="middle">WEEK 13</text>
+
+    <rect x="917.5" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="943.75" y="15" class="week-text" text-anchor="middle">WEEK 14</text>
+
+    <rect x="970" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="996.25" y="15" class="week-text" text-anchor="middle">WEEK 15</text>
+
+    <rect x="1022.5" y="0" width="52.5" height="22" fill="#2b2b2b" />
+    <text x="1048.75" y="15" class="week-text" text-anchor="middle">WEEK 16</text>
+
+    <!-- Dividers -->
+    <line x1="235" y1="0" x2="235" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="287.5" y1="0" x2="287.5" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="340" y1="0" x2="340" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="392.5" y1="0" x2="392.5" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="445" y1="0" x2="445" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="497.5" y1="0" x2="497.5" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="550" y1="0" x2="550" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="602.5" y1="0" x2="602.5" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="655" y1="0" x2="655" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="707.5" y1="0" x2="707.5" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="760" y1="0" x2="760" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="812.5" y1="0" x2="812.5" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="865" y1="0" x2="865" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="917.5" y1="0" x2="917.5" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="970" y1="0" x2="970" y2="22" stroke="#4b5563" stroke-width="1" />
+    <line x1="1022.5" y1="0" x2="1022.5" y2="22" stroke="#4b5563" stroke-width="1" />
+  </g>
+
+  <!-- TABLE BODY (ROWS) -->
+  <g transform="translate(30, 130)">
+    <!-- Alternating row backgrounds (13 rows, 24px each = 312px total) -->
+    <rect x="0" y="0" width="1075" height="24" fill="#ffffff" />
+    <rect x="0" y="24" width="1075" height="24" fill="#f8fafc" />
+    <rect x="0" y="48" width="1075" height="24" fill="#ffffff" />
+    <rect x="0" y="72" width="1075" height="24" fill="#f8fafc" />
+    <rect x="0" y="96" width="1075" height="24" fill="#ffffff" />
+    <rect x="0" y="120" width="1075" height="24" fill="#f8fafc" />
+    <rect x="0" y="144" width="1075" height="24" fill="#ffffff" />
+    <rect x="0" y="168" width="1075" height="24" fill="#f8fafc" />
+    <rect x="0" y="192" width="1075" height="24" fill="#ffffff" />
+    <rect x="0" y="216" width="1075" height="24" fill="#f8fafc" />
+    <rect x="0" y="240" width="1075" height="24" fill="#ffffff" />
+    <rect x="0" y="264" width="1075" height="24" fill="#f8fafc" />
+    <rect x="0" y="288" width="1075" height="24" fill="#ffffff" />
+
+    <!-- Vertical grid lines for weeks -->
+    <line x1="235" y1="0" x2="235" y2="312" class="grid-line-solid" />
+    <line x1="287.5" y1="0" x2="287.5" y2="312" class="grid-line" />
+    <line x1="340" y1="0" x2="340" y2="312" class="grid-line" />
+    <line x1="392.5" y1="0" x2="392.5" y2="312" class="grid-line-solid" />
+    <line x1="445" y1="0" x2="445" y2="312" class="grid-line" />
+    <line x1="497.5" y1="0" x2="497.5" y2="312" class="grid-line" />
+    <line x1="550" y1="0" x2="550" y2="312" class="grid-line" />
+    <line x1="602.5" y1="0" x2="602.5" y2="312" class="grid-line" />
+    <line x1="655" y1="0" x2="655" y2="312" class="grid-line-solid" />
+    <line x1="707.5" y1="0" x2="707.5" y2="312" class="grid-line" />
+    <line x1="760" y1="0" x2="760" y2="312" class="grid-line" />
+    <line x1="812.5" y1="0" x2="812.5" y2="312" class="grid-line" />
+    <line x1="865" y1="0" x2="865" y2="312" class="grid-line-solid" />
+    <line x1="917.5" y1="0" x2="917.5" y2="312" class="grid-line" />
+    <line x1="970" y1="0" x2="970" y2="312" class="grid-line" />
+    <line x1="1022.5" y1="0" x2="1022.5" y2="312" class="grid-line" />
+    <line x1="1075" y1="0" x2="1075" y2="312" class="grid-line-solid" />
+
+    <!-- Outer border -->
+    <rect x="0" y="0" width="1075" height="312" fill="none" stroke="#d1d5db" stroke-width="1" />
+
+    <!-- TASK COLUMN CONTENT (Clipped to cell to prevent any bleed) -->
+    <g clip-path="url(#task-col-clip)">
+      <!-- ROW 0: Setup -->
+      <g transform="translate(0, 0)">
+        <text x="6" y="10.5" class="task-text" fill="#5b67a5">Setup: <tspan class="task-sub">Software, StyleGuide,</tspan></text>
+        <text x="6" y="20.5" class="task-sub">Users, Challenges, KPIs</text>
+      </g>
+
+      <!-- ROW 1: Discovery -->
+      <g transform="translate(0, 24)">
+        <text x="6" y="10.5" class="task-text" fill="#00897b">Discovery:</text>
+        <text x="6" y="20.5" class="task-sub">Site Components Heuristics</text>
+      </g>
+
+      <!-- ROW 2: Research Comparative -->
+      <g transform="translate(0, 48)">
+        <text x="6" y="10.5" class="task-text" fill="#558b2f">Research: <tspan class="task-sub">Comparative /</tspan></text>
+        <text x="6" y="20.5" class="task-sub">Competitive Analysis</text>
+      </g>
+
+      <!-- ROW 3: Research Users -->
+      <g transform="translate(0, 72)">
+        <text x="6" y="10.5" class="task-text" fill="#7cb342">Research: <tspan class="task-sub">Users</tspan></text>
+        <text x="6" y="20.5" class="task-sub">(Interview/Observe/Survey/Contact)</text>
+      </g>
+
+      <!-- ROW 4: Analysis Personas -->
+      <g transform="translate(0, 96)">
+        <text x="6" y="15.5" class="task-text" fill="#f59e0b">Analysis: <tspan class="task-sub">Personas</tspan></text>
+      </g>
+
+      <!-- ROW 5: Analysis Story Development -->
+      <g transform="translate(0, 120)">
+        <text x="6" y="10.5" class="task-text" fill="#f59e0b">Analysis: <tspan class="task-sub">Story Development</tspan></text>
+        <text x="6" y="20.5" class="task-sub">(Scenarios/Epics)</text>
+      </g>
+
+      <!-- ROW 6: Design User Flows (Line 1 of Design) -->
+      <g transform="translate(0, 144)">
+        <text x="6" y="15.5" class="task-text" fill="#ea580c">Design: <tspan class="task-sub">User Flows</tspan></text>
+      </g>
+
+      <!-- ROW 7: Design Initial Wireframes (Line 2 of Design) -->
+      <g transform="translate(0, 168)">
+        <text x="6" y="15.5" class="task-text" fill="#ea580c">Design: <tspan class="task-sub">Initial Wireframes</tspan></text>
+      </g>
+
+      <!-- ROW 8: Design Interactive Prototype (Line 3 of Design) -->
+      <g transform="translate(0, 192)">
+        <text x="6" y="10.5" class="task-text" fill="#ea580c">Design: <tspan class="task-sub">Interactive Prototype</tspan></text>
+        <text x="6" y="20.5" class="task-sub">(HTML/Staging)</text>
+      </g>
+
+      <!-- ROW 9: Research User Testing (Fourth Line of Design updated to Research) -->
+      <g transform="translate(0, 216)">
+        <text x="6" y="15.5" class="task-text" fill="#558b2f">Research: <tspan class="task-sub">User Testing</tspan></text>
+      </g>
+
+      <!-- ROW 10: Design Incorporating Feedback (Line 5 of Design) -->
+      <g transform="translate(0, 240)">
+        <text x="6" y="10.5" class="task-text" fill="#ea580c">Design:</text>
+        <text x="6" y="20.5" class="task-sub">Incorporating Feedback</text>
+      </g>
+
+      <!-- ROW 11: Production Design -->
+      <g transform="translate(0, 264)">
+        <text x="6" y="15.5" class="task-text" fill="#dc2626">Production: <tspan class="task-sub">Design</tspan></text>
+      </g>
+
+      <!-- ROW 12: Production Final Documentation to DEV -->
+      <g transform="translate(0, 288)">
+        <text x="6" y="10.5" class="task-text" fill="#dc2626">Production:</text>
+        <text x="6" y="20.5" class="task-sub">Final Documentation to DEV</text>
+      </g>
+    </g>
+
+    <!-- CALENDAR BARS FOR ROWS -->
+    <!-- ROW 0: Setup (W1) -->
+    <g transform="translate(0, 0)">
+      <rect x="235" y="0" width="52.5" height="24" fill="#5c6bc0" />
+      <text x="261.25" y="12" class="bar-marker">•</text>
+    </g>
+
+    <!-- ROW 1: Discovery (W1-W2) -->
+    <g transform="translate(0, 24)">
+      <rect x="235" y="0" width="105" height="24" fill="#00897b" />
+      <text x="261.25" y="12" class="bar-marker">•</text>
+      <text x="313.75" y="12" class="bar-marker">•</text>
+    </g>
+
+    <!-- ROW 2: Research Comparative (W4-W5, W9-W10, W13) -->
+    <g transform="translate(0, 48)">
+      <rect x="392.5" y="0" width="105" height="24" fill="#689f38" />
+      <text x="418.75" y="12" class="bar-marker">•</text>
+      <rect x="655" y="0" width="105" height="24" fill="#689f38" />
+      <text x="681.25" y="12" class="bar-marker">o</text>
+      <rect x="865" y="0" width="52.5" height="24" fill="#689f38" />
+      <text x="891.25" y="12" class="bar-marker">o</text>
+    </g>
+
+    <!-- ROW 3: Research Users (W3) -->
+    <g transform="translate(0, 72)">
+      <rect x="340" y="0" width="52.5" height="24" fill="#c0ca33" />
+      <text x="366.25" y="12" class="bar-marker">•</text>
+    </g>
+
+    <!-- ROW 4: Analysis Personas (W3) -->
+    <g transform="translate(0, 96)">
+      <rect x="340" y="0" width="52.5" height="24" fill="#fbc02d" />
+      <text x="366.25" y="12" class="bar-marker">•</text>
+    </g>
+
+    <!-- ROW 5: Analysis Story Development (W4-W5, W9-W10, W13-W14) -->
+    <g transform="translate(0, 120)">
+      <rect x="392.5" y="0" width="105" height="24" fill="#fbc02d" />
+      <rect x="655" y="0" width="105" height="24" fill="#fbc02d" />
+      <rect x="865" y="0" width="105" height="24" fill="#fbc02d" />
+    </g>
+
+    <!-- ROW 6: Design User Flows (W4-W5, W9-W10, W13-W14) -->
+    <g transform="translate(0, 144)">
+      <rect x="392.5" y="0" width="105" height="24" fill="#f97316" />
+      <rect x="655" y="0" width="105" height="24" fill="#f97316" />
+      <rect x="865" y="0" width="105" height="24" fill="#f97316" />
+    </g>
+
+    <!-- ROW 7: Design Initial Wireframes (W6-W7, W10-W11, W14-W15) -->
+    <g transform="translate(0, 168)">
+      <rect x="497.5" y="0" width="105" height="24" fill="#ea580c" />
+      <rect x="707.5" y="0" width="105" height="24" fill="#ea580c" />
+      <rect x="917.5" y="0" width="105" height="24" fill="#ea580c" />
+    </g>
+
+    <!-- TEAL DIVIDER LINE: potential start of DEV involvement -->
+    <line x1="0" y1="192" x2="1075" y2="192" stroke="#00acc1" stroke-width="2" />
+
+    <!-- ROW 8: Design Interactive Prototype (W7-W8, W11-W12, W15-W16) -->
+    <g transform="translate(0, 192)">
+      <rect x="550" y="0" width="105" height="24" fill="#ea580c" />
+      <rect x="760" y="0" width="105" height="24" fill="#ea580c" />
+      <rect x="970" y="0" width="105" height="24" fill="#ea580c" />
+    </g>
+
+    <!-- ROW 9: Research User Testing (W7-W8, W10-W11, W15-W16) -->
+    <g transform="translate(0, 216)">
+      <rect x="550" y="0" width="105" height="24" fill="#689f38" />
+      <rect x="707.5" y="0" width="105" height="24" fill="#689f38" />
+      <rect x="970" y="0" width="105" height="24" fill="#689f38" />
+    </g>
+
+    <!-- ROW 10: Design Incorporating Feedback (No bar) -->
+    <!-- (Empty) -->
+
+    <!-- ROW 11: Production Design (W8-W9, W12-W13, W16) -->
+    <g transform="translate(0, 264)">
+      <rect x="602.5" y="0" width="105" height="24" fill="#e53935" />
+      <rect x="812.5" y="0" width="105" height="24" fill="#e53935" />
+      <rect x="1022.5" y="0" width="52.5" height="24" fill="#e53935" />
+    </g>
+
+    <!-- ROW 12: Production Final Documentation to DEV (No bar) -->
+    <!-- (Empty) -->
+  </g>
+
+  <!-- LEGEND & FOOTNOTES -->
+  <g transform="translate(30, 470)">
+    <text x="0" y="0" class="legend-text">• = completed</text>
+    <text x="0" y="17" class="legend-text">o = revisit</text>
+    <g transform="translate(0, 32)">
+      <line x1="0" y1="-4" x2="16" y2="-4" stroke="#00acc1" stroke-width="2" />
+      <text x="22" y="0" class="legend-text">= potential start of DEV involvement</text>
+    </g>
+
+    <text x="0" y="62" class="note-text">All dates are estimates.</text>
+    <text x="0" y="76" class="note-text">Table will be modified throughout process to accommodate for holidays &amp; PTO.</text>
+    <text x="0" y="90" class="note-text">Site updates will be incorporated into the table as they occur.</text>
+  </g>
+</svg>

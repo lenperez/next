@@ -21,6 +21,7 @@ const mainProjects: Project[] = [
     tag: "UX / Product Design",
     year: "Case Study",
     image: "/Thumbnail_PurchasingPlatform.svg",
+    showStepPlaceholders: true,
     synopsis:
       "Tasked with redesigning a complete eProcurement platform from search & browse through to checkout. The process starts with an understanding of timing and resources needed to completion with KPIs and strategic goals in place. Understanding the current site's pain-points and technical (development) challenges is key in setting the correct approach to interaction design and overall page structure.",
     steps: [
@@ -28,56 +29,78 @@ const mainProjects: Project[] = [
         label: "Timeline Development",
         description:
           "Established project timeline with KPIs and strategic goals. Mapped resource requirements and development constraints to set a realistic scope.",
+        image: "/purchasing_platform_step1_schedule.svg",
+        imageAlt: "Site Redesign Schedule — 16-Week Project Timeline & Stage Roadmap",
       },
       {
         label: "Heuristic Analysis",
         description:
           "Identified current site pain-points and technical challenges. Evaluated usability against established heuristics to surface interaction gaps.",
+        placeholder: true,
+        placeholderText: "Heuristic Evaluation Artifact",
       },
       {
         label: "Competitive / Comparative Analysis",
         description:
           "Gathered insights from market competitors and like-minded establishments to glean best practices and proof-in-practice methodologies.",
+        placeholder: true,
+        placeholderText: "Competitive Matrix Artifact",
       },
       {
         label: "Persona Development",
         description:
           "Built evolving personas to understand different user groups' needs. These informed reasoning behind interaction and layout decisions.",
+        placeholder: true,
+        placeholderText: "User Persona Sheets",
       },
       {
         label: "Storymapping",
         description:
           "Created storymaps showing streamlined user-flows through the site, indicating which back-end components would be needed at each step.",
+        placeholder: true,
+        placeholderText: "Storymap & Architecture",
       },
       {
         label: "Heat Mapping",
         description:
           "Used heat maps to see how users navigated the current structure — what was most used and what portions were essential for task completion.",
+        placeholder: true,
+        placeholderText: "Heatmap & Clickstream Data",
       },
       {
         label: "Analytics",
         description:
           "Dove into numbers to inform decisions: screen sizes in use, bounce rates, drop-off points, and purchasing habits for marketing optimization.",
+        placeholder: true,
+        placeholderText: "Funnel & Drop-off Analytics",
       },
       {
         label: "User Flow",
         description:
           "Generated user flows highlighting challenges and identifying where processes could be streamlined for the quickest route to conversion.",
+        placeholder: true,
+        placeholderText: "User Flow Blueprint",
       },
       {
         label: "Whiteboarding",
         description:
           "Heavy use of whiteboard sketching to rapidly iterate through ideas, facilitating group discussion around design decisions.",
+        placeholder: true,
+        placeholderText: "Whiteboard Sketches & Ideation",
       },
       {
         label: "Lo-Fi Wireframing",
         description:
           "Created lo-fidelity wireframes and prototypes to understand page structure and user interactions, hammering out limitations early.",
+        placeholder: true,
+        placeholderText: "Lo-Fi Wireframe Mockups",
       },
       {
         label: "Hi-Fi Comps",
         description:
           "Produced high-fidelity comps using the established style-guide, giving the team a real feel for look and behavior across platforms.",
+        placeholder: true,
+        placeholderText: "Hi-Fi Comps & Design Specs",
       },
     ],
   },

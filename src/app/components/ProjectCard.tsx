@@ -1,17 +1,21 @@
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowUpRight, ChevronDown, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, X, Image as ImageIcon, ZoomIn } from "lucide-react";
 import { ImageWithFallback } from "./ImageWithFallback";
 import { useTheme } from "../context/ThemeContext";
 import { Tooltip } from "./Tooltip";
 
-interface ProcessStep {
+export interface ProcessStep {
   label: string;
   description: string;
+  image?: string;
+  imageAlt?: string;
+  placeholder?: boolean | string;
+  placeholderText?: string;
 }
 
-interface Project {
+export interface Project {
   id: string;
   title: string;
   subtitle: string;
@@ -20,11 +24,18 @@ interface Project {
   tag: string;
   year: string;
   steps: ProcessStep[];
+  showStepPlaceholders?: boolean;
 }
 
 interface ProjectCardProps {
   project: Project;
   index: number;
+}
+
+interface LightboxData {
+  src: string;
+  alt: string;
+  title: string;
 }
 
 function ProcessModal({
@@ -39,6 +50,7 @@ function ProcessModal({
   const { isDark } = useTheme();
   const modalRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const [lightboxImage, setLightboxImage] = useState<LightboxData | null>(null);
 
   // Focus trap, Escape key handling, and Scroll Locking (WCAG 2.1 Dialog Pattern)
   useEffect(() => {
@@ -54,11 +66,15 @@ function ProcessModal({
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         e.preventDefault();
-        onClose();
+        if (lightboxImage) {
+          setLightboxImage(null);
+        } else {
+          onClose();
+        }
         return;
       }
 
-      if (e.key === "Tab" && modalRef.current) {
+      if (e.key === "Tab" && modalRef.current && !lightboxImage) {
         const focusables = modalRef.current.querySelectorAll<HTMLElement>(
           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
@@ -86,137 +102,258 @@ function ProcessModal({
       // Restore focus back to the triggering element
       triggerElement?.focus();
     };
-  }, [onClose, triggerElement]);
+  }, [onClose, triggerElement, lightboxImage]);
 
   return createPortal(
-    <AnimatePresence>
-      <div
-        className={`fixed inset-0 z-50 backdrop-blur-sm flex items-center justify-center p-0 lg:p-6 ${
-          isDark ? "bg-black/80" : "bg-black/50"
-        }`}
-        onClick={onClose}
-      >
-        <motion.div
-          ref={modalRef}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby={`modal-title-${project.id}`}
-          aria-describedby={`modal-synopsis-${project.id}`}
-          initial={{ opacity: 0, y: 30, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 30, scale: 0.98 }}
-          transition={{
-            duration: 0.3,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className={`
-            relative w-full h-[100dvh] max-h-[100dvh] lg:h-auto lg:max-h-[85vh] lg:w-[75vw] lg:max-w-[75vw]
-            overflow-y-auto rounded-none lg:rounded-2xl border-0 lg:border shadow-2xl flex flex-col
-            ${isDark ? "bg-[#111318] lg:border-white/15 text-white" : "bg-white lg:border-black/15 text-neutral-900"}
-          `}
-          style={{ overscrollBehavior: "contain", WebkitOverflowScrolling: "touch" }}
-          onClick={(e) => e.stopPropagation()}
+    <>
+      <AnimatePresence>
+        <div
+          className={`fixed inset-0 z-50 backdrop-blur-sm flex items-center justify-center p-0 lg:p-6 ${
+            isDark ? "bg-black/80" : "bg-black/50"
+          }`}
+          onClick={onClose}
         >
-          {/* Sticky Close button: 0-height container so image flows flush to the top edge */}
-          <div className="sticky top-0 z-30 flex justify-end pointer-events-none h-0 overflow-visible">
-            <div className="p-3 sm:p-4">
-              <Tooltip content="Close case study (Esc)" position="bottom">
-                <button
-                  ref={closeBtnRef}
-                  type="button"
-                  onClick={onClose}
-                  aria-label={`Close modal for ${project.title}`}
-                  className={`pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full transition-all shadow-xl backdrop-blur-md border ${
-                    isDark
-                      ? "bg-[#111318]/80 hover:bg-[#1c202a] text-white border-white/25 focus-visible:ring-2 focus-visible:ring-blue-400"
-                      : "bg-white/80 hover:bg-neutral-100 text-neutral-900 border-black/15 focus-visible:ring-2 focus-visible:ring-blue-600"
-                  }`}
-                >
-                  <X size={20} aria-hidden="true" />
-                </button>
-              </Tooltip>
+          <motion.div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={`modal-title-${project.id}`}
+            aria-describedby={`modal-synopsis-${project.id}`}
+            initial={{ opacity: 0, y: 30, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 30, scale: 0.98 }}
+            transition={{
+              duration: 0.3,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className={`
+              relative w-full h-[100dvh] max-h-[100dvh] lg:h-auto lg:max-h-[85vh] lg:w-[75vw] lg:max-w-[75vw]
+              overflow-y-auto rounded-none lg:rounded-2xl border-0 lg:border shadow-2xl flex flex-col
+              ${isDark ? "bg-[#111318] lg:border-white/15 text-white" : "bg-white lg:border-black/15 text-neutral-900"}
+            `}
+            style={{ overscrollBehavior: "contain", WebkitOverflowScrolling: "touch" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Sticky Close button: 0-height container so image flows flush to the top edge */}
+            <div className="sticky top-0 z-30 flex justify-end pointer-events-none h-0 overflow-visible">
+              <div className="p-3 sm:p-4">
+                <Tooltip content="Close case study (Esc)" position="bottom">
+                  <button
+                    ref={closeBtnRef}
+                    type="button"
+                    onClick={onClose}
+                    aria-label={`Close modal for ${project.title}`}
+                    className={`pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full transition-all shadow-xl backdrop-blur-md border ${
+                      isDark
+                        ? "bg-[#111318]/80 hover:bg-[#1c202a] text-white border-white/25 focus-visible:ring-2 focus-visible:ring-blue-400"
+                        : "bg-white/80 hover:bg-neutral-100 text-neutral-900 border-black/15 focus-visible:ring-2 focus-visible:ring-blue-600"
+                    }`}
+                  >
+                    <X size={20} aria-hidden="true" />
+                  </button>
+                </Tooltip>
+              </div>
             </div>
-          </div>
 
-          {/* Image banner - flows flush to the very top */}
-          <div className="w-full h-56 sm:h-72 lg:h-80 xl:h-96 shrink-0 relative overflow-hidden lg:rounded-t-2xl">
-            <ImageWithFallback
-              src={project.image}
-              alt={`Visual preview of ${project.title}`}
-              className="w-full h-full object-cover lg:rounded-t-2xl"
-            />
-          </div>
-
-          <div className="px-3 py-6 sm:px-8 lg:px-12 flex-1">
-            {/* Header */}
-            <div className="flex items-center gap-3 mb-3">
-              <span className={`text-xs tracking-widest uppercase px-3 py-1 rounded-full font-semibold ${
-                isDark ? "text-blue-400 bg-blue-500/15" : "text-blue-800 bg-blue-100"
-              }`}>
-                {project.tag}
-              </span>
-              <span className={`text-xs font-medium ${isDark ? "text-white/60" : "text-neutral-600"}`}>
-                {project.year}
-              </span>
+            {/* Image banner - flows flush to the very top */}
+            <div className="w-full h-56 sm:h-72 lg:h-80 xl:h-96 shrink-0 relative overflow-hidden lg:rounded-t-2xl">
+              <ImageWithFallback
+                src={project.image}
+                alt={`Visual preview of ${project.title}`}
+                className="w-full h-full object-cover lg:rounded-t-2xl"
+              />
             </div>
 
-            <h3
-              id={`modal-title-${project.id}`}
-              className={`${isDark ? "text-white" : "text-neutral-900"} mb-1.5 transition-colors`}
-              style={{
-                fontSize: "clamp(1.4rem, 2.4vw, 2.2rem)",
-                fontWeight: 700,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              {project.title}
-            </h3>
-            <p className={`${isDark ? "text-blue-400" : "text-blue-700"} text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4`}>
-              {project.subtitle}
-            </p>
-            <p
-              id={`modal-synopsis-${project.id}`}
-              className={`${isDark ? "text-white/80" : "text-neutral-700"} text-sm sm:text-base leading-relaxed mb-8 max-w-4xl transition-colors`}
-            >
-              {project.synopsis}
-            </p>
+            <div className="px-3 py-6 sm:px-8 lg:px-12 flex-1">
+              {/* Header */}
+              <div className="flex items-center gap-3 mb-3">
+                <span className={`text-xs tracking-widest uppercase px-3 py-1 rounded-full font-semibold ${
+                  isDark ? "text-blue-400 bg-blue-500/15" : "text-blue-800 bg-blue-100"
+                }`}>
+                  {project.tag}
+                </span>
+                <span className={`text-xs font-medium ${isDark ? "text-white/60" : "text-neutral-600"}`}>
+                  {project.year}
+                </span>
+              </div>
 
-            {/* Process steps */}
-            <p className={`${isDark ? "text-white/60" : "text-neutral-700"} text-xs font-bold tracking-widest uppercase mb-4`}>
-              Process &amp; Approach
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 pb-4">
-              {project.steps.map((step, i) => (
-                <div
-                  key={step.label}
-                  className={`border rounded-xl p-4 sm:p-5 transition-colors flex flex-col justify-start ${
-                    isDark
-                      ? "bg-white/[0.04] border-white/10"
-                      : "bg-neutral-50 border-black/10"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <span className={`w-5 h-5 rounded-full text-[11px] flex items-center justify-center font-bold shrink-0 ${
-                      isDark ? "bg-blue-600/30 text-blue-300" : "bg-blue-600 text-white"
-                    }`} aria-hidden="true">
-                      {i + 1}
-                    </span>
-                    <h4
-                      className={`${isDark ? "text-white" : "text-neutral-900"} text-xs tracking-wider uppercase font-semibold`}
+              <h3
+                id={`modal-title-${project.id}`}
+                className={`${isDark ? "text-white" : "text-neutral-900"} mb-1.5 transition-colors`}
+                style={{
+                  fontSize: "clamp(1.4rem, 2.4vw, 2.2rem)",
+                  fontWeight: 700,
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                {project.title}
+              </h3>
+              <p className={`${isDark ? "text-blue-400" : "text-blue-700"} text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4`}>
+                {project.subtitle}
+              </p>
+              <p
+                id={`modal-synopsis-${project.id}`}
+                className={`${isDark ? "text-white/80" : "text-neutral-700"} text-sm sm:text-base leading-relaxed mb-8 max-w-4xl transition-colors`}
+              >
+                {project.synopsis}
+              </p>
+
+              {/* Process steps */}
+              <p className={`${isDark ? "text-white/60" : "text-neutral-700"} text-xs font-bold tracking-widest uppercase mb-4`}>
+                Process &amp; Approach
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 pb-4">
+                {project.steps.map((step, i) => {
+                  const hasImage = Boolean(step.image);
+                  const hasPlaceholder = Boolean(
+                    step.placeholder ||
+                    (project.id === "purchasing-platform" && !hasImage) ||
+                    (project.showStepPlaceholders && !hasImage)
+                  );
+
+                  return (
+                    <div
+                      key={step.label}
+                      className={`border rounded-xl p-4 sm:p-5 transition-colors flex flex-col justify-between ${
+                        isDark
+                          ? "bg-white/[0.04] border-white/10"
+                          : "bg-neutral-50 border-black/10"
+                      }`}
                     >
-                      {step.label}
-                    </h4>
-                  </div>
-                  <p className={`${isDark ? "text-white/75" : "text-neutral-700"} text-xs leading-relaxed`}>
-                    {step.description}
-                  </p>
-                </div>
-              ))}
+                      <div>
+                        <div className="flex items-center gap-2.5 mb-2.5">
+                          <span
+                            className={`w-5 h-5 rounded-full text-[11px] flex items-center justify-center font-bold shrink-0 ${
+                              isDark ? "bg-blue-600/30 text-blue-300" : "bg-blue-600 text-white"
+                            }`}
+                            aria-hidden="true"
+                          >
+                            {i + 1}
+                          </span>
+                          <h4
+                            className={`${isDark ? "text-white" : "text-neutral-900"} text-xs tracking-wider uppercase font-semibold`}
+                          >
+                            {step.label}
+                          </h4>
+                        </div>
+
+                        {/* Step Visual Artifact (Rendered only in modal) */}
+                        {hasImage ? (
+                          <div className="my-3 overflow-hidden rounded-lg border border-black/10 dark:border-white/15 bg-white group/stepimg relative shadow-xs">
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setLightboxImage({
+                                  src: step.image!,
+                                  alt: step.imageAlt || `${step.label} artifact`,
+                                  title: `${step.label} — ${project.title}`,
+                                })
+                              }
+                              className="w-full text-left block relative cursor-zoom-in group-hover/stepimg:opacity-95 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
+                              aria-label={`View full-size ${step.label} artifact`}
+                            >
+                              <img
+                                src={step.image}
+                                alt={step.imageAlt || `${step.label} artifact`}
+                                referrerPolicy="no-referrer"
+                                className="w-full h-auto aspect-video object-contain bg-white rounded-lg p-1.5"
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover/stepimg:bg-black/15 transition-colors flex items-end justify-end p-2 pointer-events-none">
+                                <span className="bg-black/85 text-white text-[10px] font-medium px-2 py-0.5 rounded backdrop-blur-xs flex items-center gap-1 opacity-0 group-hover/stepimg:opacity-100 transition-opacity shadow-sm">
+                                  <ZoomIn size={11} aria-hidden="true" />
+                                  <span>Expand</span>
+                                </span>
+                              </div>
+                            </button>
+                          </div>
+                        ) : hasPlaceholder ? (
+                          <div
+                            className={`my-3 h-32 rounded-lg border border-dashed flex flex-col items-center justify-center text-center p-3 transition-colors ${
+                              isDark
+                                ? "bg-white/[0.02] border-white/15 text-white/40"
+                                : "bg-black/[0.02] border-black/15 text-neutral-400"
+                            }`}
+                            aria-label={`Placeholder for ${step.label} artifact`}
+                          >
+                            <div
+                              className={`w-8 h-8 rounded-full flex items-center justify-center mb-1.5 ${
+                                isDark
+                                  ? "bg-white/[0.06] text-white/60"
+                                  : "bg-black/[0.04] text-neutral-500"
+                              }`}
+                            >
+                              <ImageIcon size={15} aria-hidden="true" />
+                            </div>
+                            <span
+                              className={`text-[11px] font-semibold tracking-wide uppercase ${
+                                isDark ? "text-white/65" : "text-neutral-700"
+                              }`}
+                            >
+                              {typeof step.placeholder === "string"
+                                ? step.placeholder
+                                : step.placeholderText || "Artifact Placeholder"}
+                            </span>
+                            <span
+                              className={`text-[10px] mt-0.5 ${
+                                isDark ? "text-white/40" : "text-neutral-400"
+                              }`}
+                            >
+                              Documentation asset
+                            </span>
+                          </div>
+                        ) : null}
+                      </div>
+
+                      <p className={`${isDark ? "text-white/75" : "text-neutral-700"} text-xs leading-relaxed mt-1`}>
+                        {step.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </AnimatePresence>
+
+      {/* Lightbox for viewing full-size artifact */}
+      <AnimatePresence>
+        {lightboxImage && (
+          <div
+            className="fixed inset-0 z-[70] bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-6"
+            onClick={() => setLightboxImage(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={lightboxImage.title}
+          >
+            <div className="w-full max-w-6xl flex justify-between items-center mb-3 px-2">
+              <span className="text-white text-sm sm:text-base font-semibold truncate">
+                {lightboxImage.title}
+              </span>
+              <button
+                type="button"
+                onClick={() => setLightboxImage(null)}
+                aria-label="Close image preview"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
+              >
+                <X size={18} aria-hidden="true" />
+              </button>
+            </div>
+            <div
+              className="max-w-6xl max-h-[85vh] w-full bg-white rounded-xl overflow-hidden shadow-2xl p-2 sm:p-4 flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={lightboxImage.src}
+                alt={lightboxImage.alt}
+                referrerPolicy="no-referrer"
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              />
             </div>
           </div>
-        </motion.div>
-      </div>
-    </AnimatePresence>,
+        )}
+      </AnimatePresence>
+    </>,
     document.body,
   );
 }
@@ -431,6 +568,4 @@ export function ProjectCard({
     </>
   );
 }
-
-export type { Project };
 
