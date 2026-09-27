@@ -27,6 +27,144 @@ html.dark :focus-visible {
   outline-offset: 3px !important;
 }
 
+/* ==========================================================================
+   Modal Scrollbar Visibility & Styling
+   Ensures that whenever a modal has content overflow that is not visible,
+   the scrollbar is clearly and consistently displayed across all browsers/OS.
+   ========================================================================== */
+
+/* Thin scrollbars for Firefox / modern standard CSS */
+[role="dialog"] [class*="overflow-y-"],
+[role="dialog"][class*="overflow-y-"],
+[aria-modal="true"] [class*="overflow-y-"],
+[aria-modal="true"][class*="overflow-y-"],
+.modal-scrollable {
+  scrollbar-width: thin;
+}
+
+/* Light Theme Modal Scrollbar (Firefox) */
+html.light [role="dialog"] [class*="overflow-y-auto"],
+html.light [role="dialog"][class*="overflow-y-auto"],
+html.light [role="dialog"] [class*="overflow-y-scroll"],
+html.light [role="dialog"][class*="overflow-y-scroll"],
+html.light [aria-modal="true"] [class*="overflow-y-auto"],
+html.light [aria-modal="true"][class*="overflow-y-auto"],
+html.light [aria-modal="true"] [class*="overflow-y-scroll"],
+html.light [aria-modal="true"][class*="overflow-y-scroll"],
+html.light .modal-scrollable {
+  scrollbar-color: rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Theme Modal Scrollbar (Firefox) */
+html.dark [role="dialog"] [class*="overflow-y-auto"],
+html.dark [role="dialog"][class*="overflow-y-auto"],
+html.dark [role="dialog"] [class*="overflow-y-scroll"],
+html.dark [role="dialog"][class*="overflow-y-scroll"],
+html.dark [aria-modal="true"] [class*="overflow-y-auto"],
+html.dark [aria-modal="true"][class*="overflow-y-auto"],
+html.dark [aria-modal="true"] [class*="overflow-y-scroll"],
+html.dark [aria-modal="true"][class*="overflow-y-scroll"],
+html.dark .modal-scrollable {
+  scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.08);
+}
+
+/* WebKit / Chromium / Safari Custom Scrollbar (Prevents OS overlay auto-hiding) */
+[role="dialog"] [class*="overflow-y-auto"]::-webkit-scrollbar,
+[role="dialog"][class*="overflow-y-auto"]::-webkit-scrollbar,
+[role="dialog"] [class*="overflow-y-scroll"]::-webkit-scrollbar,
+[role="dialog"][class*="overflow-y-scroll"]::-webkit-scrollbar,
+[aria-modal="true"] [class*="overflow-y-auto"]::-webkit-scrollbar,
+[aria-modal="true"][class*="overflow-y-auto"]::-webkit-scrollbar,
+[aria-modal="true"] [class*="overflow-y-scroll"]::-webkit-scrollbar,
+[aria-modal="true"][class*="overflow-y-scroll"]::-webkit-scrollbar,
+.modal-scrollable::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  display: block;
+}
+
+/* Light Theme Tracks & Thumbs */
+html.light [role="dialog"] [class*="overflow-y-auto"]::-webkit-scrollbar-track,
+html.light [role="dialog"][class*="overflow-y-auto"]::-webkit-scrollbar-track,
+html.light [role="dialog"] [class*="overflow-y-scroll"]::-webkit-scrollbar-track,
+html.light [role="dialog"][class*="overflow-y-scroll"]::-webkit-scrollbar-track,
+html.light [aria-modal="true"] [class*="overflow-y-auto"]::-webkit-scrollbar-track,
+html.light [aria-modal="true"][class*="overflow-y-auto"]::-webkit-scrollbar-track,
+html.light [aria-modal="true"] [class*="overflow-y-scroll"]::-webkit-scrollbar-track,
+html.light [aria-modal="true"][class*="overflow-y-scroll"]::-webkit-scrollbar-track,
+html.light .modal-scrollable::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+}
+
+html.light [role="dialog"] [class*="overflow-y-auto"]::-webkit-scrollbar-thumb,
+html.light [role="dialog"][class*="overflow-y-auto"]::-webkit-scrollbar-thumb,
+html.light [role="dialog"] [class*="overflow-y-scroll"]::-webkit-scrollbar-thumb,
+html.light [role="dialog"][class*="overflow-y-scroll"]::-webkit-scrollbar-thumb,
+html.light [aria-modal="true"] [class*="overflow-y-auto"]::-webkit-scrollbar-thumb,
+html.light [aria-modal="true"][class*="overflow-y-auto"]::-webkit-scrollbar-thumb,
+html.light [aria-modal="true"] [class*="overflow-y-scroll"]::-webkit-scrollbar-thumb,
+html.light [aria-modal="true"][class*="overflow-y-scroll"]::-webkit-scrollbar-thumb,
+html.light .modal-scrollable::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+html.light [role="dialog"] [class*="overflow-y-auto"]::-webkit-scrollbar-thumb:hover,
+html.light [role="dialog"][class*="overflow-y-auto"]::-webkit-scrollbar-thumb:hover,
+html.light [role="dialog"] [class*="overflow-y-scroll"]::-webkit-scrollbar-thumb:hover,
+html.light [role="dialog"][class*="overflow-y-scroll"]::-webkit-scrollbar-thumb:hover,
+html.light [aria-modal="true"] [class*="overflow-y-auto"]::-webkit-scrollbar-thumb:hover,
+html.light [aria-modal="true"][class*="overflow-y-auto"]::-webkit-scrollbar-thumb:hover,
+html.light [aria-modal="true"] [class*="overflow-y-scroll"]::-webkit-scrollbar-thumb:hover,
+html.light [aria-modal="true"][class*="overflow-y-scroll"]::-webkit-scrollbar-thumb:hover,
+html.light .modal-scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* Dark Theme Tracks & Thumbs */
+html.dark [role="dialog"] [class*="overflow-y-auto"]::-webkit-scrollbar-track,
+html.dark [role="dialog"][class*="overflow-y-auto"]::-webkit-scrollbar-track,
+html.dark [role="dialog"] [class*="overflow-y-scroll"]::-webkit-scrollbar-track,
+html.dark [role="dialog"][class*="overflow-y-scroll"]::-webkit-scrollbar-track,
+html.dark [aria-modal="true"] [class*="overflow-y-auto"]::-webkit-scrollbar-track,
+html.dark [aria-modal="true"][class*="overflow-y-auto"]::-webkit-scrollbar-track,
+html.dark [aria-modal="true"] [class*="overflow-y-scroll"]::-webkit-scrollbar-track,
+html.dark [aria-modal="true"][class*="overflow-y-scroll"]::-webkit-scrollbar-track,
+html.dark .modal-scrollable::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 9999px;
+}
+
+html.dark [role="dialog"] [class*="overflow-y-auto"]::-webkit-scrollbar-thumb,
+html.dark [role="dialog"][class*="overflow-y-auto"]::-webkit-scrollbar-thumb,
+html.dark [role="dialog"] [class*="overflow-y-scroll"]::-webkit-scrollbar-thumb,
+html.dark [role="dialog"][class*="overflow-y-scroll"]::-webkit-scrollbar-thumb,
+html.dark [aria-modal="true"] [class*="overflow-y-auto"]::-webkit-scrollbar-thumb,
+html.dark [aria-modal="true"][class*="overflow-y-auto"]::-webkit-scrollbar-thumb,
+html.dark [aria-modal="true"] [class*="overflow-y-scroll"]::-webkit-scrollbar-thumb,
+html.dark [aria-modal="true"][class*="overflow-y-scroll"]::-webkit-scrollbar-thumb,
+html.dark .modal-scrollable::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+html.dark [role="dialog"] [class*="overflow-y-auto"]::-webkit-scrollbar-thumb:hover,
+html.dark [role="dialog"][class*="overflow-y-auto"]::-webkit-scrollbar-thumb:hover,
+html.dark [role="dialog"] [class*="overflow-y-scroll"]::-webkit-scrollbar-thumb:hover,
+html.dark [role="dialog"][class*="overflow-y-scroll"]::-webkit-scrollbar-thumb:hover,
+html.dark [aria-modal="true"] [class*="overflow-y-auto"]::-webkit-scrollbar-thumb:hover,
+html.dark [aria-modal="true"][class*="overflow-y-auto"]::-webkit-scrollbar-thumb:hover,
+html.dark [aria-modal="true"] [class*="overflow-y-scroll"]::-webkit-scrollbar-thumb:hover,
+html.dark [aria-modal="true"][class*="overflow-y-scroll"]::-webkit-scrollbar-thumb:hover,
+html.dark .modal-scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 /* Accessibility: Respect user's prefers-reduced-motion system preference (WCAG 2.3.3) */
 @media (prefers-reduced-motion: reduce) {
   *,

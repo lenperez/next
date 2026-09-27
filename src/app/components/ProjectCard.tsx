@@ -51,6 +51,40 @@ function ProcessModal({
   const modalRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const [lightboxImage, setLightboxImage] = useState<LightboxData | null>(null);
+  const [hasOverflow, setHasOverflow] = useState(false);
+
+  // Check if content overflows to ensure scrollbar is rendered immediately when not all content is visible
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (modalRef.current) {
+        const { scrollHeight, clientHeight } = modalRef.current;
+        setHasOverflow(scrollHeight > clientHeight + 4);
+      }
+    };
+
+    checkOverflow();
+
+    const el = modalRef.current;
+    if (!el) return;
+
+    window.addEventListener("resize", checkOverflow);
+    const t1 = setTimeout(checkOverflow, 80);
+    const t2 = setTimeout(checkOverflow, 300);
+
+    let observer: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== "undefined") {
+      observer = new ResizeObserver(checkOverflow);
+      observer.observe(el);
+      Array.from(el.children).forEach((child) => observer?.observe(child));
+    }
+
+    return () => {
+      window.removeEventListener("resize", checkOverflow);
+      clearTimeout(t1);
+      clearTimeout(t2);
+      observer?.disconnect();
+    };
+  }, [project]);
 
   // Focus trap, Escape key handling, and Scroll Locking (WCAG 2.1 Dialog Pattern)
   useEffect(() => {
@@ -128,7 +162,7 @@ function ProcessModal({
             }}
             className={`
               relative w-full h-[100dvh] max-h-[100dvh] lg:h-auto lg:max-h-[85vh] lg:w-[75vw] lg:max-w-[75vw]
-              overflow-y-auto rounded-none lg:rounded-2xl border-0 lg:border shadow-2xl flex flex-col
+              ${hasOverflow ? "overflow-y-scroll" : "overflow-y-auto"} modal-scrollable rounded-none lg:rounded-2xl border-0 lg:border shadow-2xl flex flex-col
               ${isDark ? "bg-[#111318] lg:border-white/15 text-white" : "bg-white lg:border-black/15 text-neutral-900"}
             `}
             style={{ overscrollBehavior: "contain", WebkitOverflowScrolling: "touch" }}
@@ -320,13 +354,13 @@ function ProcessModal({
       <AnimatePresence>
         {lightboxImage && (
           <div
-            className="fixed inset-0 z-[70] bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-[70] bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-6 overflow-y-auto modal-scrollable"
             onClick={() => setLightboxImage(null)}
             role="dialog"
             aria-modal="true"
             aria-label={lightboxImage.title}
           >
-            <div className="w-full max-w-6xl flex justify-between items-center mb-3 px-2">
+            <div className="w-full max-w-6xl flex justify-between items-center mb-3 px-2 shrink-0">
               <span className="text-white text-sm sm:text-base font-semibold truncate">
                 {lightboxImage.title}
               </span>
@@ -334,13 +368,13 @@ function ProcessModal({
                 type="button"
                 onClick={() => setLightboxImage(null)}
                 aria-label="Close image preview"
-                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none cursor-pointer"
               >
                 <X size={18} aria-hidden="true" />
               </button>
             </div>
             <div
-              className="max-w-6xl max-h-[85vh] w-full bg-white rounded-xl overflow-hidden shadow-2xl p-2 sm:p-4 flex items-center justify-center"
+              className="max-w-6xl max-h-[85vh] w-full bg-white rounded-xl overflow-y-auto modal-scrollable shadow-2xl p-2 sm:p-4 flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               <img

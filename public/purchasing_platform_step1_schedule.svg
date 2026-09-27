@@ -5,8 +5,8 @@
       .title-sub { font-size: 28px; font-weight: 300; fill: #26a69a; letter-spacing: -0.01em; }
       .header-text { font-size: 9.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.05em; }
       .week-text { font-size: 8.5px; font-weight: 700; fill: #ffffff; }
-      .task-text { font-size: 9.5px; font-weight: 700; }
-      .task-sub { font-size: 8.5px; font-weight: 500; fill: #4b5563; }
+      .task-label { font-size: 9px; font-weight: 700; letter-spacing: 0.01em; }
+      .task-data { font-size: 8px; font-weight: 500; fill: #4b5563; }
       .bar-marker { font-size: 11px; font-weight: bold; fill: #111827; text-anchor: middle; dominant-baseline: central; }
       .legend-text { font-size: 10.5px; fill: #00838f; font-weight: 700; }
       .note-text { font-size: 9.5px; fill: #00838f; font-style: italic; }
@@ -174,79 +174,84 @@
     <!-- Outer border -->
     <rect x="0" y="0" width="1075" height="312" fill="none" stroke="#d1d5db" stroke-width="1" />
 
-    <!-- TASK COLUMN CONTENT (Clipped to cell to prevent any bleed) -->
+    <!-- TASK COLUMN CONTENT: All data placed below labels, clipped to first column -->
     <g clip-path="url(#task-col-clip)">
       <!-- ROW 0: Setup -->
       <g transform="translate(0, 0)">
-        <text x="6" y="10.5" class="task-text" fill="#5b67a5">Setup: <tspan class="task-sub">Software, StyleGuide,</tspan></text>
-        <text x="6" y="20.5" class="task-sub">Users, Challenges, KPIs</text>
+        <text x="6" y="9.5" class="task-label" fill="#5c6bc0">Setup:</text>
+        <text x="6" y="19.5" class="task-data">Software, StyleGuide, Users, Challenges, KPIs</text>
       </g>
 
       <!-- ROW 1: Discovery -->
       <g transform="translate(0, 24)">
-        <text x="6" y="10.5" class="task-text" fill="#00897b">Discovery:</text>
-        <text x="6" y="20.5" class="task-sub">Site Components Heuristics</text>
+        <text x="6" y="9.5" class="task-label" fill="#00897b">Discovery:</text>
+        <text x="6" y="19.5" class="task-data">Site Components Heuristics</text>
       </g>
 
       <!-- ROW 2: Research Comparative -->
       <g transform="translate(0, 48)">
-        <text x="6" y="10.5" class="task-text" fill="#558b2f">Research: <tspan class="task-sub">Comparative /</tspan></text>
-        <text x="6" y="20.5" class="task-sub">Competitive Analysis</text>
+        <text x="6" y="9.5" class="task-label" fill="#558b2f">Research:</text>
+        <text x="6" y="19.5" class="task-data">Comparative / Competitive Analysis</text>
       </g>
 
       <!-- ROW 3: Research Users -->
       <g transform="translate(0, 72)">
-        <text x="6" y="10.5" class="task-text" fill="#7cb342">Research: <tspan class="task-sub">Users</tspan></text>
-        <text x="6" y="20.5" class="task-sub">(Interview/Observe/Survey/Contact)</text>
+        <text x="6" y="9.5" class="task-label" fill="#7cb342">Research:</text>
+        <text x="6" y="19.5" class="task-data">Users (Interview/Observe/Survey/Contact)</text>
       </g>
 
       <!-- ROW 4: Analysis Personas -->
       <g transform="translate(0, 96)">
-        <text x="6" y="15.5" class="task-text" fill="#f59e0b">Analysis: <tspan class="task-sub">Personas</tspan></text>
+        <text x="6" y="9.5" class="task-label" fill="#f59e0b">Analysis:</text>
+        <text x="6" y="19.5" class="task-data">Personas</text>
       </g>
 
       <!-- ROW 5: Analysis Story Development -->
       <g transform="translate(0, 120)">
-        <text x="6" y="10.5" class="task-text" fill="#f59e0b">Analysis: <tspan class="task-sub">Story Development</tspan></text>
-        <text x="6" y="20.5" class="task-sub">(Scenarios/Epics)</text>
+        <text x="6" y="9.5" class="task-label" fill="#f59e0b">Analysis:</text>
+        <text x="6" y="19.5" class="task-data">Story Development (Scenarios/Epics)</text>
       </g>
 
-      <!-- ROW 6: Design User Flows (Line 1 of Design) -->
+      <!-- ROW 6: Design User Flows -->
       <g transform="translate(0, 144)">
-        <text x="6" y="15.5" class="task-text" fill="#ea580c">Design: <tspan class="task-sub">User Flows</tspan></text>
+        <text x="6" y="9.5" class="task-label" fill="#ea580c">Design:</text>
+        <text x="6" y="19.5" class="task-data">User Flows</text>
       </g>
 
-      <!-- ROW 7: Design Initial Wireframes (Line 2 of Design) -->
+      <!-- ROW 7: Design Initial Wireframes -->
       <g transform="translate(0, 168)">
-        <text x="6" y="15.5" class="task-text" fill="#ea580c">Design: <tspan class="task-sub">Initial Wireframes</tspan></text>
+        <text x="6" y="9.5" class="task-label" fill="#ea580c">Design:</text>
+        <text x="6" y="19.5" class="task-data">Initial Wireframes</text>
       </g>
 
-      <!-- ROW 8: Design Interactive Prototype (Line 3 of Design) -->
+      <!-- ROW 8: Design Interactive Prototype -->
       <g transform="translate(0, 192)">
-        <text x="6" y="10.5" class="task-text" fill="#ea580c">Design: <tspan class="task-sub">Interactive Prototype</tspan></text>
-        <text x="6" y="20.5" class="task-sub">(HTML/Staging)</text>
+        <text x="6" y="9.5" class="task-label" fill="#ea580c">Design:</text>
+        <text x="6" y="19.5" class="task-data">Interactive Prototype (HTML/Staging)</text>
       </g>
 
-      <!-- ROW 9: Research User Testing (Fourth Line of Design updated to Research) -->
+      <!-- ROW 9: Research User Testing -->
       <g transform="translate(0, 216)">
-        <text x="6" y="15.5" class="task-text" fill="#558b2f">Research: <tspan class="task-sub">User Testing</tspan></text>
+        <text x="6" y="9.5" class="task-label" fill="#558b2f">Research:</text>
+        <text x="6" y="19.5" class="task-data">User Testing</text>
       </g>
 
-      <!-- ROW 10: Design Incorporating Feedback (Line 5 of Design) -->
+      <!-- ROW 10: Design Incorporating Feedback -->
       <g transform="translate(0, 240)">
-        <text x="6" y="10.5" class="task-text" fill="#ea580c">Design:</text>
-        <text x="6" y="20.5" class="task-sub">Incorporating Feedback</text>
+        <text x="6" y="9.5" class="task-label" fill="#ea580c">Design:</text>
+        <text x="6" y="19.5" class="task-data">Incorporating Feedback</text>
       </g>
 
       <!-- ROW 11: Production Design -->
       <g transform="translate(0, 264)">
-        <text x="6" y="15.5" class="task-text" fill="#dc2626">Production: <tspan class="task-sub">Design</tspan></text>
+        <text x="6" y="9.5" class="task-label" fill="#dc2626">Production:</text>
+        <text x="6" y="19.5" class="task-data">Design</text>
       </g>
 
       <!-- ROW 12: Production Final Documentation to DEV -->
       <g transform="translate(0, 288)">
-        <text x="6" y="10.5" class="task-text" fill="#dc2626">Production:</text>
-        <text x="6" y="20.5" class="task-sub">Final Documentation to DEV</text>
+        <text x="6" y="9.5" class="task-label" fill="#dc2626">Production:</text>
+        <text x="6" y="19.5" class="task-data">Final Documentation to DEV</text>
       </g>
     </g>
 
@@ -264,12 +269,15 @@
       <text x="313.75" y="12" class="bar-marker">•</text>
     </g>
 
-    <!-- ROW 2: Research Comparative (W4-W5, W9-W10, W13) -->
+    <!-- ROW 2: Research Comparative (Week 5 and Week 10 REMOVED: active only in W4, W9, W13) -->
     <g transform="translate(0, 48)">
-      <rect x="392.5" y="0" width="105" height="24" fill="#689f38" />
+      <!-- Week 4 only -->
+      <rect x="392.5" y="0" width="52.5" height="24" fill="#689f38" />
       <text x="418.75" y="12" class="bar-marker">•</text>
-      <rect x="655" y="0" width="105" height="24" fill="#689f38" />
+      <!-- Week 9 only (Week 10 removed) -->
+      <rect x="655" y="0" width="52.5" height="24" fill="#689f38" />
       <text x="681.25" y="12" class="bar-marker">o</text>
+      <!-- Week 13 only -->
       <rect x="865" y="0" width="52.5" height="24" fill="#689f38" />
       <text x="891.25" y="12" class="bar-marker">o</text>
     </g>
@@ -293,11 +301,14 @@
       <rect x="865" y="0" width="105" height="24" fill="#fbc02d" />
     </g>
 
-    <!-- ROW 6: Design User Flows (W4-W5, W9-W10, W13-W14) -->
+    <!-- ROW 6: Design User Flows (Weeks 5, 10, and 14 REMOVED: active only in W4, W9, W13) -->
     <g transform="translate(0, 144)">
-      <rect x="392.5" y="0" width="105" height="24" fill="#f97316" />
-      <rect x="655" y="0" width="105" height="24" fill="#f97316" />
-      <rect x="865" y="0" width="105" height="24" fill="#f97316" />
+      <!-- Week 4 only (Week 5 removed) -->
+      <rect x="392.5" y="0" width="52.5" height="24" fill="#f97316" />
+      <!-- Week 9 only (Week 10 removed) -->
+      <rect x="655" y="0" width="52.5" height="24" fill="#f97316" />
+      <!-- Week 13 only (Week 14 removed) -->
+      <rect x="865" y="0" width="52.5" height="24" fill="#f97316" />
     </g>
 
     <!-- ROW 7: Design Initial Wireframes (W6-W7, W10-W11, W14-W15) -->
