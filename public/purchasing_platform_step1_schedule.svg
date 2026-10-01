@@ -294,21 +294,21 @@
       <text x="366.25" y="12" class="bar-marker">•</text>
     </g>
 
-    <!-- ROW 5: Analysis Story Development (W4-W5, W9-W10, W13-W14) -->
+    <!-- ROW 5: Analysis Story Development (Weeks 5, 10, and 14 removed: active in W4, W9, W13) -->
     <g transform="translate(0, 120)">
-      <rect x="392.5" y="0" width="105" height="24" fill="#fbc02d" />
-      <rect x="655" y="0" width="105" height="24" fill="#fbc02d" />
-      <rect x="865" y="0" width="105" height="24" fill="#fbc02d" />
+      <rect x="392.5" y="0" width="52.5" height="24" fill="#fbc02d" />
+      <rect x="655" y="0" width="52.5" height="24" fill="#fbc02d" />
+      <rect x="865" y="0" width="52.5" height="24" fill="#fbc02d" />
     </g>
 
-    <!-- ROW 6: Design User Flows (Weeks 5, 10, and 14 REMOVED: active only in W4, W9, W13) -->
+    <!-- ROW 6: Design User Flows (Moved to W5, W10, W14) -->
     <g transform="translate(0, 144)">
-      <!-- Week 4 only (Week 5 removed) -->
-      <rect x="392.5" y="0" width="52.5" height="24" fill="#f97316" />
-      <!-- Week 9 only (Week 10 removed) -->
-      <rect x="655" y="0" width="52.5" height="24" fill="#f97316" />
-      <!-- Week 13 only (Week 14 removed) -->
-      <rect x="865" y="0" width="52.5" height="24" fill="#f97316" />
+      <!-- Week 5 -->
+      <rect x="445" y="0" width="52.5" height="24" fill="#f97316" />
+      <!-- Week 10 -->
+      <rect x="707.5" y="0" width="52.5" height="24" fill="#f97316" />
+      <!-- Week 14 -->
+      <rect x="917.5" y="0" width="52.5" height="24" fill="#f97316" />
     </g>
 
     <!-- ROW 7: Design Initial Wireframes (W6-W7, W10-W11, W14-W15) -->
