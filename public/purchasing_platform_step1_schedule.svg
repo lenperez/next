@@ -334,25 +334,45 @@
       <rect x="970" y="0" width="52.5" height="24" fill="#ea580c" />
     </g>
 
-    <!-- ROW 9: Research User Testing (W7-W8, W10-W11, W15-W16) -->
+    <!-- ROW 9: Research User Testing (W7, W11, W15) -->
     <g transform="translate(0, 216)">
-      <rect x="550" y="0" width="105" height="24" fill="#689f38" />
-      <rect x="707.5" y="0" width="105" height="24" fill="#689f38" />
-      <rect x="970" y="0" width="105" height="24" fill="#689f38" />
+      <!-- Week 7 -->
+      <rect x="550" y="0" width="52.5" height="24" fill="#689f38" />
+      <!-- Week 11 -->
+      <rect x="760" y="0" width="52.5" height="24" fill="#689f38" />
+      <!-- Week 15 -->
+      <rect x="970" y="0" width="52.5" height="24" fill="#689f38" />
     </g>
 
-    <!-- ROW 10: Design Incorporating Feedback (No bar) -->
-    <!-- (Empty) -->
+    <!-- ROW 10: Design Incorporating Feedback (W8, W12, W16) -->
+    <g transform="translate(0, 240)">
+      <!-- Week 8 -->
+      <rect x="602.5" y="0" width="52.5" height="24" fill="#ea580c" />
+      <!-- Week 12 -->
+      <rect x="812.5" y="0" width="52.5" height="24" fill="#ea580c" />
+      <!-- Week 16 -->
+      <rect x="1022.5" y="0" width="52.5" height="24" fill="#ea580c" />
+    </g>
 
-    <!-- ROW 11: Production Design (W8-W9, W12-W13, W16) -->
+    <!-- ROW 11: Production Design (W8, W12, W16) -->
     <g transform="translate(0, 264)">
-      <rect x="602.5" y="0" width="105" height="24" fill="#e53935" />
-      <rect x="812.5" y="0" width="105" height="24" fill="#e53935" />
+      <!-- Week 8 -->
+      <rect x="602.5" y="0" width="52.5" height="24" fill="#e53935" />
+      <!-- Week 12 -->
+      <rect x="812.5" y="0" width="52.5" height="24" fill="#e53935" />
+      <!-- Week 16 -->
       <rect x="1022.5" y="0" width="52.5" height="24" fill="#e53935" />
     </g>
 
-    <!-- ROW 12: Production Final Documentation to DEV (No bar) -->
-    <!-- (Empty) -->
+    <!-- ROW 12: Production Final Documentation to DEV (W8, W12, W16) -->
+    <g transform="translate(0, 288)">
+      <!-- Week 8 -->
+      <rect x="602.5" y="0" width="52.5" height="24" fill="#e53935" />
+      <!-- Week 12 -->
+      <rect x="812.5" y="0" width="52.5" height="24" fill="#e53935" />
+      <!-- Week 16 -->
+      <rect x="1022.5" y="0" width="52.5" height="24" fill="#e53935" />
+    </g>
   </g>
 
   <!-- LEGEND & FOOTNOTES -->
