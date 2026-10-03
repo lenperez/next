@@ -188,10 +188,10 @@
         <text x="6" y="19.5" class="task-data">Site Components Heuristics</text>
       </g>
 
-      <!-- ROW 2: Research Comparative -->
+      <!-- ROW 2: Analysis Personas -->
       <g transform="translate(0, 48)">
-        <text x="6" y="9.5" class="task-label" fill="#558b2f">Research:</text>
-        <text x="6" y="19.5" class="task-data">Comparative / Competitive Analysis</text>
+        <text x="6" y="9.5" class="task-label" fill="#f59e0b">Analysis:</text>
+        <text x="6" y="19.5" class="task-data">Personas</text>
       </g>
 
       <!-- ROW 3: Research Users -->
@@ -200,10 +200,10 @@
         <text x="6" y="19.5" class="task-data">Users (Interview/Observe/Survey/Contact)</text>
       </g>
 
-      <!-- ROW 4: Analysis Personas -->
+      <!-- ROW 4: Research Comparative -->
       <g transform="translate(0, 96)">
-        <text x="6" y="9.5" class="task-label" fill="#f59e0b">Analysis:</text>
-        <text x="6" y="19.5" class="task-data">Personas</text>
+        <text x="6" y="9.5" class="task-label" fill="#558b2f">Research:</text>
+        <text x="6" y="19.5" class="task-data">Comparative / Competitive Analysis</text>
       </g>
 
       <!-- ROW 5: Analysis Story Development -->
@@ -269,17 +269,10 @@
       <text x="313.75" y="12" class="bar-marker">•</text>
     </g>
 
-    <!-- ROW 2: Research Comparative (Week 5 and Week 10 REMOVED: active only in W4, W9, W13) -->
+    <!-- ROW 2: Analysis Personas (W3) -->
     <g transform="translate(0, 48)">
-      <!-- Week 4 only -->
-      <rect x="392.5" y="0" width="52.5" height="24" fill="#689f38" />
-      <text x="418.75" y="12" class="bar-marker">•</text>
-      <!-- Week 9 only (Week 10 removed) -->
-      <rect x="655" y="0" width="52.5" height="24" fill="#689f38" />
-      <text x="681.25" y="12" class="bar-marker">o</text>
-      <!-- Week 13 only -->
-      <rect x="865" y="0" width="52.5" height="24" fill="#689f38" />
-      <text x="891.25" y="12" class="bar-marker">o</text>
+      <rect x="340" y="0" width="52.5" height="24" fill="#fbc02d" />
+      <text x="366.25" y="12" class="bar-marker">•</text>
     </g>
 
     <!-- ROW 3: Research Users (W3) -->
@@ -288,10 +281,17 @@
       <text x="366.25" y="12" class="bar-marker">•</text>
     </g>
 
-    <!-- ROW 4: Analysis Personas (W3) -->
+    <!-- ROW 4: Research Comparative (active in W4, W9, W13) -->
     <g transform="translate(0, 96)">
-      <rect x="340" y="0" width="52.5" height="24" fill="#fbc02d" />
-      <text x="366.25" y="12" class="bar-marker">•</text>
+      <!-- Week 4 only -->
+      <rect x="392.5" y="0" width="52.5" height="24" fill="#689f38" />
+      <text x="418.75" y="12" class="bar-marker">•</text>
+      <!-- Week 9 only -->
+      <rect x="655" y="0" width="52.5" height="24" fill="#689f38" />
+      <text x="681.25" y="12" class="bar-marker">o</text>
+      <!-- Week 13 only -->
+      <rect x="865" y="0" width="52.5" height="24" fill="#689f38" />
+      <text x="891.25" y="12" class="bar-marker">o</text>
     </g>
 
     <!-- ROW 5: Analysis Story Development (Weeks 5, 10, and 14 removed: active in W4, W9, W13) -->
@@ -311,21 +311,27 @@
       <rect x="917.5" y="0" width="52.5" height="24" fill="#f97316" />
     </g>
 
-    <!-- ROW 7: Design Initial Wireframes (W6-W7, W10-W11, W14-W15) -->
+    <!-- ROW 7: Design Initial Wireframes (W5-W6, W10, W14) -->
     <g transform="translate(0, 168)">
-      <rect x="497.5" y="0" width="105" height="24" fill="#ea580c" />
-      <rect x="707.5" y="0" width="105" height="24" fill="#ea580c" />
-      <rect x="917.5" y="0" width="105" height="24" fill="#ea580c" />
+      <!-- Weeks 5-6 -->
+      <rect x="445" y="0" width="105" height="24" fill="#ea580c" />
+      <!-- Week 10 -->
+      <rect x="707.5" y="0" width="52.5" height="24" fill="#ea580c" />
+      <!-- Week 14 -->
+      <rect x="917.5" y="0" width="52.5" height="24" fill="#ea580c" />
     </g>
 
     <!-- TEAL DIVIDER LINE: potential start of DEV involvement -->
     <line x1="0" y1="192" x2="1075" y2="192" stroke="#00acc1" stroke-width="2" />
 
-    <!-- ROW 8: Design Interactive Prototype (W7-W8, W11-W12, W15-W16) -->
+    <!-- ROW 8: Design Interactive Prototype (W6-W7, W11, W15) -->
     <g transform="translate(0, 192)">
-      <rect x="550" y="0" width="105" height="24" fill="#ea580c" />
-      <rect x="760" y="0" width="105" height="24" fill="#ea580c" />
-      <rect x="970" y="0" width="105" height="24" fill="#ea580c" />
+      <!-- Weeks 6-7 -->
+      <rect x="497.5" y="0" width="105" height="24" fill="#ea580c" />
+      <!-- Week 11 -->
+      <rect x="760" y="0" width="52.5" height="24" fill="#ea580c" />
+      <!-- Week 15 -->
+      <rect x="970" y="0" width="52.5" height="24" fill="#ea580c" />
     </g>
 
     <!-- ROW 9: Research User Testing (W7-W8, W10-W11, W15-W16) -->

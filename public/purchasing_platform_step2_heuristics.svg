@@ -1,0 +1,664 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" style="background:#071a2d; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Deep Navy Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a2a47" />
+      <stop offset="45%" stop-color="#0c2338" />
+      <stop offset="85%" stop-color="#061624" />
+      <stop offset="100%" stop-color="#030c14" />
+    </linearGradient>
+
+    <!-- Cyan Corner Geometry Gradients -->
+    <linearGradient id="cyanTopRight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+
+    <linearGradient id="cyanBottomLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Deep presentation ambient shadow -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="130%">
+      <feDropShadow dx="-2" dy="22" stdDeviation="26" flood-color="#000000" flood-opacity="0.8" />
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+
+    <filter id="sheetShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="14" dy="18" stdDeviation="20" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <filter id="glowLight" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Clip Path for Right-Hand Heatmap Diagonal Sweep -->
+    <clipPath id="heatmapClip">
+      <path d="M 750,-20 C 710,130 630,260 540,390 C 475,480 405,570 300,700 L 1220,700 L 1220,-20 Z" />
+    </clipPath>
+
+    <!-- Heatmap Radial Gradients matching Image -->
+    <!-- High intensity hot spot: Red core -> Orange -> Yellow -> Green -> Alpha 0 -->
+    <radialGradient id="heatHot">
+      <stop offset="0%" stop-color="#ff0a00" stop-opacity="0.96" />
+      <stop offset="28%" stop-color="#ff3700" stop-opacity="0.9" />
+      <stop offset="52%" stop-color="#ff9a00" stop-opacity="0.8" />
+      <stop offset="74%" stop-color="#76db00" stop-opacity="0.55" />
+      <stop offset="90%" stop-color="#00d655" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#00d655" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Medium intensity spot -->
+    <radialGradient id="heatMed">
+      <stop offset="0%" stop-color="#ff4400" stop-opacity="0.88" />
+      <stop offset="35%" stop-color="#ffaa00" stop-opacity="0.75" />
+      <stop offset="68%" stop-color="#65d400" stop-opacity="0.5" />
+      <stop offset="88%" stop-color="#00bb4a" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#00bb4a" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Low intensity green / lime glow -->
+    <radialGradient id="heatLow">
+      <stop offset="0%" stop-color="#73e600" stop-opacity="0.82" />
+      <stop offset="42%" stop-color="#40cf29" stop-opacity="0.55" />
+      <stop offset="78%" stop-color="#05a83b" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#05a83b" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Soft diffuse green for navigation rail -->
+    <radialGradient id="heatRail">
+      <stop offset="0%" stop-color="#84e805" stop-opacity="0.72" />
+      <stop offset="50%" stop-color="#40cf29" stop-opacity="0.48" />
+      <stop offset="80%" stop-color="#029e36" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#029e36" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Diagonal glow divider gradient -->
+    <linearGradient id="dividerBeam" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95" />
+      <stop offset="28%" stop-color="#fef08a" stop-opacity="1" />
+      <stop offset="48%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="72%" stop-color="#6ee7b7" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.5" />
+    </linearGradient>
+
+    <linearGradient id="dividerGlow" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0" />
+      <stop offset="20%" stop-color="#38bdf8" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#fde047" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#4ade80" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- ======================================================== -->
+  <!-- PRESENTATION BACKGROUND CANVAS -->
+  <!-- ======================================================== -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+
+  <!-- SHARP CYAN ANGLED GEOMETRIC CORNERS (Matching presentation slide) -->
+  <!-- Top Right Cyan Wedge -->
+  <polygon points="760,0 1200,0 1200,175" fill="url(#cyanTopRight)" />
+  <line x1="760" y1="0" x2="1200" y2="175" stroke="#38bdf8" stroke-width="2.5" opacity="0.85" />
+
+  <!-- Bottom Left Cyan Wedge -->
+  <polygon points="0,520 270,675 0,675" fill="url(#cyanBottomLeft)" />
+  <line x1="0" y1="520" x2="270" y2="675" stroke="#38bdf8" stroke-width="2.5" opacity="0.85" />
+
+  <!-- ======================================================== -->
+  <!-- LAYER 1: UNDERLAY SHEET (Tilted Top Right) -->
+  <!-- ======================================================== -->
+  <g transform="translate(690, 18) rotate(12.5)" filter="url(#sheetShadow)">
+    <rect width="470" height="610" rx="3" fill="#ffffff" />
+    <!-- Header with p* purchasing platform logo -->
+    <g transform="translate(360, 20)">
+      <rect x="0" y="0" width="18" height="18" rx="2.5" fill="#0284c7" />
+      <text x="9" y="13" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+      <text x="24" y="9" font-size="9" font-weight="bold" fill="#0f172a">purchasing</text>
+      <text x="24" y="17" font-size="7" fill="#64748b">platform</text>
+    </g>
+    <!-- Document lines sketches -->
+    <line x1="30" y1="65" x2="440" y2="65" stroke="#cbd5e1" stroke-width="1.5" />
+    <line x1="30" y1="90" x2="300" y2="90" stroke="#e2e8f0" stroke-width="2.5" />
+    <line x1="30" y1="115" x2="410" y2="115" stroke="#e2e8f0" stroke-width="2.5" />
+    <line x1="30" y1="140" x2="350" y2="140" stroke="#e2e8f0" stroke-width="2.5" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- LAYER 2: UNDERLAY SHEET (Appendix - Tilted Left) -->
+  <!-- ======================================================== -->
+  <g transform="translate(10, 68) rotate(-5)" filter="url(#sheetShadow)">
+    <rect width="640" height="570" rx="3" fill="#ffffff" />
+    <text x="32" y="38" font-size="21" font-weight="bold" fill="#0284c7">Appendix</text>
+    <text x="32" y="58" font-size="12" font-weight="bold" fill="#64748b">A.1</text>
+
+    <!-- Orange circular badges on left margin -->
+    <circle cx="28" cy="180" r="14" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
+    <text x="28" y="184.5" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">13</text>
+    <circle cx="28" cy="245" r="14" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
+    <text x="28" y="249.5" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">11</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- MAIN PRESENTATION CANVAS (Top Layer: Heuristic + Heatmap) -->
+  <!-- ======================================================== -->
+  <g id="mainComposite" filter="url(#cardShadow)">
+    <!-- Base Paper Sheet (Tilted gently by -1 deg matching presentation) -->
+    <g transform="translate(38, 25) rotate(-1)">
+      <!-- Outer White Canvas -->
+      <rect x="0" y="0" width="1125" height="625" fill="#ffffff" />
+
+      <!-- ======================================================== -->
+      <!-- LEFT HALF: HEURISTIC AUDIT REPORT -->
+      <!-- ======================================================== -->
+      <g id="leftAuditSide">
+        <!-- DOCUMENT HEADER (Top Right of sheet) -->
+        <g transform="translate(565, 16)">
+          <rect x="0" y="0" width="22" height="22" rx="3" fill="#0284c7" />
+          <text x="11" y="15.5" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+          <text x="28" y="11" font-size="10.5" font-weight="bold" fill="#0f172a">purchasing</text>
+          <text x="28" y="21" font-size="8.5" fill="#64748b">platform</text>
+        </g>
+
+        <!-- LEFT: ECOMMERCE DESKTOP BROWSER INTERFACE -->
+        <g transform="translate(25, 40)">
+          <!-- Browser Window Wrapper -->
+          <rect x="0" y="0" width="365" height="495" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+
+          <!-- Browser Header: Logo + Search -->
+          <g transform="translate(10, 10)">
+            <!-- Purchasing Platform Logo -->
+            <rect x="0" y="0" width="15" height="15" rx="2.5" fill="#0284c7" />
+            <text x="7.5" y="11" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+            <text x="18" y="7.5" font-size="7" font-weight="bold" fill="#0f172a">purchasing</text>
+            <text x="18" y="14" font-size="6" fill="#64748b">platform</text>
+
+            <!-- Top Links -->
+            <text x="135" y="11" font-size="6" fill="#475569">Commerce page</text>
+            <text x="195" y="11" font-size="6" fill="#475569">Features</text>
+            <text x="235" y="11" font-size="6" fill="#475569">Reports</text>
+            <text x="272" y="11" font-size="6" fill="#0284c7" font-weight="bold">Login</text>
+          </g>
+
+          <!-- Search Bar Banner (Teal) -->
+          <g transform="translate(8, 32)">
+            <rect x="0" y="0" width="348" height="24" rx="2" fill="#00738c" />
+            <!-- Search Input Box -->
+            <rect x="5" y="3" width="275" height="18" rx="2" fill="#ffffff" />
+            <text x="12" y="15" font-size="7" fill="#94a3b8">Search e-commerce platform...</text>
+            <!-- Search Submit Button -->
+            <rect x="284" y="3" width="58" height="18" rx="2" fill="#65a30d" />
+            <text x="313" y="15" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">Search</text>
+          </g>
+
+          <!-- Catalog Body: Sidebar + Grid -->
+          <g transform="translate(8, 65)">
+            <!-- SIDEBAR (Categories) -->
+            <g transform="translate(0, 0)">
+              <text x="0" y="8" font-size="7.5" font-weight="bold" fill="#1e293b">Products</text>
+              <!-- Category items -->
+              <g font-size="5" fill="#475569">
+                <text x="0" y="18">All items</text>
+                <text x="0" y="26">Accessories</text>
+                <text x="0" y="34">Breakroom</text>
+                <text x="0" y="42">Building Materials</text>
+                <text x="0" y="50">Cleaning &amp; Janitorial</text>
+                <text x="0" y="58">Doors &amp; Windows</text>
+                <text x="0" y="66">Electrical</text>
+                <text x="0" y="74">Fitness &amp; Exercise</text>
+                <text x="0" y="82">Furniture</text>
+                <text x="0" y="90">Hardware &amp; Tools</text>
+                <text x="0" y="98">Heating &amp; Cooling</text>
+                <text x="0" y="106">Internal Finishings</text>
+                <text x="0" y="114">Lawn &amp; Garden</text>
+                <text x="0" y="122">Lighting &amp; Fans</text>
+                <text x="0" y="130">Manufactured Housing</text>
+                <text x="0" y="138">Material Handling</text>
+                <text x="0" y="146">Office Supplies</text>
+                <text x="0" y="154">Paint</text>
+                <text x="0" y="162">Plumbing</text>
+                <text x="0" y="170">Pool &amp; Patio</text>
+                <text x="0" y="178">Safety &amp; Security</text>
+                <text x="0" y="186">Technology</text>
+              </g>
+
+              <text x="0" y="202" font-size="7.5" font-weight="bold" fill="#1e293b">Services</text>
+              <g font-size="5" fill="#475569">
+                <text x="0" y="212">Flooring</text>
+                <text x="0" y="220">Paving</text>
+                <text x="0" y="228">Refuse</text>
+              </g>
+
+              <text x="0" y="245" font-size="7.5" font-weight="bold" fill="#1e293b">Favorites</text>
+            </g>
+
+            <!-- VERTICAL DIVIDER -->
+            <line x1="65" y1="0" x2="65" y2="405" stroke="#e2e8f0" stroke-width="1" />
+
+            <!-- PRODUCT GRID (4 columns x 4 rows) -->
+            <g transform="translate(74, 0)">
+              <!-- ROW 1 -->
+              <!-- Grill -->
+              <g transform="translate(0, 0)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="11" y="9" width="33" height="25" fill="#ea580c" opacity="0.85" rx="1" />
+                <rect x="15" y="13" width="25" height="13" fill="#ffffff" opacity="0.9" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">VR Burner</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$149.00</text>
+              </g>
+
+              <!-- Microwave -->
+              <g transform="translate(65, 0)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="9" y="11" width="37" height="21" rx="1" fill="#64748b" />
+                <rect x="13" y="14" width="21" height="15" fill="#94a3b8" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Pro Microwave</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$289.00</text>
+              </g>
+
+              <!-- Waste container -->
+              <g transform="translate(130, 0)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="17" y="9" width="21" height="25" rx="4" fill="#475569" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Trash Can</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$44.50</text>
+              </g>
+
+              <!-- Stove -->
+              <g transform="translate(195, 0)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="13" y="7" width="29" height="27" rx="1" fill="#334155" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Kitchen Unit</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$820.00</text>
+              </g>
+
+              <!-- ROW 2 -->
+              <!-- Cleaning spray -->
+              <g transform="translate(0, 65)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="21" y="11" width="13" height="23" rx="2" fill="#0284c7" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Spray Cleaner</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$12.99</text>
+              </g>
+
+              <!-- Sanitizer -->
+              <g transform="translate(65, 65)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="19" y="9" width="17" height="25" rx="5" fill="#059669" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Sanitizer</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$18.50</text>
+              </g>
+
+              <!-- Smoke Detector Alarm -->
+              <g transform="translate(130, 65)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <circle cx="27.5" cy="21" r="13" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5" />
+                <circle cx="27.5" cy="21" r="4" fill="#0284c7" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Smoke Sensor</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$32.00</text>
+              </g>
+
+              <!-- Copy Paper Box -->
+              <g transform="translate(195, 65)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="11" y="11" width="33" height="21" rx="1" fill="#dc2626" />
+                <rect x="11" y="17" width="33" height="4" fill="#ffffff" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Copy Paper</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$48.00</text>
+              </g>
+
+              <!-- ROW 3 -->
+              <!-- Patio furniture -->
+              <g transform="translate(0, 130)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="13" y="11" width="29" height="21" rx="2" fill="#b45309" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Patio Set</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$185.00</text>
+              </g>
+
+              <!-- Lighting Spiral Bulb -->
+              <g transform="translate(65, 130)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <path d="M 23,13 C 23,7 32,7 32,13 L 31,25 L 24,25 Z" fill="#fef08a" stroke="#ca8a04" stroke-width="0.8" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">CFL Lamp</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$6.25</text>
+              </g>
+
+              <!-- Breakroom Coffee Tin -->
+              <g transform="translate(130, 130)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="13" y="9" width="29" height="23" rx="2" fill="#b91c1c" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Breakroom</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$28.00</text>
+              </g>
+
+              <!-- Paper Towels -->
+              <g transform="translate(195, 130)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="11" y="13" width="33" height="19" rx="1" fill="#d97706" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Paper Towels</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$29.50</text>
+              </g>
+
+              <!-- ROW 4 -->
+              <!-- STOP Sign -->
+              <g transform="translate(0, 195)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <polygon points="27.5,7 42,13 42,29 27.5,35 13,29 13,13" fill="#dc2626" />
+                <text x="27.5" y="23" font-size="5" font-weight="900" fill="#ffffff" text-anchor="middle">STOP</text>
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Signs</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$22.00</text>
+              </g>
+
+              <!-- Paint -->
+              <g transform="translate(65, 195)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="17" y="11" width="21" height="23" rx="2" fill="#e2e8f0" stroke="#64748b" stroke-width="1" />
+                <rect x="17" y="15" width="21" height="6" fill="#38bdf8" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Paint</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$39.00</text>
+              </g>
+
+              <!-- Ink & Toner -->
+              <g transform="translate(130, 195)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <rect x="15" y="11" width="25" height="23" rx="2" fill="#0284c7" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Ink &amp; Toner</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$65.00</text>
+              </g>
+
+              <!-- Faucet -->
+              <g transform="translate(195, 195)">
+                <rect x="0" y="0" width="55" height="55" rx="2" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" />
+                <path d="M 23,33 L 23,17 C 23,11 34,11 34,19 L 34,23" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" />
+                <text x="27.5" y="44" font-size="5" fill="#334155" text-anchor="middle">Plumbing</text>
+                <text x="27.5" y="51" font-size="4.5" fill="#64748b" text-anchor="middle">$115.00</text>
+              </g>
+            </g>
+          </g>
+
+          <!-- NUMBERED CALLOUT BADGES (Amber Orange with white border) matching Image -->
+          <!-- Badge 1: Top Search / Promo -->
+          <g transform="translate(230, 24)">
+            <circle cx="9" cy="9" r="8" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
+            <text x="9" y="12.5" font-size="9.5" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+          </g>
+
+          <!-- Badge 2: Product organization / top sellers -->
+          <g transform="translate(238, 118)">
+            <circle cx="9" cy="9" r="8" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
+            <text x="9" y="12.5" font-size="9.5" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+          </g>
+
+          <!-- Badge 4: Center Product Grid (Patio) -->
+          <g transform="translate(180, 185)">
+            <circle cx="9" cy="9" r="8" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
+            <text x="9" y="12.5" font-size="9.5" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+          </g>
+
+          <!-- Badge 3: Services Section -->
+          <g transform="translate(56, 262)">
+            <circle cx="9" cy="9" r="8" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
+            <text x="9" y="12.5" font-size="9.5" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+          </g>
+
+          <!-- Badge 4: Favorites Section -->
+          <g transform="translate(56, 305)">
+            <circle cx="9" cy="9" r="8" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
+            <text x="9" y="12.5" font-size="9.5" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+          </g>
+
+          <!-- Footer Copyright on Document matching Image -->
+          <text x="10" y="485" font-size="6" fill="#94a3b8">© 2019 Purchasing Platform LLC</text>
+        </g>
+
+        <!-- AUDIT FINDINGS & RECOMMENDATIONS TEXT (Right of Desktop Window) matching uploaded image text -->
+        <g transform="translate(422, 58)">
+          <!-- Finding 1 -->
+          <g transform="translate(0, 0)">
+            <text x="0" y="10" font-size="8.5" font-weight="bold" fill="#0f172a">1</text>
+            <text x="15" y="10" font-size="7.5" fill="#1e293b">
+              The scarcity of promotion on an commerce site is
+            </text>
+            <text x="15" y="21" font-size="7.5" fill="#1e293b">
+              rare, res lilled to highlight certain cemens means
+            </text>
+            <text x="15" y="32" font-size="7.5" fill="#1e293b">
+              from your offerage oheneves appropriate.
+            </text>
+            <!-- Recommendation 1 (Green) -->
+            <text x="15" y="45" font-size="7.5" font-weight="bold" fill="#15803d">
+              Recommendation: <tspan font-weight="normal" fill="#166534">Use a promotional secton to</tspan>
+            </text>
+            <text x="15" y="56" font-size="7.5" fill="#166534">
+              execuion is page. Ideally above this this close to
+            </text>
+            <text x="15" y="67" font-size="7.5" fill="#166534">
+              the top.
+            </text>
+          </g>
+
+          <!-- Finding 2 -->
+          <g transform="translate(0, 92)">
+            <text x="0" y="10" font-size="8.5" font-weight="bold" fill="#0f172a">2</text>
+            <text x="15" y="10" font-size="7.5" fill="#1e293b">
+              This section is unbalated, at the organization is
+            </text>
+            <text x="15" y="21" font-size="7.5" fill="#1e293b">
+              questionable. After review this look like it's ordered
+            </text>
+            <text x="15" y="32" font-size="7.5" fill="#1e293b">
+              by the 'top sellers'. This iss great idea, but the
+            </text>
+            <text x="15" y="43" font-size="7.5" fill="#1e293b">
+              execution is spane and the greae could be used
+            </text>
+            <text x="15" y="54" font-size="7.5" fill="#1e293b">
+              more effectively in recommenn with other parts of
+            </text>
+            <text x="15" y="65" font-size="7.5" fill="#1e293b">
+              the landing page.
+            </text>
+            <!-- Recommendation 2 (Green) -->
+            <text x="15" y="78" font-size="7.5" font-weight="bold" fill="#15803d">
+              Recommendation: <tspan font-weight="normal" fill="#166534">Label the section</tspan>
+            </text>
+            <text x="15" y="89" font-size="7.5" fill="#166534">
+              appropriately, and reduce to also allowing
+            </text>
+            <text x="15" y="100" font-size="7.5" fill="#166534">
+              other sections in make vair of valuable
+            </text>
+            <text x="15" y="111" font-size="7.5" fill="#166534">
+              entate, delete the fold and otherwise.
+            </text>
+          </g>
+
+          <!-- Finding 3 -->
+          <g transform="translate(0, 235)">
+            <text x="0" y="10" font-size="8.5" font-weight="bold" fill="#0f172a">3</text>
+            <text x="15" y="10" font-size="7.5" fill="#1e293b">
+              Some images are loading slowly. T...
+            </text>
+            <text x="15" y="21" font-size="7.5" fill="#1e293b">
+              optimizing them for different di...
+            </text>
+            <!-- Recommendation 3 (Green) -->
+            <text x="15" y="34" font-size="7.5" font-weight="bold" fill="#15803d">
+              Recommendation: <tspan font-weight="normal" fill="#166534">Optimiz...</tspan>
+            </text>
+            <text x="15" y="45" font-size="7.5" fill="#166534">
+              being used for distri...
+            </text>
+          </g>
+
+          <!-- Finding 4 -->
+          <g transform="translate(0, 305)">
+            <text x="0" y="10" font-size="8.5" font-weight="bold" fill="#0f172a">4</text>
+            <text x="15" y="10" font-size="7.5" fill="#1e293b">
+              There are man...
+            </text>
+            <text x="15" y="21" font-size="7.5" fill="#1e293b">
+              may not b... asu...
+            </text>
+          </g>
+        </g>
+      </g>
+
+      <!-- ======================================================== -->
+      <!-- RIGHT HALF: HEATMAP OVERLAY (Matching user's image) -->
+      <!-- ======================================================== -->
+      <g id="rightHeatmapSide" clip-path="url(#heatmapClip)">
+        <!-- Neutral Slate Shaded Base matching Image 2 background -->
+        <rect x="0" y="0" width="1125" height="625" fill="#3a4350" />
+
+        <!-- Underneath: Desktop UI Structure visible under heat map -->
+        <g transform="translate(480, 42)">
+          <!-- Top App Bar in Heatmap -->
+          <rect x="0" y="0" width="640" height="38" fill="#1e293b" />
+          <rect x="18" y="9" width="18" height="18" rx="2.5" fill="#0284c7" />
+          <text x="27" y="22" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+          <text x="44" y="18" font-size="9" font-weight="bold" fill="#ffffff">purchasing</text>
+          <text x="44" y="27" font-size="7" fill="#94a3b8">platform</text>
+
+          <!-- Top Nav Links in Heatmap -->
+          <text x="230" y="23" font-size="8" fill="#cbd5e1">Commerce page</text>
+          <text x="325" y="23" font-size="8" fill="#cbd5e1">Features</text>
+          <text x="410" y="23" font-size="8" fill="#cbd5e1">Reports</text>
+          <text x="480" y="23" font-size="8" fill="#38bdf8">Login</text>
+
+          <!-- Subheader / Blue Bar -->
+          <rect x="0" y="38" width="640" height="32" fill="#005f73" />
+          <rect x="18" y="44" width="440" height="20" rx="2" fill="#ffffff" opacity="0.9" />
+          <rect x="465" y="44" width="80" height="20" rx="2" fill="#65a30d" />
+          <text x="505" y="58" font-size="8.5" font-weight="bold" fill="#ffffff" text-anchor="middle">Search</text>
+
+          <!-- Sidebar Navigation in Heatmap -->
+          <g transform="translate(18, 88)">
+            <text x="0" y="11" font-size="10" font-weight="bold" fill="#cbd5e1">Products</text>
+            <!-- Vertical list items matching Image -->
+            <rect x="0" y="22" width="80" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="36" width="75" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="50" width="90" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="64" width="100" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="78" width="85" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="92" width="90" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="106" width="95" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="120" width="80" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="134" width="90" height="7" rx="2" fill="#475569" opacity="0.6" />
+
+            <text x="0" y="168" font-size="10" font-weight="bold" fill="#cbd5e1">Services</text>
+            <rect x="0" y="180" width="75" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="194" width="65" height="7" rx="2" fill="#475569" opacity="0.6" />
+            <rect x="0" y="208" width="85" height="7" rx="2" fill="#475569" opacity="0.6" />
+
+            <text x="0" y="240" font-size="10" font-weight="bold" fill="#cbd5e1">Favorites</text>
+          </g>
+
+          <!-- Product Grid Items in Heatmap -->
+          <g transform="translate(155, 88)">
+            <!-- Row 1 Cards: Grill, Microwave, Waste, Stove -->
+            <rect x="0" y="0" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="105" y="0" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="210" y="0" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="315" y="0" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+
+            <!-- Row 2 Cards -->
+            <rect x="0" y="110" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="105" y="110" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="210" y="110" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="315" y="110" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+
+            <!-- Row 3 Cards -->
+            <rect x="0" y="220" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="105" y="220" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="210" y="220" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="315" y="220" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+
+            <!-- Row 4 Cards -->
+            <rect x="0" y="330" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="105" y="330" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="210" y="330" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+            <rect x="315" y="330" width="90" height="90" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1" />
+          </g>
+
+          <!-- Bottom Footer Bar in Heatmap -->
+          <g transform="translate(0, 530)">
+            <rect x="0" y="0" width="640" height="28" fill="#0f172a" />
+            <text x="18" y="17" font-size="6" fill="#64748b">© 2012 - 2016 Purchasing Platform LLC. All rights reserved.</text>
+            <rect x="545" y="4" width="70" height="19" rx="2" fill="#166534" />
+            <text x="580" y="16.5" font-size="7" fill="#ffffff" text-anchor="middle">Contact us!</text>
+          </g>
+        </g>
+
+        <!-- ======================================================== -->
+        <!-- HEATMAP GLOWING BLOBS & HOT SPOTS (Exact match to Image) -->
+        <!-- ======================================================== -->
+        <!-- 1. Top Navigation Hot Spots (4 distinct red points on right) -->
+        <circle cx="740" cy="62" r="36" fill="url(#heatHot)" />
+        <circle cx="815" cy="62" r="40" fill="url(#heatHot)" />
+        <circle cx="885" cy="62" r="38" fill="url(#heatHot)" />
+        <circle cx="955" cy="62" r="42" fill="url(#heatHot)" />
+
+        <!-- 2. Search Bar Hot Spots -->
+        <!-- Large intense red/orange spot on Search button area -->
+        <circle cx="990" cy="98" r="52" fill="url(#heatHot)" />
+        <circle cx="945" cy="98" r="44" fill="url(#heatMed)" />
+
+        <!-- 3. Top Product Row Hot Spots (4 huge red spots centered over items) -->
+        <!-- Item 1: Grill -->
+        <circle cx="680" cy="178" r="52" fill="url(#heatHot)" />
+        <!-- Item 2: Microwave -->
+        <circle cx="780" cy="180" r="50" fill="url(#heatHot)" />
+        <!-- Item 3: Waste -->
+        <circle cx="885" cy="178" r="46" fill="url(#heatHot)" />
+        <!-- Item 4: Stove -->
+        <circle cx="985" cy="180" r="48" fill="url(#heatHot)" />
+
+        <!-- 4. Second Product Row Hot Spots (Green/lime attention spots) -->
+        <circle cx="680" cy="288" r="46" fill="url(#heatLow)" />
+        <circle cx="780" cy="292" r="50" fill="url(#heatLow)" />
+        <circle cx="885" cy="288" r="44" fill="url(#heatLow)" />
+
+        <!-- 5. Left Sidebar Vertical Trail (Scanning pattern from Image) -->
+        <circle cx="575" cy="160" r="32" fill="url(#heatRail)" />
+        <circle cx="570" cy="192" r="34" fill="url(#heatRail)" />
+        <circle cx="565" cy="225" r="38" fill="url(#heatRail)" />
+        <circle cx="560" cy="262" r="36" fill="url(#heatRail)" />
+        <circle cx="555" cy="300" r="40" fill="url(#heatRail)" />
+        <circle cx="545" cy="338" r="42" fill="url(#heatRail)" />
+        <circle cx="535" cy="375" r="40" fill="url(#heatRail)" />
+        <circle cx="525" cy="412" r="36" fill="url(#heatRail)" />
+        <circle cx="515" cy="450" r="34" fill="url(#heatRail)" />
+        <circle cx="505" cy="488" r="32" fill="url(#heatRail)" />
+        <circle cx="490" cy="525" r="28" fill="url(#heatRail)" />
+
+        <!-- 6. Bottom Right Carousel Hot Spot -->
+        <circle cx="995" cy="515" r="44" fill="url(#heatMed)" />
+      </g>
+
+      <!-- ======================================================== -->
+      <!-- DYNAMIC DIAGONAL SWEEP DIVIDER (Separating Audit & Heatmap) -->
+      <!-- ======================================================== -->
+      <!-- Broad Ambient Glow behind divider line -->
+      <path d="M 750,-20 C 710,130 630,260 540,390 C 475,480 405,570 300,700" fill="none" stroke="url(#dividerGlow)" stroke-width="26" opacity="0.65" filter="url(#glowLight)" />
+
+      <!-- Secondary Soft Golden Light Beam -->
+      <path d="M 750,-20 C 710,130 630,260 540,390 C 475,480 405,570 300,700" fill="none" stroke="#fef08a" stroke-width="9" opacity="0.8" filter="url(#glowLight)" />
+
+      <!-- Sharp Bright Core Filament -->
+      <path d="M 750,-20 C 710,130 630,260 540,390 C 475,480 405,570 300,700" fill="none" stroke="url(#dividerBeam)" stroke-width="4" />
+      
+      <!-- White Core Specular Highlight -->
+      <path d="M 700,160 C 640,265 565,375 500,455" fill="none" stroke="#ffffff" stroke-width="2.2" opacity="0.95" />
+
+      <!-- Document Outer Frame Border -->
+      <rect x="0" y="0" width="1125" height="625" fill="none" stroke="#334155" stroke-width="1.5" />
+    </g>
+  </g>
+</svg>

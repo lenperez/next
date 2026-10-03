@@ -36,8 +36,8 @@ const mainProjects: Project[] = [
         label: "Heuristic Analysis",
         description:
           "Identified current site pain-points and technical challenges. Evaluated usability against established heuristics to surface interaction gaps.",
-        placeholder: true,
-        placeholderText: "Heuristic Evaluation Artifact",
+        image: "/purchasing_platform_step2_heuristics.svg",
+        imageAlt: "Heuristic Evaluation & Interaction Heatmap Audit — Purchasing Platform",
       },
       {
         label: "Competitive / Comparative Analysis",
