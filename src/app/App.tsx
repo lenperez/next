@@ -37,14 +37,14 @@ const mainProjects: Project[] = [
         description:
           "Identified current site pain-points and technical challenges. Evaluated usability against established heuristics to surface interaction gaps.",
         image: "/purchasing_platform_step2_heuristics.svg",
-        imageAlt: "Heuristic Evaluation & Interaction Heatmap Audit — Purchasing Platform",
+        imageAlt: "Heuristic Evaluation Deck & Usability Audit — Purchasing Platform",
       },
       {
         label: "Competitive / Comparative Analysis",
         description:
           "Gathered insights from market competitors and like-minded establishments to glean best practices and proof-in-practice methodologies.",
-        placeholder: true,
-        placeholderText: "Competitive Matrix Artifact",
+        image: "/purchasing_platform_step3_competitive.svg",
+        imageAlt: "Competitive & Comparative Analysis Deck — Home Depot, Lowes & General Findings",
       },
       {
         label: "Persona Development",

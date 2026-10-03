@@ -1,0 +1,662 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" width="1600" height="720" style="background:#e8eaed; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Card Drop Shadow -->
+    <filter id="backShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000000" flood-opacity="0.16" />
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+
+    <!-- Foreground Center Card Drop Shadow (Elevated over both sides) -->
+    <filter id="frontShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.28" />
+      <feDropShadow dx="-4" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15" />
+      <feDropShadow dx="4" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Light Grey Presentation Canvas -->
+  <rect width="1600" height="720" fill="#e8eaed" />
+
+  <!-- ======================================================== -->
+  <!-- LAYER 1 (LEFT SHEET): Home Depot Analysis -->
+  <!-- ======================================================== -->
+  <g id="leftSheetHomeDepot" transform="translate(40, 36)" filter="url(#backShadow)">
+    <!-- White Paper Sheet -->
+    <rect width="665" height="520" rx="3" fill="#ffffff" stroke="#d1d5db" stroke-width="0.8" />
+
+    <!-- Top Right Logo -->
+    <g transform="translate(585, 18)">
+      <rect x="0" y="0" width="16" height="16" rx="2" fill="#0284c7" />
+      <text x="8" y="11" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+      <text x="20" y="8" font-size="7.5" font-weight="bold" fill="#0f172a">purchasing</text>
+      <text x="20" y="15" font-size="6" fill="#64748b">platform</text>
+    </g>
+
+    <!-- Header Section on Right -->
+    <g transform="translate(365, 42)">
+      <text x="0" y="20" font-size="22" font-weight="bold" fill="#0284c7">Home Depot</text>
+      <text x="0" y="36" font-size="11" font-weight="bold" fill="#64748b" letter-spacing="0.5">LANDING / NAVIGATION / CATEGORY</text>
+      <text x="0" y="55" font-size="7.5" fill="#334155" width="270">Home Depot is also in the MRO business, with a surprisingly</text>
+      <text x="0" y="66" font-size="7.5" fill="#334155">different take on organization and promotions than Grainger.</text>
+
+      <!-- Findings List -->
+      <g transform="translate(0, 85)">
+        <!-- Finding 1 -->
+        <text x="0" y="10" font-size="8" font-weight="bold" fill="#1e293b">1.</text>
+        <text x="16" y="10" font-size="8" font-weight="bold" fill="#1e293b">Landing page:</text>
+        <g font-size="7.2" fill="#475569">
+          <text x="16" y="22">• Header links include: DIY Projects, Pro Xtra, Order Status,</text>
+          <text x="22" y="32">Sign In, Cart, and a Search Field.</text>
+          <text x="16" y="44">• The navigation is open by default on the landing page</text>
+          <text x="22" y="54">and broken up into two sections, categories &amp; misc.</text>
+          <text x="16" y="66">• More than half of the page is dedicated to promotions.</text>
+          <text x="16" y="78">• Followed by the top ten selling categories</text>
+          <text x="16" y="90">• Two more promotions follow below that.</text>
+        </g>
+
+        <!-- Finding 2 -->
+        <g transform="translate(0, 105)">
+          <text x="0" y="10" font-size="8" font-weight="bold" fill="#1e293b">2.</text>
+          <text x="16" y="10" font-size="8" font-weight="bold" fill="#1e293b">Navigation:</text>
+          <g font-size="7.2" fill="#475569">
+            <text x="16" y="22">• Categories and sub-categories are clearly displayed</text>
+            <text x="22" y="32">and abundant, with both as jumping-off points.</text>
+          </g>
+        </g>
+
+        <!-- Finding 3 -->
+        <g transform="translate(0, 150)">
+          <text x="0" y="10" font-size="8" font-weight="bold" fill="#1e293b">3.</text>
+          <text x="16" y="10" font-size="8" font-weight="bold" fill="#1e293b">Category page:</text>
+          <g font-size="7.2" fill="#475569">
+            <text x="16" y="22">• Static promotional section at the top of the page</text>
+            <text x="16" y="34">• Subcategories (ranked by popularity), with images follow</text>
+            <text x="16" y="46">• The left-rail is also a list of sub-categories along</text>
+            <text x="22" y="56">with brands below that.</text>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- LEFT COLUMN: Screen Wireframes (Screen 1, Screen 2, Screen 3) -->
+    <g transform="translate(24, 25)">
+      <!-- SCREEN 1: Tall Landing Page (Left) -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="125" height="465" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8" />
+        <!-- Orange Home Depot Header -->
+        <rect x="3" y="3" width="119" height="14" fill="#f97316" rx="1" />
+        <rect x="6" y="5" width="10" height="10" fill="#ea580c" />
+        <text x="11" y="12" font-size="4" font-weight="900" fill="#ffffff" text-anchor="middle">HD</text>
+        <rect x="20" y="5" width="80" height="10" rx="1" fill="#ffffff" />
+        <text x="23" y="12" font-size="3.5" fill="#94a3b8">What can we help you find?</text>
+
+        <!-- Hero Promo Banner (Brick look) -->
+        <g transform="translate(3, 20)">
+          <rect x="0" y="0" width="119" height="60" fill="#b45309" rx="1" />
+          <text x="6" y="12" font-size="4" font-weight="bold" fill="#ffffff">RECREATE A BRICK LOOK</text>
+          <text x="6" y="18" font-size="3.5" fill="#fef08a">WITH THE DURABILITY OF TILE</text>
+          <rect x="6" y="24" width="36" height="8" rx="1" fill="#ea580c" />
+          <text x="24" y="29.5" font-size="3" font-weight="bold" fill="#ffffff" text-anchor="middle">SHOP NOW</text>
+          <!-- Brick tile photo mockup -->
+          <rect x="52" y="8" width="62" height="46" rx="1" fill="#d97706" opacity="0.8" />
+          <rect x="56" y="12" width="54" height="38" rx="1" fill="#fef3c7" opacity="0.9" />
+        </g>
+
+        <!-- Promo Rows: Appliances / $500 Off -->
+        <g transform="translate(3, 84)">
+          <rect x="0" y="0" width="58" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+          <text x="4" y="8" font-size="3.5" font-weight="bold" fill="#dc2626">10% OFF</text>
+          <text x="4" y="13" font-size="3" fill="#1e293b">APPLIANCES</text>
+          <text x="4" y="18" font-size="2.5" fill="#64748b">$396 OR MORE</text>
+          <rect x="26" y="6" width="28" height="30" rx="1" fill="#e2e8f0" />
+
+          <rect x="61" y="0" width="58" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+          <text x="65" y="8" font-size="3" font-weight="bold" fill="#1e293b">SAVE UP TO</text>
+          <text x="65" y="14" font-size="3.5" font-weight="bold" fill="#ea580c">$500 OFF</text>
+          <rect x="88" y="6" width="28" height="30" rx="1" fill="#cbd5e1" />
+        </g>
+
+        <!-- Window Treatments / Levolor Promo -->
+        <g transform="translate(3, 130)">
+          <rect x="0" y="0" width="38" height="45" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+          <text x="4" y="7" font-size="2.8" font-weight="bold" fill="#dc2626">UP TO 35% OFF</text>
+          <rect x="4" y="14" width="30" height="26" rx="1" fill="#e2e8f0" />
+
+          <rect x="40" y="0" width="38" height="45" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+          <text x="44" y="7" font-size="2.8" font-weight="bold" fill="#0284c7">SAVE ENERGY</text>
+          <rect x="44" y="14" width="30" height="26" rx="1" fill="#e2e8f0" />
+
+          <rect x="80" y="0" width="39" height="45" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+          <text x="84" y="7" font-size="2.8" font-weight="bold" fill="#059669">MARQUEE PAINT</text>
+          <rect x="84" y="14" width="31" height="26" rx="1" fill="#e2e8f0" />
+        </g>
+
+        <!-- Top Selling Categories Grid -->
+        <g transform="translate(3, 180)">
+          <text x="0" y="6" font-size="3.5" font-weight="bold" fill="#1e293b">TOP SELLING CATEGORIES</text>
+          <g transform="translate(0, 10)">
+            <rect x="0" y="0" width="28" height="26" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" />
+            <rect x="30" y="0" width="28" height="26" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" />
+            <rect x="60" y="0" width="28" height="26" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" />
+            <rect x="90" y="0" width="29" height="26" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" />
+
+            <rect x="0" y="28" width="28" height="26" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" />
+            <rect x="30" y="28" width="28" height="26" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" />
+            <rect x="60" y="28" width="28" height="26" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" />
+            <rect x="90" y="28" width="29" height="26" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" />
+          </g>
+        </g>
+
+        <!-- Orange Badge 1 -->
+        <g transform="translate(112, 110)">
+          <circle cx="8" cy="8" r="7" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" />
+          <text x="8" y="10.5" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+        </g>
+      </g>
+
+      <!-- SCREEN 2: Mega Menu Navigation (Top Middle) -->
+      <g transform="translate(136, 0)">
+        <rect x="0" y="0" width="190" height="150" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8" />
+        <!-- Top Nav Bar -->
+        <rect x="3" y="3" width="184" height="14" fill="#f97316" rx="1" />
+        <rect x="6" y="5" width="34" height="10" rx="1" fill="#ea580c" />
+        <text x="23" y="12" font-size="3.5" font-weight="bold" fill="#ffffff" text-anchor="middle">Products v</text>
+        <rect x="44" y="5" width="138" height="10" rx="1" fill="#ffffff" />
+        <text x="48" y="12" font-size="3.5" fill="#94a3b8">What can we help you find?</text>
+
+        <!-- Left Nav Rail (Dark) -->
+        <rect x="3" y="18" width="55" height="128" fill="#334155" />
+        <g font-size="3.2" fill="#cbd5e1">
+          <text x="6" y="28">Appliances</text>
+          <text x="6" y="36" font-weight="bold" fill="#ffffff">Bath &amp; Faucets ></text>
+          <text x="6" y="44">Blinds &amp; Decor</text>
+          <text x="6" y="52">Building Materials</text>
+          <text x="6" y="60">Doors &amp; Windows</text>
+          <text x="6" y="68">Electrical</text>
+          <text x="6" y="76">Flooring &amp; Area Rugs</text>
+          <text x="6" y="84">Heating &amp; Cooling</text>
+          <text x="6" y="92">Kitchen</text>
+          <text x="6" y="100">Lawn &amp; Garden</text>
+          <text x="6" y="108">Lighting &amp; Ceiling Fans</text>
+        </g>
+
+        <!-- Subcategory Columns inside Mega Menu -->
+        <g transform="translate(62, 22)">
+          <!-- Col 1 -->
+          <text x="0" y="6" font-size="3.5" font-weight="bold" fill="#0284c7">BATH FAUCETS</text>
+          <g font-size="3" fill="#475569">
+            <text x="0" y="14">Bathroom Faucets</text>
+            <text x="0" y="20">Shower Faucets</text>
+            <text x="0" y="26">Shower Heads</text>
+          </g>
+          <text x="0" y="38" font-size="3.5" font-weight="bold" fill="#0284c7">VANITIES</text>
+          <g font-size="3" fill="#475569">
+            <text x="0" y="46">Vanities with Tops</text>
+            <text x="0" y="52">Vanities without Tops</text>
+          </g>
+
+          <!-- Col 2 -->
+          <g transform="translate(42, 0)">
+            <text x="0" y="6" font-size="3.5" font-weight="bold" fill="#0284c7">BATHTUBS</text>
+            <g font-size="3" fill="#475569">
+              <text x="0" y="14">Tub &amp; Shower Combos</text>
+              <text x="0" y="20">Freestanding Tubs</text>
+              <text x="0" y="26">Whirlpool Tubs</text>
+            </g>
+            <text x="0" y="38" font-size="3.5" font-weight="bold" fill="#0284c7">ACCESSORIES</text>
+            <g font-size="3" fill="#475569">
+              <text x="0" y="46">Towel Bars</text>
+              <text x="0" y="52">Bathroom Mirrors</text>
+            </g>
+          </g>
+
+          <!-- Col 3 -->
+          <g transform="translate(84, 0)">
+            <text x="0" y="6" font-size="3.5" font-weight="bold" fill="#0284c7">SHOWERS</text>
+            <g font-size="3" fill="#475569">
+              <text x="0" y="14">Shower Doors</text>
+              <text x="0" y="20">Shower Bases</text>
+            </g>
+            <text x="0" y="38" font-size="3.5" font-weight="bold" fill="#0284c7">SINKS</text>
+            <g font-size="3" fill="#475569">
+              <text x="0" y="46">Bathroom Sinks</text>
+            </g>
+          </g>
+        </g>
+
+        <!-- Orange Badge 2 -->
+        <g transform="translate(175, 120)">
+          <circle cx="8" cy="8" r="7" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" />
+          <text x="8" y="10.5" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+        </g>
+      </g>
+
+      <!-- SCREEN 3: Category Page Bath (Bottom Middle) -->
+      <g transform="translate(136, 160)">
+        <rect x="0" y="0" width="190" height="305" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8" />
+        <!-- Header -->
+        <text x="6" y="10" font-size="3" fill="#64748b">Home > Bath</text>
+        <text x="6" y="20" font-size="7" font-weight="bold" fill="#1e293b">Bath</text>
+
+        <!-- Hero Promo Banner (Bath) -->
+        <g transform="translate(48, 14)">
+          <rect x="0" y="0" width="138" height="48" fill="#78716c" rx="1" />
+          <text x="6" y="12" font-size="4" font-weight="bold" fill="#ffffff">SAVE UP TO 40% ON THE</text>
+          <text x="6" y="18" font-size="4" font-weight="bold" fill="#ffffff">PERFECT BATHROOM</text>
+          <rect x="6" y="26" width="34" height="8" rx="1" fill="#ffffff" />
+          <text x="23" y="31.5" font-size="3" font-weight="bold" fill="#1e293b" text-anchor="middle">SHOP BATH SAVINGS</text>
+          <!-- Bathroom photo mockup -->
+          <rect x="76" y="4" width="58" height="40" rx="1" fill="#d6d3d1" />
+        </g>
+
+        <!-- Left Sidebar Categories -->
+        <g transform="translate(6, 28)">
+          <text x="0" y="6" font-size="3.5" font-weight="bold" fill="#1e293b">Browse</text>
+          <g font-size="3" fill="#475569">
+            <text x="0" y="14">Bathroom Accessories</text>
+            <text x="0" y="20">Bathroom Faucets</text>
+            <text x="0" y="26">Bathroom Mirrors</text>
+            <text x="0" y="32">Bathroom Safety</text>
+            <text x="0" y="38">Bathroom Sinks</text>
+            <text x="0" y="44">Bathroom Vanities</text>
+            <text x="0" y="50">Bathtubs &amp; Whirlpools</text>
+            <text x="0" y="56">Showers</text>
+            <text x="0" y="62">Toilets</text>
+          </g>
+        </g>
+
+        <!-- Subcategories Grid -->
+        <g transform="translate(48, 68)">
+          <text x="0" y="6" font-size="3.5" font-weight="bold" fill="#1e293b">EVERYTHING YOU NEED TO UPDATE YOUR BATH</text>
+          <g transform="translate(0, 10)">
+            <!-- Tile 1: Toilets -->
+            <rect x="0" y="0" width="32" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <circle cx="16" cy="14" r="8" fill="#e2e8f0" />
+            <text x="16" y="30" font-size="3" font-weight="bold" fill="#1e293b" text-anchor="middle">Toilets</text>
+
+            <!-- Tile 2: Bathtubs -->
+            <rect x="35" y="0" width="32" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <rect x="40" y="9" width="22" height="12" rx="3" fill="#cbd5e1" />
+            <text x="51" y="30" font-size="3" font-weight="bold" fill="#1e293b" text-anchor="middle">Bathtubs</text>
+
+            <!-- Tile 3: Vanities -->
+            <rect x="70" y="0" width="32" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <rect x="75" y="8" width="22" height="14" fill="#334155" />
+            <text x="86" y="30" font-size="3" font-weight="bold" fill="#1e293b" text-anchor="middle">Vanities</text>
+
+            <!-- Tile 4: Selector tool -->
+            <rect x="105" y="0" width="32" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <rect x="110" y="8" width="22" height="14" fill="#0284c7" opacity="0.8" />
+            <text x="121" y="30" font-size="3" font-weight="bold" fill="#0284c7" text-anchor="middle">Selector Tool</text>
+          </g>
+
+          <!-- Second Subcategory Row -->
+          <g transform="translate(0, 58)">
+            <!-- Faucets -->
+            <rect x="0" y="0" width="32" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <path d="M 12,20 L 12,10 C 12,6 20,6 20,11 L 20,14" fill="none" stroke="#64748b" stroke-width="1.5" />
+            <text x="16" y="30" font-size="3" font-weight="bold" fill="#1e293b" text-anchor="middle">Faucets</text>
+
+            <!-- Sinks -->
+            <rect x="35" y="0" width="32" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <ellipse cx="51" cy="14" rx="10" ry="6" fill="#b45309" opacity="0.8" />
+            <text x="51" y="30" font-size="3" font-weight="bold" fill="#1e293b" text-anchor="middle">Sinks</text>
+
+            <!-- Showers -->
+            <rect x="70" y="0" width="32" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <rect x="76" y="7" width="20" height="16" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.6" />
+            <text x="86" y="30" font-size="3" font-weight="bold" fill="#1e293b" text-anchor="middle">Showers</text>
+
+            <!-- Shower Doors -->
+            <rect x="105" y="0" width="32" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <rect x="111" y="7" width="20" height="16" fill="#38bdf8" opacity="0.5" />
+            <text x="121" y="30" font-size="3" font-weight="bold" fill="#1e293b" text-anchor="middle">Configurator</text>
+          </g>
+        </g>
+
+        <!-- Orange Badge 3 -->
+        <g transform="translate(175, 230)">
+          <circle cx="8" cy="8" r="7" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" />
+          <text x="8" y="10.5" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- LAYER 2 (RIGHT SHEET): Lowes Analysis -->
+  <!-- ======================================================== -->
+  <g id="rightSheetLowes" transform="translate(895, 36)" filter="url(#backShadow)">
+    <!-- White Paper Sheet -->
+    <rect width="665" height="520" rx="3" fill="#ffffff" stroke="#d1d5db" stroke-width="0.8" />
+
+    <!-- Top Right Logo -->
+    <g transform="translate(585, 18)">
+      <rect x="0" y="0" width="16" height="16" rx="2" fill="#0284c7" />
+      <text x="8" y="11" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+      <text x="20" y="8" font-size="7.5" font-weight="bold" fill="#0f172a">purchasing</text>
+      <text x="20" y="15" font-size="6" fill="#64748b">platform</text>
+    </g>
+
+    <!-- Header Section on Right -->
+    <g transform="translate(365, 42)">
+      <text x="0" y="20" font-size="22" font-weight="bold" fill="#0284c7">Lowes</text>
+      <text x="0" y="36" font-size="11" font-weight="bold" fill="#64748b" letter-spacing="0.5">TYPE WITH SUGGESTIONS</text>
+      <text x="0" y="55" font-size="7.5" fill="#334155" width="270">Lowes' search is basic, with a few touches to help in the process.</text>
+
+      <!-- Findings List -->
+      <g transform="translate(0, 78)">
+        <!-- Finding 1 -->
+        <text x="0" y="10" font-size="8" font-weight="bold" fill="#1e293b">1.</text>
+        <text x="16" y="10" font-size="8" font-weight="bold" fill="#1e293b">Search:</text>
+        <g font-size="7.2" fill="#475569">
+          <text x="16" y="22">• Type ahead is broken out into two sections,</text>
+          <text x="22" y="32">Categories and Products.</text>
+          <text x="16" y="44">• Thumbnail images are used for quicker identification.</text>
+          <text x="16" y="56">• The search field is visually distinctive from</text>
+          <text x="22" y="66">the rest of the navigation.</text>
+        </g>
+
+        <!-- Finding 2 -->
+        <g transform="translate(0, 95)">
+          <text x="0" y="10" font-size="8" font-weight="bold" fill="#1e293b">2.</text>
+          <text x="16" y="10" font-size="8" font-weight="bold" fill="#1e293b">Results:</text>
+          <g font-size="7.2" fill="#475569">
+            <text x="16" y="22">• Results are shown in List View by default.</text>
+            <text x="16" y="34">• A tab is given as a quick ability to see what</text>
+            <text x="22" y="44">is immediately available for pick-up.</text>
+            <text x="16" y="56">• The left-hand rail is shown for filtering.</text>
+            <text x="16" y="68">• "Also viewed..." is shown at the bottom for</text>
+            <text x="22" y="78">similar searches.</text>
+            <text x="16" y="90">• The "sort by..." ability is fully displayed by default.</text>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- LEFT COLUMN: Screen Wireframes (Screen 1 & Screen 2) -->
+    <g transform="translate(24, 25)">
+      <!-- SCREEN 1: Lowes Homepage with Autocomplete Search Typeahead -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="155" height="465" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8" />
+        <!-- Dark Blue Lowes Header -->
+        <rect x="3" y="3" width="149" height="16" fill="#004990" rx="1" />
+        <text x="8" y="14" font-size="5" font-weight="bold" fill="#ffffff">LOWE'S</text>
+        <rect x="38" y="4" width="110" height="12" rx="1" fill="#ffffff" />
+        <text x="42" y="12.5" font-size="4" fill="#0f172a">type s mortar</text>
+
+        <!-- Autocomplete Typeahead Dropdown Popup -->
+        <g transform="translate(38, 18)" filter="url(#backShadow)">
+          <rect x="0" y="0" width="112" height="95" rx="1.5" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6" />
+          <text x="6" y="9" font-size="3.5" font-weight="bold" fill="#64748b">CATEGORIES</text>
+          <text x="6" y="18" font-size="3.5" fill="#0284c7">Type S Mortar Mix</text>
+          <text x="6" y="26" font-size="3.5" fill="#0284c7">Mortar &amp; Stucco</text>
+
+          <line x1="4" y1="31" x2="108" y2="31" stroke="#f1f5f9" stroke-width="0.6" />
+          <text x="6" y="38" font-size="3.5" font-weight="bold" fill="#64748b">PRODUCTS</text>
+
+          <!-- Product suggestion 1 with thumbnail -->
+          <g transform="translate(6, 42)">
+            <rect x="0" y="0" width="14" height="14" rx="1" fill="#ea580c" />
+            <text x="18" y="6" font-size="3" font-weight="bold" fill="#1e293b">QUIKRETE Premix 80-lb</text>
+            <text x="18" y="11" font-size="2.8" fill="#64748b">Dry Type S Mortar Mix</text>
+          </g>
+
+          <!-- Product suggestion 2 with thumbnail -->
+          <g transform="translate(6, 60)">
+            <rect x="0" y="0" width="14" height="14" rx="1" fill="#cbd5e1" />
+            <text x="18" y="6" font-size="3" font-weight="bold" fill="#1e293b">Ash Grove 80-lb Dry</text>
+            <text x="18" y="11" font-size="2.8" fill="#64748b">Type S Mortar Mix</text>
+          </g>
+
+          <!-- Product suggestion 3 with thumbnail -->
+          <g transform="translate(6, 78)">
+            <rect x="0" y="0" width="14" height="14" rx="1" fill="#94a3b8" />
+            <text x="18" y="6" font-size="3" font-weight="bold" fill="#1e293b">Sakrete 80-lb Mortar</text>
+            <text x="18" y="11" font-size="2.8" fill="#64748b">High Strength Type S</text>
+          </g>
+        </g>
+
+        <!-- Promo Banner (3 for $12 Preen Mulch) -->
+        <g transform="translate(3, 118)">
+          <rect x="0" y="0" width="149" height="75" fill="#475569" rx="1" />
+          <text x="8" y="20" font-size="8" font-weight="900" fill="#ffffff">3 <tspan font-size="4.5">FOR</tspan> $12</text>
+          <text x="8" y="28" font-size="3.5" fill="#fde047">Preen Mulch Plus With Weed Barrier</text>
+          <!-- Mulch bags graphic mockup -->
+          <rect x="90" y="10" width="52" height="58" rx="2" fill="#d97706" />
+        </g>
+
+        <!-- Product Cards (Save $20 Grill, Save $33 Mower, Save $50 Patio) -->
+        <g transform="translate(3, 198)">
+          <rect x="0" y="0" width="47" height="52" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+          <rect x="6" y="6" width="35" height="28" rx="1" fill="#cbd5e1" />
+          <text x="23" y="44" font-size="3.5" font-weight="bold" fill="#0284c7" text-anchor="middle">SAVE $20</text>
+
+          <rect x="51" y="0" width="47" height="52" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+          <rect x="57" y="6" width="35" height="28" rx="1" fill="#cbd5e1" />
+          <text x="74" y="44" font-size="3.5" font-weight="bold" fill="#0284c7" text-anchor="middle">SAVE $33</text>
+
+          <rect x="102" y="0" width="47" height="52" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+          <rect x="108" y="6" width="35" height="28" rx="1" fill="#cbd5e1" />
+          <text x="125" y="44" font-size="3.5" font-weight="bold" fill="#0284c7" text-anchor="middle">SAVE $50</text>
+        </g>
+
+        <!-- Kobalt Tools Promo -->
+        <g transform="translate(3, 255)">
+          <text x="0" y="6" font-size="3.5" font-weight="bold" fill="#004990">KOBALT SERIOUS SAVINGS EVENT</text>
+          <g transform="translate(0, 10)">
+            <rect x="0" y="0" width="47" height="44" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <text x="23" y="38" font-size="3" font-weight="bold" fill="#dc2626" text-anchor="middle">20% OFF</text>
+            <rect x="51" y="0" width="47" height="44" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <text x="74" y="38" font-size="3" font-weight="bold" fill="#dc2626" text-anchor="middle">20% OFF</text>
+            <rect x="102" y="0" width="47" height="44" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+            <text x="125" y="38" font-size="3" font-weight="bold" fill="#dc2626" text-anchor="middle">30% OFF</text>
+          </g>
+        </g>
+
+        <!-- Orange Badge 1 -->
+        <g transform="translate(135, 140)">
+          <circle cx="8" cy="8" r="7" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" />
+          <text x="8" y="10.5" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+        </g>
+      </g>
+
+      <!-- SCREEN 2: Search Results Page (Type S Mortar) -->
+      <g transform="translate(165, 0)">
+        <rect x="0" y="0" width="170" height="465" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8" />
+        <!-- Header -->
+        <rect x="3" y="3" width="164" height="14" fill="#004990" rx="1" />
+        <text x="8" y="12" font-size="4.5" font-weight="bold" fill="#ffffff">LOWE'S</text>
+
+        <!-- Search Results Query -->
+        <g transform="translate(6, 24)">
+          <text x="0" y="6" font-size="4.5" font-weight="bold" fill="#1e293b">Search results for <tspan fill="#0284c7">type s mortar:</tspan></text>
+          <!-- Left Rail Filters -->
+          <g transform="translate(0, 14)">
+            <text x="0" y="6" font-size="3.5" font-weight="bold" fill="#1e293b">Refine Results</text>
+            <text x="0" y="14" font-size="3" fill="#64748b">Brand (3)</text>
+            <text x="0" y="20" font-size="3" fill="#64748b">Price</text>
+            <text x="0" y="26" font-size="3" fill="#64748b">Rating</text>
+
+            <!-- 5% Off Promo Tile -->
+            <g transform="translate(0, 36)">
+              <rect x="0" y="0" width="38" height="60" fill="#f0f9ff" stroke="#bae6fd" stroke-width="0.5" />
+              <text x="19" y="16" font-size="8" font-weight="900" fill="#0284c7" text-anchor="middle">5%</text>
+              <text x="19" y="23" font-size="3.5" font-weight="bold" fill="#0284c7" text-anchor="middle">OFF</text>
+              <text x="19" y="30" font-size="2.5" fill="#475569" text-anchor="middle">EVERY DAY</text>
+              <text x="19" y="40" font-size="2.2" fill="#0369a1" text-anchor="middle">OR 6 MONTHS</text>
+            </g>
+          </g>
+
+          <!-- List View Products -->
+          <g transform="translate(44, 14)">
+            <!-- Top Tabs: All Products / In Store -->
+            <rect x="0" y="0" width="45" height="10" fill="#004990" rx="1" />
+            <text x="22" y="7" font-size="3" font-weight="bold" fill="#ffffff" text-anchor="middle">All Products</text>
+            <rect x="47" y="0" width="55" height="10" fill="#e2e8f0" rx="1" />
+            <text x="74" y="7" font-size="3" fill="#475569" text-anchor="middle">In Store: Available</text>
+
+            <!-- Product Row 1: QUIKRETE -->
+            <g transform="translate(0, 16)">
+              <rect x="0" y="0" width="114" height="42" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.5" />
+              <rect x="4" y="5" width="26" height="32" rx="1" fill="#ea580c" />
+              <text x="34" y="12" font-size="3.5" font-weight="bold" fill="#0284c7">QUIKRETE Premix 80-lb</text>
+              <text x="34" y="17" font-size="3" fill="#64748b">Dry Type S Mortar Mix</text>
+              <text x="34" y="26" font-size="4.5" font-weight="bold" fill="#1e293b">$5.24</text>
+            </g>
+
+            <!-- Product Row 2: Ash Grove -->
+            <g transform="translate(0, 62)">
+              <rect x="0" y="0" width="114" height="42" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.5" />
+              <rect x="4" y="5" width="26" height="32" rx="1" fill="#cbd5e1" />
+              <text x="34" y="12" font-size="3.5" font-weight="bold" fill="#0284c7">Ash Grove 80-lb Dry</text>
+              <text x="34" y="17" font-size="3" fill="#64748b">Type S Mortar Mix</text>
+              <text x="34" y="26" font-size="4.5" font-weight="bold" fill="#1e293b">$5.61</text>
+            </g>
+
+            <!-- Also Viewed Section -->
+            <g transform="translate(0, 114)">
+              <text x="0" y="6" font-size="3" font-weight="bold" fill="#1e293b">Customers Who Searched This Term Also Viewed:</text>
+              <g transform="translate(0, 10)">
+                <rect x="0" y="0" width="26" height="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+                <rect x="29" y="0" width="26" height="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+                <rect x="58" y="0" width="26" height="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+                <rect x="87" y="0" width="27" height="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5" />
+              </g>
+            </g>
+          </g>
+        </g>
+
+        <!-- Orange Badge 2 -->
+        <g transform="translate(150, 140)">
+          <circle cx="8" cy="8" r="7" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" />
+          <text x="8" y="10.5" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- LAYER 3 (CENTER SHEET - ON TOP): Findings (general) -->
+  <!-- ======================================================== -->
+  <g id="centerSheetFindings" transform="translate(465, 155)" filter="url(#frontShadow)">
+    <!-- White Paper Sheet in Foreground -->
+    <rect width="670" height="515" rx="3" fill="#ffffff" stroke="#d1d5db" stroke-width="0.9" />
+
+    <!-- Title: Findings (general) -->
+    <text x="30" y="38" font-size="20" font-weight="bold" fill="#0284c7">Findings <tspan font-weight="normal" fill="#64748b">(general)</tspan></text>
+
+    <!-- Top Right Sheet Logo -->
+    <g transform="translate(585, 18)">
+      <rect x="0" y="0" width="16" height="16" rx="2" fill="#0284c7" />
+      <text x="8" y="11" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+      <text x="20" y="8" font-size="7.5" font-weight="bold" fill="#0f172a">purchasing</text>
+      <text x="20" y="15" font-size="6" fill="#64748b">platform</text>
+    </g>
+
+    <!-- COLUMN 1: Items 1 - 5 -->
+    <g transform="translate(30, 58)">
+      <!-- Item 1 -->
+      <g transform="translate(0, 0)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">1.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">A few promotions are more helpful than none.</text>
+        <text x="16" y="19" font-size="6.5" fill="#475569">Discounts may not be the key selling points to getting</text>
+        <text x="16" y="27" font-size="6.5" fill="#475569">users to purchase items, once on your site. Organizing</text>
+        <text x="16" y="35" font-size="6.5" fill="#475569">products into collections that ring familiar allow users</text>
+        <text x="16" y="43" font-size="6.5" fill="#475569">to more quickly / easily understand the necessity.</text>
+      </g>
+
+      <!-- Item 2 -->
+      <g transform="translate(0, 58)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">2.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">Categories should be easy and quick to navigate</text>
+        <text x="16" y="19" font-size="7" font-weight="bold" fill="#1e293b">(sub-categories may be needed).</text>
+        <text x="16" y="28" font-size="6.5" fill="#475569">Major categories / collections should be visible at all times,</text>
+        <text x="16" y="36" font-size="6.5" fill="#475569">with a sub-category fly-out optional. Possible rework of</text>
+        <text x="16" y="44" font-size="6.5" fill="#475569">category titles. More IA work needs to be done to find if</text>
+        <text x="16" y="52" font-size="6.5" fill="#475569">this is feasible and worth executing.</text>
+      </g>
+
+      <!-- Item 3 -->
+      <g transform="translate(0, 126)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">3.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">Filtering is appropriate, at the right times (levels).</text>
+        <text x="16" y="19" font-size="6.5" fill="#475569">Introducing the ability to filter is a powerful way to streamline</text>
+        <text x="16" y="27" font-size="6.5" fill="#475569">results. Although, with questionable taxonomy, it may become</text>
+        <text x="16" y="35" font-size="6.5" fill="#475569">more of a hinderance than a help. The key is to get the user</text>
+        <text x="16" y="43" font-size="6.5" fill="#475569">down far enough in the browse path to make filters reliable.</text>
+      </g>
+
+      <!-- Item 4 -->
+      <g transform="translate(0, 186)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">4.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">Attributes should be limited to the top 5-6 with</text>
+        <text x="16" y="19" font-size="7" font-weight="bold" fill="#1e293b">the ability to "view more" available.</text>
+        <text x="16" y="28" font-size="6.5" fill="#475569">Listing out all possible attributes by default can lead to</text>
+        <text x="16" y="36" font-size="6.5" fill="#475569">left-rail blindness. An overwhelming amount of choices often-</text>
+        <text x="16" y="44" font-size="6.5" fill="#475569">times distracts the user to not make any decision.</text>
+      </g>
+
+      <!-- Item 5 -->
+      <g transform="translate(0, 246)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">5.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">The quicker you can add to a cart, the better.</text>
+        <text x="16" y="19" font-size="6.5" fill="#475569">Adding the ability to add to your cart in a results view makes</text>
+        <text x="16" y="27" font-size="6.5" fill="#475569">sense when enough information is made available to make</text>
+        <text x="16" y="35" font-size="6.5" fill="#475569">a strong decision.</text>
+      </g>
+    </g>
+
+    <!-- COLUMN 2: Items 6 - 10 -->
+    <g transform="translate(335, 58)">
+      <!-- Item 6 -->
+      <g transform="translate(0, 0)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">6.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">Offer related search terms, products and other</text>
+        <text x="16" y="19" font-size="7" font-weight="bold" fill="#1e293b">pieces of information on result pages.</text>
+        <text x="16" y="28" font-size="6.5" fill="#475569">Show "related" search terms and other "related" products</text>
+        <text x="16" y="36" font-size="6.5" fill="#475569">at various points of the search and browse experience.</text>
+      </g>
+
+      <!-- Item 7 -->
+      <g transform="translate(0, 50)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">7.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">Consider restructuring PP's categories.</text>
+        <text x="16" y="19" font-size="6.5" fill="#475569">A major concern is that the current amount of items in</text>
+        <text x="16" y="27" font-size="6.5" fill="#475569">the left-hand navigation push sections of the menu</text>
+        <text x="16" y="35" font-size="6.5" fill="#475569">below the fold. A regrouping exercise may help in shortening.</text>
+      </g>
+
+      <!-- Item 8 -->
+      <g transform="translate(0, 102)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">8.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">If Product Pages start getting long in length,</text>
+        <text x="16" y="19" font-size="7" font-weight="bold" fill="#1e293b">consider floating menus with anchor points.</text>
+        <text x="16" y="28" font-size="6.5" fill="#475569">Alleviate scroll-fatigue by offering the user a quick way</text>
+        <text x="16" y="36" font-size="6.5" fill="#475569">to jump from section to section without traveling too much.</text>
+      </g>
+
+      <!-- Item 9 -->
+      <g transform="translate(0, 154)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">9.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">Consider adding the ability to select Paint Color</text>
+        <text x="16" y="19" font-size="7" font-weight="bold" fill="#1e293b">from the Search Results List.</text>
+        <text x="16" y="28" font-size="6.5" fill="#475569">Ability to select the color choice from the Result List will</text>
+        <text x="16" y="36" font-size="6.5" fill="#475569">save users time with not having to click into the choice.</text>
+      </g>
+
+      <!-- Item 10 -->
+      <g transform="translate(0, 206)">
+        <text x="0" y="10" font-size="7.5" font-weight="bold" fill="#0f172a">10.</text>
+        <text x="16" y="10" font-size="7" font-weight="bold" fill="#1e293b">Consider pulling the top three filtering attributes</text>
+        <text x="16" y="19" font-size="7" font-weight="bold" fill="#1e293b">from the left-rail into an impromptu table header.</text>
+        <text x="16" y="28" font-size="6.5" fill="#475569">Users can sometimes lose sight of specific attributes in</text>
+        <text x="16" y="36" font-size="6.5" fill="#475569">the left-rail. Pulling out 2-3 of the most used filters</text>
+        <text x="16" y="44" font-size="6.5" fill="#475569">may greatly increase Result List functionality.</text>
+      </g>
+    </g>
+
+    <!-- Bottom Left Copyright -->
+    <text x="30" y="492" font-size="6.5" fill="#94a3b8">©2016 Purchasing Platform, LLC.</text>
+  </g>
+</svg>
