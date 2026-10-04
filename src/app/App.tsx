@@ -50,15 +50,15 @@ const mainProjects: Project[] = [
         label: "Persona Development",
         description:
           "Built evolving personas to understand different user groups' needs. These informed reasoning behind interaction and layout decisions.",
-        placeholder: true,
-        placeholderText: "User Persona Sheets",
+        image: "/purchasing_platform_step4_personas.svg",
+        imageAlt: "User Persona Sheets — Property Managers, Maintenance Technicians & Executive Leadership",
       },
       {
         label: "Storymapping",
         description:
           "Created storymaps showing streamlined user-flows through the site, indicating which back-end components would be needed at each step.",
-        placeholder: true,
-        placeholderText: "Storymap & Architecture",
+        image: "/purchasing_platform_step5_storymapping.svg",
+        imageAlt: "Storymapping Whiteboard Session — Browse & Search Agile Story Maps",
       },
       {
         label: "Heat Mapping",

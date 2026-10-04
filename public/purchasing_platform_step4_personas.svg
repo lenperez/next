@@ -1,0 +1,310 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" width="1600" height="720" style="background:#e8eaed; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Card Drop Shadow -->
+    <filter id="backShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000000" flood-opacity="0.16" />
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+
+    <!-- Foreground Center Card Drop Shadow -->
+    <filter id="frontShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.28" />
+      <feDropShadow dx="-4" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15" />
+      <feDropShadow dx="4" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+
+    <!-- Avatar Drop Shadow -->
+    <filter id="avatarShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.22" />
+    </filter>
+
+    <!-- Circular Avatar Clip Paths -->
+    <clipPath id="circleAvatar">
+      <circle cx="45" cy="45" r="45" />
+    </clipPath>
+  </defs>
+
+  <!-- Ambient Light Grey Presentation Canvas -->
+  <rect width="1600" height="720" fill="#e8eaed" />
+
+  <!-- ======================================================== -->
+  <!-- LAYER 1 (LEFT SHEET): Property Managers (Stephanie & Gwen) -->
+  <!-- ======================================================== -->
+  <g id="leftSheetManagers" transform="translate(40, 36)" filter="url(#backShadow)">
+    <!-- White Paper Sheet -->
+    <rect width="665" height="520" rx="3" fill="#ffffff" stroke="#d1d5db" stroke-width="0.8" />
+
+    <!-- Top Right Logo -->
+    <g transform="translate(585, 18)">
+      <rect x="0" y="0" width="16" height="16" rx="2" fill="#0284c7" />
+      <text x="8" y="11" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+      <text x="20" y="8" font-size="7.5" font-weight="bold" fill="#0f172a">purchasing</text>
+      <text x="20" y="15" font-size="6" fill="#64748b">platform</text>
+    </g>
+
+    <!-- PERSONA 1: Stephanie (Left Column) -->
+    <g transform="translate(26, 32)">
+      <!-- Name & Title -->
+      <text x="0" y="22" font-size="22" font-weight="bold" fill="#0284c7">Stephanie</text>
+      <text x="0" y="38" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">PROPERTY MANAGER</text>
+      <text x="0" y="50" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">(APARTMENTS)</text>
+
+      <!-- Circular Avatar Photo (Stephanie) -->
+      <g transform="translate(195, 2)" filter="url(#avatarShadow)">
+        <circle cx="45" cy="45" r="45" fill="#fdf2e9" stroke="#e2e8f0" stroke-width="2" />
+        <g clip-path="url(#circleAvatar)">
+          <!-- Background indoor tint -->
+          <rect width="90" height="90" fill="#f8fafc" />
+          <!-- Woman graphic -->
+          <path d="M 15,90 C 15,68 30,62 45,62 C 60,62 75,68 75,90 Z" fill="#1e3a8a" />
+          <path d="M 30,62 L 45,78 L 60,62" fill="#2563eb" />
+          <path d="M 36,46 C 36,54 42,60 45,60 C 48,60 54,54 54,46 L 54,34 L 36,34 Z" fill="#fed7aa" />
+          <circle cx="45" cy="34" r="16" fill="#fcd34d" opacity="0.2" />
+          <!-- Hair & Face -->
+          <path d="M 28,26 C 28,14 62,14 62,26 C 62,40 58,54 58,60 C 52,60 52,40 52,36 C 45,36 38,40 38,54 C 34,48 28,40 28,26 Z" fill="#b45309" />
+          <ellipse cx="45" cy="35" rx="11" ry="13" fill="#ffedd5" />
+          <!-- Long brown hair flowing -->
+          <path d="M 34,25 C 34,22 45,20 54,24 C 56,28 58,38 56,52 C 54,44 52,36 50,32 C 44,30 38,32 35,36 Z" fill="#92400e" />
+          <!-- Smile -->
+          <path d="M 42,41 Q 45,44 48,41" fill="none" stroke="#b45309" stroke-width="1.2" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- Bullet Points -->
+      <g transform="translate(0, 85)" font-size="7.2" fill="#334155">
+        <text x="0" y="10">• This segment is predominantly female (~75%).</text>
+        <text x="0" y="26">• Her age is between 30-45.</text>
+        <text x="0" y="42">• Is very tech-savvy. Laptop/Desktop is their primary input</text>
+        <text x="8" y="52">method, but definitely knows their way around a mobile device.</text>
+        <text x="0" y="68">• More patient than an older user. Will search to make sure</text>
+        <text x="8" y="78">that they've covered all bases before giving up on a page / application.</text>
+        <text x="0" y="94">• Has a general understanding of the units she covers. Specific</text>
+        <text x="8" y="104">needs are on a first-come-first-served basis.</text>
+        <text x="0" y="120">• Has a general understanding of what supplies are needed. Will take</text>
+        <text x="8" y="130">the recommendations of the maintenance technician. She may</text>
+        <text x="8" y="140">be more influenced by price over brand.</text>
+        <text x="0" y="156">• She's more likely to have a variety of websites to choose</text>
+        <text x="8" y="166">from when purchasing products.</text>
+      </g>
+    </g>
+
+    <!-- PERSONA 2: Gwen (Right Column) -->
+    <g transform="translate(345, 32)">
+      <!-- Name & Title -->
+      <text x="0" y="22" font-size="22" font-weight="bold" fill="#0284c7">Gwen</text>
+      <text x="0" y="38" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">PROPERTY MANAGER</text>
+      <text x="0" y="50" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">(MANUFACTURED HOUSING /</text>
+      <text x="0" y="62" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">OFFICE BUILDINGS)</text>
+
+      <!-- Circular Avatar Photo (Gwen) -->
+      <g transform="translate(195, 2)" filter="url(#avatarShadow)">
+        <circle cx="45" cy="45" r="45" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" />
+        <g clip-path="url(#circleAvatar)">
+          <rect width="90" height="90" fill="#f1f5f9" />
+          <!-- Business suit -->
+          <path d="M 15,90 C 15,68 30,60 45,60 C 60,60 75,68 75,90 Z" fill="#0f172a" />
+          <path d="M 32,60 L 45,76 L 58,60" fill="#ffffff" />
+          <!-- Head & Glasses -->
+          <path d="M 36,46 C 36,54 42,60 45,60 C 48,60 54,54 54,46 L 54,34 L 36,34 Z" fill="#fed7aa" />
+          <ellipse cx="45" cy="35" rx="11" ry="13" fill="#ffedd5" />
+          <!-- Short brown hair -->
+          <path d="M 30,30 C 30,16 60,16 60,30 C 60,38 56,44 56,46 C 53,42 53,30 45,28 C 37,30 37,42 34,46 C 34,44 30,38 30,30 Z" fill="#78350f" />
+          <!-- Spectacles / Glasses -->
+          <rect x="36" y="32" width="7" height="4" rx="1" fill="none" stroke="#334155" stroke-width="0.8" />
+          <rect x="47" y="32" width="7" height="4" rx="1" fill="none" stroke="#334155" stroke-width="0.8" />
+          <line x1="43" y1="34" x2="47" y2="34" stroke="#334155" stroke-width="0.8" />
+          <!-- Smile -->
+          <path d="M 42,42 Q 45,45 48,42" fill="none" stroke="#78350f" stroke-width="1.2" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- Bullet Points -->
+      <g transform="translate(0, 85)" font-size="7.2" fill="#334155">
+        <text x="0" y="10">• This segment is predominantly female (~75%).</text>
+        <text x="0" y="26">• Her age is between 40-60.</text>
+        <text x="0" y="42">• Respectably tech-savvy. Uses a laptop / desktop to do most</text>
+        <text x="8" y="52">ordering. Mobile devices are primarily for phone use.</text>
+        <text x="0" y="68">• She prefers clear and concise CTAs. Quick to lose patience if</text>
+        <text x="8" y="78">things are out-of-sorts and not where she's used to.</text>
+        <text x="0" y="94">• She knows her buildings very well. She has a good understanding</text>
+        <text x="8" y="104">of specific needs for the properties, and their surrounding</text>
+        <text x="8" y="114">environments, that she covers.</text>
+        <text x="0" y="130">• More likely to use specific, trusted, brands over generic. She's</text>
+        <text x="8" y="140">willing to try other products, if recommended.</text>
+      </g>
+    </g>
+
+    <!-- Bottom Left Copyright -->
+    <text x="26" y="495" font-size="6.5" fill="#94a3b8">©2016 Purchasing Platform, LLC.</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- LAYER 2 (RIGHT SHEET): Maintenance Technicians (Mike & Tony) -->
+  <!-- ======================================================== -->
+  <g id="rightSheetTechs" transform="translate(895, 36)" filter="url(#backShadow)">
+    <!-- White Paper Sheet -->
+    <rect width="665" height="520" rx="3" fill="#ffffff" stroke="#d1d5db" stroke-width="0.8" />
+
+    <!-- Top Right Logo -->
+    <g transform="translate(585, 18)">
+      <rect x="0" y="0" width="16" height="16" rx="2" fill="#0284c7" />
+      <text x="8" y="11" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+      <text x="20" y="8" font-size="7.5" font-weight="bold" fill="#0f172a">purchasing</text>
+      <text x="20" y="15" font-size="6" fill="#64748b">platform</text>
+    </g>
+
+    <!-- PERSONA 3: Mike (Left Column) -->
+    <g transform="translate(26, 32)">
+      <!-- Name & Title -->
+      <text x="0" y="22" font-size="22" font-weight="bold" fill="#0284c7">Mike</text>
+      <text x="0" y="38" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">MAINTENANCE TECHNICIAN</text>
+      <text x="0" y="50" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">(APARTMENTS)</text>
+
+      <!-- Circular Avatar Photo (Mike) -->
+      <g transform="translate(195, 2)" filter="url(#avatarShadow)">
+        <circle cx="45" cy="45" r="45" fill="#eff6ff" stroke="#e2e8f0" stroke-width="2" />
+        <g clip-path="url(#circleAvatar)">
+          <rect width="90" height="90" fill="#f8fafc" />
+          <!-- Blue uniform work shirt -->
+          <path d="M 15,90 C 15,66 28,58 45,58 C 62,58 75,66 75,90 Z" fill="#2563eb" />
+          <path d="M 38,58 L 45,72 L 52,58" fill="#ffffff" />
+          <!-- Coil of wires on shoulder -->
+          <ellipse cx="68" cy="62" rx="10" ry="16" fill="none" stroke="#64748b" stroke-width="3" />
+          <ellipse cx="66" cy="60" rx="8" ry="14" fill="none" stroke="#d97706" stroke-width="2" />
+          <!-- Head -->
+          <path d="M 36,46 C 36,54 42,60 45,60 C 48,60 54,54 54,46 L 54,34 L 36,34 Z" fill="#fed7aa" />
+          <ellipse cx="45" cy="34" rx="11" ry="13" fill="#ffedd5" />
+          <!-- Dark hair -->
+          <path d="M 32,28 C 32,16 58,16 58,28 C 58,30 56,32 54,32 C 54,24 45,20 36,24 C 34,26 32,28 32,28 Z" fill="#1e293b" />
+          <!-- Smile -->
+          <path d="M 42,41 Q 45,44 48,41" fill="none" stroke="#1e293b" stroke-width="1.2" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- Bullet Points -->
+      <g transform="translate(0, 85)" font-size="7.2" fill="#334155">
+        <text x="0" y="10">• This segment is predominantly male (95% - 99%).</text>
+        <text x="0" y="26">• He's between 20-40 years old.</text>
+        <text x="0" y="42">• Rather tech-savvy. Definitely knows his way around a</text>
+        <text x="8" y="52">computer and mobile device.</text>
+        <text x="0" y="68">• He's more patient than his older counter-part. Will search</text>
+        <text x="8" y="78">to make sure that he's covered all bases before giving up.</text>
+        <text x="0" y="94">• Will have a very good, general, understanding of the units</text>
+        <text x="8" y="104">he has to cover. Specific needs are on a first-come-first-served basis.</text>
+        <text x="0" y="120">• He knows what supplies are needed to get the job done. Will do</text>
+        <text x="8" y="130">the research necessary to find the best parts required.</text>
+        <text x="0" y="146">• He hasn't been in the MRO / handy-man business very long. Is quick</text>
+        <text x="8" y="156">to look-up / research problems that he hasn't come across.</text>
+      </g>
+    </g>
+
+    <!-- PERSONA 4: Tony (Right Column) -->
+    <g transform="translate(345, 32)">
+      <!-- Name & Title -->
+      <text x="0" y="22" font-size="22" font-weight="bold" fill="#0284c7">Tony</text>
+      <text x="0" y="38" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">MAINTENANCE TECHNICIAN</text>
+      <text x="0" y="50" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">(MANUFACTURED HOUSING /</text>
+      <text x="0" y="62" font-size="9" font-weight="bold" fill="#64748b" letter-spacing="0.5">OFFICE BUILDINGS)</text>
+
+      <!-- Circular Avatar Photo (Tony) -->
+      <g transform="translate(195, 2)" filter="url(#avatarShadow)">
+        <circle cx="45" cy="45" r="45" fill="#f0f9ff" stroke="#e2e8f0" stroke-width="2" />
+        <g clip-path="url(#circleAvatar)">
+          <rect width="90" height="90" fill="#e2e8f0" />
+          <!-- Blue work shirt -->
+          <path d="M 15,90 C 15,66 28,58 45,58 C 62,58 75,66 75,90 Z" fill="#0284c7" />
+          <path d="M 38,58 L 45,72 L 52,58" fill="#ffffff" />
+          <!-- Head with grey hair / bald top & mustache -->
+          <path d="M 36,46 C 36,54 42,60 45,60 C 48,60 54,54 54,46 L 54,34 L 36,34 Z" fill="#fed7aa" />
+          <ellipse cx="45" cy="35" rx="12" ry="14" fill="#ffedd5" />
+          <!-- Grey side hair -->
+          <path d="M 32,30 C 32,24 35,22 35,28 C 35,36 33,40 32,44 Z" fill="#94a3b8" />
+          <path d="M 58,30 C 58,24 55,22 55,28 C 55,36 57,40 58,44 Z" fill="#94a3b8" />
+          <!-- White mustache -->
+          <path d="M 38,40 Q 45,43 52,40 Q 45,46 38,40 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.5" />
+          <path d="M 40,44 Q 45,47 50,44" fill="none" stroke="#94a3b8" stroke-width="1" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- Bullet Points -->
+      <g transform="translate(0, 85)" font-size="7.2" fill="#334155">
+        <text x="0" y="10">• This segment is predominantly male (95% - 99%).</text>
+        <text x="0" y="26">• He's between 40-60 years old.</text>
+        <text x="0" y="42">• He's not very tech-savvy. Uses a laptop / desktop to do most</text>
+        <text x="8" y="52">ordering. Mobile devices are primarily for phone use.</text>
+        <text x="0" y="68">• Will give up quickly if CTAs are not clear and concise.</text>
+        <text x="8" y="78">Expects things to work a "certain" way (eg. they're used to it).</text>
+        <text x="0" y="94">• He knows his buildings very well. Has a great understanding</text>
+        <text x="8" y="104">of specific needs for the properties he covers.</text>
+        <text x="0" y="120">• He's more likely to use specific, trusted, brands over generic.</text>
+        <text x="0" y="136">• He's been in the MRO / handy-man business for awhile, and is</text>
+        <text x="8" y="146">very self-sufficient. Has, pretty much, seen everything.</text>
+      </g>
+    </g>
+
+    <!-- Bottom Left Copyright -->
+    <text x="26" y="495" font-size="6.5" fill="#94a3b8">©2016 Purchasing Platform, LLC.</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- LAYER 3 (CENTER SHEET - ON TOP): Executive (Charles) -->
+  <!-- ======================================================== -->
+  <g id="centerSheetExecutive" transform="translate(515, 140)" filter="url(#frontShadow)">
+    <!-- White Paper Sheet in Foreground -->
+    <rect width="570" height="535" rx="3" fill="#ffffff" stroke="#d1d5db" stroke-width="0.9" />
+
+    <!-- Top Right Logo -->
+    <g transform="translate(490, 18)">
+      <rect x="0" y="0" width="16" height="16" rx="2" fill="#0284c7" />
+      <text x="8" y="11" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">p*</text>
+      <text x="20" y="8" font-size="7.5" font-weight="bold" fill="#0f172a">purchasing</text>
+      <text x="20" y="15" font-size="6" fill="#64748b">platform</text>
+    </g>
+
+    <!-- Name & Subtitle -->
+    <g transform="translate(34, 30)">
+      <text x="0" y="24" font-size="24" font-weight="bold" fill="#0284c7">Charles</text>
+      <text x="0" y="42" font-size="10.5" font-weight="bold" fill="#64748b" letter-spacing="0.5">REGIONAL MANAGER /</text>
+      <text x="0" y="56" font-size="10.5" font-weight="bold" fill="#64748b" letter-spacing="0.5">COMPANY PRESIDENT</text>
+
+      <!-- Circular Avatar Photo (Charles) -->
+      <g transform="translate(340, 0)" filter="url(#avatarShadow)">
+        <circle cx="50" cy="50" r="50" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2.5" />
+        <g clip-path="url(#circleAvatar)">
+          <rect width="100" height="100" fill="#f1f5f9" />
+          <!-- Dark business suit -->
+          <path d="M 15,100 C 15,74 30,65 50,65 C 70,65 85,74 85,100 Z" fill="#1e293b" />
+          <path d="M 38,65 L 50,82 L 62,65" fill="#ffffff" />
+          <!-- Blue tie -->
+          <polygon points="48,72 52,72 53,88 50,94 47,88" fill="#0284c7" />
+          <!-- Head with silver grey hair -->
+          <path d="M 40,50 C 40,58 46,65 50,65 C 54,65 60,58 60,50 L 60,38 L 40,38 Z" fill="#fed7aa" />
+          <ellipse cx="50" cy="38" rx="13" ry="15" fill="#ffedd5" />
+          <!-- Silver grey hair -->
+          <path d="M 34,30 C 34,18 66,18 66,30 C 66,34 64,36 62,36 C 62,24 54,20 44,22 C 38,24 34,28 34,30 Z" fill="#cbd5e1" />
+          <!-- Smile -->
+          <path d="M 46,45 Q 50,49 54,45" fill="none" stroke="#64748b" stroke-width="1.4" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- Bullet Points -->
+      <g transform="translate(0, 92)" font-size="8.2" fill="#334155">
+        <text x="0" y="12">• This segment is a majority male (~65%).</text>
+        <text x="0" y="32">• Age can be anywhere between 35-60.</text>
+        <text x="0" y="52">• Decently tech-savvy. Primarily uses a laptop / desktop, but can use</text>
+        <text x="10" y="64">mobile phone apps as needed.</text>
+        <text x="0" y="86">• Understands the needs of his properties, but rarely handles the</text>
+        <text x="10" y="98">day-to-day logistics of keeping them maintained.</text>
+        <text x="0" y="120">• Primarily uses Purchasing Platform as a means to see overall usage.</text>
+        <text x="10" y="132">Downloads reports monthly / quarterly. May need to approve / reject orders.</text>
+        <text x="0" y="154">• He's usually looking to see how to improve the bottom-line, in</text>
+        <text x="10" y="166">relation to cutting costs, but does not bother himself with specifics.</text>
+        <text x="0" y="188">• Would prefer to deal with one gateway to handle as many</text>
+        <text x="10" y="200">purchasing options as possible.</text>
+      </g>
+    </g>
+
+    <!-- Bottom Left Copyright -->
+    <text x="34" y="508" font-size="7" fill="#94a3b8">©2016 Purchasing Platform, LLC.</text>
+  </g>
+</svg>

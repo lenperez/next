@@ -1,0 +1,672 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 950" width="1000" height="950" style="background:#e2e5e9; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Whiteboard Surface Lighting -->
+    <linearGradient id="wbSurface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f7f9" />
+      <stop offset="40%" stop-color="#eff2f5" />
+      <stop offset="80%" stop-color="#e6e9ee" />
+      <stop offset="100%" stop-color="#dde1e7" />
+    </linearGradient>
+
+    <!-- Whiteboard Frame Gradients -->
+    <linearGradient id="frameMetal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d1d5db" />
+      <stop offset="50%" stop-color="#9ca3af" />
+      <stop offset="100%" stop-color="#6b7280" />
+    </linearGradient>
+    <linearGradient id="frameInner" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4b5563" />
+      <stop offset="100%" stop-color="#9ca3af" />
+    </linearGradient>
+
+    <!-- Realistic Sticky Note Soft Drop Shadow -->
+    <filter id="noteShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="1" dy="2.5" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+    <filter id="headerNoteShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="1" dy="3.5" stdDeviation="3.5" flood-color="#000000" flood-opacity="0.22" />
+    </filter>
+
+    <!-- Frame Drop Shadow -->
+    <filter id="boardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND WALL -->
+  <rect width="1000" height="950" fill="#e2e5e9" />
+
+  <!-- WHITEBOARD OUTER ALUMINUM FRAME -->
+  <g filter="url(#boardShadow)">
+    <rect x="12" y="10" width="976" height="928" rx="6" fill="#8f96a3" stroke="#b0b7c3" stroke-width="2" />
+    <rect x="14" y="12" width="972" height="924" rx="4" fill="#a4abb8" />
+    <!-- Whiteboard Inner Frame Groove -->
+    <rect x="18" y="16" width="964" height="916" rx="2" fill="#5a6270" />
+    <!-- Whiteboard Board Face -->
+    <rect x="20" y="18" width="960" height="912" fill="url(#wbSurface)" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- DRY-ERASE MARKER TITLES                                  -->
+  <!-- ======================================================== -->
+  <!-- BROWSE STORY MAPS -->
+  <g transform="translate(432, 60)">
+    <text x="0" y="0" font-size="27" font-weight="700" font-style="italic" font-family="'Caveat', 'Comic Sans MS', -apple-system, sans-serif" fill="#18191c" letter-spacing="1.5">BROWSE STORY MAPS</text>
+    <path d="M -2,7 Q 120,9 252,6" fill="none" stroke="#18191c" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+
+  <!-- SEARCH STORY MAPS -->
+  <g transform="translate(745, 60)">
+    <text x="0" y="0" font-size="27" font-weight="700" font-style="italic" font-family="'Caveat', 'Comic Sans MS', -apple-system, sans-serif" fill="#18191c" letter-spacing="1.5">SEARCH STORY MAPS</text>
+    <path d="M -2,7 Q 110,8 235,6" fill="none" stroke="#18191c" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 1. TOP LEFT: "What They Think & Feel" (BROWSE FLOW)       -->
+  <!-- ======================================================== -->
+  <!-- Pink Header Sticky Note -->
+  <g transform="translate(32, 40) rotate(-1)" filter="url(#headerNoteShadow)">
+    <rect width="66" height="66" rx="2" fill="#ff5388" />
+    <text x="8" y="24" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">What</text>
+    <text x="8" y="40" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">They Think</text>
+    <text x="8" y="56" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">&amp; Feel</text>
+  </g>
+
+  <!-- ROW 1 -->
+  <!-- Note 1 (Aqua): "It's a lot to take in at first." (Mkt. Mgr) -->
+  <g transform="translate(108, 92)" filter="url(#noteShadow)">
+    <rect width="58" height="60" rx="2" fill="#9de2e9" />
+    <text x="5" y="14" font-size="7.5" font-family="-apple-system, sans-serif" fill="#0f2b30">"It's a lot</text>
+    <text x="5" y="24" font-size="7.5" font-family="-apple-system, sans-serif" fill="#0f2b30">to take in</text>
+    <text x="5" y="34" font-size="7.5" font-family="-apple-system, sans-serif" fill="#0f2b30">at first."</text>
+    <text x="5" y="50" font-size="6.5" font-weight="600" fill="#09454d">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- Note 2 (Yellow): "This could really help us be more efficient." (Sales Rep) -->
+  <g transform="translate(172, 92)" filter="url(#noteShadow)">
+    <rect width="58" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">"This could</text>
+    <text x="5" y="24" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">really help</text>
+    <text x="5" y="34" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">us be more</text>
+    <text x="5" y="44" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">efficient."</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- Note 3 (Yellow): "I'm not sure where to start with this." (New Hire) -->
+  <g transform="translate(236, 92)" filter="url(#noteShadow)">
+    <rect width="58" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">"I'm not sure</text>
+    <text x="5" y="24" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">where to start</text>
+    <text x="5" y="34" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">with this."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(New Hire)</text>
+  </g>
+
+  <!-- Note 4 (Yellow): Feels overwhelming at first. (Support) -->
+  <g transform="translate(300, 95)" filter="url(#noteShadow)">
+    <rect width="58" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">Feels</text>
+    <text x="5" y="25" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">overwhelming</text>
+    <text x="5" y="35" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">at first.</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Support)</text>
+  </g>
+
+  <!-- Note 5 (Yellow): "I hope this actually makes discovering things easier." (Product) -->
+  <g transform="translate(364, 98)" filter="url(#noteShadow)">
+    <rect width="60" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="13" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"I hope this</text>
+    <text x="5" y="22" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">actually makes</text>
+    <text x="5" y="31" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">discovering</text>
+    <text x="5" y="40" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">things easier."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Product)</text>
+  </g>
+
+  <!-- Note 6 (Yellow): "I like how visual it is." (Designer) -->
+  <g transform="translate(430, 102)" filter="url(#noteShadow)">
+    <rect width="58" height="62" rx="2" fill="#ffef6b" />
+    <text x="5" y="16" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">"I like how</text>
+    <text x="5" y="27" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">visual it is."</text>
+    <text x="5" y="52" font-size="6.5" font-weight="600" fill="#524502">(Designer)</text>
+  </g>
+
+  <!-- Note 7 (Yellow): "This will save me time down the road." (Sales Rep) -->
+  <g transform="translate(494, 106)" filter="url(#noteShadow)">
+    <rect width="60" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"This will</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">save me time</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">down the road."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- Note 8 (Yellow): "I'm curious how it works in practice." (Mkt. Mgr) -->
+  <g transform="translate(560, 108)" filter="url(#noteShadow)">
+    <rect width="60" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"I'm curious</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">how it works</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">in practice."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- ROW 2 -->
+  <!-- Note 1 (Aqua): "It's valuable, but it's a lot at once." (Support) -->
+  <g transform="translate(80, 186)" filter="url(#noteShadow)">
+    <rect width="62" height="66" rx="2" fill="#9de2e9" />
+    <text x="5" y="14" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">"It's</text>
+    <text x="5" y="24" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">valuable,</text>
+    <text x="5" y="34" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">but it's a lot</text>
+    <text x="5" y="44" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">at once."</text>
+    <text x="5" y="58" font-size="6.5" font-weight="600" fill="#09454d">(Support)</text>
+  </g>
+
+  <!-- Note 2 (Yellow): "I want to see real examples." (Sales Rep) -->
+  <g transform="translate(160, 186)" filter="url(#noteShadow)">
+    <rect width="60" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">"I want to</text>
+    <text x="5" y="26" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">see real</text>
+    <text x="5" y="37" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">examples."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- Note 3 (Yellow): "I'm always looking for better ways to organize." (Product) -->
+  <g transform="translate(236, 186)" filter="url(#noteShadow)">
+    <rect width="62" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"I'm always</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">looking for</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">better ways</text>
+    <text x="5" y="44" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">to organize."</text>
+    <text x="5" y="58" font-size="6.5" font-weight="600" fill="#524502">(Product)</text>
+  </g>
+
+  <!-- Note 4 (Yellow): "This could help with customer conversations." (Sales Rep) -->
+  <g transform="translate(312, 186)" filter="url(#noteShadow)">
+    <rect width="64" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="13" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">"This could</text>
+    <text x="5" y="22" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">help with</text>
+    <text x="5" y="31" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">customer</text>
+    <text x="5" y="40" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">conversations."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- Note 5 (Yellow): "I hope it's easy to navigate." (New Hire) -->
+  <g transform="translate(388, 186)" filter="url(#noteShadow)">
+    <rect width="60" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">"I hope it's</text>
+    <text x="5" y="26" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">easy to</text>
+    <text x="5" y="37" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">navigate."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(New Hire)</text>
+  </g>
+
+  <!-- ROW 3 -->
+  <!-- Note 1 (Yellow): "This feels like a step in the right direction." (Mkt. Mgr) -->
+  <g transform="translate(80, 276)" filter="url(#noteShadow)">
+    <rect width="66" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="13" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"This feels</text>
+    <text x="5" y="23" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">like a step</text>
+    <text x="5" y="33" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">in the right</text>
+    <text x="5" y="43" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">direction."</text>
+    <text x="5" y="58" font-size="6.5" font-weight="600" fill="#524502">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- Note 2 (Yellow): "I'm excited about the possibilities." (Designer) -->
+  <g transform="translate(160, 278)" filter="url(#noteShadow)">
+    <rect width="64" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"I'm excited</text>
+    <text x="5" y="25" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">about the</text>
+    <text x="5" y="35" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">possibilities."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Designer)</text>
+  </g>
+
+  <!-- Note 3 (Yellow): "It looks like it will be useful." (Support) -->
+  <g transform="translate(240, 278)" filter="url(#noteShadow)">
+    <rect width="60" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">"It looks</text>
+    <text x="5" y="25" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">like it will</text>
+    <text x="5" y="35" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">be useful."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Support)</text>
+  </g>
+
+  <!-- Note 4 (Yellow): "I'd love to see more use cases." (Product) -->
+  <g transform="translate(318, 278)" filter="url(#noteShadow)">
+    <rect width="60" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">"I'd love to</text>
+    <text x="5" y="25" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">see more</text>
+    <text x="5" y="35" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">use cases."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Product)</text>
+  </g>
+
+  <!-- Note 5 (Yellow): "How often is this updated?" (Mkt. Mgr) -->
+  <g transform="translate(394, 278)" filter="url(#noteShadow)">
+    <rect width="62" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="16" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"How often</text>
+    <text x="5" y="27" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">is this updated?"</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- Note 6 (Yellow): Will there be training or support? (New Hire) -->
+  <g transform="translate(470, 278)" filter="url(#noteShadow)">
+    <rect width="64" height="64" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">Will there be</text>
+    <text x="5" y="25" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">training or</text>
+    <text x="5" y="35" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">support?</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(New Hire)</text>
+  </g>
+
+
+  <!-- ======================================================== -->
+  <!-- 2. TOP RIGHT: "What They Think & Feel" (SEARCH FLOW)      -->
+  <!-- ======================================================== -->
+  <!-- Pink Header Sticky Note -->
+  <g transform="translate(738, 92)" filter="url(#headerNoteShadow)">
+    <rect width="66" height="66" rx="2" fill="#ff5388" />
+    <text x="8" y="24" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">What</text>
+    <text x="8" y="40" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">They Think</text>
+    <text x="8" y="56" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">&amp; Feel</text>
+  </g>
+
+  <!-- COLUMN 1 (Aqua notes) -->
+  <!-- 1. "I'm not sure what to search for." (New Hire) -->
+  <g transform="translate(742, 172)" filter="url(#noteShadow)">
+    <rect width="66" height="66" rx="2" fill="#9de2e9" />
+    <text x="5" y="14" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">"I'm not sure</text>
+    <text x="5" y="24" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">what to search</text>
+    <text x="5" y="34" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">for."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#09454d">(New Hire)</text>
+  </g>
+
+  <!-- 2. "This is frustrating when nothing comes up." (Support) -->
+  <g transform="translate(742, 252)" filter="url(#noteShadow)">
+    <rect width="68" height="72" rx="2" fill="#9de2e9" />
+    <text x="5" y="13" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">"This is</text>
+    <text x="5" y="23" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">frustrating</text>
+    <text x="5" y="33" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">when nothing</text>
+    <text x="5" y="43" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">comes up."</text>
+    <text x="5" y="60" font-size="6.5" font-weight="600" fill="#09454d">(Support)</text>
+  </g>
+
+  <!-- 3. The results aren't always relevant. (Mkt. Mgr) -->
+  <g transform="translate(746, 340)" filter="url(#noteShadow)">
+    <rect width="66" height="66" rx="2" fill="#9de2e9" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">The results</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">aren't always</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">relevant.</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#09454d">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- 4. "I'm not sure if I'm using the right terms." (New Hire) -->
+  <g transform="translate(746, 428)" filter="url(#noteShadow)">
+    <rect width="68" height="72" rx="2" fill="#9de2e9" />
+    <text x="5" y="13" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">"I'm not sure</text>
+    <text x="5" y="23" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">if I'm using</text>
+    <text x="5" y="33" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">the right</text>
+    <text x="5" y="43" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">terms."</text>
+    <text x="5" y="60" font-size="6.5" font-weight="600" fill="#09454d">(New Hire)</text>
+  </g>
+
+  <!-- COLUMN 2 (Yellow notes) -->
+  <!-- 1. "I hope I find the right info quickly." (Sales Rep) -->
+  <g transform="translate(826, 166)" filter="url(#noteShadow)">
+    <rect width="64" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"I hope I find</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">the right info</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">quickly."</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- 2. "I wish there was a search filter." (Product) -->
+  <g transform="translate(826, 252)" filter="url(#noteShadow)">
+    <rect width="64" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"I wish there</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">was a search</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">filter."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Product)</text>
+  </g>
+
+  <!-- 3. "It would be great to search by topic or use case." (Designer) -->
+  <g transform="translate(830, 342)" filter="url(#noteShadow)">
+    <rect width="70" height="74" rx="2" fill="#ffef6b" />
+    <text x="5" y="13" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">"It would be</text>
+    <text x="5" y="23" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">great to search</text>
+    <text x="5" y="33" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">by topic or</text>
+    <text x="5" y="43" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">use case."</text>
+    <text x="5" y="62" font-size="6.5" font-weight="600" fill="#524502">(Designer)</text>
+  </g>
+
+  <!-- 4. "I need faster, more accurate results." (Support) -->
+  <g transform="translate(832, 432)" filter="url(#noteShadow)">
+    <rect width="68" height="74" rx="2" fill="#ffef6b" />
+    <text x="5" y="13" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"I need</text>
+    <text x="5" y="23" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">faster, more</text>
+    <text x="5" y="33" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">accurate</text>
+    <text x="5" y="43" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">results."</text>
+    <text x="5" y="62" font-size="6.5" font-weight="600" fill="#524502">(Support)</text>
+  </g>
+
+  <!-- COLUMN 3 (Yellow notes) -->
+  <!-- 1. "It's hard to know what keywords to use." (Mkt. Mgr) -->
+  <g transform="translate(906, 166)" filter="url(#noteShadow)">
+    <rect width="66" height="70" rx="2" fill="#ffef6b" />
+    <text x="5" y="13" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">"It's hard to</text>
+    <text x="5" y="23" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">know what</text>
+    <text x="5" y="33" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">keywords to use."</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- 2. "I'm looking for specific customer examples." (Sales Rep) -->
+  <g transform="translate(908, 252)" filter="url(#noteShadow)">
+    <rect width="68" height="74" rx="2" fill="#ffef6b" />
+    <text x="5" y="13" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">"I'm looking</text>
+    <text x="5" y="23" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">for specific</text>
+    <text x="5" y="33" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">customer</text>
+    <text x="5" y="43" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">examples."</text>
+    <text x="5" y="62" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+
+  <!-- ======================================================== -->
+  <!-- 3. MIDDLE LEFT: "What They Say"                          -->
+  <!-- ======================================================== -->
+  <!-- Pink Header Sticky Note -->
+  <g transform="translate(24, 412) rotate(1)" filter="url(#headerNoteShadow)">
+    <rect width="66" height="66" rx="2" fill="#ff5388" />
+    <text x="8" y="28" font-size="14" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">What</text>
+    <text x="8" y="46" font-size="14" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">They Say</text>
+  </g>
+
+  <!-- 1. Aqua: "This is easy to find." (New Hire) -->
+  <g transform="translate(82, 482)" filter="url(#noteShadow)">
+    <rect width="60" height="66" rx="2" fill="#9de2e9" />
+    <text x="5" y="14" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">"This is</text>
+    <text x="5" y="24" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">easy to</text>
+    <text x="5" y="34" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">find."</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#09454d">(New Hire)</text>
+  </g>
+
+  <!-- 2. Yellow: "I found what I was looking for!" (Sales Rep) -->
+  <g transform="translate(160, 482)" filter="url(#noteShadow)">
+    <rect width="66" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="13" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"I found what</text>
+    <text x="5" y="23" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">I was looking</text>
+    <text x="5" y="33" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">for!"</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- 3. Yellow: "The layout is kind of confusing." (Mkt. Mgr) -->
+  <g transform="translate(242, 482)" filter="url(#noteShadow)">
+    <rect width="68" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="13" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"The layout</text>
+    <text x="5" y="23" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">is kind of</text>
+    <text x="5" y="33" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">confusing."</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- 4. Yellow: "Can you show me an example?" (Product) -->
+  <g transform="translate(324, 482)" filter="url(#noteShadow)">
+    <rect width="66" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"Can you</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">show me</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">an example?"</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Product)</text>
+  </g>
+
+  <!-- 5. Yellow: "This is helpful!" (Designer) -->
+  <g transform="translate(402, 482)" filter="url(#noteShadow)">
+    <rect width="60" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">"This is</text>
+    <text x="5" y="26" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">helpful!"</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Designer)</text>
+  </g>
+
+
+
+
+
+  <!-- ======================================================== -->
+  <!-- 5. BOTTOM LEFT: "What They Do"                           -->
+  <!-- ======================================================== -->
+  <!-- Pink Header Sticky Note -->
+  <g transform="translate(20, 595) rotate(-1)" filter="url(#headerNoteShadow)">
+    <rect width="66" height="66" rx="2" fill="#ff5388" />
+    <text x="8" y="28" font-size="14" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">What</text>
+    <text x="8" y="46" font-size="14" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">They Do</text>
+  </g>
+
+  <!-- Row 1: Clicks through menus, Uses search bar, Filters results, Reads help docs, Looks at examples -->
+  <!-- Note 1 (Aqua): "Clicks through menus" (New Hire) -->
+  <g transform="translate(48, 660)" filter="url(#noteShadow)">
+    <rect width="60" height="66" rx="2" fill="#9de2e9" />
+    <text x="5" y="14" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">"Clicks</text>
+    <text x="5" y="24" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">through</text>
+    <text x="5" y="34" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">menus"</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#09454d">(New Hire)</text>
+  </g>
+
+  <!-- Note 2 (Yellow): Uses search bar" (Sales Rep) -->
+  <g transform="translate(128, 656)" filter="url(#noteShadow)">
+    <rect width="64" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">Uses search</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">bar"</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- Note 3 (Yellow): "Filters results" (Mkt. Mgr) -->
+  <g transform="translate(202, 650)" filter="url(#noteShadow)">
+    <rect width="60" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"Filters</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">results"</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- Note 4 (Aqua): Reads help docs" (Support) -->
+  <g transform="translate(288, 646)" filter="url(#noteShadow)">
+    <rect width="60" height="66" rx="2" fill="#9de2e9" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">Reads</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">help docs"</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#09454d">(Support)</text>
+  </g>
+
+  <!-- Note 5 (Yellow): "Looks at examples" (Product) -->
+  <g transform="translate(358, 646)" filter="url(#noteShadow)">
+    <rect width="62" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"Looks at</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">examples"</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Product)</text>
+  </g>
+
+  <!-- Row 2: Takes notes, Shares with team -->
+  <!-- Note 6 (Aqua): Takes notes" (Designer) -->
+  <g transform="translate(274, 725)" filter="url(#noteShadow)">
+    <rect width="58" height="66" rx="2" fill="#9de2e9" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">Takes</text>
+    <text x="5" y="26" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">notes"</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#09454d">(Designer)</text>
+  </g>
+
+  <!-- Note 7 (Yellow): "Shares with team" (Sales Rep) -->
+  <g transform="translate(342, 722)" filter="url(#noteShadow)">
+    <rect width="64" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">"Shares with</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">team"</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- Row 3: Tries different keywords, Clicks on links, Bookmarks useful pages -->
+  <!-- Note 8 (Aqua): "Tries different keywords" (Mkt. Mgr) -->
+  <g transform="translate(250, 810)" filter="url(#noteShadow)">
+    <rect width="64" height="70" rx="2" fill="#9de2e9" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">"Tries</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">different</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">keywords"</text>
+    <text x="5" y="58" font-size="6.5" font-weight="600" fill="#09454d">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- Note 9 (Yellow): Clicks on links" (New Hire) -->
+  <g transform="translate(318, 812)" filter="url(#noteShadow)">
+    <rect width="58" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">Clicks on</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">links"</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(New Hire)</text>
+  </g>
+
+  <!-- Note 10 (Yellow): Bookmarks useful pages (Support) -->
+  <g transform="translate(382, 812)" filter="url(#noteShadow)">
+    <rect width="62" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">Bookmarks</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">useful pages</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Support)</text>
+  </g>
+
+
+  <!-- ======================================================== -->
+  <!-- 6. BOTTOM CENTER: "What They Need"                       -->
+  <!-- ======================================================== -->
+  <!-- Pink Header Sticky Note -->
+  <g transform="translate(480, 598) rotate(1)" filter="url(#headerNoteShadow)">
+    <rect width="66" height="66" rx="2" fill="#ff5388" />
+    <text x="8" y="22" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">What</text>
+    <text x="8" y="38" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">They</text>
+    <text x="8" y="54" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">Need</text>
+  </g>
+
+  <!-- Column 1 (Aqua Notes): Clear navigation, More examples and use cases, Quick answers -->
+  <!-- 1. Clear navigation (New Hire) -->
+  <g transform="translate(488, 674)" filter="url(#noteShadow)">
+    <rect width="58" height="64" rx="2" fill="#9de2e9" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">Clear</text>
+    <text x="5" y="26" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">navigation</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#09454d">(New Hire)</text>
+  </g>
+
+  <!-- 2. "More examples and use cases" (Product) -->
+  <g transform="translate(486, 750)" filter="url(#noteShadow)">
+    <rect width="64" height="68" rx="2" fill="#9de2e9" />
+    <text x="5" y="14" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">"More</text>
+    <text x="5" y="24" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">examples</text>
+    <text x="5" y="34" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">and use cases"</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#09454d">(Product)</text>
+  </g>
+
+  <!-- 3. Quick answers (Mkt. Mgr) -->
+  <g transform="translate(488, 830)" filter="url(#noteShadow)">
+    <rect width="60" height="68" rx="2" fill="#9de2e9" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">Quick</text>
+    <text x="5" y="26" font-size="7.2" font-family="-apple-system, sans-serif" fill="#0f2b30">answers</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#09454d">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- Column 2 (Yellow Notes): Better search filters, Updated content, Relevant results -->
+  <!-- 1. Better search filters (Mkt. Mgr) -->
+  <g transform="translate(562, 672)" filter="url(#noteShadow)">
+    <rect width="60" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">Better</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">search</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">filters</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- 2. Updated content (Support) -->
+  <g transform="translate(562, 748)" filter="url(#noteShadow)">
+    <rect width="62" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">Updated</text>
+    <text x="5" y="26" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">content</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Support)</text>
+  </g>
+
+  <!-- 3. Relevant results (New Hire) -->
+  <g transform="translate(562, 828)" filter="url(#noteShadow)">
+    <rect width="62" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">Relevant</text>
+    <text x="5" y="26" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">results</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(New Hire)</text>
+  </g>
+
+  <!-- Column 3 (Yellow Notes): Training & support, Easy to understand language -->
+  <!-- 1. Training & support (Sales Rep) -->
+  <g transform="translate(636, 746)" filter="url(#noteShadow)">
+    <rect width="60" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">Training</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">&amp; support</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- 2. Easy to understand language (Support) -->
+  <g transform="translate(638, 828)" filter="url(#noteShadow)">
+    <rect width="68" height="70" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">Easy to</text>
+    <text x="5" y="24" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">understand</text>
+    <text x="5" y="34" font-size="6.8" font-family="-apple-system, sans-serif" fill="#2d2804">language</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Support)</text>
+  </g>
+
+  <!-- Column 4 (Yellow Note): Mobile friendly (Designer) -->
+  <g transform="translate(704, 746)" filter="url(#noteShadow)">
+    <rect width="58" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">Mobile</text>
+    <text x="5" y="26" font-size="7.2" font-family="-apple-system, sans-serif" fill="#2d2804">friendly</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(Designer)</text>
+  </g>
+
+
+  <!-- ======================================================== -->
+  <!-- 7. BOTTOM RIGHT: "What They Need (continued)"             -->
+  <!-- ======================================================== -->
+  <!-- Pink Header Sticky Note -->
+  <g transform="translate(786, 592) rotate(-1)" filter="url(#headerNoteShadow)">
+    <rect width="70" height="74" rx="2" fill="#ff5388" />
+    <text x="8" y="22" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">What</text>
+    <text x="8" y="36" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">They</text>
+    <text x="8" y="50" font-size="13" font-weight="800" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">Need</text>
+    <text x="8" y="64" font-size="9" font-weight="700" font-family="'Caveat', -apple-system, sans-serif" fill="#2d0014">(continued)</text>
+  </g>
+
+  <!-- Column 1 (Aqua Notes): "Role-based Content", "Integration with other tools.", Better in-app help" -->
+  <!-- 1. "Role-based Content" (Product) -->
+  <g transform="translate(826, 678)" filter="url(#noteShadow)">
+    <rect width="66" height="66" rx="2" fill="#9de2e9" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">"Role-based</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">Content"</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#09454d">(Product)</text>
+  </g>
+
+  <!-- 2. "Integration with other tools." (Mkt. Mgr) -->
+  <g transform="translate(828, 754)" filter="url(#noteShadow)">
+    <rect width="68" height="70" rx="2" fill="#9de2e9" />
+    <text x="5" y="14" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">"Integration</text>
+    <text x="5" y="24" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">with other</text>
+    <text x="5" y="34" font-size="6.8" font-family="-apple-system, sans-serif" fill="#0f2b30">tools."</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#09454d">(Mkt. Mgr)</text>
+  </g>
+
+  <!-- 3. Better in-app help" (Support) -->
+  <g transform="translate(830, 836)" filter="url(#noteShadow)">
+    <rect width="64" height="68" rx="2" fill="#9de2e9" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">Better</text>
+    <text x="5" y="25" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">in-app</text>
+    <text x="5" y="35" font-size="7" font-family="-apple-system, sans-serif" fill="#0f2b30">help"</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#09454d">(Support)</text>
+  </g>
+
+  <!-- Column 2 (Yellow Notes): Real customer stories, Regular updates, More visuals -->
+  <!-- 1. Real customer stories (Sales Rep) -->
+  <g transform="translate(902, 668)" filter="url(#noteShadow)">
+    <rect width="64" height="70" rx="2" fill="#ffef6b" />
+    <text x="5" y="14" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">Real</text>
+    <text x="5" y="24" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">customer</text>
+    <text x="5" y="34" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">stories</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Sales Rep)</text>
+  </g>
+
+  <!-- 2. Regular updates (Designer) -->
+  <g transform="translate(904, 754)" filter="url(#noteShadow)">
+    <rect width="62" height="68" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">Regular</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">updates</text>
+    <text x="5" y="56" font-size="6.5" font-weight="600" fill="#524502">(Designer)</text>
+  </g>
+
+  <!-- 3. More visuals (New Hire) -->
+  <g transform="translate(904, 836)" filter="url(#noteShadow)">
+    <rect width="62" height="66" rx="2" fill="#ffef6b" />
+    <text x="5" y="15" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">More</text>
+    <text x="5" y="26" font-size="7" font-family="-apple-system, sans-serif" fill="#2d2804">visuals</text>
+    <text x="5" y="54" font-size="6.5" font-weight="600" fill="#524502">(New Hire)</text>
+  </g>
+</svg>
