@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 1100" width="1700" height="1100" style="background:#e2e8f0; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Soft Drop Shadow for Whiteboard Panels -->
+    <filter id="wbShadow" x="-5%" y="-5%" width="110%" height="112%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.14" />
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+
+    <!-- Marker Arrow Markers -->
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7c3aed" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+
+    <!-- Whiteboard Gloss Surface Gradient -->
+    <linearGradient id="wbGloss" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+
+    <!-- Whiteboard Frame Gradient -->
+    <linearGradient id="frameAlum" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cbd5e1" />
+      <stop offset="50%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+  </defs>
+
+  <!-- STUDIO WALL BACKGROUND -->
+  <rect width="1700" height="1100" fill="#e2e8f0" />
+
+  <!-- TOP HEADER BANNER -->
+  <g transform="translate(40, 20)">
+    <rect width="1620" height="52" rx="8" fill="#0f172a" />
+    <text x="24" y="32" font-size="18" font-weight="700" fill="#ffffff" letter-spacing="0.5">WHITEBOARDING SESSIONS &amp; ARCHITECTURE WORKSHOPS</text>
+    <text x="630" y="32" font-size="13" font-weight="500" fill="#94a3b8">Purchasing Platform Ideation Wall • 5 Collaborative Discovery Tracks</text>
+    <g transform="translate(1330, 14)">
+      <rect width="265" height="24" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <circle cx="14" cy="12" r="5" fill="#22c55e" />
+      <text x="28" y="16" font-size="11" font-weight="600" fill="#e2e8f0">Multi-Session Discovery Synthesis</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- BOARD 1: VENDOR WORKFLOW & SERVICE BLUEPRINT (TOP LEFT) -->
+  <!-- ======================================================== -->
+  <g transform="translate(40, 90)" filter="url(#wbShadow)">
+    <!-- Frame -->
+    <rect width="910" height="475" rx="6" fill="url(#frameAlum)" />
+    <rect x="5" y="5" width="900" height="465" rx="4" fill="url(#wbGloss)" />
+    
+    <!-- Title Badge -->
+    <g transform="translate(18, 14)">
+      <rect width="360" height="24" rx="4" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1" />
+      <text x="10" y="16" font-size="11" font-weight="700" fill="#6d28d9">BOARD 1: SERVICE QUOTE &amp; VENDOR WORKFLOW</text>
+      <text x="262" y="16" font-size="10" fill="#8b5cf6">Purple Dry-Erase</text>
+    </g>
+
+    <!-- PURPLE MARKER FLOWCHART (MATCHING PHOTO 1) -->
+    <g stroke="#7c3aed" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      
+      <!-- Top Section: Completed Job & Final Approval -->
+      <!-- Vendor checks box in PP vendor for completed job -->
+      <g transform="translate(30, 60)">
+        <rect width="170" height="44" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8" />
+        <text x="85" y="18" font-size="10" font-weight="600" fill="#6d28d9" text-anchor="middle">Vendor checks box</text>
+        <text x="85" y="32" font-size="9.5" fill="#6d28d9" text-anchor="middle">in PP vendor for completed job</text>
+      </g>
+
+      <!-- Arrow to Request Final Appvl -->
+      <line x1="200" y1="82" x2="280" y2="82" marker-end="url(#arrow-purple)" />
+
+      <!-- Request Final Appvl from Client -->
+      <g transform="translate(285, 60)">
+        <rect width="155" height="44" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8" />
+        <text x="77" y="18" font-size="10" font-weight="600" fill="#6d28d9" text-anchor="middle">Request Final Appvl</text>
+        <text x="77" y="32" font-size="9.5" fill="#6d28d9" text-anchor="middle">from Client</text>
+      </g>
+
+      <!-- Split to Appv vs Decl/why -->
+      <path d="M 440,82 L 475,82 L 475,64 L 500,64" marker-end="url(#arrow-purple)" />
+      <path d="M 440,82 L 475,82 L 475,100 L 500,100" marker-end="url(#arrow-purple)" />
+
+      <!-- Appv Box -->
+      <g transform="translate(505, 50)">
+        <rect width="48" height="26" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="24" y="17" font-size="10" font-weight="600" fill="#6d28d9" text-anchor="middle">Appv</text>
+      </g>
+      <!-- Line to PP pays vendor -->
+      <line x1="553" y1="63" x2="580" y2="63" marker-end="url(#arrow-purple)" />
+      <!-- PP pays vendor -->
+      <g transform="translate(585, 50)">
+        <rect width="90" height="26" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="45" y="17" font-size="9.5" font-weight="600" fill="#6d28d9" text-anchor="middle">PP pays vendor</text>
+      </g>
+      <!-- Big X terminal marker -->
+      <text x="688" y="70" font-size="18" font-weight="700" fill="#7c3aed">✕</text>
+
+      <!-- Decl / why Box -->
+      <g transform="translate(505, 87)">
+        <rect width="65" height="26" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="32" y="17" font-size="9.5" fill="#6d28d9" text-anchor="middle">Decl / why</text>
+      </g>
+      <!-- Line to vendor / PP notified -->
+      <line x1="570" y1="100" x2="600" y2="100" marker-end="url(#arrow-purple)" />
+      <!-- vendor / PP notified -->
+      <g transform="translate(605, 87)">
+        <rect width="100" height="26" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="50" y="17" font-size="9.5" fill="#6d28d9" text-anchor="middle">vendor/PP notified</text>
+      </g>
+      <!-- Line to Addtl Work Done by Vendor -->
+      <line x1="705" y1="100" x2="725" y2="100" marker-end="url(#arrow-purple)" />
+      <!-- Addtl Work Done by Vendor -->
+      <g transform="translate(730, 80)">
+        <rect width="125" height="40" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8" />
+        <text x="62" y="17" font-size="10" font-weight="600" fill="#6d28d9" text-anchor="middle">Addtl Work Done</text>
+        <text x="62" y="30" font-size="9.5" fill="#6d28d9" text-anchor="middle">by Vendor</text>
+      </g>
+
+      <!-- Loopback arrow from Addtl Work back to Vendor checks box -->
+      <path d="M 855,100 L 880,100 L 880,42 L 115,42 L 115,55" marker-end="url(#arrow-purple)" />
+
+      <!-- Middle Section: Client Quote Initiation -->
+      <!-- Client -->
+      <g transform="translate(250, 160)">
+        <rect width="55" height="32" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="27" y="20" font-size="10.5" font-weight="600" fill="#6d28d9" text-anchor="middle">Client</text>
+      </g>
+      <line x1="305" y1="176" x2="340" y2="176" marker-end="url(#arrow-purple)" />
+
+      <!-- PP Serv Page -->
+      <g transform="translate(345, 155)">
+        <rect width="78" height="42" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="39" y="19" font-size="9.5" font-weight="600" fill="#6d28d9" text-anchor="middle">PP Serv</text>
+        <text x="39" y="32" font-size="9" fill="#6d28d9" text-anchor="middle">Page</text>
+      </g>
+      <line x1="423" y1="176" x2="455" y2="176" marker-end="url(#arrow-purple)" />
+
+      <!-- Req Quote -->
+      <g transform="translate(460, 155)">
+        <rect width="68" height="42" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="34" y="19" font-size="9.5" font-weight="600" fill="#6d28d9" text-anchor="middle">Req</text>
+        <text x="34" y="32" font-size="9" fill="#6d28d9" text-anchor="middle">Quote</text>
+      </g>
+      <line x1="528" y1="176" x2="565" y2="176" marker-end="url(#arrow-purple)" />
+
+      <!-- Select Features / Enter Add. -->
+      <g transform="translate(570, 150)">
+        <rect width="115" height="48" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="57" y="19" font-size="9.5" font-weight="600" fill="#6d28d9" text-anchor="middle">Select Features /</text>
+        <text x="57" y="33" font-size="9" fill="#6d28d9" text-anchor="middle">Enter Add.</text>
+      </g>
+
+      <!-- Submit arrow down -->
+      <path d="M 685,174 L 735,174 L 735,215" marker-end="url(#arrow-purple)" />
+      <text x="742" y="195" font-size="9.5" font-style="italic" fill="#6d28d9">Submit</text>
+
+      <!-- Lower Split: Create a request / APP & Ping vendor with Details -->
+      <path d="M 735,215 L 685,215 L 685,235" marker-end="url(#arrow-purple)" />
+      <path d="M 735,215 L 785,215 L 785,235" marker-end="url(#arrow-purple)" />
+
+      <!-- Create a request / APP -->
+      <g transform="translate(640, 240)">
+        <rect width="90" height="40" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="45" y="17" font-size="9" fill="#6d28d9" text-anchor="middle">Create a</text>
+        <text x="45" y="29" font-size="9" fill="#6d28d9" text-anchor="middle">request w/ APP</text>
+      </g>
+
+      <!-- Ping vendor with Details -->
+      <g transform="translate(745, 240)">
+        <rect width="95" height="40" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6" />
+        <text x="47" y="17" font-size="9" fill="#6d28d9" text-anchor="middle">Ping Vendor</text>
+        <text x="47" y="29" font-size="9" fill="#6d28d9" text-anchor="middle">with Details</text>
+      </g>
+
+      <!-- Feeds into Vendor executes quote -->
+      <path d="M 685,280 L 685,300 L 735,300 L 735,310" marker-end="url(#arrow-purple)" />
+      <path d="M 792,280 L 792,300 L 735,300 L 735,310" />
+
+      <!-- Vendor executes quote & submits on vendor portal page w/ APP -->
+      <g transform="translate(670, 315)">
+        <rect width="155" height="52" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8" />
+        <text x="77" y="16" font-size="9" font-weight="600" fill="#6d28d9" text-anchor="middle">Vendor executes quote &amp;</text>
+        <text x="77" y="29" font-size="8.5" fill="#6d28d9" text-anchor="middle">submits on vendor portal</text>
+        <text x="77" y="42" font-size="8.5" fill="#6d28d9" text-anchor="middle">page w/ APP</text>
+      </g>
+
+      <!-- Arrow left to Ping PP empl for review -->
+      <line x1="670" y1="340" x2="600" y2="340" marker-end="url(#arrow-purple)" />
+
+      <!-- Ping PP empl for review -->
+      <g transform="translate(485, 315)">
+        <rect width="110" height="52" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8" />
+        <text x="55" y="21" font-size="9.5" font-weight="600" fill="#6d28d9" text-anchor="middle">Ping PP empl</text>
+        <text x="55" y="35" font-size="9.5" fill="#6d28d9" text-anchor="middle">for review</text>
+      </g>
+
+      <!-- Decision split: Appv vs Req Adj -->
+      <path d="M 485,340 L 450,340 L 450,320 L 415,320" marker-end="url(#arrow-purple)" />
+      <path d="M 485,340 L 450,340 L 450,360 L 415,360" marker-end="url(#arrow-purple)" />
+
+      <!-- Appv -->
+      <g transform="translate(365, 308)">
+        <rect width="45" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" />
+        <text x="22" y="16" font-size="9.5" font-weight="600" fill="#6d28d9" text-anchor="middle">Appv</text>
+      </g>
+
+      <!-- Req Adj (loops back to Vendor executes quote) -->
+      <g transform="translate(355, 348)">
+        <rect width="55" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" />
+        <text x="27" y="16" font-size="9" fill="#6d28d9" text-anchor="middle">Req Adj</text>
+      </g>
+      <!-- Loop back path -->
+      <path d="M 355,360 L 335,360 L 335,420 L 745,420 L 745,372" marker-end="url(#arrow-purple)" />
+
+      <!-- Feeds into Client recvs Email and SOW created -->
+      <path d="M 365,320 L 335,320 L 335,275 L 305,275" marker-end="url(#arrow-purple)" />
+
+      <!-- Client recvs Email and SOW created -->
+      <g transform="translate(195, 245)">
+        <rect width="105" height="60" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8" />
+        <text x="52" y="18" font-size="9" font-weight="600" fill="#6d28d9" text-anchor="middle">Client recvs</text>
+        <text x="52" y="31" font-size="9" fill="#6d28d9" text-anchor="middle">Email and</text>
+        <text x="52" y="44" font-size="9" fill="#6d28d9" text-anchor="middle">SOW created</text>
+      </g>
+
+      <!-- 3-way split: Appv / Req Revisit / Decline -->
+      <path d="M 195,275 L 165,275 L 165,230 L 140,230" marker-end="url(#arrow-purple)" />
+      <path d="M 195,275 L 165,275 L 165,275 L 140,275" marker-end="url(#arrow-purple)" />
+      <path d="M 195,275 L 165,275 L 165,320 L 140,320" marker-end="url(#arrow-purple)" />
+
+      <!-- Appv -->
+      <g transform="translate(90, 218)">
+        <rect width="45" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" />
+        <text x="22" y="16" font-size="9.5" font-weight="600" fill="#6d28d9" text-anchor="middle">Appv</text>
+      </g>
+
+      <!-- Req Revisit (loops to Ping PP empl) -->
+      <g transform="translate(75, 263)">
+        <rect width="60" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" />
+        <text x="30" y="16" font-size="8.5" fill="#6d28d9" text-anchor="middle">Req Revisit</text>
+      </g>
+      <!-- Loop from Req Revisit -->
+      <path d="M 75,275 L 50,275 L 50,405 L 540,405 L 540,372" marker-end="url(#arrow-purple)" />
+
+      <!-- Decline -->
+      <g transform="translate(85, 308)">
+        <rect width="50" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" />
+        <text x="25" y="16" font-size="9" fill="#6d28d9" text-anchor="middle">Decline</text>
+      </g>
+      <text x="68" y="325" font-size="16" font-weight="700" fill="#7c3aed">✕</text>
+
+      <!-- PO to Vendor -->
+      <path d="M 90,230 L 65,230 L 65,190" marker-end="url(#arrow-purple)" />
+      <g transform="translate(35, 145)">
+        <rect width="75" height="44" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8" />
+        <text x="37" y="19" font-size="9.5" font-weight="700" fill="#6d28d9" text-anchor="middle">PO to</text>
+        <text x="37" y="32" font-size="9.5" fill="#6d28d9" text-anchor="middle">Vendor</text>
+      </g>
+
+      <!-- work completed arrow up to Vendor checks box -->
+      <line x1="72" y1="145" x2="72" y2="109" marker-end="url(#arrow-purple)" />
+      <text x="54" y="130" font-size="8.5" font-style="italic" fill="#6d28d9" transform="rotate(-90, 54, 130)">work completed</text>
+
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- BOARD 2: PHASE 1 SHOPPING ARCHITECTURE MATRIX (TOP RIGHT) -->
+  <!-- ======================================================== -->
+  <g transform="translate(970, 90)" filter="url(#wbShadow)">
+    <rect width="690" height="475" rx="6" fill="url(#frameAlum)" />
+    <rect x="5" y="5" width="680" height="465" rx="4" fill="url(#wbGloss)" />
+
+    <!-- Title Badge -->
+    <g transform="translate(18, 14)">
+      <rect width="380" height="24" rx="4" fill="#ecfeff" stroke="#0891b2" stroke-width="1" />
+      <text x="10" y="16" font-size="11" font-weight="700" fill="#0e7490">BOARD 2: PHASE 1 SHOPPING ARCHITECTURE MATRIX</text>
+      <text x="295" y="16" font-size="10" fill="#06b6d4">Black &amp; Cyan Marker</text>
+    </g>
+
+    <!-- Content (MATCHING PHOTO 2) -->
+    <!-- Header: PHASE 1: SHOPPING -->
+    <text x="30" y="65" font-size="20" font-weight="800" fill="#0f172a" letter-spacing="1">PHASE 1: SHOPPING</text>
+    <line x1="30" y1="73" x2="235" y2="73" stroke="#0f172a" stroke-width="2" />
+
+    <!-- Column Structure -->
+    <!-- Headers -->
+    <line x1="30" y1="105" x2="655" y2="105" stroke="#334155" stroke-width="1.5" />
+    <line x1="235" y1="105" x2="235" y2="455" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3" />
+    <line x1="450" y1="105" x2="450" y2="455" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3" />
+
+    <!-- Stage Titles -->
+    <text x="40" y="98" font-size="13" font-weight="700" fill="#0f172a">STAGE III</text>
+    <text x="245" y="98" font-size="13" font-weight="700" fill="#0f172a">STAGE I</text>
+    <text x="460" y="98" font-size="13" font-weight="700" fill="#0f172a">STAGE II</text>
+
+    <text x="40" y="125" font-size="11" font-weight="700" fill="#0284c7">ONE PAGE CHECKOUT</text>
+    <text x="245" y="125" font-size="11" font-weight="700" fill="#0284c7">SEARCH &amp; BROWSE</text>
+    <text x="460" y="125" font-size="11" font-weight="700" fill="#0284c7">CART</text>
+
+    <!-- Side Row Label: FEATURE / BE. COMP. -->
+    <text x="10" y="160" font-size="9" font-weight="700" fill="#0284c7" transform="rotate(-90, 10, 160)">FEATURE</text>
+    <text x="10" y="225" font-size="9" font-weight="700" fill="#0891b2" transform="rotate(-90, 10, 225)">BE. COMP.</text>
+
+    <!-- COLUMN 1: ONE PAGE CHECKOUT ITEMS -->
+    <g transform="translate(40, 145)" font-size="10" fill="#0f172a">
+      <text x="0" y="14" font-weight="600" fill="#0284c7">• TAXES</text>
+      <text x="75" y="14" font-weight="600" fill="#0284c7">• PAY. PROC.</text>
+
+      <text x="0" y="38" font-weight="700" fill="#0891b2">• ORDERS</text>
+      <text x="75" y="38" font-weight="700" fill="#0891b2">• USER INFO.</text>
+
+      <g transform="translate(15, 52)" font-size="9.5" fill="#334155">
+        <text x="0" y="12">- PAYMENT</text>
+        <text x="0" y="26">- LOCATION</text>
+        <text x="0" y="40">- RESTRICTIONS</text>
+      </g>
+
+      <text x="0" y="116" font-weight="700" fill="#0891b2">• CART ?</text>
+
+      <!-- Notes box -->
+      <rect x="0" y="135" width="180" height="55" rx="4" fill="#f8fafc" stroke="#0891b2" stroke-width="1" stroke-dasharray="2,2" />
+      <text x="10" y="152" font-size="9" font-weight="700" fill="#0891b2">• NOTES</text>
+      <text x="18" y="168" font-size="9.5" font-weight="600" fill="#0284c7">- EXPENSE MAPP</text>
+      <text x="18" y="182" font-size="8.5" fill="#64748b">(Location &amp; Chart of Accts)</text>
+    </g>
+
+    <!-- COLUMN 2: SEARCH & BROWSE ITEMS -->
+    <g transform="translate(245, 145)" font-size="9.5" fill="#0f172a">
+      <text x="0" y="12" font-weight="700" fill="#0891b2">• SHOPPING CART</text>
+      <text x="12" y="26" fill="#334155">- PRODUCTS</text>
+      <text x="12" y="39" fill="#64748b">- VARIANTS</text>
+
+      <text x="0" y="60" font-weight="700" fill="#0891b2">• FEES (PROD. / VEND.)</text>
+      <text x="12" y="74" fill="#334155">- TAXES</text>
+      <text x="12" y="88" fill="#334155">- ORDER MIN/LIMT ?</text>
+
+      <text x="0" y="110" font-weight="700" fill="#0891b2">• FILTERS</text>
+      <text x="12" y="124" fill="#334155">- FEATURED</text>
+      <text x="12" y="137" fill="#334155">- CORP / CORPORATE</text>
+
+      <text x="0" y="160" font-weight="700" fill="#0891b2">• SEARCH</text>
+      <g transform="translate(12, 172)" font-size="9" fill="#334155">
+        <text x="0" y="10">- TYPE AHEAD</text>
+        <text x="75" y="10">- CATEGORIES</text>
+        <text x="0" y="23">- RESULTS</text>
+        <text x="75" y="23">- VENDOR/BRAND</text>
+        <text x="0" y="36">- HIT ENTER</text>
+      </g>
+
+      <text x="0" y="235" font-weight="700" fill="#0891b2">• FOOTER</text>
+    </g>
+
+    <!-- COLUMN 3: CART ITEMS -->
+    <g transform="translate(460, 145)" font-size="9.5" fill="#0f172a">
+      <text x="0" y="12" font-weight="700" fill="#0891b2">• VENDORS</text>
+      <text x="12" y="26" fill="#334155">- PRODUCTS</text>
+      <text x="12" y="39" fill="#64748b">- VARIANT</text>
+
+      <text x="0" y="60" font-weight="700" fill="#0891b2">• FEES</text>
+      <text x="0" y="80" font-weight="700" fill="#0891b2">• RECOMMEND</text>
+      <text x="0" y="100" font-weight="700" fill="#0891b2">• NOTES</text>
+      <text x="0" y="120" font-weight="700" fill="#0891b2">• USER</text>
+      <text x="0" y="140" font-weight="700" fill="#0891b2">• SEARCH</text>
+      <text x="0" y="160" font-weight="700" fill="#0891b2">• SNAPSHOT</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- BOARD 3: SAME DAY CRITERIA & WIREFRAMES (BOTTOM LEFT)    -->
+  <!-- ======================================================== -->
+  <g transform="translate(40, 580)" filter="url(#wbShadow)">
+    <rect width="530" height="495" rx="6" fill="url(#frameAlum)" />
+    <rect x="5" y="5" width="520" height="485" rx="4" fill="url(#wbGloss)" />
+
+    <!-- Title Badge -->
+    <g transform="translate(18, 14)">
+      <rect width="360" height="24" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1" />
+      <text x="10" y="16" font-size="11" font-weight="700" fill="#b91c1c">BOARD 3: SHIPPING RULES &amp; WIREFRAME SKETCHES</text>
+      <text x="280" y="16" font-size="10" fill="#ef4444">Red &amp; Black</text>
+    </g>
+
+    <!-- CONTENT (MATCHING PHOTO 3) -->
+    <!-- Catalog grid sketch top left -->
+    <g transform="translate(25, 50)">
+      <!-- Breadcrumbs & search scribbles -->
+      <line x1="0" y1="5" x2="15" y2="5" stroke="#334155" stroke-width="1.5" />
+      <line x1="0" y1="10" x2="15" y2="10" stroke="#334155" stroke-width="1.5" />
+      <path d="M 25,6 Q 35,0 45,6 T 65,6" fill="none" stroke="#334155" stroke-width="1.5" />
+      <!-- Grid items -->
+      <rect x="25" y="15" width="28" height="22" fill="none" stroke="#0891b2" stroke-width="1.2" />
+      <rect x="58" y="15" width="28" height="22" fill="none" stroke="#0891b2" stroke-width="1.2" />
+      <rect x="91" y="15" width="28" height="22" fill="none" stroke="#0891b2" stroke-width="1.2" />
+      <rect x="25" y="42" width="38" height="28" fill="none" stroke="#334155" stroke-width="1.2" />
+      <rect x="68" y="42" width="38" height="28" fill="none" stroke="#334155" stroke-width="1.2" />
+      <text x="130" y="48" font-size="16" fill="#334155">→</text>
+      <!-- Filtered grid -->
+      <g transform="translate(155, 0)">
+        <rect x="15" y="15" width="30" height="24" fill="none" stroke="#0891b2" stroke-width="1.2" />
+        <rect x="50" y="15" width="30" height="24" fill="none" stroke="#0891b2" stroke-width="1.2" />
+        <rect x="15" y="44" width="30" height="24" fill="none" stroke="#0891b2" stroke-width="1.2" />
+        <rect x="50" y="44" width="30" height="24" fill="none" stroke="#0891b2" stroke-width="1.2" />
+      </g>
+    </g>
+
+    <!-- SAME DAY CRITERIA (Red Marker, Top Right) -->
+    <g transform="translate(270, 50)" fill="#b91c1c">
+      <text x="0" y="12" font-size="12" font-weight="800" text-decoration="underline">SAME DAY CRITERIA</text>
+      <text x="0" y="28" font-size="9" font-weight="700">• "TYPICALLY SHIPS NEXT DAY"</text>
+      <text x="0" y="42" font-size="8.5" font-weight="600">• ORDERS MUST BE PROCESSED</text>
+      <text x="8" y="54" font-size="8">WITHIN THE NEXT 'XX:XX:XX'</text>
+      <text x="8" y="66" font-size="8">TO BE DELIVERED:</text>
+      <text x="16" y="78" font-size="8">+ 2-3 BUSINESS DAYS</text>
+      <text x="16" y="90" font-size="8">+ NEXT DAY</text>
+
+      <g transform="translate(0, 102)" font-size="8.5" font-weight="600">
+        <text x="0" y="12">1. Typically Ships Same Day</text>
+        <text x="0" y="25">2. Same Day Shipping (for in-stock items)</text>
+        <text x="0" y="38">3. All Same Day Shipping:</text>
+        <text x="10" y="49" font-size="7.5">order placed in next xx:xx:xx, if in-stock</text>
+      </g>
+    </g>
+
+    <!-- Product Page Messaging (Blue Marker, Mid Left) -->
+    <g transform="translate(25, 150)">
+      <text x="0" y="15" font-size="12" font-weight="700" fill="#0284c7">Product Page Messaging</text>
+      <line x1="0" y1="19" x2="140" y2="19" stroke="#0284c7" stroke-width="1.2" />
+
+      <g transform="translate(0, 26)" font-size="9" fill="#1e293b">
+        <text x="0" y="12">• <tspan font-weight="700" fill="#0284c7">Badge:</tspan> In-Stock - Same Day Shipping</text>
+        <text x="0" y="26">• <tspan font-weight="700" fill="#0284c7">Stock Status:</tspan> Order in xx hrs xx mins</text>
+        <text x="8" y="38" font-size="8.5" fill="#475569">for same day shipping</text>
+        <text x="0" y="52">• Vendor level shipping policy</text>
+        <text x="0" y="66">• Product level shipping policy</text>
+        <text x="8" y="78" font-size="8" font-style="italic" fill="#0284c7">(Trumps vendor level policy)</text>
+      </g>
+    </g>
+
+    <!-- Red Cutoff Comparison Bubble (Mid Right) -->
+    <g transform="translate(250, 220)">
+      <rect width="245" height="65" rx="14" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.5" />
+      <text x="12" y="20" font-size="8.5" font-weight="600" fill="#be123c">Before - order in xx:xx:xx for same</text>
+      <text x="12" y="32" font-size="8" fill="#be123c">day processing to yyyy this item.</text>
+      <text x="12" y="48" font-size="8.5" font-weight="700" fill="#be123c">After - estimating shipment business day</text>
+    </g>
+
+    <!-- Cart Wireframe Sketch (Bottom Left) -->
+    <g transform="translate(25, 275)">
+      <rect width="190" height="180" rx="4" fill="#ffffff" stroke="#059669" stroke-width="1.5" />
+      <text x="10" y="20" font-size="12" font-weight="700" fill="#059669">CART</text>
+      <!-- Item row 1 -->
+      <rect x="12" y="32" width="34" height="34" fill="none" stroke="#334155" stroke-width="1" />
+      <line x1="12" y1="32" x2="46" y2="66" stroke="#334155" stroke-width="1" />
+      <line x1="46" y1="32" x2="12" y2="66" stroke="#334155" stroke-width="1" />
+      <line x1="55" y1="40" x2="120" y2="40" stroke="#059669" stroke-width="1.5" />
+      <line x1="55" y1="52" x2="95" y2="52" stroke="#059669" stroke-width="1.2" />
+      <rect x="135" y="36" width="40" height="22" fill="none" stroke="#059669" stroke-width="1" />
+      <text x="155" y="51" font-size="9" fill="#059669" text-anchor="middle">Qty 2</text>
+
+      <!-- Item row 2 -->
+      <rect x="12" y="80" width="34" height="34" fill="none" stroke="#334155" stroke-width="1" />
+      <line x1="12" y1="80" x2="46" y2="114" stroke="#334155" stroke-width="1" />
+      <line x1="46" y1="80" x2="12" y2="114" stroke="#334155" stroke-width="1" />
+      <line x1="55" y1="88" x2="120" y2="88" stroke="#059669" stroke-width="1.5" />
+      <line x1="55" y1="100" x2="95" y2="100" stroke="#059669" stroke-width="1.2" />
+      <rect x="135" y="84" width="40" height="22" fill="none" stroke="#059669" stroke-width="1" />
+      <text x="155" y="99" font-size="9" fill="#059669" text-anchor="middle">Qty 1</text>
+
+      <!-- Subtotal -->
+      <line x1="12" y1="130" x2="175" y2="130" stroke="#e2e8f0" stroke-width="1" />
+      <text x="12" y="150" font-size="10" font-weight="700" fill="#334155">Subtotal: 49.00</text>
+      <rect x="100" y="138" width="75" height="24" rx="4" fill="#059669" />
+      <text x="137" y="154" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">Checkout</text>
+    </g>
+
+    <!-- Modal Sketches Bottom Right -->
+    <g transform="translate(245, 305)">
+      <rect width="110" height="145" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+      <line x1="10" y1="20" x2="80" y2="20" stroke="#334155" stroke-width="2" />
+      <line x1="10" y1="30" x2="100" y2="30" stroke="#334155" stroke-width="1" />
+      <line x1="10" y1="40" x2="90" y2="40" stroke="#334155" stroke-width="1" />
+      <line x1="10" y1="55" x2="70" y2="55" stroke="#334155" stroke-width="1.5" />
+
+      <!-- Flyout 2 -->
+      <g transform="translate(125, 10)">
+        <rect width="100" height="135" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <line x1="10" y1="15" x2="70" y2="15" stroke="#334155" stroke-width="1.5" />
+        <line x1="10" y1="25" x2="85" y2="25" stroke="#334155" stroke-width="1" />
+        <!-- Checkboxes -->
+        <circle cx="15" cy="45" r="3" fill="none" stroke="#059669" stroke-width="1" />
+        <line x1="24" y1="45" x2="80" y2="45" stroke="#334155" stroke-width="1" />
+        <circle cx="15" cy="60" r="3" fill="none" stroke="#059669" stroke-width="1" />
+        <line x1="24" y1="60" x2="80" y2="60" stroke="#334155" stroke-width="1" />
+      </g>
+      <!-- Note below -->
+      <text x="0" y="165" font-size="8.5" font-weight="700" fill="#047857">EDITING USERS / ADMIN: CUSTOM ADDRESSES</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- BOARD 4: NOTES & PDP WIREFRAME SPECS (BOTTOM CENTER)     -->
+  <!-- ======================================================== -->
+  <g transform="translate(590, 580)" filter="url(#wbShadow)">
+    <rect width="530" height="495" rx="6" fill="url(#frameAlum)" />
+    <rect x="5" y="5" width="520" height="485" rx="4" fill="url(#wbGloss)" />
+
+    <!-- Title Badge -->
+    <g transform="translate(18, 14)">
+      <rect width="370" height="24" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1" />
+      <text x="10" y="16" font-size="11" font-weight="700" fill="#15803d">BOARD 4: FEATURE NOTES &amp; PDP WIREFRAME SPECS</text>
+      <text x="295" y="16" font-size="10" fill="#22c55e">Teal &amp; Blue</text>
+    </g>
+
+    <!-- CONTENT (MATCHING PHOTO 4) -->
+    <g transform="translate(25, 45)">
+      <text x="0" y="15" font-size="14" font-weight="800" fill="#0f172a">NOTES:</text>
+
+      <!-- LANDING PAGE -->
+      <g transform="translate(0, 22)">
+        <text x="0" y="12" font-size="11" font-weight="700" fill="#0891b2">LANDING PAGE</text>
+        <text x="8" y="26" font-size="9" fill="#334155">- AUTO POPULATE IMAGE</text>
+        <text x="8" y="38" font-size="9" fill="#334155">- ABILITY TO UPDATE UPC</text>
+      </g>
+
+      <!-- SEARCH -->
+      <g transform="translate(0, 72)">
+        <text x="0" y="12" font-size="11" font-weight="700" fill="#0891b2">SEARCH</text>
+        <text x="8" y="26" font-size="9" fill="#334155">- SIZE &amp; LINING UP OF PRICE / TILES</text>
+        <text x="8" y="39" font-size="9" fill="#334155">- 2/+ TITLE DESCRIPTION ON ROLLOVER</text>
+        <text x="8" y="52" font-size="9" fill="#334155">- 0 FAVORITES / SHORT DESCRIPTIONS</text>
+      </g>
+
+      <!-- PRODUCT -->
+      <g transform="translate(0, 134)">
+        <text x="0" y="12" font-size="11" font-weight="700" fill="#0891b2">PRODUCT</text>
+        <text x="8" y="26" font-size="9" fill="#334155">- GET RID OF PRINT / SHARE</text>
+        <text x="8" y="39" font-size="9" fill="#334155">- MOVE SERVICES TO "ADD TO CART"</text>
+        <text x="8" y="52" font-size="9" fill="#334155">- RETHINK SERVICES / VARIANTS</text>
+      </g>
+
+      <!-- Check-out feature: Save for later tile -->
+      <g transform="translate(0, 205)">
+        <text x="0" y="12" font-size="9.5" font-weight="700" fill="#0891b2">Check-out feature: Save for later</text>
+        <g transform="translate(0, 20)">
+          <rect width="105" height="120" rx="4" fill="#ffffff" stroke="#dc2626" stroke-width="1.2" />
+          <rect x="10" y="10" width="40" height="35" fill="none" stroke="#dc2626" stroke-width="1" />
+          <line x1="10" y1="10" x2="50" y2="45" stroke="#dc2626" stroke-width="1" />
+          <line x1="50" y1="10" x2="10" y2="45" stroke="#dc2626" stroke-width="1" />
+          <line x1="10" y1="55" x2="70" y2="55" stroke="#dc2626" stroke-width="1.5" />
+          <text x="10" y="72" font-size="7.5" font-weight="600" fill="#dc2626">@ IN STOCK</text>
+          <text x="10" y="86" font-size="8.5" font-weight="700" fill="#dc2626">.xx</text>
+          <rect x="10" y="94" width="65" height="18" rx="2" fill="none" stroke="#dc2626" stroke-width="1" />
+          <text x="42" y="106" font-size="8" font-weight="600" fill="#dc2626" text-anchor="middle">+ ADD +</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- RIGHT HALF: DETAILED PDP WIREFRAME SKETCH (MATCHING PHOTO 4) -->
+    <g transform="translate(250, 45)">
+      <!-- Mobile Notes -->
+      <g transform="translate(0, 0)" font-size="8.5" fill="#1e293b">
+        <text x="0" y="10">- MOBILE: NOTHING SEARCH (HIDE)</text>
+        <text x="0" y="22">- PRICE RANGE / BUCKETS</text>
+        <text x="0" y="34">- ON ROLLOVER (SHOW MORE ITEMS)</text>
+      </g>
+
+      <!-- PDP Sketch Sheet -->
+      <g transform="translate(15, 45)">
+        <rect width="235" height="385" rx="4" fill="#ffffff" stroke="#dc2626" stroke-width="1.4" />
+        <!-- Header -->
+        <rect x="8" y="8" width="25" height="8" fill="none" stroke="#dc2626" stroke-width="0.8" />
+        <line x1="38" y1="12" x2="160" y2="12" stroke="#dc2626" stroke-width="1" />
+        <rect x="190" y="6" width="35" height="12" rx="2" fill="#dc2626" />
+        <text x="207" y="15" font-size="7" fill="#ffffff" text-anchor="middle">BUY</text>
+
+        <!-- Main Product Image -->
+        <rect x="10" y="26" width="95" height="80" fill="none" stroke="#dc2626" stroke-width="1" />
+        <line x1="10" y1="26" x2="105" y2="106" stroke="#dc2626" stroke-width="0.8" />
+        <line x1="105" y1="26" x2="10" y2="106" stroke="#dc2626" stroke-width="0.8" />
+
+        <!-- Title, Price, Add to Cart -->
+        <g transform="translate(115, 30)">
+          <line x1="0" y1="5" x2="105" y2="5" stroke="#dc2626" stroke-width="2" />
+          <line x1="0" y1="14" x2="80" y2="14" stroke="#dc2626" stroke-width="1.2" />
+          <text x="0" y="32" font-size="11" font-weight="700" fill="#dc2626">4.50</text>
+          <text x="0" y="46" font-size="7" fill="#dc2626">Item #: 482910</text>
+          <!-- Size / Variants -->
+          <rect x="0" y="54" width="40" height="12" rx="2" fill="none" stroke="#dc2626" stroke-width="0.8" />
+          <text x="20" y="63" font-size="7" fill="#dc2626" text-anchor="middle">Qty: 1</text>
+          <rect x="45" y="54" width="65" height="18" rx="3" fill="#dc2626" />
+          <text x="77" y="66" font-size="7.5" font-weight="700" fill="#ffffff" text-anchor="middle">Add to Cart</text>
+        </g>
+
+        <!-- Product Details Tab -->
+        <g transform="translate(10, 118)">
+          <text x="0" y="10" font-size="8" font-weight="700" fill="#dc2626">Product Details</text>
+          <line x1="0" y1="14" x2="215" y2="14" stroke="#dc2626" stroke-width="0.8" />
+          <line x1="0" y1="22" x2="200" y2="22" stroke="#dc2626" stroke-width="0.6" />
+          <line x1="0" y1="28" x2="180" y2="28" stroke="#dc2626" stroke-width="0.6" />
+          <line x1="0" y1="34" x2="190" y2="34" stroke="#dc2626" stroke-width="0.6" />
+        </g>
+
+        <!-- Similar Products / Carousel -->
+        <g transform="translate(10, 168)">
+          <text x="0" y="10" font-size="8" font-weight="700" fill="#dc2626">Similar Products</text>
+          <line x1="0" y1="14" x2="215" y2="14" stroke="#dc2626" stroke-width="0.8" />
+          <rect x="0" y="20" width="45" height="35" fill="none" stroke="#dc2626" stroke-width="0.8" />
+          <rect x="52" y="20" width="45" height="35" fill="none" stroke="#dc2626" stroke-width="0.8" />
+          <rect x="104" y="20" width="45" height="35" fill="none" stroke="#dc2626" stroke-width="0.8" />
+          <rect x="156" y="20" width="45" height="35" fill="none" stroke="#dc2626" stroke-width="0.8" />
+        </g>
+
+        <!-- Frequently Bought Together / Addtl Services -->
+        <g transform="translate(10, 235)">
+          <text x="0" y="10" font-size="8" font-weight="700" fill="#dc2626">Frequently Bought Together</text>
+          <line x1="0" y1="14" x2="215" y2="14" stroke="#dc2626" stroke-width="0.8" />
+          <rect x="0" y="20" width="65" height="32" fill="none" stroke="#dc2626" stroke-width="0.8" />
+          <text x="72" y="38" font-size="12" fill="#dc2626">+</text>
+          <rect x="85" y="20" width="65" height="32" fill="none" stroke="#dc2626" stroke-width="0.8" />
+        </g>
+
+        <!-- Additional Services / Variants -->
+        <g transform="translate(10, 298)">
+          <text x="0" y="10" font-size="8" font-weight="700" fill="#dc2626">Addtl Services</text>
+          <line x1="0" y1="14" x2="215" y2="14" stroke="#dc2626" stroke-width="0.8" />
+          <rect x="0" y="20" width="215" height="20" rx="2" fill="#fef2f2" stroke="#dc2626" stroke-width="0.8" />
+          <text x="10" y="33" font-size="7" fill="#dc2626">Installation &amp; Assembly Services Available</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- BOARD 5: PROPERTY HIERARCHY & ACCOUNTING (BOTTOM RIGHT)  -->
+  <!-- ======================================================== -->
+  <g transform="translate(1140, 580)" filter="url(#wbShadow)">
+    <rect width="520" height="495" rx="6" fill="url(#frameAlum)" />
+    <rect x="5" y="5" width="510" height="485" rx="4" fill="url(#wbGloss)" />
+
+    <!-- Title Badge -->
+    <g transform="translate(18, 14)">
+      <rect width="370" height="24" rx="4" fill="#f8fafc" stroke="#475569" stroke-width="1" />
+      <text x="10" y="16" font-size="11" font-weight="700" fill="#1e293b">BOARD 5: MULTI-LOCATION &amp; CART ACCOUNTING</text>
+      <text x="295" y="16" font-size="10" fill="#64748b">Black &amp; Blue</text>
+    </g>
+
+    <!-- CONTENT (MATCHING PHOTO 5) -->
+    <!-- Top Hierarchy Tree -->
+    <g transform="translate(25, 48)">
+      <!-- Property Name -->
+      <g transform="translate(0, 0)">
+        <rect width="105" height="32" rx="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+        <text x="52" y="20" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">Property Name</text>
+      </g>
+
+      <!-- Double-line divider -->
+      <line x1="52" y1="32" x2="52" y2="46" stroke="#1e293b" stroke-width="1.5" />
+      <line x1="20" y1="46" x2="85" y2="46" stroke="#1e293b" stroke-width="1.5" />
+      <line x1="20" y1="50" x2="85" y2="50" stroke="#1e293b" stroke-width="1.5" />
+      <line x1="52" y1="50" x2="52" y2="64" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-black)" />
+
+      <!-- Expense Type -->
+      <g transform="translate(0, 68)">
+        <rect width="105" height="32" rx="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+        <text x="52" y="20" font-size="10" font-weight="700" fill="#1e293b" text-anchor="middle">Expense Type</text>
+      </g>
+
+      <!-- Down to Chart of Accounts -->
+      <line x1="52" y1="100" x2="52" y2="124" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-black)" />
+
+      <!-- Chart of Accounts -->
+      <g transform="translate(0, 128)">
+        <rect width="115" height="32" rx="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+        <text x="57" y="20" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">Chart of Accounts</text>
+      </g>
+
+      <!-- Split to Acct Name & Acct # -->
+      <line x1="35" y1="160" x2="35" y2="180" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-black)" />
+      <line x1="80" y1="160" x2="100" y2="180" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-black)" />
+
+      <!-- Acct Name -->
+      <g transform="translate(5, 185)">
+        <rect width="70" height="28" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+        <text x="35" y="18" font-size="9" fill="#1e293b" text-anchor="middle">Acct Name</text>
+      </g>
+
+      <!-- Acct # -->
+      <g transform="translate(85, 185)">
+        <rect width="60" height="28" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+        <text x="30" y="18" font-size="9" fill="#1e293b" text-anchor="middle">Acct #</text>
+      </g>
+
+      <!-- Branch right from Expense Type to Business Unit -->
+      <path d="M 105,84 L 160,84 L 160,124" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow-black)" />
+      <g transform="translate(130, 128)">
+        <rect width="90" height="32" rx="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+        <text x="45" y="20" font-size="9.5" font-weight="700" fill="#1e293b" text-anchor="middle">Business Unit</text>
+      </g>
+
+      <!-- Right Hierarchy Notes -->
+      <g transform="translate(245, 0)" font-size="9.5" fill="#1e293b">
+        <text x="0" y="12" font-weight="700">Property Name: <tspan fill="#0284c7">Whispering Pines</tspan></text>
+        <text x="0" y="32">Exp Type → <tspan font-weight="600">Operating</tspan></text>
+        <text x="0" y="50">Business Unit → <tspan font-weight="700" fill="#0284c7">1234</tspan></text>
+        <text x="130" y="50">Sales: <tspan font-weight="700">8234</tspan></text>
+
+        <!-- Unit allocation arrows -->
+        <g transform="translate(0, 75)" font-size="9">
+          <text x="0" y="12">Unit # • Purchase Order # • Notes</text>
+          <text x="0" y="28">→ 1 Product A: Unit 10, Total 10</text>
+          <text x="0" y="42">→ 2 Product B: Unit 10, Total 20</text>
+          <text x="0" y="56">→ 1 Product C: Unit 10, Total 10</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Bottom Shopping Cart Multi-Allocation Table (MATCHING PHOTO 5) -->
+    <g transform="translate(20, 280)">
+      <text x="5" y="15" font-size="12" font-weight="800" fill="#0f172a" text-decoration="underline">Shopping Cart</text>
+
+      <!-- Table Container -->
+      <g transform="translate(0, 25)">
+        <!-- Table Header -->
+        <rect width="475" height="22" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+        <text x="10" y="15" font-size="8.5" font-weight="700" fill="#334155">Product Name</text>
+        <text x="100" y="15" font-size="8.5" font-weight="700" fill="#334155">$</text>
+        <text x="120" y="15" font-size="8.5" font-weight="700" fill="#334155">Qty</text>
+        <text x="145" y="15" font-size="8.5" font-weight="700" fill="#334155">Ext. $</text>
+        <text x="180" y="15" font-size="8.5" font-weight="700" fill="#334155">Exp Type</text>
+        <text x="235" y="15" font-size="8.5" font-weight="700" fill="#334155">BU</text>
+        <text x="270" y="15" font-size="8.5" font-weight="700" fill="#334155">CoA N/O</text>
+        <text x="330" y="15" font-size="8.5" font-weight="700" fill="#334155">Unit #</text>
+        <text x="380" y="15" font-size="8.5" font-weight="700" fill="#334155">PO #</text>
+        <text x="425" y="15" font-size="8.5" font-weight="700" fill="#334155">Notes</text>
+
+        <!-- Row 1 -->
+        <g transform="translate(0, 22)">
+          <rect width="475" height="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.8" />
+          <text x="10" y="16" font-size="8.5" font-weight="600" fill="#0f172a">+/- Case Paper</text>
+          <text x="100" y="16" font-size="8.5" fill="#334155">30</text>
+          <text x="125" y="16" font-size="8.5" fill="#334155">3</text>
+          <text x="148" y="16" font-size="8.5" font-weight="700" fill="#0f172a">90</text>
+          <rect x="178" y="3" width="45" height="17" rx="2" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.8" />
+          <text x="190" y="15" font-size="7.5" fill="#334155">Op ▾</text>
+          <text x="238" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="278" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="338" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="388" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="430" y="16" font-size="8" fill="#64748b">xxxx</text>
+        </g>
+
+        <!-- Row 2 -->
+        <g transform="translate(0, 46)">
+          <rect width="475" height="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.8" />
+          <text x="10" y="16" font-size="8.5" fill="#64748b">[Line item split 2]</text>
+          <text x="100" y="16" font-size="8.5" fill="#334155">30</text>
+          <text x="125" y="16" font-size="8.5" fill="#334155">1</text>
+          <text x="148" y="16" font-size="8.5" font-weight="700" fill="#0f172a">30</text>
+          <rect x="178" y="3" width="45" height="17" rx="2" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.8" />
+          <text x="190" y="15" font-size="7.5" fill="#334155">Op ▾</text>
+          <text x="238" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="278" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="338" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="388" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="430" y="16" font-size="8" fill="#64748b">xxxx</text>
+        </g>
+
+        <!-- Row 3 -->
+        <g transform="translate(0, 70)">
+          <rect width="475" height="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.8" />
+          <text x="10" y="16" font-size="8.5" fill="#64748b">[Line item split 3]</text>
+          <text x="100" y="16" font-size="8.5" fill="#334155">30</text>
+          <text x="125" y="16" font-size="8.5" fill="#334155">2</text>
+          <text x="148" y="16" font-size="8.5" font-weight="700" fill="#0f172a">60</text>
+          <rect x="178" y="3" width="45" height="17" rx="2" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.8" />
+          <text x="190" y="15" font-size="7.5" fill="#334155">Op ▾</text>
+          <text x="238" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="278" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="338" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="388" y="16" font-size="8" fill="#64748b">xxxx</text>
+          <text x="430" y="16" font-size="8" fill="#64748b">xxxx</text>
+        </g>
+      </g>
+
+      <!-- Location Alert Note (Bottom) -->
+      <g transform="translate(5, 130)">
+        <text x="0" y="12" font-size="10" font-weight="700" fill="#0284c7">No locations available</text>
+        <g transform="translate(0, 20)" font-size="8.5" fill="#475569">
+          <text x="0" y="10"><tspan font-weight="700" fill="#0f172a">Subject:</tspan> [Location] is no longer available for [user]</text>
+          <text x="0" y="22"><tspan font-weight="700" fill="#0f172a">Content:</tspan> [Location] was assigned to @user for purchases and is no longer available.</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#e8eaed; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Card Drop Shadows -->
+    <filter id="deckShadow" x="-5%" y="-5%" width="110%" height="112%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.18" />
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+
+    <filter id="deviceShadow" x="-8%" y="-5%" width="116%" height="112%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.22" />
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.10" />
+    </filter>
+
+    <!-- Clip Paths -->
+    <clipPath id="desktopClip">
+      <rect width="940" height="780" rx="6" />
+    </clipPath>
+    <clipPath id="tabletClip">
+      <rect width="520" height="380" rx="12" />
+    </clipPath>
+    <clipPath id="phoneClip">
+      <rect width="520" height="380" rx="16" />
+    </clipPath>
+
+    <!-- Stove Range Product Graphic Component -->
+    <g id="stoveGraphic">
+      <!-- Main body -->
+      <rect x="0" y="0" width="110" height="115" rx="3" fill="#18181b" stroke="#27272a" stroke-width="1" />
+      <!-- Backguard panel -->
+      <rect x="5" y="3" width="100" height="24" rx="1" fill="#09090b" />
+      <!-- Digital clock/display -->
+      <rect x="45" y="9" width="20" height="10" rx="1" fill="#18181b" />
+      <text x="55" y="17" font-size="6.5" font-family="monospace" fill="#38bdf8" text-anchor="middle">12:00</text>
+      <!-- Control dials -->
+      <circle cx="16" cy="14" r="4" fill="#27272a" stroke="#3f3f46" stroke-width="0.8" />
+      <circle cx="28" cy="14" r="4" fill="#27272a" stroke="#3f3f46" stroke-width="0.8" />
+      <circle cx="82" cy="14" r="4" fill="#27272a" stroke="#3f3f46" stroke-width="0.8" />
+      <circle cx="94" cy="14" r="4" fill="#27272a" stroke="#3f3f46" stroke-width="0.8" />
+      <!-- Cooktop Grates -->
+      <rect x="5" y="29" width="100" height="8" fill="#27272a" />
+      <line x1="15" y1="30" x2="15" y2="36" stroke="#52525b" stroke-width="1.5" />
+      <line x1="38" y1="30" x2="38" y2="36" stroke="#52525b" stroke-width="1.5" />
+      <line x1="72" y1="30" x2="72" y2="36" stroke="#52525b" stroke-width="1.5" />
+      <line x1="95" y1="30" x2="95" y2="36" stroke="#52525b" stroke-width="1.5" />
+      <!-- Oven Door Handle -->
+      <rect x="12" y="41" width="86" height="4" rx="1.5" fill="#d4d4d8" stroke="#71717a" stroke-width="0.5" />
+      <!-- Oven Window -->
+      <rect x="15" y="48" width="80" height="46" rx="2" fill="#09090b" stroke="#3f3f46" stroke-width="1" />
+      <!-- Inner rack glow -->
+      <rect x="22" y="58" width="66" height="2" fill="#52525b" />
+      <rect x="22" y="72" width="66" height="2" fill="#52525b" />
+      <!-- Lower Storage Drawer -->
+      <rect x="8" y="98" width="94" height="14" rx="1" fill="#27272a" />
+      <line x1="30" y1="104" x2="80" y2="104" stroke="#71717a" stroke-width="1" />
+    </g>
+
+    <!-- MFS Supply Logo Badge -->
+    <g id="mfsLogo">
+      <ellipse cx="32" cy="15" rx="30" ry="13" fill="#ffffff" stroke="#b91c1c" stroke-width="1.5" />
+      <text x="32" y="19" font-size="11" font-weight="900" font-style="italic" fill="#991b1b" text-anchor="middle" letter-spacing="0.5">MFS</text>
+      <text x="32" y="25" font-size="5" font-weight="800" fill="#1e293b" text-anchor="middle" letter-spacing="1">SUPPLY</text>
+    </g>
+  </defs>
+
+  <!-- AMBIENT GALLERY CANVAS -->
+  <rect width="1600" height="900" fill="#e8eaed" />
+
+  <!-- TOP PRESENTATION TITLE BAR -->
+  <g transform="translate(50, 24)">
+    <text x="0" y="24" font-size="20" font-weight="800" fill="#1e293b" letter-spacing="0.3">HI-FI COMPS &amp; MULTI-PLATFORM DESIGN SYSTEM</text>
+    <text x="540" y="24" font-size="13.5" font-weight="500" fill="#64748b">Responsive Production Comps • Desktop, Tablet &amp; Mobile Breakpoints • Step 11</text>
+    <g transform="translate(1260, 4)">
+      <rect width="240" height="28" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="16" cy="14" r="5" fill="#22c55e" />
+      <text x="30" y="18" font-size="11.5" font-weight="600" fill="#334155">Full-Fidelity Style Guide &amp; UI</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 1. DESKTOP PRODUCTION COMP (LEFT, 940 x 780)             -->
+  <!-- ======================================================== -->
+  <g transform="translate(50, 75)" filter="url(#deckShadow)">
+    <!-- Desktop Window Frame -->
+    <rect width="940" height="780" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+
+    <g clip-path="url(#desktopClip)">
+      <!-- Browser Top Navigation / Utilities Bar -->
+      <rect width="940" height="44" fill="#ffffff" />
+      <line x1="0" y1="44" x2="940" y2="44" stroke="#e2e8f0" stroke-width="1" />
+
+      <!-- Hamburger Menu with Cyan Highlight -->
+      <g transform="translate(22, 12)">
+        <line x1="0" y1="3" x2="16" y2="3" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+        <line x1="0" y1="8" x2="16" y2="8" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+        <line x1="0" y1="13" x2="16" y2="13" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+        <text x="20" y="12" font-size="8.5" font-weight="600" fill="#0284c7">Menu</text>
+      </g>
+
+      <!-- Logo: p^ Cyan Brand Tile -->
+      <g transform="translate(95, 7)">
+        <rect width="30" height="30" rx="4" fill="#0ea5e9" />
+        <text x="15" y="21" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">p</text>
+        <path d="M 19,9 L 23,13 L 22,14 L 19,11 L 16,14 L 15,13 z" fill="#ffffff" />
+      </g>
+
+      <!-- Search Input Box & Green SEARCH Button -->
+      <g transform="translate(145, 8)">
+        <rect width="440" height="28" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+        <rect x="370" y="0" width="70" height="28" rx="2" fill="#65a30d" />
+        <text x="400" y="18" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">Search</text>
+        <!-- Magnifier Icon in Search Button -->
+        <circle cx="426" cy="13" r="3.5" fill="none" stroke="#ffffff" stroke-width="1.4" />
+        <line x1="428.5" y1="15.5" x2="432.5" y2="19.5" stroke="#ffffff" stroke-width="1.4" />
+      </g>
+
+      <!-- Account & Cart (with badge) -->
+      <g transform="translate(650, 14)" fill="#0284c7">
+        <!-- User Icon -->
+        <circle cx="8" cy="6" r="4" fill="#0284c7" />
+        <path d="M 2,16 C 2,12 14,12 14,16 z" fill="#0284c7" />
+        <text x="20" y="12" font-size="9" font-weight="600">Account</text>
+
+        <!-- Cart Icon -->
+        <g transform="translate(85, 0)">
+          <path d="M 0,2 L 3,2 L 6,12 L 15,12 L 17,5 L 4,5" fill="none" stroke="#0284c7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="7" cy="15" r="1.5" fill="#0284c7" />
+          <circle cx="14" cy="15" r="1.5" fill="#0284c7" />
+          <text x="22" y="12" font-size="9" font-weight="600">Cart</text>
+        </g>
+      </g>
+
+      <!-- BREADCRUMBS & ACTION BADGES -->
+      <g transform="translate(25, 60)">
+        <text x="0" y="8" font-size="9" fill="#0284c7">Home &gt; Appliances &gt; Kitchen</text>
+        <!-- Badges Right -->
+        <g transform="translate(595, -2)">
+          <rect width="112" height="18" rx="3" fill="#f0fdfa" stroke="#38bdf8" stroke-width="0.8" />
+          <text x="10" y="12" font-size="8" font-weight="600" fill="#0284c7">Remove Corporate</text>
+          <rect x="96" y="5" width="8" height="8" rx="1" fill="#0284c7" />
+          <text x="100" y="11" font-size="8" fill="#ffffff" text-anchor="middle">-</text>
+
+          <rect x="118" y="0" width="105" height="18" rx="3" fill="#f0fdfa" stroke="#38bdf8" stroke-width="0.8" />
+          <text x="128" y="12" font-size="8" font-weight="600" fill="#0284c7">Remove Favorite</text>
+          <path d="M 213,9 C 213,7.5 215,7 216,8.2 C 217,7 219,7.5 219,9 C 219,10.5 216,12.5 216,12.5 C 216,12.5 213,10.5 213,9 z" fill="#0284c7" />
+        </g>
+      </g>
+
+      <!-- ============================================== -->
+      <!-- PRODUCT HERO SECTION (DESKTOP)                 -->
+      <!-- ============================================== -->
+      <!-- Left Thumbnail Strip -->
+      <g transform="translate(25, 76)">
+        <text x="14" y="6" font-size="9" fill="#0284c7" text-anchor="middle">▲</text>
+        <!-- Thumb 1 -->
+        <rect x="0" y="12" width="28" height="22" rx="1" fill="#f4f4f5" stroke="#0284c7" stroke-width="1" />
+        <use href="#stoveGraphic" transform="translate(1, 13) scale(0.24)" />
+        <!-- Thumb 2 -->
+        <rect x="0" y="37" width="28" height="22" rx="1" fill="#f4f4f5" stroke="#cbd5e1" stroke-width="0.8" />
+        <rect x="3" y="40" width="22" height="16" fill="#27272a" />
+        <!-- Thumb 3 -->
+        <rect x="0" y="62" width="28" height="22" rx="1" fill="#f4f4f5" stroke="#cbd5e1" stroke-width="0.8" />
+        <rect x="3" y="65" width="22" height="16" fill="#18181b" />
+        <!-- Thumb 4 -->
+        <rect x="0" y="87" width="28" height="22" rx="1" fill="#f4f4f5" stroke="#cbd5e1" stroke-width="0.8" />
+        <rect x="3" y="90" width="22" height="16" fill="#09090b" />
+        <text x="14" y="118" font-size="9" fill="#0284c7" text-anchor="middle">▼</text>
+      </g>
+
+      <!-- Big Stove Photo Display -->
+      <g transform="translate(65, 78)">
+        <rect width="125" height="125" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+        <use href="#stoveGraphic" transform="translate(8, 5) scale(0.98)" />
+      </g>
+
+      <!-- Title, Meta, and Buy Box -->
+      <g transform="translate(205, 78)">
+        <text x="0" y="16" font-size="16" font-weight="800" fill="#0f172a">Whirlpool 30" Black, Gas,</text>
+        <text x="0" y="34" font-size="16" font-weight="800" fill="#0f172a">Standard Clean Range / Stove</text>
+
+        <!-- Status Meta -->
+        <g transform="translate(0, 48)" font-size="8.5">
+          <text x="0" y="8" fill="#94a3b8">Item #278784</text>
+          <circle cx="66" cy="5" r="4" fill="#22c55e" />
+          <path d="M 64.5,5 L 65.5,6.2 L 68,3.8" fill="none" stroke="#ffffff" stroke-width="1" />
+          <text x="74" y="8" font-weight="600" fill="#16a34a">In Stock</text>
+          
+          <path d="M 120,5 C 120,3.5 122,3 123,4.2 C 124,3 126,3.5 126,5 C 126,6.5 123,8.5 123,8.5 C 123,8.5 120,6.5 120,5 z" fill="#dc2626" />
+          <text x="130" y="8" fill="#dc2626" font-weight="600">Favorite</text>
+
+          <rect x="175" y="1" width="7" height="7" rx="1" fill="#0284c7" />
+          <text x="186" y="8" fill="#0284c7" font-weight="600">Corporate</text>
+        </g>
+
+        <!-- Shipped by note -->
+        <text x="0" y="72" font-size="8.5" fill="#334155">Shipped by <tspan font-weight="700" fill="#0284c7">MFS Supply</tspan> | Additional <tspan font-weight="700" fill="#0284c7">5 Vendor Fee</tspan> per order</text>
+        <text x="0" y="84" font-size="7.5" fill="#64748b">SpeedHeat™ Burners, Continuous, Satin-Finish Cast-Iron Grates. Expected delivery 2-5 business days.</text>
+        <text x="0" y="94" font-size="7.5" fill="#64748b">Standard shipping delivers to ground floor lobby, garage or shed. Installation services available.</text>
+      </g>
+
+      <!-- Green Price & CTA Buy Box (Right) -->
+      <g transform="translate(690, 78)">
+        <text x="0" y="10" font-size="8.5" fill="#64748b">Qty:</text>
+        <rect x="0" y="14" width="28" height="22" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+        <text x="14" y="29" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">1</text>
+
+        <!-- Bold Green Price -->
+        <text x="45" y="30" font-size="21" font-weight="900" fill="#16a34a">66.96</text>
+        <g transform="translate(70, 36)">
+          <circle cx="5" cy="4" r="3.5" fill="#ea580c" />
+          <circle cx="5" cy="4" r="1.5" fill="#ffffff" />
+          <text x="12" y="7" font-size="7.5" font-weight="700" fill="#ea580c">Saver</text>
+        </g>
+
+        <!-- Green Add to Cart Button -->
+        <g transform="translate(0, 48)">
+          <rect width="155" height="26" rx="3" fill="#65a30d" />
+          <text x="68" y="17" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Add to Cart</text>
+          <text x="120" y="17" font-size="12" font-weight="700" fill="#ffffff">+</text>
+          <!-- Small Cart icon -->
+          <path d="M 130,9 L 133,9 L 135,16 L 141,16 L 142,11 L 134,11" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round" />
+          <circle cx="136" cy="18" r="1" fill="#ffffff" />
+          <circle cx="140" cy="18" r="1" fill="#ffffff" />
+        </g>
+      </g>
+
+      <!-- ============================================== -->
+      <!-- PRODUCT DESCRIPTION TABLE (FULL COLOR)         -->
+      <!-- ============================================== -->
+      <g transform="translate(25, 215)">
+        <text x="0" y="14" font-size="11.5" font-weight="800" fill="#0f172a">Product description</text>
+        <line x1="0" y1="20" x2="890" y2="20" stroke="#38bdf8" stroke-width="1.5" />
+
+        <g transform="translate(0, 22)" font-size="8" fill="#334155">
+          <!-- Row 1 -->
+          <rect width="890" height="16" fill="#ffffff" />
+          <text x="0" y="12" font-weight="700">Capacity (cf)</text><text x="100" y="12">5.1</text>
+          <text x="260" y="12" font-weight="700">Manufacturer Part #</text><text x="380" y="12">WFG320M0BB29.88</text>
+          <text x="540" y="12" font-weight="700">Unit Qty</text><text x="660" y="12">1</text>
+          
+          <!-- Row 2 -->
+          <rect y="16" width="890" height="16" fill="#f8fafc" />
+          <text x="0" y="28" font-weight="700">Color</text><text x="100" y="28">Black</text>
+          <text x="260" y="28" font-weight="700">Manufacturer Site</text><text x="380" y="28" fill="#0284c7">Click Here</text>
+          <text x="540" y="28" font-weight="700">Vendor Category</text><text x="660" y="28">Gas Range</text>
+
+          <!-- Row 3 -->
+          <rect y="32" width="890" height="16" fill="#ffffff" />
+          <text x="0" y="44" font-weight="700">Depth</text><text x="100" y="44">27.2</text>
+          <text x="260" y="44" font-weight="700">Type</text><text x="380" y="44">Fuel Type - Gas</text>
+          <text x="540" y="44" font-weight="700">Weight (lbs.)</text><text x="660" y="44">136</text>
+
+          <!-- Row 4 -->
+          <rect y="48" width="890" height="16" fill="#f8fafc" />
+          <text x="0" y="60" font-weight="700">Height</text><text x="100" y="60">46.25</text>
+          <text x="260" y="60" font-weight="700">Unit</text><text x="380" y="60">EA</text>
+          <text x="540" y="60" font-weight="700">Width</text><text x="660" y="60">29.88</text>
+
+          <!-- Row 5 -->
+          <rect y="64" width="890" height="16" fill="#ffffff" />
+          <text x="0" y="76" font-weight="700">Manufacturer</text><text x="100" y="76">Whirlpool</text>
+        </g>
+      </g>
+
+      <!-- ============================================== -->
+      <!-- VENDOR INFORMATION WITH MFS SUPPLY EMBLEM     -->
+      <!-- ============================================== -->
+      <g transform="translate(25, 320)">
+        <text x="0" y="14" font-size="11.5" font-weight="800" fill="#0f172a">Vendor information</text>
+        <line x1="0" y1="20" x2="890" y2="20" stroke="#38bdf8" stroke-width="1.5" />
+
+        <!-- Col 1: Contact -->
+        <g transform="translate(0, 28)" font-size="7.5" fill="#334155">
+          <text x="0" y="10" font-weight="700">Vendor Name</text><text x="0" y="19" fill="#64748b">MFS Supply</text>
+          <text x="0" y="32" font-weight="700">Vendor Part #</text><text x="0" y="41" fill="#64748b">WFG320M0BB</text>
+          <text x="0" y="54" font-weight="700">Product Support</text><text x="0" y="63" fill="#64748b">Andrew Campbell 800.607.0541</text>
+        </g>
+
+        <!-- Col 2: Logo Badge -->
+        <g transform="translate(145, 32)">
+          <use href="#mfsLogo" />
+        </g>
+
+        <!-- Col 3: Shipping Policy -->
+        <g transform="translate(240, 28)" font-size="7.5" fill="#334155">
+          <text x="0" y="10" font-weight="700">Shipping Policy</text>
+          <text x="0" y="20" fill="#64748b">Orders placed before 4:00 PM ET</text>
+          <text x="0" y="30" fill="#64748b">deliver in 2-5 business days.</text>
+          <text x="0" y="40" fill="#64748b">Standard delivery leaves items in lobby</text>
+          <text x="0" y="50" fill="#64748b">or maintenance shed.</text>
+        </g>
+
+        <!-- Col 4: Returns Policy -->
+        <g transform="translate(480, 28)" font-size="7.5" fill="#334155">
+          <text x="0" y="10" font-weight="700">Vendor Returns Policy</text>
+          <text x="0" y="20" fill="#64748b">Damaged Appliance - Notify within 10 days of delivery.</text>
+          <text x="0" y="30" fill="#64748b">Exchange will be made in 2-5 business days. Good Stock Return -</text>
+          <text x="0" y="40" fill="#64748b">Within 60 days of delivery. Subject to 0 restock fee per appliance.</text>
+        </g>
+      </g>
+
+      <!-- ============================================== -->
+      <!-- FULL COLOR PRODUCT CAROUSELS (BOTTOM)          -->
+      <!-- ============================================== -->
+      <!-- Section 1: Frequently bought together -->
+      <g transform="translate(25, 415)">
+        <text x="0" y="12" font-size="11" font-weight="800" fill="#0f172a">Frequently bought together</text>
+        <text x="845" y="12" font-size="9" font-weight="700" fill="#0284c7">See All &gt;</text>
+        <line x1="0" y1="18" x2="890" y2="18" stroke="#e2e8f0" stroke-width="1" />
+
+        <!-- Cards -->
+        <!-- Card 1: Range Hood -->
+        <g transform="translate(15, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="10" y="18" width="55" height="15" rx="2" fill="#18181b" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Range Hood</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">1.76</text>
+        </g>
+
+        <!-- Card 2: Gas Control -->
+        <g transform="translate(105, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="22" y="12" width="30" height="30" rx="2" fill="#a1a1aa" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Pilot Gas Control</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">2.01</text>
+        </g>
+
+        <!-- Card 3: Dishwasher -->
+        <g transform="translate(195, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="18" y="8" width="38" height="38" rx="1" fill="#18181b" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Built-in Dishwasher</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">69.36</text>
+        </g>
+
+        <!-- Card 4: Refrigerator Black -->
+        <g transform="translate(285, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="22" y="6" width="30" height="42" rx="1" fill="#18181b" />
+          <line x1="37" y1="6" x2="37" y2="48" stroke="#27272a" stroke-width="0.8" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Refrigerator, Black</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">,267.76</text>
+        </g>
+
+        <!-- Card 5: Kohler Sink -->
+        <g transform="translate(375, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <ellipse cx="37" cy="26" rx="25" ry="14" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.8" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Double Sink</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">27.56</text>
+        </g>
+
+        <!-- Card 6: Faucet -->
+        <g transform="translate(465, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <path d="M 37,35 L 37,15 Q 37,8 30,10 Q 25,12 25,18" fill="none" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Heritage Faucet</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">10.76</text>
+        </g>
+      </g>
+
+      <!-- Section 2: Services that can help with delivery -->
+      <g transform="translate(25, 530)">
+        <text x="0" y="12" font-size="11" font-weight="800" fill="#0f172a">Services that can help with delivery</text>
+        <line x1="0" y1="18" x2="890" y2="18" stroke="#38bdf8" stroke-width="1.5" />
+
+        <!-- 4 Service badges with MFS SUPPLY logo -->
+        <g transform="translate(15, 24)">
+          <use href="#mfsLogo" />
+          <text x="32" y="42" font-size="6.5" fill="#334155" text-anchor="middle">Set and Uncrate</text>
+          <text x="32" y="52" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">5.60</text>
+        </g>
+
+        <g transform="translate(130, 24)">
+          <use href="#mfsLogo" />
+          <text x="32" y="42" font-size="6.5" fill="#334155" text-anchor="middle">Set in Place</text>
+          <text x="32" y="52" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">5.60</text>
+        </g>
+
+        <g transform="translate(245, 24)">
+          <use href="#mfsLogo" />
+          <text x="32" y="42" font-size="6.5" fill="#334155" text-anchor="middle">Set in Place (2-5 Fl)</text>
+          <text x="32" y="52" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">1.20</text>
+        </g>
+
+        <g transform="translate(360, 24)">
+          <use href="#mfsLogo" />
+          <text x="32" y="42" font-size="6.5" fill="#334155" text-anchor="middle">Haul Away Services</text>
+          <text x="32" y="52" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">0.80</text>
+        </g>
+      </g>
+
+      <!-- Section 3: Similar products carousel -->
+      <g transform="translate(25, 638)">
+        <text x="0" y="12" font-size="11" font-weight="800" fill="#0f172a">Similar products</text>
+        <text x="845" y="12" font-size="9" font-weight="700" fill="#0284c7">See All &gt;</text>
+        <line x1="0" y1="18" x2="890" y2="18" stroke="#38bdf8" stroke-width="1.5" />
+
+        <!-- 6 Alternate Stove Models -->
+        <!-- Model 1: Stainless -->
+        <g transform="translate(15, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="20" y="6" width="34" height="40" rx="1" fill="#d4d4d8" stroke="#a1a1aa" stroke-width="0.8" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Whirlpool Stainless</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">91.76</text>
+        </g>
+
+        <!-- Model 2: White -->
+        <g transform="translate(105, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="20" y="6" width="34" height="40" rx="1" fill="#ffffff" stroke="#d4d4d8" stroke-width="0.8" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Whirlpool White</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">66.96</text>
+        </g>
+
+        <!-- Model 3: Amana White -->
+        <g transform="translate(195, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="20" y="6" width="34" height="40" rx="1" fill="#ffffff" stroke="#d4d4d8" stroke-width="0.8" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Amana White</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">98.16</text>
+        </g>
+
+        <!-- Model 4: Amana Black -->
+        <g transform="translate(285, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="20" y="6" width="34" height="40" rx="1" fill="#18181b" stroke="#27272a" stroke-width="0.8" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Amana Black</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">98.16</text>
+        </g>
+
+        <!-- Model 5: Amana Stainless -->
+        <g transform="translate(375, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="20" y="6" width="34" height="40" rx="1" fill="#e4e4e7" stroke="#a1a1aa" stroke-width="0.8" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Amana Stainless</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">60.56</text>
+        </g>
+
+        <!-- Model 6: Whirlpool Bisque -->
+        <g transform="translate(465, 24)">
+          <rect width="75" height="52" rx="2" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.8" />
+          <rect x="20" y="6" width="34" height="40" rx="1" fill="#fef3c7" stroke="#fde68a" stroke-width="0.8" />
+          <text x="37" y="62" font-size="6.5" fill="#334155" text-anchor="middle">Whirlpool Bisque</text>
+          <text x="37" y="72" font-size="7.5" font-weight="700" fill="#16a34a" text-anchor="middle">91.76</text>
+        </g>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 2. TABLET COMP (RIGHT TOP, 530 x 380)                    -->
+  <!-- ======================================================== -->
+  <g transform="translate(1020, 75)" filter="url(#deviceShadow)">
+    <rect width="530" height="380" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+    <rect x="4" y="4" width="522" height="372" rx="10" fill="#ffffff" />
+
+    <g clip-path="url(#tabletClip)">
+      <!-- iPad Status Bar -->
+      <rect width="530" height="18" fill="#f1f5f9" />
+      <g font-size="7.5" font-weight="600" fill="#475569">
+        <text x="12" y="13">••••• VIRGIN</text>
+        <text x="265" y="13" text-anchor="middle">4:21 PM • purchasingplatform.com</text>
+        <text x="485" y="13">22% [■]</text>
+      </g>
+
+      <!-- Tablet Header -->
+      <g transform="translate(0, 18)">
+        <rect width="530" height="36" fill="#ffffff" />
+        <line x1="0" y1="36" x2="530" y2="36" stroke="#e2e8f0" stroke-width="1" />
+
+        <!-- Menu & Logo -->
+        <g transform="translate(16, 11)">
+          <line x1="0" y1="2" x2="14" y2="2" stroke="#0284c7" stroke-width="1.8" />
+          <line x1="0" y1="6" x2="14" y2="6" stroke="#0284c7" stroke-width="1.8" />
+          <line x1="0" y1="10" x2="14" y2="10" stroke="#0284c7" stroke-width="1.8" />
+        </g>
+        <g transform="translate(48, 6)">
+          <rect width="24" height="24" rx="3" fill="#0ea5e9" />
+          <text x="12" y="17" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">p</text>
+        </g>
+
+        <!-- Search Bar -->
+        <g transform="translate(85, 7)">
+          <rect width="315" height="22" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8" />
+          <rect x="280" y="0" width="35" height="22" rx="2" fill="#65a30d" />
+          <circle cx="297" cy="11" r="3" fill="none" stroke="#ffffff" stroke-width="1.2" />
+          <line x1="299" y1="13" x2="302" y2="16" stroke="#ffffff" stroke-width="1.2" />
+        </g>
+
+        <!-- Icons -->
+        <g transform="translate(435, 11)" fill="#0284c7">
+          <circle cx="8" cy="5" r="3.5" fill="#0284c7" />
+          <path d="M 2,13 C 2,10 14,10 14,13 z" fill="#0284c7" />
+          <g transform="translate(45, 0)">
+            <path d="M 0,2 L 3,2 L 5,10 L 13,10 L 14,4 L 3.5,4" fill="none" stroke="#0284c7" stroke-width="1.2" />
+          </g>
+        </g>
+      </g>
+
+      <!-- Back Link & Favorite -->
+      <g transform="translate(16, 64)">
+        <text x="0" y="8" font-size="8.5" font-weight="700" fill="#0284c7">&lt; Kitchen</text>
+        <rect x="395" y="-3" width="105" height="16" rx="2" fill="#f0fdfa" stroke="#38bdf8" stroke-width="0.8" />
+        <text x="405" y="8" font-size="7.5" font-weight="600" fill="#0284c7">Remove Favorite - ♥</text>
+      </g>
+
+      <!-- Tablet Product Section -->
+      <g transform="translate(16, 82)">
+        <!-- Stove Photo -->
+        <use href="#stoveGraphic" transform="translate(0, 0) scale(0.68)" />
+        
+        <!-- Thumbnails below -->
+        <g transform="translate(0, 84)">
+          <rect width="16" height="14" fill="#f4f4f5" stroke="#0284c7" stroke-width="0.8" />
+          <rect x="20" y="0" width="16" height="14" fill="#27272a" />
+          <rect x="40" y="0" width="16" height="14" fill="#18181b" />
+          <rect x="60" y="0" width="16" height="14" fill="#09090b" />
+        </g>
+
+        <!-- Tablet Title & Price -->
+        <g transform="translate(95, 0)">
+          <text x="0" y="12" font-size="12" font-weight="800" fill="#0f172a">Whirlpool 30" Black, Gas,</text>
+          <text x="0" y="25" font-size="12" font-weight="800" fill="#0f172a">Standard Clean Range / Stove</text>
+          <text x="0" y="38" font-size="7.5" fill="#64748b">Item #278784 • In Stock • Favorite • Corporate</text>
+          <text x="0" y="49" font-size="7.5" fill="#0284c7">Shipped by MFS Supply | Addtl 5 Fee</text>
+
+          <!-- Price & Button -->
+          <g transform="translate(245, 0)">
+            <rect width="20" height="18" rx="1" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8" />
+            <text x="10" y="13" font-size="9" font-weight="700" fill="#0f172a" text-anchor="middle">1</text>
+            <text x="30" y="16" font-size="16" font-weight="900" fill="#16a34a">66.96</text>
+            <rect x="0" y="24" width="145" height="22" rx="2" fill="#65a30d" />
+            <text x="72" y="39" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">Add to Cart +</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Specs Table Preview Tablet -->
+      <g transform="translate(16, 195)">
+        <text x="0" y="10" font-size="9.5" font-weight="800" fill="#0f172a">Product Details</text>
+        <line x1="0" y1="14" x2="495" y2="14" stroke="#38bdf8" stroke-width="1.2" />
+        <g transform="translate(0, 18)" font-size="7.5" fill="#334155">
+          <text x="0" y="10" font-weight="700">Capacity (cf): <tspan font-weight="400">5.1</tspan></text>
+          <text x="120" y="10" font-weight="700">Type: <tspan font-weight="400">Gas Range</tspan></text>
+          <text x="240" y="10" font-weight="700">Color: <tspan font-weight="400">Black</tspan></text>
+          <text x="360" y="10" font-weight="700">Unit: <tspan font-weight="400">EA</tspan></text>
+          <text x="0" y="24" font-weight="700">Manufacturer: <tspan font-weight="400">Whirlpool</tspan></text>
+          <text x="120" y="24" font-weight="700">Part #: <tspan font-weight="400">WFG320M0BB</tspan></text>
+          <text x="240" y="24" font-weight="700">Weight: <tspan font-weight="400">136 lbs</tspan></text>
+          <text x="360" y="24" font-weight="700">Width: <tspan font-weight="400">29.88"</tspan></text>
+        </g>
+
+        <!-- Carousel preview row -->
+        <g transform="translate(0, 56)">
+          <text x="0" y="10" font-size="9" font-weight="700" fill="#0f172a">Frequently bought together</text>
+          <text x="460" y="10" font-size="7.5" font-weight="700" fill="#0284c7">See All &gt;</text>
+          <g transform="translate(0, 16)">
+            <rect width="42" height="34" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.6" />
+            <rect x="55" y="0" width="42" height="34" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.6" />
+            <rect x="110" y="0" width="42" height="34" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.6" />
+            <rect x="165" y="0" width="42" height="34" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.6" />
+            <text x="21" y="43" font-size="6" fill="#334155" text-anchor="middle">Hood 1.76</text>
+            <text x="76" y="43" font-size="6" fill="#334155" text-anchor="middle">Pilot 2.01</text>
+            <text x="131" y="43" font-size="6" fill="#334155" text-anchor="middle">Dishwasher</text>
+            <text x="186" y="43" font-size="6" fill="#334155" text-anchor="middle">Fridge Black</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 3. MOBILE SMARTPHONE COMP (RIGHT BOTTOM, 530 x 375)      -->
+  <!-- ======================================================== -->
+  <g transform="translate(1020, 480)" filter="url(#deviceShadow)">
+    <rect width="530" height="375" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+    <rect x="4" y="4" width="522" height="367" rx="12" fill="#ffffff" />
+
+    <g clip-path="url(#phoneClip)">
+      <!-- Status & Top URL Bar -->
+      <rect width="530" height="16" fill="#f8fafc" />
+      <g font-size="7" font-weight="600" fill="#475569">
+        <text x="12" y="11">••••• VIRGIN</text>
+        <text x="265" y="11" text-anchor="middle">4:21 PM • purchasingplatform.com</text>
+        <text x="485" y="11">22% [■]</text>
+      </g>
+
+      <!-- App Header Bar -->
+      <g transform="translate(0, 16)">
+        <rect width="530" height="32" fill="#ffffff" />
+        <line x1="0" y1="32" x2="530" y2="32" stroke="#e2e8f0" stroke-width="1" />
+        <!-- Hamburger & Logo -->
+        <g transform="translate(16, 10)">
+          <line x1="0" y1="2" x2="14" y2="2" stroke="#0284c7" stroke-width="1.8" />
+          <line x1="0" y1="6" x2="14" y2="6" stroke="#0284c7" stroke-width="1.8" />
+          <line x1="0" y1="10" x2="14" y2="10" stroke="#0284c7" stroke-width="1.8" />
+        </g>
+        <g transform="translate(48, 5)">
+          <rect width="22" height="22" rx="3" fill="#0ea5e9" />
+          <text x="11" y="16" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">p</text>
+        </g>
+        <!-- Icons -->
+        <g transform="translate(440, 9)" fill="#0284c7">
+          <circle cx="8" cy="5" r="3.5" fill="#0284c7" />
+          <path d="M 2,13 C 2,10 14,10 14,13 z" fill="#0284c7" />
+          <g transform="translate(45, 0)">
+            <path d="M 0,2 L 3,2 L 5,10 L 13,10 L 14,4 L 3.5,4" fill="none" stroke="#0284c7" stroke-width="1.2" />
+          </g>
+        </g>
+      </g>
+
+      <!-- Breadcrumbs & Favorite toggle -->
+      <g transform="translate(16, 56)">
+        <text x="0" y="8" font-size="8" font-weight="700" fill="#0284c7">&lt; Kitchen</text>
+        <rect x="440" y="-3" width="65" height="14" rx="2" fill="#f0fdfa" stroke="#38bdf8" stroke-width="0.8" />
+        <text x="452" y="7" font-size="7" font-weight="600" fill="#0284c7">- ♥</text>
+      </g>
+
+      <!-- Mobile Product Content (Split Layout for Panoramic Device Card) -->
+      <!-- Left side: Stove photo & details -->
+      <g transform="translate(16, 75)">
+        <!-- Swipe Carousel View -->
+        <rect x="0" y="5" width="28" height="60" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.6" />
+        <g transform="translate(35, 0)">
+          <use href="#stoveGraphic" transform="scale(0.68)" />
+        </g>
+        <rect x="118" y="5" width="28" height="60" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.6" />
+
+        <!-- Title below -->
+        <g transform="translate(0, 85)">
+          <text x="0" y="10" font-size="10.5" font-weight="800" fill="#0f172a">Whirlpool 30" Black, Gas,</text>
+          <text x="0" y="22" font-size="10.5" font-weight="800" fill="#0f172a">Standard Clean Range / Stove</text>
+          <text x="0" y="33" font-size="7" fill="#64748b">Item #278784 • In Stock • Favorite • Corporate</text>
+          <text x="0" y="43" font-size="7" fill="#0284c7">Shipped by MFS Supply | Addtl 5 Fee</text>
+        </g>
+      </g>
+
+      <!-- Right side: Green CTA Box & Mobile Accordions (Matching Photo 3!) -->
+      <g transform="translate(225, 75)">
+        <!-- Buy Action Box -->
+        <g transform="translate(0, 0)">
+          <text x="0" y="10" font-size="8" fill="#64748b">Qty:</text>
+          <rect x="22" y="0" width="22" height="18" rx="1" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8" />
+          <text x="33" y="13" font-size="9" font-weight="700" fill="#0f172a" text-anchor="middle">1</text>
+          <text x="55" y="14" font-size="17" font-weight="900" fill="#16a34a">66.96</text>
+          <text x="130" y="14" font-size="7.5" font-weight="700" fill="#ea580c">Saver</text>
+
+          <!-- Full Width Solid Green CTA Button -->
+          <rect x="0" y="24" width="270" height="24" rx="3" fill="#65a30d" />
+          <text x="135" y="40" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Add to Cart + [🛒]</text>
+        </g>
+
+        <!-- Product Details Preview -->
+        <g transform="translate(0, 58)">
+          <text x="0" y="10" font-size="9" font-weight="800" fill="#0f172a">Product Details</text>
+          <line x1="0" y1="14" x2="270" y2="14" stroke="#38bdf8" stroke-width="1.2" />
+          <g transform="translate(0, 17)" font-size="7.5" fill="#334155">
+            <text x="0" y="10" font-weight="700">Capacity: <tspan font-weight="400">5.1 cf</tspan></text>
+            <text x="100" y="10" font-weight="700">Color: <tspan font-weight="400">Black</tspan></text>
+            <text x="180" y="10" font-weight="700">Fuel: <tspan font-weight="400">Gas</tspan></text>
+            <text x="0" y="22" font-weight="700">Dimensions: <tspan font-weight="400">46.2"H × 29.8"W × 27.2"D</tspan></text>
+          </g>
+        </g>
+
+        <!-- Mobile Expandable Blue Accordions (Matching Photo 3!) -->
+        <g transform="translate(0, 110)">
+          <!-- Accordion 1 -->
+          <g transform="translate(0, 0)">
+            <line x1="0" y1="0" x2="270" y2="0" stroke="#38bdf8" stroke-width="1" />
+            <text x="0" y="15" font-size="9" font-weight="700" fill="#0284c7">Frequently bought together</text>
+            <text x="260" y="15" font-size="10" font-weight="700" fill="#0284c7">&gt;</text>
+          </g>
+          <!-- Accordion 2 -->
+          <g transform="translate(0, 24)">
+            <line x1="0" y1="0" x2="270" y2="0" stroke="#38bdf8" stroke-width="1" />
+            <text x="0" y="15" font-size="9" font-weight="700" fill="#0284c7">Services that can help with delivery</text>
+            <text x="260" y="15" font-size="10" font-weight="700" fill="#0284c7">&gt;</text>
+          </g>
+          <!-- Accordion 3 -->
+          <g transform="translate(0, 48)">
+            <line x1="0" y1="0" x2="270" y2="0" stroke="#38bdf8" stroke-width="1" />
+            <text x="0" y="15" font-size="9" font-weight="700" fill="#0284c7">Similar Products</text>
+            <text x="260" y="15" font-size="10" font-weight="700" fill="#0284c7">&gt;</text>
+            <line x1="0" y1="24" x2="270" y2="24" stroke="#38bdf8" stroke-width="1" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+</svg>

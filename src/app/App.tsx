@@ -64,43 +64,43 @@ const mainProjects: Project[] = [
         label: "Heat Mapping",
         description:
           "Used heat maps to see how users navigated the current structure — what was most used and what portions were essential for task completion.",
-        placeholder: true,
-        placeholderText: "Heatmap & Clickstream Data",
+        image: "/purchasing_platform_step6_heatmap.svg",
+        imageAlt: "Purchasing Platform Desktop Clickstream & Attention Heatmap Analysis",
       },
       {
         label: "Analytics",
         description:
           "Dove into numbers to inform decisions: screen sizes in use, bounce rates, drop-off points, and purchasing habits for marketing optimization.",
-        placeholder: true,
-        placeholderText: "Funnel & Drop-off Analytics",
+        image: "/purchasing_platform_step7_analytics.svg",
+        imageAlt: "Visitor Insights Dashboard — Traffic, Screen Resolutions & Browser Bounce Rates",
       },
       {
         label: "User Flow",
         description:
           "Generated user flows highlighting challenges and identifying where processes could be streamlined for the quickest route to conversion.",
-        placeholder: true,
-        placeholderText: "User Flow Blueprint",
+        image: "/purchasing_platform_step8_userflow.svg",
+        imageAlt: "Purchasing Platform User Flow Diagram & Architecture Blueprint",
       },
       {
         label: "Whiteboarding",
         description:
           "Heavy use of whiteboard sketching to rapidly iterate through ideas, facilitating group discussion around design decisions.",
-        placeholder: true,
-        placeholderText: "Whiteboard Sketches & Ideation",
+        image: "/purchasing_platform_step9_whiteboarding.svg",
+        imageAlt: "Purchasing Platform Whiteboard Ideation Wall — Vendor Workflow, Architecture Matrix, Shipping Wireframes & Cart Accounting",
       },
       {
         label: "Lo-Fi Wireframing",
         description:
           "Created lo-fidelity wireframes and prototypes to understand page structure and user interactions, hammering out limitations early.",
-        placeholder: true,
-        placeholderText: "Lo-Fi Wireframe Mockups",
+        image: "/purchasing_platform_step10_lofi_wireframes.svg",
+        imageAlt: "Purchasing Platform Lo-Fi Wireframes — Responsive Desktop & Mobile Product Detail Page Prototype",
       },
       {
         label: "Hi-Fi Comps",
         description:
           "Produced high-fidelity comps using the established style-guide, giving the team a real feel for look and behavior across platforms.",
-        placeholder: true,
-        placeholderText: "Hi-Fi Comps & Design Specs",
+        image: "/purchasing_platform_step11_hifi_comps.svg",
+        imageAlt: "Purchasing Platform Hi-Fi Comps — Production Desktop, Tablet & Mobile Product Detail Page Comps",
       },
     ],
   },

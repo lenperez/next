@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1100" width="1000" height="1100" style="background:#8f9499; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Base Heatmap Radial Gradients -->
+    <!-- High Intensity Red Hotspot (e.g. Products Row 1, Search, Nav items) -->
+    <radialGradient id="heatHot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d91b24" stop-opacity="0.95" />
+      <stop offset="35%" stop-color="#ea2e23" stop-opacity="0.88" />
+      <stop offset="55%" stop-color="#f57d19" stop-opacity="0.75" />
+      <stop offset="75%" stop-color="#eed018" stop-opacity="0.6" />
+      <stop offset="90%" stop-color="#84cc16" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#84cc16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Medium Intensity Orange/Yellow Hotspot -->
+    <radialGradient id="heatMedium" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.85" />
+      <stop offset="30%" stop-color="#f59e0b" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#eab308" stop-opacity="0.6" />
+      <stop offset="85%" stop-color="#84cc16" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#84cc16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Low/Ambient Green Attention Cloud -->
+    <radialGradient id="heatGreen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#84cc16" stop-opacity="0.65" />
+      <stop offset="45%" stop-color="#a3e635" stop-opacity="0.5" />
+      <stop offset="80%" stop-color="#bef264" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#bef264" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Warm Amber Hotspot (for Search bar button and footer carousel) -->
+    <radialGradient id="heatAmber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c2410c" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="#ea580c" stop-opacity="0.8" />
+      <stop offset="65%" stop-color="#f59e0b" stop-opacity="0.65" />
+      <stop offset="85%" stop-color="#84cc16" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#84cc16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Subtle Drop Shadows for Product Cards -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- ======================================================== -->
+  <!-- 1. BASE WEBSITE UI: PURCHASING PLATFORM HOMEPAGE         -->
+  <!-- ======================================================== -->
+
+  <!-- Top Utilities Strip (Left dropdown chevron) -->
+  <rect x="0" y="0" width="1000" height="36" fill="#f8fafc" />
+  <rect x="0" y="0" width="76" height="36" fill="#1e2227" />
+  <path d="M 30,15 L 38,23 L 46,15" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Main Brand Header Bar -->
+  <rect x="76" y="0" width="924" height="74" fill="#ffffff" />
+  <g transform="translate(155, 12)">
+    <!-- Logo square -->
+    <rect x="0" y="0" width="46" height="46" rx="4" fill="#0284c7" />
+    <path d="M 23,8 L 33,18 L 27,18 L 27,34 L 19,34 L 19,18 L 13,18 Z" fill="#ffffff" />
+    <!-- Brand text -->
+    <text x="56" y="24" font-size="22" font-weight="800" fill="#0f172a" letter-spacing="-0.5">purchasing</text>
+    <text x="56" y="44" font-size="18" font-weight="600" fill="#64748b">platform</text>
+  </g>
+
+  <!-- Top Navigation Links (Right) -->
+  <g transform="translate(520, 36)" font-size="11" font-weight="600" fill="#0284c7">
+    <text x="0" y="0">Corporate Catalog</text>
+    <text x="120" y="0">Favorites</text>
+    <text x="200" y="0">Account</text>
+    <text x="270" y="0">Cart (0)</text>
+  </g>
+
+  <!-- Blue/Teal Search Banner -->
+  <rect x="0" y="74" width="1000" height="66" fill="#08738e" />
+  <!-- Search Input Bar -->
+  <rect x="155" y="86" width="600" height="42" rx="3" fill="#ffffff" />
+  <text x="175" y="112" font-size="13" fill="#94a3b8">What would you like to find today?</text>
+  <!-- Search Action Button -->
+  <rect x="760" y="86" width="105" height="42" rx="3" fill="#65a30d" />
+  <text x="812" y="112" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Search</text>
+
+  <!-- ======================================================== -->
+  <!-- MAIN BODY: CATEGORY SIDEBAR + PRODUCT CATALOG GRID       -->
+  <!-- ======================================================== -->
+  <rect x="0" y="140" width="1000" height="915" fill="#8f9499" />
+
+  <!-- LEFT SIDEBAR: CATEGORIES -->
+  <g transform="translate(155, 160)">
+    <text x="0" y="20" font-size="15" font-weight="bold" fill="#0f172a">Products</text>
+    <g font-size="9.5" fill="#1e293b" font-weight="500">
+      <text x="0" y="42">Best Deals</text>
+      <text x="0" y="60">Appliances</text>
+      <text x="0" y="78">Breakroom</text>
+      <text x="0" y="96">Building Materials</text>
+      <text x="0" y="114">Cleaning &amp; Janitorial</text>
+      <text x="0" y="132">Doors &amp; Windows</text>
+      <text x="0" y="150">Electrical</text>
+      <text x="0" y="168">Fitness &amp; Exercise</text>
+      <text x="0" y="186">Furniture</text>
+      <text x="0" y="204">Hardware &amp; Tools</text>
+      <text x="0" y="222">Heating &amp; Cooling</text>
+      <text x="0" y="240">Internal Finishings</text>
+      <text x="0" y="258">Lawn &amp; Garden</text>
+      <text x="0" y="276">Lighting &amp; Fans</text>
+      <text x="0" y="294">Manufactured Housing</text>
+      <text x="0" y="312">Material Handling &amp; Storage</text>
+      <text x="0" y="330">Office Supplies</text>
+      <text x="0" y="348">Paint</text>
+      <text x="0" y="366">Plumbing</text>
+      <text x="0" y="384">Pool &amp; Patio</text>
+      <text x="0" y="402">Safety &amp; Security</text>
+      <text x="0" y="420">Technology, Ink &amp; Toner</text>
+    </g>
+
+    <text x="0" y="456" font-size="15" font-weight="bold" fill="#0f172a">Services</text>
+    <g font-size="9.5" fill="#1e293b" font-weight="500">
+      <text x="0" y="478">Flooring</text>
+      <text x="0" y="496">Paving</text>
+      <text x="0" y="514">Refuse Management</text>
+      <text x="0" y="532">Vehicles</text>
+    </g>
+  </g>
+
+  <!-- PRODUCT GRID (4 COLUMNS x 4 ROWS) -->
+  <g transform="translate(325, 175)">
+    <!-- ================= ROW 1 ================= -->
+    <!-- Col 1: Soil -->
+    <g transform="translate(0, 0)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.4" />
+      <!-- Soil bag graphic -->
+      <polygon points="32,60 72,60 66,15 38,15" fill="#92400e" rx="3" />
+      <rect x="42" y="25" width="22" height="18" fill="#fde047" rx="1" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Soil</text>
+    </g>
+
+    <!-- Col 2: Air Conditioners -->
+    <g transform="translate(140, 0)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.4" />
+      <!-- AC unit graphic -->
+      <rect x="25" y="20" width="56" height="38" rx="2" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
+      <rect x="30" y="25" width="34" height="28" fill="#94a3b8" rx="1" />
+      <rect x="68" y="25" width="8" height="10" fill="#0284c7" />
+      <text x="52" y="90" font-size="10" font-weight="600" fill="#1e293b" text-anchor="middle">Air Conditioners</text>
+    </g>
+
+    <!-- Col 3: Space Heaters -->
+    <g transform="translate(280, 0)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.4" />
+      <!-- Heater graphic -->
+      <rect x="28" y="16" width="50" height="44" rx="4" fill="#dc2626" />
+      <rect x="36" y="24" width="34" height="28" fill="#1e293b" rx="2" />
+      <line x1="42" y1="30" x2="64" y2="30" stroke="#f97316" stroke-width="2" />
+      <line x1="42" y1="38" x2="64" y2="38" stroke="#f97316" stroke-width="2" />
+      <line x1="42" y1="46" x2="64" y2="46" stroke="#f97316" stroke-width="2" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Space Heaters</text>
+    </g>
+
+    <!-- Col 4: Appliances -->
+    <g transform="translate(420, 0)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.4" />
+      <!-- Appliance graphic -->
+      <rect x="32" y="14" width="42" height="50" rx="2" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1" />
+      <line x1="32" y1="32" x2="74" y2="32" stroke="#64748b" stroke-width="1.5" />
+      <circle cx="68" cy="24" r="2" fill="#475569" />
+      <circle cx="68" cy="46" r="2" fill="#475569" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Appliances</text>
+    </g>
+
+    <!-- ================= ROW 2 ================= -->
+    <!-- Col 1: Electrical -->
+    <g transform="translate(0, 115)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Wall outlet icon -->
+      <rect x="32" y="14" width="40" height="50" rx="3" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
+      <rect x="40" y="24" width="3" height="10" fill="#334155" />
+      <rect x="58" y="24" width="3" height="10" fill="#334155" />
+      <circle cx="50.5" cy="38" r="2.5" fill="#334155" />
+      <rect x="40" y="44" width="3" height="10" fill="#334155" />
+      <rect x="58" y="44" width="3" height="10" fill="#334155" />
+      <circle cx="50.5" cy="58" r="2.5" fill="#334155" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Electrical</text>
+    </g>
+
+    <!-- Col 2: Janitorial -->
+    <g transform="translate(140, 115)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Spray cleaner graphic -->
+      <polygon points="44,28 60,28 56,15 48,15" fill="#0284c7" />
+      <rect x="42" y="28" width="22" height="36" rx="2" fill="#22c55e" />
+      <rect x="45" y="38" width="16" height="14" fill="#ffffff" rx="1" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Janitorial</text>
+    </g>
+
+    <!-- Col 3: Safety & Security -->
+    <g transform="translate(280, 115)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Smoke detector / lock icon -->
+      <circle cx="52" cy="38" r="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+      <circle cx="52" cy="38" r="14" fill="#f1f5f9" />
+      <circle cx="52" cy="38" r="5" fill="#dc2626" />
+      <text x="52" y="90" font-size="9.5" font-weight="600" fill="#1e293b" text-anchor="middle">Safety &amp; Security</text>
+    </g>
+
+    <!-- Col 4: Copy Paper -->
+    <g transform="translate(420, 115)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Red copy paper box -->
+      <polygon points="30,30 60,18 78,28 48,40" fill="#ef4444" />
+      <polygon points="30,30 48,40 48,60 30,50" fill="#b91c1c" />
+      <polygon points="48,40 78,28 78,48 48,60" fill="#dc2626" />
+      <text x="52" y="80" font-size="8" font-weight="bold" fill="#dc2626" text-anchor="middle">10 REAMS</text>
+      <text x="52" y="94" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Copy Paper</text>
+    </g>
+
+    <!-- ================= ROW 3 ================= -->
+    <!-- Col 1: Patio & Outdoor -->
+    <g transform="translate(0, 230)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Patio table graphic -->
+      <rect x="30" y="24" width="44" height="24" rx="2" fill="#78350f" />
+      <rect x="36" y="48" width="4" height="16" fill="#451a03" />
+      <rect x="64" y="48" width="4" height="16" fill="#451a03" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Patio &amp; Outdoor</text>
+    </g>
+
+    <!-- Col 2: Lighting -->
+    <g transform="translate(140, 230)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- CFL lightbulb graphic -->
+      <path d="M 45,16 Q 52,10 59,16 Q 52,24 45,30 Q 52,38 59,44 L 59,50 L 45,50 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
+      <rect x="47" y="52" width="10" height="8" fill="#ca8a04" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Lighting</text>
+    </g>
+
+    <!-- Col 3: Breakroom -->
+    <g transform="translate(280, 230)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Red coffee tub graphic -->
+      <rect x="36" y="16" width="34" height="46" rx="4" fill="#b91c1c" />
+      <rect x="34" y="14" width="38" height="6" rx="2" fill="#7f1d1d" />
+      <rect x="42" y="28" width="22" height="16" fill="#fde047" rx="1" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Breakroom</text>
+    </g>
+
+    <!-- Col 4: Paper Towels -->
+    <g transform="translate(420, 230)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Paper towels carton box -->
+      <rect x="28" y="20" width="50" height="40" rx="2" fill="#d97706" />
+      <rect x="36" y="26" width="34" height="14" fill="#fef3c7" rx="1" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Paper Towels</text>
+    </g>
+
+    <!-- ================= ROW 4 ================= -->
+    <!-- Col 1: Signs -->
+    <g transform="translate(0, 345)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- STOP sign graphic -->
+      <polygon points="40,16 64,16 76,28 76,52 64,64 40,64 28,52 28,28" fill="#dc2626" stroke="#ffffff" stroke-width="2" />
+      <text x="52" y="44" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">STOP</text>
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Signs</text>
+    </g>
+
+    <!-- Col 2: Paint -->
+    <g transform="translate(140, 345)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Paint can graphic -->
+      <rect x="36" y="20" width="34" height="44" rx="2" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1" />
+      <rect x="38" y="28" width="30" height="20" fill="#0284c7" rx="1" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Paint</text>
+    </g>
+
+    <!-- Col 3: Ink & Toner -->
+    <g transform="translate(280, 345)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Ink cartridge box graphic -->
+      <rect x="36" y="18" width="34" height="46" rx="2" fill="#0f172a" />
+      <circle cx="53" cy="34" r="8" fill="#06b6d4" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Ink &amp; Toner</text>
+    </g>
+
+    <!-- Col 4: Plumbing -->
+    <g transform="translate(420, 345)">
+      <rect x="15" y="0" width="75" height="75" rx="4" fill="#a3a8ad" opacity="0.3" />
+      <!-- Faucet graphic -->
+      <path d="M 44,56 L 44,28 Q 44,16 54,16 Q 64,16 64,28 L 64,34" fill="none" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round" />
+      <rect x="34" y="54" width="38" height="6" rx="2" fill="#94a3b8" />
+      <text x="52" y="90" font-size="10.5" font-weight="600" fill="#1e293b" text-anchor="middle">Plumbing</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- FAVORITES SECTION                                        -->
+  <!-- ======================================================== -->
+  <g transform="translate(155, 680)">
+    <text x="0" y="24" font-size="15" font-weight="bold" fill="#0f172a">Favorites</text>
+
+    <!-- Left Arrow Button in Circle -->
+    <circle cx="18" cy="80" r="16" fill="#475569" opacity="0.6" />
+    <path d="M 21,74 L 14,80 L 21,86" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Favorite 1: Clorox Toilet Bowl Cleaner -->
+    <g transform="translate(70, 35)">
+      <rect x="12" y="0" width="34" height="65" rx="4" fill="#0284c7" />
+      <rect x="18" y="14" width="22" height="30" fill="#ffffff" rx="1" />
+      <text x="29" y="80" font-size="8.5" font-weight="500" fill="#1e293b" text-anchor="middle">Clorox&#174; Bleach Toilet Bowl Cleaner, 24</text>
+      <text x="29" y="92" font-size="8.5" font-weight="500" fill="#1e293b" text-anchor="middle">Oz.</text>
+    </g>
+
+    <!-- Favorite 2: Copy Paper Carton -->
+    <g transform="translate(230, 42)">
+      <polygon points="10,25 45,10 70,22 35,37" fill="#94a3b8" />
+      <polygon points="10,25 35,37 35,55 10,43" fill="#64748b" />
+      <polygon points="35,37 70,22 70,40 35,55" fill="#cbd5e1" />
+      <text x="40" y="74" font-size="8" font-weight="500" fill="#1e293b" text-anchor="middle">Copy Paper, 8 1/2" x 11", 20 Lb, 500</text>
+      <text x="40" y="86" font-size="8" font-weight="500" fill="#1e293b" text-anchor="middle">Sheets Per Ream, 10 Reams Per</text>
+      <text x="40" y="98" font-size="8" font-weight="500" fill="#1e293b" text-anchor="middle">Carton, Pallet Of 40 Cartons</text>
+    </g>
+
+    <!-- Favorite 3: Ice Melt Bag -->
+    <g transform="translate(420, 32)">
+      <rect x="10" y="0" width="38" height="58" rx="2" fill="#ea580c" />
+      <rect x="14" y="8" width="30" height="20" fill="#0284c7" rx="1" />
+      <text x="29" y="84" font-size="8" font-weight="500" fill="#1e293b" text-anchor="middle">Road Runner Calcium Chloride Blend</text>
+      <text x="29" y="96" font-size="8" font-weight="500" fill="#1e293b" text-anchor="middle">Ice Melt, Pallet of 50 bags, 50lbs per</text>
+      <text x="29" y="108" font-size="8" font-weight="500" fill="#1e293b" text-anchor="middle">bag</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- FOOTER                                                   -->
+  <!-- ======================================================== -->
+  <g transform="translate(0, 960)">
+    <rect width="1000" height="95" fill="#1a1e23" />
+    <text x="155" y="42" font-size="11" fill="#94a3b8">&#169; 2012 - 2018 Purchasing Platform LLC. All rights reserved.</text>
+    <g transform="translate(545, 42)" font-size="10.5" fill="#60a5fa">
+      <text x="0" y="0">About</text>
+      <text x="45" y="0">Blog</text>
+      <text x="82" y="0">Careers</text>
+      <text x="135" y="0">Privacy</text>
+      <text x="188" y="0">Terms of Membership</text>
+      <text x="315" y="0">Terms</text>
+    </g>
+    <!-- Contact us widget in bottom right -->
+    <rect x="805" y="48" width="150" height="46" rx="4" fill="#2d6a4f" />
+    <text x="850" y="76" font-size="12" font-weight="600" fill="#ffffff">Contact us!</text>
+    <path d="M 932,77 L 938,71 L 944,77" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+
+  <!-- ======================================================== -->
+  <!-- 2. HEATMAP OVERLAY LAYERS                                -->
+  <!-- Exact Hotspots & Clickstream Attention Gradient Maps     -->
+  <!-- ======================================================== -->
+  <g id="heatmapLayer">
+
+    <!-- ____________________________________________________ -->
+    <!-- TOP NAV ATTENTION STRIP (Corporate Catalog to Cart)   -->
+    <!-- ____________________________________________________ -->
+    <!-- Green connecting cloud along top right links -->
+    <ellipse cx="700" cy="40" rx="220" ry="42" fill="url(#heatGreen)" />
+
+    <!-- 1. Hotspot: Corporate Catalog -->
+    <ellipse cx="560" cy="38" rx="48" ry="40" fill="url(#heatGreen)" />
+    <ellipse cx="558" cy="38" rx="25" ry="22" fill="url(#heatHot)" />
+
+    <!-- 2. Hotspot: Favorites -->
+    <ellipse cx="665" cy="40" rx="48" ry="38" fill="url(#heatGreen)" />
+    <ellipse cx="662" cy="39" rx="28" ry="24" fill="url(#heatHot)" />
+
+    <!-- 3. Hotspot: Account -->
+    <ellipse cx="750" cy="38" rx="46" ry="40" fill="url(#heatGreen)" />
+    <ellipse cx="748" cy="38" rx="26" ry="24" fill="url(#heatHot)" />
+
+    <!-- 4. Hotspot: Cart -->
+    <ellipse cx="828" cy="38" rx="55" ry="42" fill="url(#heatGreen)" />
+    <ellipse cx="826" cy="38" rx="30" ry="26" fill="url(#heatHot)" />
+
+    <!-- ____________________________________________________ -->
+    <!-- SEARCH BAR & ACTION BUTTON                           -->
+    <!-- ____________________________________________________ -->
+    <!-- Green ambient field spanning the search bar -->
+    <ellipse cx="490" cy="115" rx="380" ry="50" fill="url(#heatGreen)" opacity="0.6" />
+
+    <!-- Left Search Input Hotspot (High click focus) -->
+    <ellipse cx="205" cy="112" rx="90" ry="60" fill="url(#heatGreen)" />
+    <ellipse cx="200" cy="114" rx="58" ry="40" fill="url(#heatMedium)" />
+    <ellipse cx="192" cy="110" rx="38" ry="28" fill="url(#heatHot)" />
+
+    <!-- Right Search Action Button Hotspot -->
+    <ellipse cx="818" cy="110" rx="88" ry="54" fill="url(#heatGreen)" />
+    <ellipse cx="818" cy="110" rx="58" ry="36" fill="url(#heatAmber)" />
+
+    <!-- ____________________________________________________ -->
+    <!-- LEFT CATEGORY SIDEBAR CLICKSTREAM CASCADE            -->
+    <!-- Continuous green/lime trail running down the menu   -->
+    <!-- ____________________________________________________ -->
+    <!-- Top left cluster around Products & Best Deals -->
+    <ellipse cx="205" cy="190" rx="95" ry="60" fill="url(#heatGreen)" />
+    <ellipse cx="185" cy="225" rx="75" ry="65" fill="url(#heatGreen)" />
+    <ellipse cx="178" cy="290" rx="78" ry="65" fill="url(#heatGreen)" />
+    <ellipse cx="175" cy="360" rx="76" ry="65" fill="url(#heatGreen)" />
+    <ellipse cx="175" cy="425" rx="72" ry="65" fill="url(#heatGreen)" />
+    <ellipse cx="178" cy="500" rx="74" ry="65" fill="url(#heatGreen)" />
+    <ellipse cx="180" cy="580" rx="68" ry="65" fill="url(#heatGreen)" />
+    <ellipse cx="180" cy="660" rx="55" ry="55" fill="url(#heatGreen)" />
+
+    <!-- Top sidebar warm glow on top categories -->
+    <ellipse cx="200" cy="195" rx="55" ry="40" fill="url(#heatGreen)" opacity="0.8" />
+
+    <!-- ____________________________________________________ -->
+    <!-- ROW 1 PRODUCTS: INTENSE ENGAGEMENT ZONE              -->
+    <!-- Connected horizontal green belt across all 4 items   -->
+    <!-- ____________________________________________________ -->
+    <ellipse cx="580" cy="235" rx="310" ry="75" fill="url(#heatGreen)" opacity="0.8" />
+
+    <!-- Product 1: Soil (Intense Red Core) -->
+    <ellipse cx="380" cy="232" rx="75" ry="68" fill="url(#heatGreen)" />
+    <ellipse cx="380" cy="230" rx="52" ry="46" fill="url(#heatMedium)" />
+    <ellipse cx="380" cy="226" rx="36" ry="32" fill="url(#heatHot)" />
+
+    <!-- Product 2: Air Conditioners (Intense Red Core) -->
+    <ellipse cx="522" cy="234" rx="75" ry="68" fill="url(#heatGreen)" />
+    <ellipse cx="522" cy="232" rx="52" ry="46" fill="url(#heatMedium)" />
+    <ellipse cx="524" cy="228" rx="36" ry="32" fill="url(#heatHot)" />
+
+    <!-- Product 3: Space Heaters (High-Heat Red Core) -->
+    <ellipse cx="664" cy="234" rx="75" ry="68" fill="url(#heatGreen)" />
+    <ellipse cx="664" cy="230" rx="54" ry="48" fill="url(#heatMedium)" />
+    <ellipse cx="664" cy="226" rx="38" ry="34" fill="url(#heatHot)" />
+
+    <!-- Product 4: Appliances (Solid Red Core) -->
+    <ellipse cx="798" cy="234" rx="72" ry="68" fill="url(#heatGreen)" />
+    <ellipse cx="798" cy="232" rx="50" ry="46" fill="url(#heatMedium)" />
+    <ellipse cx="798" cy="228" rx="32" ry="30" fill="url(#heatHot)" />
+
+    <!-- ____________________________________________________ -->
+    <!-- ROW 2 PRODUCTS: MODERATE ATTENTION CLUSTERS          -->
+    <!-- ____________________________________________________ -->
+    <!-- Item 1: Electrical (Mild Circular Green/Yellow Heatspot) -->
+    <ellipse cx="380" cy="390" rx="68" ry="64" fill="url(#heatGreen)" />
+    <ellipse cx="380" cy="390" rx="34" ry="32" fill="url(#heatGreen)" opacity="0.9" />
+
+    <!-- Item 2: Janitorial (Prominent Circular Green/Yellow Heatspot) -->
+    <ellipse cx="522" cy="394" rx="68" ry="64" fill="url(#heatGreen)" />
+    <ellipse cx="522" cy="394" rx="38" ry="34" fill="url(#heatGreen)" opacity="0.95" />
+
+    <!-- Item 3: Safety & Security (Circular Green Heatspot) -->
+    <ellipse cx="658" cy="394" rx="68" ry="64" fill="url(#heatGreen)" />
+    <ellipse cx="658" cy="394" rx="36" ry="32" fill="url(#heatGreen)" opacity="0.9" />
+
+    <!-- Item 4: Copy Paper -> COLD / NO HEATSPOT (Matching source photo) -->
+
+    <!-- ____________________________________________________ -->
+    <!-- ROWS 3 & 4 PRODUCTS -> COLD (Illustrating Drop-off)   -->
+    <!-- ____________________________________________________ -->
+
+    <!-- ____________________________________________________ -->
+    <!-- FAVORITES CAROUSEL / BOTTOM RIGHT HOTSPOT            -->
+    <!-- ____________________________________________________ -->
+    <!-- Green ambient field over right side of Favorites -->
+    <ellipse cx="818" cy="880" rx="88" ry="76" fill="url(#heatGreen)" />
+    <ellipse cx="818" cy="884" rx="58" ry="48" fill="url(#heatGreen)" opacity="0.85" />
+    <ellipse cx="816" cy="886" rx="36" ry="30" fill="url(#heatMedium)" />
+    <ellipse cx="814" cy="888" rx="18" ry="16" fill="url(#heatHot)" />
+
+  </g>
+</svg>
