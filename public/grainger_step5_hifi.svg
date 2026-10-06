@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1020" width="1100" height="1020" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Top Grainger Header Bar (Black with Red Logo) -->
+  <rect width="1100" height="60" fill="#1c1917" />
+  <rect y="58" width="1100" height="3" fill="#dc2626" />
+
+  <!-- GRAINGER Logo -->
+  <g transform="translate(30, 14)">
+    <text x="0" y="24" font-size="26" font-weight="900" font-style="italic" fill="#ffffff" letter-spacing="1.2">GRAINGER</text>
+    <rect x="0" y="28" width="150" height="10" rx="1" fill="#dc2626" />
+    <text x="75" y="35" font-size="6.5" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.4">FOR THE ONES WHO GET IT DONE</text>
+  </g>
+
+  <!-- Right Header: Benefits Management System -->
+  <g transform="translate(800, 18)" text-anchor="end">
+    <text x="265" y="16" font-size="16" font-weight="700" fill="#ffffff">Benefits Management System</text>
+    <text x="265" y="32" font-size="11" fill="#a8a29e">Welcome <tspan fill="#ffffff" font-weight="700">Len Perez</tspan> | <tspan fill="#0284c7">Sign Out</tspan></text>
+  </g>
+
+  <!-- Breadcrumbs & Account Search Bar -->
+  <g transform="translate(0, 61)">
+    <rect width="1100" height="38" fill="#ffffff" />
+    <line x1="0" y1="38" x2="1100" y2="38" stroke="#e2e8f0" stroke-width="1" />
+    <text x="30" y="24" font-size="11.5" fill="#0284c7">Home <tspan fill="#94a3b8">/</tspan> Account #083748596 <tspan fill="#94a3b8">/</tspan> Location <tspan fill="#94a3b8">/</tspan> <tspan fill="#64748b">Catalog</tspan></text>
+
+    <!-- Search input right -->
+    <g transform="translate(800, 5)">
+      <rect width="210" height="28" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+      <text x="10" y="18" font-size="10.5" fill="#94a3b8">Search for an Account Number</text>
+      <rect x="210" y="0" width="55" height="28" fill="#0284c7" />
+      <circle cx="237" cy="13" r="4.5" fill="none" stroke="#ffffff" stroke-width="1.8" />
+      <line x1="240.5" y1="16.5" x2="245.5" y2="21.5" stroke="#ffffff" stroke-width="1.8" />
+    </g>
+  </g>
+
+  <!-- Account Header Bar (Light Grey) -->
+  <g transform="translate(0, 99)">
+    <rect width="1100" height="52" fill="#f5f5f4" />
+    <line x1="0" y1="52" x2="1100" y2="52" stroke="#e7e5e4" stroke-width="1" />
+    <text x="30" y="22" font-size="14.5" font-weight="800" fill="#1c1917">Honda Manufacturing of America, Inc.</text>
+    <text x="30" y="38" font-size="11" fill="#78716c">123 Primary Address, Ctiy, ST 12345-6789</text>
+    <text x="1065" y="32" font-size="13.5" font-weight="600" fill="#44403c" text-anchor="end">Account <tspan font-weight="800" fill="#1c1917">#083748596</tspan></text>
+  </g>
+
+  <!-- MAIN APP BODY: SIDEBAR + CONTENT -->
+  <g transform="translate(0, 151)">
+    <line x1="265" y1="0" x2="265" y2="860" stroke="#e7e5e4" stroke-width="1" />
+
+    <!-- LEFT SIDEBAR -->
+    <g transform="translate(25, 20)">
+      <!-- Location info -->
+      <g>
+        <text x="0" y="14" font-size="14" font-weight="800" fill="#1c1917">📍 Shoe of Gary</text>
+        <text x="195" y="14" font-size="11" font-weight="700" fill="#0284c7">Edit</text>
+        <text x="20" y="30" font-size="10.5" fill="#78716c">456 Secondary Address</text>
+        <text x="20" y="43" font-size="10.5" fill="#78716c">Suite 1300</text>
+        <text x="20" y="56" font-size="10.5" fill="#78716c">Gary, IN 12345-6789</text>
+      </g>
+
+      <g transform="translate(0, 72)">
+        <text x="0" y="14" font-size="12" font-weight="700" fill="#1c1917">Ship Order To</text>
+        <text x="195" y="14" font-size="11" font-weight="700" fill="#0284c7">Edit</text>
+        <text x="0" y="28" font-size="10.5" fill="#78716c">Location</text>
+      </g>
+
+      <g transform="translate(0, 114)">
+        <text x="0" y="14" font-size="12" font-weight="700" fill="#1c1917">Billing Options</text>
+        <text x="195" y="14" font-size="11" font-weight="700" fill="#0284c7">Edit</text>
+        <text x="0" y="28" font-size="10.5" fill="#78716c">Combine Invoices</text>
+      </g>
+
+      <!-- Add A Location Button -->
+      <g transform="translate(0, 156)">
+        <rect width="170" height="34" rx="4" fill="#57534e" />
+        <text x="85" y="22" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">Add A Location</text>
+      </g>
+
+      <!-- Safety Program Navigation Menu -->
+      <g transform="translate(0, 210)">
+        <text x="25" y="18" font-size="14" font-weight="800" fill="#1c1917">Safety Program</text>
+        <line x1="0" y1="28" x2="235" y2="28" stroke="#e7e5e4" stroke-width="1" />
+
+        <!-- Active Catalog Tab -->
+        <g transform="translate(0, 38)">
+          <rect x="-10" y="-6" width="250" height="36" fill="#f5f5f4" />
+          <path d="M 235,-6 L 250,12 L 235,30" fill="#ffffff" stroke="#e7e5e4" stroke-width="1" />
+          <rect x="18" y="2" width="15" height="15" rx="1" fill="none" stroke="#0284c7" stroke-width="1.6" />
+          <text x="44" y="14" font-size="13" font-weight="700" fill="#0284c7">Catalog</text>
+        </g>
+
+        <!-- Roster Tab -->
+        <g transform="translate(0, 80)">
+          <circle cx="25" cy="6" r="5" fill="#78716c" />
+          <path d="M 18,18 C 18,13 32,13 32,18 z" fill="#78716c" />
+          <text x="44" y="14" font-size="13" fill="#44403c">Roster</text>
+        </g>
+      </g>
+
+      <!-- Contacts Section -->
+      <g transform="translate(0, 335)">
+        <text x="50" y="18" font-size="14" font-weight="800" fill="#1c1917">Contacts</text>
+        <line x1="0" y1="28" x2="235" y2="28" stroke="#e7e5e4" stroke-width="1" />
+
+        <g transform="translate(0, 38)" font-size="10.5">
+          <text x="0" y="12" font-weight="700" fill="#1c1917">Scheduler</text>
+          <text x="195" y="12" font-weight="700" fill="#0284c7">Edit</text>
+          <text x="0" y="26" fill="#78716c">Len Perez</text>
+          <text x="0" y="40" fill="#0284c7">len.perez@company.com</text>
+          <text x="0" y="54" fill="#78716c">+1 (888) 888 - 8888</text>
+        </g>
+
+        <g transform="translate(0, 108)" font-size="10.5">
+          <text x="0" y="12" font-weight="700" fill="#1c1917">Arrival</text>
+          <text x="195" y="12" font-weight="700" fill="#0284c7">Edit</text>
+          <text x="0" y="26" fill="#78716c">Dan Ertman</text>
+          <text x="0" y="40" fill="#0284c7">dan.ertman@company.com</text>
+          <text x="0" y="54" fill="#78716c">+1 (888) 888 - 8888</text>
+        </g>
+
+        <g transform="translate(0, 178)" font-size="10.5">
+          <text x="0" y="12" font-weight="700" fill="#1c1917">Roster</text>
+          <text x="195" y="12" font-weight="700" fill="#0284c7">Edit</text>
+          <text x="0" y="26" fill="#78716c">Susan Arnold</text>
+          <text x="0" y="40" fill="#0284c7">susan.arnold@company...</text>
+          <text x="0" y="54" fill="#78716c">+1 (888) 888 - 8888</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- MAIN CONTENT: CATALOG GROUPINGS -->
+    <g transform="translate(290, 20)">
+      <text x="0" y="22" font-size="22" font-weight="700" fill="#1c1917">Catalog</text>
+
+      <!-- Section Subheader -->
+      <g transform="translate(0, 42)">
+        <text x="0" y="14" font-size="15" font-weight="800" fill="#b91c1c">Catalog Groupings</text>
+        <text x="775" y="14" font-size="12" font-weight="700" fill="#0284c7" text-anchor="end">+ Create a New Grouping</text>
+      </g>
+
+      <!-- Expandable Grouping Accordion: Safety Boots [-] -->
+      <g transform="translate(0, 68)">
+        <rect width="780" height="34" rx="2" fill="#e7e5e4" />
+        <text x="18" y="22" font-size="13.5" font-weight="800" fill="#1c1917">Safety Boots</text>
+        <rect x="745" y="8" width="18" height="18" rx="1" fill="#44403c" />
+        <line x1="749" y1="17" x2="759" y2="17" stroke="#ffffff" stroke-width="2" />
+
+        <!-- Form Content Box -->
+        <g transform="translate(0, 44)">
+          <!-- Left: Grouping Inputs -->
+          <g>
+            <text x="0" y="14" font-size="12" font-weight="700" fill="#44403c">Grouping Name</text>
+            <rect x="0" y="22" width="330" height="32" rx="1" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+            <text x="15" y="43" font-size="12" fill="#1c1917">Safety Boots</text>
+
+            <text x="0" y="84" font-size="15" font-weight="700" fill="#1c1917">Select Product(s)</text>
+            <text x="0" y="106" font-size="11" font-weight="700" fill="#44403c">Product Selection "Type"</text>
+            <rect x="0" y="114" width="195" height="32" rx="1" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+            <text x="15" y="135" font-size="12" fill="#0284c7">SKU(s)</text>
+            <path d="M 175,128 L 181,134 L 187,128" fill="none" stroke="#0284c7" stroke-width="1.8" />
+
+            <text x="0" y="168" font-size="11" font-weight="700" fill="#44403c">Enter SKU(s)</text>
+            <text x="0" y="182" font-size="10" fill="#78716c">Separate SKU(s) with a SEMI-COLON</text>
+            <rect x="0" y="190" width="330" height="110" rx="1" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+
+            <!-- Add Selection Button -->
+            <rect x="0" y="312" width="125" height="28" rx="2" fill="#f5f5f4" stroke="#cbd5e1" stroke-width="1.2" />
+            <text x="62" y="330" font-size="11" font-weight="700" fill="#44403c" text-anchor="middle">Add Selection</text>
+          </g>
+
+          <!-- Right: Current Grouping Selection(s) Card -->
+          <g transform="translate(365, 22)">
+            <rect width="415" height="260" rx="2" fill="#fafaf9" stroke="#f5f5f4" stroke-width="1" />
+            <g transform="translate(20, 25)">
+              <text x="0" y="0" font-size="14" font-weight="700" fill="#1c1917">Current Grouping Selection(s)</text>
+
+              <text x="0" y="28" font-size="11" font-weight="700" fill="#44403c">Category:</text>
+              <g transform="translate(0, 38)">
+                <rect x="0" y="0" width="12" height="12" rx="1" fill="#44403c" />
+                <text x="6" y="9.5" font-size="9" fill="#ffffff" text-anchor="middle">✕</text>
+                <text x="18" y="10" font-size="10" fill="#0284c7">Safety &gt; Footwear and Footwear</text>
+                <text x="18" y="23" font-size="10" fill="#0284c7">Accessories &gt; Steel-Toe Work Boots and Shoes</text>
+              </g>
+
+              <text x="0" y="88" font-size="11" font-weight="700" fill="#44403c">SKU(s):</text>
+              <g transform="translate(0, 98)">
+                <rect x="0" y="0" width="12" height="12" rx="1" fill="#44403c" />
+                <text x="6" y="9.5" font-size="9" fill="#ffffff" text-anchor="middle">✕</text>
+                <text x="18" y="10" font-size="11" fill="#0284c7">12K427</text>
+
+                <rect x="80" y="0" width="12" height="12" rx="1" fill="#44403c" />
+                <text x="86" y="9.5" font-size="9" fill="#ffffff" text-anchor="middle">✕</text>
+                <text x="98" y="10" font-size="11" fill="#0284c7">12K435</text>
+              </g>
+
+              <text x="0" y="140" font-size="11" font-weight="700" fill="#44403c">Manufacturer Model #(s):</text>
+              <g transform="translate(0, 150)">
+                <rect x="0" y="0" width="12" height="12" rx="1" fill="#44403c" />
+                <text x="6" y="9.5" font-size="9" fill="#ffffff" text-anchor="middle">✕</text>
+                <text x="18" y="10" font-size="10.5" fill="#44403c">G0019-10M</text>
+
+                <rect x="110" y="0" width="12" height="12" rx="1" fill="#44403c" />
+                <text x="116" y="9.5" font-size="9" fill="#ffffff" text-anchor="middle">✕</text>
+                <text x="128" y="10" font-size="10.5" fill="#44403c">IA0103-10M</text>
+              </g>
+            </g>
+          </g>
+
+          <!-- Divider and CTA Buttons -->
+          <g transform="translate(0, 360)">
+            <line x1="0" y1="0" x2="780" y2="0" stroke="#e7e5e4" stroke-width="1" stroke-dasharray="2,2" />
+            <rect x="0" y="18" width="165" height="36" rx="3" fill="#0284c7" />
+            <text x="82" y="41" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Update Grouping</text>
+            <text x="190" y="41" font-size="12.5" fill="#0284c7">Cancel</text>
+            <text x="775" y="41" font-size="12.5" fill="#0284c7" text-anchor="end">Delete Grouping</text>
+          </g>
+
+          <!-- Grouping Row 2: Socks [+] -->
+          <g transform="translate(0, 435)">
+            <rect width="780" height="34" rx="2" fill="#e7e5e4" />
+            <text x="18" y="22" font-size="13.5" font-weight="800" fill="#1c1917">Socks</text>
+            <rect x="745" y="8" width="18" height="18" rx="1" fill="#0284c7" />
+            <text x="754" y="21" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">+</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

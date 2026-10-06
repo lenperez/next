@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 950" width="1100" height="950" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Clean Canvas -->
+  <rect width="1100" height="950" fill="#ffffff" />
+
+  <!-- Wireframe Content -->
+  <g transform="translate(50, 40)">
+    <!-- Top Customer & Ship To -->
+    <g>
+      <text x="0" y="15" font-size="14" font-weight="600" fill="#1e293b">Customer</text>
+      <rect x="0" y="24" width="240" height="32" fill="#ffffff" stroke="#334155" stroke-width="1.4" />
+      <text x="15" y="46" font-size="14" font-family="monospace" fill="#334155">#########</text>
+      <rect x="255" y="24" width="32" height="32" rx="4" fill="#ffffff" stroke="#334155" stroke-width="1.4" />
+      <circle cx="269" cy="38" r="5" fill="none" stroke="#1e293b" stroke-width="1.8" />
+      <line x1="272.5" y1="41.5" x2="278" y2="47" stroke="#1e293b" stroke-width="1.8" />
+      <text x="305" y="46" font-size="14" fill="#334155">Customer Name</text>
+    </g>
+
+    <g transform="translate(500, 0)">
+      <text x="0" y="15" font-size="14" font-weight="600" fill="#1e293b">Ship To:</text>
+      <rect x="0" y="24" width="240" height="32" fill="#ffffff" stroke="#334155" stroke-width="1.4" />
+      <text x="15" y="46" font-size="14" fill="#64748b">Location Code</text>
+      <rect x="255" y="24" width="32" height="32" rx="4" fill="#ffffff" stroke="#334155" stroke-width="1.4" />
+      <circle cx="269" cy="38" r="5" fill="none" stroke="#1e293b" stroke-width="1.8" />
+      <line x1="272.5" y1="41.5" x2="278" y2="47" stroke="#1e293b" stroke-width="1.8" />
+      <text x="305" y="46" font-size="14" fill="#334155">Location Name</text>
+    </g>
+
+    <!-- Navigation Tabs: [ Main ] [ Subsidy ] [ Shoes ] -->
+    <g transform="translate(0, 95)">
+      <rect x="0" y="0" width="170" height="46" fill="#ffffff" stroke="#334155" stroke-width="1.5" />
+      <rect x="0" y="0" width="170" height="5" fill="#0f172a" />
+      <text x="85" y="28" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Main</text>
+
+      <rect x="180" y="10" width="170" height="36" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+      <text x="265" y="33" font-size="14" fill="#334155" text-anchor="middle">Subsidy</text>
+
+      <rect x="360" y="10" width="170" height="36" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+      <text x="445" y="33" font-size="14" fill="#334155" text-anchor="middle">Shoes</text>
+    </g>
+
+    <!-- Company Info Section -->
+    <g transform="translate(0, 165)">
+      <text x="0" y="20" font-size="18" font-weight="800" fill="#0f172a">Company Info</text>
+      <rect x="750" y="4" width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+      <path d="M 755,14 L 760,19 L 769,8" fill="none" stroke="#1e293b" stroke-width="2.5" />
+      <text x="782" y="20" font-size="14" fill="#1e293b">Same as Shipping</text>
+
+      <!-- Input Grid -->
+      <g transform="translate(0, 36)" font-size="12" fill="#334155">
+        <text x="0" y="12">Name</text>
+        <rect x="0" y="20" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="15" y="40" fill="#64748b">company name</text>
+
+        <text x="270" y="12">City</text>
+        <rect x="270" y="20" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="285" y="40" fill="#64748b">City</text>
+
+        <text x="540" y="12">State</text>
+        <rect x="540" y="20" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="555" y="40" fill="#64748b">drop down</text>
+        <path d="M 740,35 L 746,41 L 752,35" fill="none" stroke="#1e293b" stroke-width="2" />
+
+        <!-- Address lines -->
+        <text x="0" y="75">Address</text>
+        <rect x="0" y="83" width="230" height="26" fill="#ffffff" stroke="#334155" stroke-width="1" />
+        <text x="15" y="101" font-size="11" fill="#64748b">Address Line 1</text>
+        <rect x="0" y="114" width="230" height="26" fill="#ffffff" stroke="#334155" stroke-width="1" />
+        <text x="15" y="132" font-size="11" fill="#64748b">Address Line 2</text>
+        <rect x="0" y="145" width="230" height="26" fill="#ffffff" stroke="#334155" stroke-width="1" />
+        <text x="15" y="163" font-size="11" fill="#64748b">Address Line 3</text>
+        <rect x="0" y="176" width="230" height="26" fill="#ffffff" stroke="#334155" stroke-width="1" />
+        <text x="15" y="194" font-size="11" fill="#64748b">Address Line 14</text>
+
+        <text x="270" y="75">ZIP Code</text>
+        <rect x="270" y="83" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="285" y="103" font-family="monospace" fill="#64748b">######-####</text>
+
+        <text x="270" y="132">Tax Code</text>
+        <rect x="270" y="140" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="285" y="160" fill="#64748b">Code</text>
+        <rect x="510" y="140" width="30" height="30" rx="3" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <circle cx="522" cy="152" r="4.5" fill="none" stroke="#1e293b" stroke-width="1.5" />
+        <line x1="525.5" y1="155.5" x2="531" y2="161" stroke="#1e293b" stroke-width="1.5" />
+        <text x="555" y="160" font-size="13" fill="#334155">Tax Rate #</text>
+      </g>
+    </g>
+
+    <!-- Divider line -->
+    <line x1="0" y1="405" x2="980" y2="405" stroke="#334155" stroke-width="1.2" />
+
+    <!-- Contact Info & Shipping Info -->
+    <g transform="translate(0, 425)">
+      <text x="0" y="20" font-size="18" font-weight="800" fill="#0f172a">Contact Info</text>
+      <text x="500" y="20" font-size="18" font-weight="800" fill="#0f172a">Shipping Info</text>
+
+      <g transform="translate(0, 36)" font-size="12" fill="#334155">
+        <text x="0" y="12">Sched</text><text x="230" y="12">Phone</text>
+        <rect x="0" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="15" y="38" fill="#64748b">employee name</text>
+        <rect x="230" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="245" y="38" fill="#64748b">text field</text>
+
+        <text x="0" y="65">Arrival</text><text x="230" y="65">Phone</text>
+        <rect x="0" y="73" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="15" y="91" fill="#64748b">employee name</text>
+        <rect x="230" y="73" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="245" y="91" fill="#64748b">text field</text>
+
+        <text x="0" y="118">Billing</text><text x="230" y="118">Phone</text>
+        <rect x="0" y="126" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="15" y="144" fill="#64748b">employee name</text>
+        <rect x="230" y="126" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="245" y="144" fill="#64748b">text field</text>
+      </g>
+
+      <g transform="translate(500, 36)" font-size="12" fill="#334155">
+        <text x="0" y="12">Sent to</text><text x="230" y="12">Attention</text>
+        <rect x="0" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="15" y="38" fill="#64748b">drop down</text>
+        <path d="M 198,35 L 204,41 L 210,35" fill="none" stroke="#1e293b" stroke-width="2" />
+        <rect x="230" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="245" y="38" fill="#64748b">text field</text>
+      </g>
+    </g>
+
+    <!-- Divider line -->
+    <line x1="0" y1="630" x2="980" y2="630" stroke="#334155" stroke-width="1.2" />
+
+    <!-- What is Required Section -->
+    <g transform="translate(0, 655)">
+      <text x="0" y="20" font-size="18" font-weight="800" fill="#0f172a">What is Required?</text>
+      
+      <!-- Checkbox grid -->
+      <g transform="translate(0, 36)" font-size="13" fill="#334155">
+        <!-- Row 1 -->
+        <g transform="translate(0, 0)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+        <g transform="translate(160, 0)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+        <g transform="translate(320, 0)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+        <g transform="translate(480, 0)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+        <g transform="translate(640, 0)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+
+        <!-- Row 2 -->
+        <g transform="translate(0, 36)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+        <g transform="translate(160, 36)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+        <g transform="translate(320, 36)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+        <g transform="translate(480, 36)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+        <g transform="translate(640, 36)">
+          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
+          <text x="32" y="16">check box</text>
+        </g>
+      </g>
+
+      <!-- Customer PO & Fulfillment DC -->
+      <g transform="translate(0, 115)" font-size="12" fill="#334155">
+        <text x="0" y="12">Customer PO</text>
+        <rect x="0" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="15" y="38" fill="#64748b">Code</text>
+
+        <text x="260" y="12">Fulfillment DC</text>
+        <rect x="260" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="275" y="38" fill="#64748b">Code</text>
+        <rect x="490" y="20" width="28" height="28" rx="3" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <circle cx="501" cy="31" r="4.5" fill="none" stroke="#1e293b" stroke-width="1.5" />
+        <line x1="504.5" y1="34.5" x2="510" y2="40" stroke="#1e293b" stroke-width="1.5" />
+        <text x="530" y="38" font-size="14" fill="#334155">Company Name</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -110,8 +110,8 @@ const mainProjects: Project[] = [
     subtitle: "Benefit Management Tool — Scalability Upgrade",
     tag: "Enterprise UX",
     year: "Case Study",
-    image:
-      "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
+    image: "/Thumbnail_Grainger.svg",
+    showStepPlaceholders: true,
     synopsis:
       "Grainger had recently acquired a proprietary benefit management tool that handled a specific channel for their clients. They needed to upgrade its scalability to handle a variety of additional channels to cover all of the company's offerings.",
     steps: [
@@ -119,6 +119,8 @@ const mainProjects: Project[] = [
         label: "Heuristic Review",
         description:
           "Got a thorough understanding of the system's components and the purpose each item served in completing the process.",
+        image: "/grainger_step1_heuristic_review.svg",
+        imageAlt: "Grainger Heuristic Review — Whiteboard Audit of System Components (Main, Required, Subsidy, Send)",
       },
       {
         label: "Extrapolation & Simplification",
@@ -129,6 +131,8 @@ const mainProjects: Project[] = [
         label: "Basic Wireframes",
         description:
           "Created initial wireframes for testing simple interactions with the team and stakeholders to ensure all scenarios were being addressed.",
+        image: "/grainger_step3_wireframes.svg",
+        imageAlt: "Grainger Benefit Management Tool — Wireframe Blueprint Specification",
       },
       {
         label: "Advanced Wireframes",
@@ -139,6 +143,8 @@ const mainProjects: Project[] = [
         label: "Hi-Fi Comps",
         description:
           "In conjunction with advanced wireframes, hi-fi comps provided a 'real-world' view of visual hierarchy, ensuring information clarity.",
+        image: "/grainger_step5_hifi.svg",
+        imageAlt: "Grainger Benefit Management Tool — Production UI Comps",
       },
     ],
   },
