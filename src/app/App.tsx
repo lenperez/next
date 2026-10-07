@@ -19,7 +19,6 @@ const mainProjects: Project[] = [
     title: "Purchasing Platform",
     subtitle: "eProcurement Redesign — End-to-End",
     tag: "UX / Product Design",
-    year: "Case Study",
     image: "/Thumbnail_PurchasingPlatform.svg",
     showStepPlaceholders: true,
     synopsis:
@@ -109,7 +108,6 @@ const mainProjects: Project[] = [
     title: "Grainger",
     subtitle: "Benefit Management Tool — Scalability Upgrade",
     tag: "Enterprise UX",
-    year: "Case Study",
     image: "/Thumbnail_Grainger.svg",
     showStepPlaceholders: true,
     synopsis:
@@ -156,7 +154,6 @@ const graphicProjects: Project[] = [
     title: "Coffee Table Book",
     subtitle: "Personal Project — Editorial & Print Design",
     tag: "Print Design",
-    year: "Case Study",
     image:
       "https://images.unsplash.com/photo-1651013542393-ced26a8bf656?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
     synopsis:
@@ -179,7 +176,6 @@ const graphicProjects: Project[] = [
     title: "Baker & McKenzie",
     subtitle: "Law Firm Rebrand — Print & Collateral",
     tag: "Brand Design",
-    year: "Case Study",
     image:
       "https://images.unsplash.com/photo-1636247499180-13285c86be9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
     synopsis:
@@ -205,7 +201,6 @@ const otherProjects: Project[] = [
     title: "American Family Insurance",
     subtitle: "Mobile App — UX Redesign",
     tag: "Mobile UX",
-    year: "Case Study",
     image:
       "https://images.unsplash.com/photo-1541560052-3744e48ab80b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
     synopsis:
@@ -233,7 +228,6 @@ const otherProjects: Project[] = [
     title: "Associated Bank",
     subtitle: "Homepage Redesign — Web",
     tag: "UI Design",
-    year: "Case Study",
     image:
       "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
     synopsis:
@@ -256,7 +250,6 @@ const otherProjects: Project[] = [
     title: "Loislaw",
     subtitle: "Mobile App — Checkout & Registration UX",
     tag: "Mobile UX",
-    year: "Case Study",
     image:
       "https://images.unsplash.com/photo-1757301714935-c8127a21abc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
     synopsis:
@@ -284,7 +277,6 @@ const otherProjects: Project[] = [
     title: "Medtronic",
     subtitle: "Insulin Pump Instructional — Flash-Based Interactive App",
     tag: "UI / Interaction Design",
-    year: "Case Study",
     image:
       "https://images.unsplash.com/photo-1624454002429-40ed87a5ec04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
     synopsis:
@@ -312,7 +304,6 @@ const otherProjects: Project[] = [
     title: "Press Ganey",
     subtitle: "Dashboard & Medical Community Suite",
     tag: "Design Systems",
-    year: "Case Study",
     image:
       "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
     synopsis:

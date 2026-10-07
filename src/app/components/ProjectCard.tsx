@@ -22,7 +22,7 @@ export interface Project {
   synopsis: string;
   image: string;
   tag: string;
-  year: string;
+  year?: string;
   steps: ProcessStep[];
   showStepPlaceholders?: boolean;
 }
@@ -171,7 +171,7 @@ function ProcessModal({
             {/* Sticky Close button: 0-height container so image flows flush to the top edge */}
             <div className="sticky top-0 z-30 flex justify-end pointer-events-none h-0 overflow-visible">
               <div className="p-3 sm:p-4">
-                <Tooltip content="Close case study (Esc)" position="bottom">
+                <Tooltip content="Close (Esc)" position="bottom">
                   <button
                     ref={closeBtnRef}
                     type="button"
@@ -206,9 +206,11 @@ function ProcessModal({
                 }`}>
                   {project.tag}
                 </span>
-                <span className={`text-xs font-medium ${isDark ? "text-white/60" : "text-neutral-600"}`}>
-                  {project.year}
-                </span>
+                {project.year && project.year.toLowerCase() !== "case study" && (
+                  <span className={`text-xs font-medium ${isDark ? "text-white/60" : "text-neutral-600"}`}>
+                    {project.year}
+                  </span>
+                )}
               </div>
 
               <h3
@@ -436,22 +438,22 @@ export function ProjectCard({
           {/* Header */}
           <div className="flex flex-col md:flex-row gap-0 items-stretch">
             {/* Image button — accessible click/keyboard trigger for modal */}
-            <Tooltip content={`View case study: ${project.title}`} position="top">
+            <Tooltip content={`View ${project.title}`} position="top">
               <button
                 ref={imageTriggerRef}
                 type="button"
                 onClick={() => handleOpenModal(imageTriggerRef.current)}
-                aria-label={`Open detailed case study for ${project.title}`}
+                aria-label={`Open details for ${project.title}`}
                 className="w-full text-left md:w-2/5 overflow-hidden group/img relative cursor-pointer md:self-stretch block p-0 border-0 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
               >
                 <div className="w-full h-56 sm:h-64 md:h-full md:min-h-full md:absolute md:inset-0 overflow-hidden">
                   <ImageWithFallback
                     src={project.image}
-                    alt={`Case study visual representation of ${project.title}`}
+                    alt={`Visual representation of ${project.title}`}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/img:scale-105 group-hover:scale-105"
                   />
                 </div>
-                <span className="sr-only">Click to view full case study</span>
+                <span className="sr-only">Click to view project details</span>
               </button>
             </Tooltip>
 
@@ -464,9 +466,11 @@ export function ProjectCard({
                   }`}>
                     {project.tag}
                   </span>
-                  <span className={`text-xs font-medium ${isDark ? "text-white/60" : "text-neutral-600"}`}>
-                    {project.year}
-                  </span>
+                  {project.year && project.year.toLowerCase() !== "case study" && (
+                    <span className={`text-xs font-medium ${isDark ? "text-white/60" : "text-neutral-600"}`}>
+                      {project.year}
+                    </span>
+                  )}
                 </div>
 
                 <h3
@@ -513,12 +517,12 @@ export function ProjectCard({
                 </Tooltip>
 
                 {/* Arrow — opens modal */}
-                <Tooltip content={`Open case study for ${project.title}`} position="top">
+                <Tooltip content={`Open details for ${project.title}`} position="top">
                   <button
                     ref={triggerRef}
                     type="button"
                     onClick={() => handleOpenModal(triggerRef.current)}
-                    aria-label={`Open detailed case study modal for ${project.title}`}
+                    aria-label={`Open details modal for ${project.title}`}
                     className={`p-2.5 rounded-full transition-all cursor-pointer ${
                       isDark ? "hover:bg-white/10 text-white/60 hover:text-white" : "hover:bg-black/5 text-neutral-600 hover:text-black"
                     }`}
