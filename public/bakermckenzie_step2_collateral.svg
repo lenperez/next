@@ -1,0 +1,324 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" style="background:#0f1218; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Studio Ambient Lighting -->
+    <radialGradient id="studioLighting" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#1f2533" />
+      <stop offset="50%" stop-color="#141824" />
+      <stop offset="100%" stop-color="#090b10" />
+    </radialGradient>
+
+    <!-- Multi-Stage Paper Drop Shadows -->
+    <filter id="collateralShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.6" />
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+
+    <filter id="cardShadowElevated" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="8" dy="24" stdDeviation="26" flood-color="#000000" flood-opacity="0.75" />
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+
+    <!-- Energy Bars Gradients -->
+    <linearGradient id="yellowFadeH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="40%" stop-color="#fced9d" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#f6d365" stop-opacity="1" />
+    </linearGradient>
+
+    <linearGradient id="greenFadeH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="45%" stop-color="#d0e281" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#a6c449" stop-opacity="1" />
+    </linearGradient>
+
+    <linearGradient id="posterYellowFade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8db" stop-opacity="0.2" />
+      <stop offset="40%" stop-color="#fae588" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#f6cb45" stop-opacity="1" />
+    </linearGradient>
+
+    <linearGradient id="posterGreenFade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eaf3cb" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#c9df76" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#a4c244" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+
+  <!-- STUDIO SHOWCASE BACKGROUND -->
+  <rect width="1600" height="1000" fill="url(#studioLighting)" />
+
+  <!-- SUBTLE ARCHITECTURAL PERSPECTIVE GRID -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="200" x2="1600" y2="200" />
+    <line x1="0" y1="400" x2="1600" y2="400" />
+    <line x1="0" y1="600" x2="1600" y2="600" />
+    <line x1="0" y1="800" x2="1600" y2="800" />
+    <line x1="300" y1="0" x2="300" y2="1000" />
+    <line x1="800" y1="0" x2="800" y2="1000" />
+    <line x1="1300" y1="0" x2="1300" y2="1000" />
+  </g>
+
+  <!-- TOP HEADER BADGE -->
+  <g transform="translate(60, 36)">
+    <rect width="460" height="36" rx="6" fill="#181c26" stroke="#2a3040" stroke-width="1" />
+    <rect x="12" y="8" width="20" height="20" rx="3" fill="#a11b2d" />
+    <text x="22" y="22" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">B</text>
+    <text x="42" y="22" font-size="12" font-weight="800" fill="#ffffff" letter-spacing="1">BAKER &amp; MᶜKENZIE</text>
+    <text x="175" y="22" font-size="12" font-weight="400" fill="#94a3b8">• Print Collateral &amp; Brand System</text>
+  </g>
+  <g transform="translate(1540, 42)" text-anchor="end">
+    <text x="0" y="16" font-size="11" font-weight="600" fill="#64748b" letter-spacing="0.5">FOLDERS, BROCHURES &amp; POSTERS SUITE</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 1. PIECE 1: GATEFOLD BROCHURE SYSTEM (LEFT / BACK)       -->
+  <!-- ======================================================== -->
+  <!-- Dimensions: 740 x 510, positioned at x=60, y=95 -->
+  <g transform="translate(60, 95)" filter="url(#collateralShadow)">
+    <rect width="740" height="510" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+
+    <!-- Panel 1A: Front Cover (Leftmost third: w=240, h=510) -->
+    <g transform="translate(0, 0)">
+      <!-- Header: Antitrust & Competition Global -->
+      <g transform="translate(18, 30)">
+        <text x="0" y="0" font-size="14" font-weight="800" fill="#0f172a">Antitrust &amp; Competition</text>
+        <text x="0" y="14" font-size="9" font-weight="600" fill="#94a3b8">Global</text>
+      </g>
+
+      <!-- Horizontal Signature Energy Bars on Cover -->
+      <g transform="translate(10, 68)">
+        <rect x="0" y="0" width="220" height="7" fill="url(#yellowFadeH)" />
+        <rect x="12" y="7" width="218" height="15" fill="#a11b2d" />
+        <text x="225" y="18" font-size="8.5" font-weight="700" fill="#ffffff" text-anchor="end" font-family="'Times New Roman', serif">BAKER &amp; MᶜKENZIE</text>
+        <rect x="30" y="22" width="200" height="6" fill="url(#greenFadeH)" />
+      </g>
+
+      <!-- Cover Title -->
+      <g transform="translate(25, 175)">
+        <text x="0" y="0" font-size="17" font-weight="700" fill="#64748b">Vigilant</text>
+        <text x="0" y="20" font-size="17" font-weight="700" fill="#64748b">Compliance</text>
+      </g>
+
+      <!-- Warehouse Worker & Rows of Stacking Boxes Illustration -->
+      <g transform="translate(0, 245)">
+        <rect width="240" height="265" fill="#f8fafc" />
+        <!-- Sky gradient band -->
+        <rect width="240" height="100" fill="#cbd5e1" opacity="0.3" />
+
+        <!-- Stacking Perspective Boxes Grid -->
+        <g stroke="#94a3b8" stroke-width="0.8" fill="#e2e8f0">
+          <!-- Foreground Stacks -->
+          <polygon points="10,210 40,195 40,250 10,265" fill="#94a3b8" />
+          <polygon points="40,195 70,210 70,265 40,250" fill="#cbd5e1" />
+          <polygon points="10,210 40,195 70,210 40,225" fill="#e2e8f0" />
+
+          <polygon points="70,180 100,165 100,225 70,240" fill="#94a3b8" />
+          <polygon points="100,165 130,180 130,240 100,225" fill="#cbd5e1" />
+          <polygon points="70,180 100,165 130,180 100,195" fill="#f1f5f9" />
+
+          <polygon points="130,150 160,135 160,200 130,215" fill="#94a3b8" />
+          <polygon points="160,135 190,150 190,215 160,200" fill="#cbd5e1" />
+          <polygon points="130,150 160,135 190,150 160,165" fill="#f1f5f9" />
+
+          <!-- Perspective Rows Continuing into Distance -->
+          <polygon points="180,120 205,110 205,160 180,170" fill="#94a3b8" />
+          <polygon points="205,110 230,120 230,170 205,160" fill="#cbd5e1" />
+        </g>
+
+        <!-- Worker Silhouette Stacking Box on Left -->
+        <g transform="translate(12, 105)" fill="#334155">
+          <!-- Head & Torso -->
+          <circle cx="28" cy="12" r="7" />
+          <path d="M 22,20 L 32,18 L 38,48 L 32,70 L 22,70 L 24,48 Z" />
+          <!-- Arms holding top box -->
+          <path d="M 32,25 L 50,45 L 45,55 L 28,35 Z" />
+          <!-- Legs -->
+          <path d="M 22,70 L 15,115 L 22,118 L 28,70 Z" />
+          <path d="M 30,70 L 38,115 L 45,118 L 36,70 Z" />
+        </g>
+      </g>
+      
+      <!-- Panel Divider Fold -->
+      <line x1="240" y1="0" x2="240" y2="510" stroke="#cbd5e1" stroke-width="1" />
+    </g>
+
+    <!-- Panel 1B: Inside Spread (Middle & Right panels: w=500, h=510) -->
+    <g transform="translate(240, 0)">
+      
+      <!-- Left Sub-panel: Blue Background with Container Grid Photo -->
+      <g transform="translate(0, 0)">
+        <rect width="190" height="510" fill="#64748b" opacity="0.85" />
+        
+        <!-- Conveyor Roller with 4 White Packing Bins -->
+        <g transform="translate(0, 200)">
+          <rect width="190" height="95" fill="#475569" opacity="0.9" />
+          <!-- Roller Frame -->
+          <line x1="0" y1="48" x2="190" y2="48" stroke="#94a3b8" stroke-width="3" />
+          <line x1="0" y1="88" x2="190" y2="88" stroke="#334155" stroke-width="4" />
+          
+          <!-- 4 Packing Bins with White Foam/Packing Fill -->
+          <g transform="translate(5, 5)">
+            <rect x="0" y="0" width="40" height="75" fill="#d1d5db" stroke="#334155" stroke-width="1.2" />
+            <rect x="2" y="2" width="36" height="55" fill="#ffffff" />
+            
+            <rect x="46" y="0" width="40" height="75" fill="#d1d5db" stroke="#334155" stroke-width="1.2" />
+            <rect x="48" y="2" width="36" height="55" fill="#ffffff" />
+
+            <rect x="92" y="0" width="40" height="75" fill="#d1d5db" stroke="#334155" stroke-width="1.2" />
+            <rect x="94" y="2" width="36" height="55" fill="#ffffff" />
+
+            <rect x="138" y="0" width="40" height="75" fill="#d1d5db" stroke="#334155" stroke-width="1.2" />
+            <rect x="140" y="2" width="36" height="55" fill="#ffffff" />
+          </g>
+        </g>
+
+        <!-- Divider Line -->
+        <line x1="190" y1="0" x2="190" y2="510" stroke="#e2e8f0" stroke-width="1" />
+      </g>
+
+      <!-- Center & Right Editorial Columns -->
+      <g transform="translate(205, 30)">
+        <!-- Headline 1 -->
+        <text x="0" y="16" font-size="11.5" font-weight="700" fill="#334155">Antitrust regimes are proliferating <tspan fill="#0284c7">worldwide</tspan>.</text>
+        <text x="0" y="28" font-size="11.5" font-weight="700" fill="#334155">So are your <tspan fill="#0284c7">compliance</tspan> obligations.</text>
+
+        <!-- Paragraph lines -->
+        <g transform="translate(0, 42)" font-size="6.5" fill="#64748b">
+          <text x="0" y="10">Antitrust compliance is becoming more complex and costly. Even as the</text>
+          <text x="0" y="18">world is becoming a single, global market, the rules for competition and fair</text>
+          <text x="0" y="26">trade remain local and disparate.</text>
+        </g>
+
+        <!-- Headline 2 -->
+        <g transform="translate(0, 115)">
+          <text x="0" y="12" font-size="11.5" font-weight="700" fill="#334155">By fluently managing your antitrust requirements on</text>
+          <text x="0" y="24" font-size="11.5" font-weight="700" fill="#334155">a global basis, we see <tspan fill="#0284c7">risks</tspan> others often overlook and</text>
+          <text x="0" y="36" font-size="11.5" font-weight="700" fill="#334155"><tspan fill="#0284c7">opportunities</tspan> that others miss.</text>
+        </g>
+      </g>
+
+      <!-- Right Inside Flap: Swiss Army Knife Feature & "Did You Know?" -->
+      <g transform="translate(340, 20)">
+        <!-- Swiss Army Knife Photo Graphic -->
+        <g transform="translate(20, 10)">
+          <!-- Blue Accent Band Behind Knife -->
+          <rect x="-30" y="20" width="130" height="6" fill="url(#greenFadeH)" opacity="0.6" />
+          <!-- Knife Body & Blades Silhouette -->
+          <rect x="25" y="12" width="55" height="18" rx="8" fill="#1e293b" />
+          <path d="M 30,12 L 15,-10 L 25,-10 L 38,12 Z" fill="#94a3b8" />
+          <path d="M 45,12 L 40,-15 L 48,-15 L 50,12 Z" fill="#cbd5e1" />
+          <path d="M 60,12 L 75,-8 L 82,-8 L 68,12 Z" fill="#94a3b8" />
+          <circle cx="50" cy="21" r="2.5" fill="#ffffff" />
+        </g>
+
+        <!-- "Here are ways we help" bullets -->
+        <g transform="translate(0, 55)" font-size="6" fill="#475569">
+          <text x="0" y="0" font-size="7.5" font-weight="800" fill="#0f172a">Here are ways we help</text>
+          <text x="0" y="12"><tspan font-weight="700">Transaction approvals.</tspan> Comprehensive guide to global merger control.</text>
+          <text x="0" y="22"><tspan font-weight="700">Anti-competition prevention.</tspan> Proactive compliance program design.</text>
+          <text x="0" y="32"><tspan font-weight="700">Leniency applications.</tspan> Coordinated steps in applying for amnesty.</text>
+        </g>
+
+        <!-- Open Book Graphic & "Did You Know?" -->
+        <g transform="translate(0, 115)">
+          <!-- Open Book Icon -->
+          <g transform="translate(30, 0)">
+            <path d="M 0,10 C 15,2 35,4 45,12 C 55,4 75,2 90,10 L 90,20 C 75,12 55,14 45,22 C 35,14 15,12 0,20 Z" fill="#cbd5e1" stroke="#64748b" stroke-width="0.8" />
+          </g>
+          
+          <g transform="translate(0, 32)" font-size="6" fill="#475569">
+            <text x="0" y="0" font-size="7.5" font-weight="800" fill="#0f172a">Did you know?</text>
+            <text x="0" y="12">• Our Global Antitrust practice is one of the largest in the world</text>
+            <text x="0" y="22">• More than 270 Antitrust lawyers in over 50 jurisdictions worldwide</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 2. PIECE 2: "DEEP ROOTS" BRAND POSTER (CENTER FOREGROUND) -->
+  <!-- ======================================================== -->
+  <!-- Dimensions: 290 x 590, positioned at x=830, y=95 -->
+  <g transform="translate(830, 95)" filter="url(#cardShadowElevated)">
+    <!-- Poster Paper Sheet (Warm Off-White Studio Stock) -->
+    <rect width="290" height="590" rx="3" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+
+    <!-- "DEEP ROOTS" Headline (Top Right) -->
+    <text x="260" y="65" font-size="21" font-weight="800" fill="#27272a" text-anchor="end" letter-spacing="1">DEEP ROOTS</text>
+
+    <!-- DIVERGING VERTICAL ENERGY BARS -->
+    <g transform="translate(0, 0)">
+      
+      <!-- 2A. LEFT YELLOW FLARING BEAM -->
+      <!-- Starts vertical at top x=20, then flares out to wide base at bottom x=0 to x=115 -->
+      <path d="M 22,120 L 45,120 L 45,260 L 115,590 L 0,590 L 0,260 Z" fill="url(#posterYellowFade)" />
+
+      <!-- 2B. RIGHT GREEN FLARING BEAM -->
+      <!-- Starts vertical at top x=70, flares out to right edge at bottom x=95 to x=290 -->
+      <path d="M 70,72 L 90,72 L 90,230 L 290,390 L 290,440 L 95,260 Z" fill="url(#posterGreenFade)" />
+      <!-- Lighter Green ambient spread -->
+      <polygon points="90,230 290,390 290,590 220,590 95,260" fill="#c4dc66" opacity="0.3" />
+
+      <!-- 2C. CENTER BURGUNDY RED ENERGY BAR -->
+      <!-- Tall vertical column extending at top (x=45, y=20) with vertical text, flaring into dynamic angular wedge -->
+      <!-- Top Column -->
+      <rect x="45" y="20" width="25" height="240" fill="#a11b2d" />
+      
+      <!-- Vertical White Wordmark inside Red Bar -->
+      <g transform="translate(58, 240) rotate(-90)">
+        <text font-family="'Times New Roman', serif" font-size="12" font-weight="700" fill="#ffffff" letter-spacing="1.5">
+          BAKER &amp; MᶜKENZIE
+        </text>
+      </g>
+
+      <!-- Center Flaring Burgundy Wedge descending to bottom (x=115 to x=220) -->
+      <polygon points="45,250 70,250 240,590 115,590" fill="#a11b2d" />
+      <!-- Shadow depth facet along left edge of burgundy wedge -->
+      <polygon points="45,250 55,250 145,590 115,590" fill="#78111f" opacity="0.6" />
+    </g>
+
+    <!-- Poster Edge Highlight -->
+    <rect x="0.5" y="0.5" width="289" height="589" rx="3" fill="none" stroke="#f1f5f9" stroke-width="1" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 3. PIECE 3: "SAN FRANCISCO" FOLDER (RIGHT FOREGROUND)     -->
+  <!-- ======================================================== -->
+  <!-- Dimensions: 370 x 520, positioned at x=1160, y=140 -->
+  <g transform="translate(1160, 140)" filter="url(#cardShadowElevated)">
+    <!-- Folder Card Stock -->
+    <rect width="370" height="520" rx="3" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+
+    <!-- Top Signature Energy Bars on Folder -->
+    <g transform="translate(50, 42)">
+      <!-- Top Gold bar -->
+      <rect x="0" y="0" width="270" height="12" fill="url(#yellowFadeH)" />
+      <!-- Middle Burgundy Red bar -->
+      <rect x="18" y="10" width="300" height="22" fill="#a11b2d" />
+      <text x="305" y="25" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="end" font-family="'Times New Roman', serif">BAKER &amp; MᶜKENZIE</text>
+      <!-- Bottom Chartreuse bar -->
+      <rect x="75" y="32" width="245" height="10" fill="url(#greenFadeH)" />
+    </g>
+
+    <!-- Hero Stacked Red Typography: SAN / FRAN / CISCO -->
+    <g transform="translate(340, 240)" text-anchor="end" fill="#a11b2d">
+      <text x="0" y="0" font-size="78" font-weight="400" letter-spacing="-1" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', sans-serif">SAN</text>
+      <text x="0" y="85" font-size="78" font-weight="400" letter-spacing="-1" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', sans-serif">FRAN</text>
+      <text x="0" y="170" font-size="78" font-weight="400" letter-spacing="-1" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', sans-serif">CISCO</text>
+    </g>
+
+    <!-- Folder Pocket Ridge / Flap Line -->
+    <line x1="0" y1="518" x2="370" y2="518" stroke="#cbd5e1" stroke-width="1.5" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 4. BOTTOM CAPTION & DESIGN PROVENANCE                    -->
+  <!-- ======================================================== -->
+  <g transform="translate(60, 955)">
+    <text x="0" y="15" font-size="13" font-weight="700" fill="#e2e8f0">BAKER &amp; MᶜKENZIE PRINT SUITE</text>
+    <text x="250" y="15" font-size="12" fill="#94a3b8">Step 2: Folders, Brochures &amp; Posters — Integrated &quot;Flow of Motion&quot; Visual Identity Collateral</text>
+    <text x="1480" y="15" font-size="12" font-weight="600" fill="#38bdf8" text-anchor="end">Print Design Exhibition</text>
+  </g>
+
+</svg>

@@ -1,0 +1,365 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 750" width="1700" height="750" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Center Gutter Crease Shadow -->
+    <linearGradient id="gutterShadow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.0" />
+      <stop offset="42%" stop-color="#000000" stop-opacity="0.08" />
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.22" />
+      <stop offset="58%" stop-color="#000000" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Soft Photo Shadow -->
+    <filter id="softShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+
+    <clipPath id="leftChairClip">
+      <rect width="520" height="490" />
+    </clipPath>
+    <clipPath id="rightProtoClip">
+      <rect width="380" height="260" />
+    </clipPath>
+  </defs>
+
+  <!-- PURE WHITE DOUBLE-PAGE SPREAD BACKGROUND -->
+  <rect width="1700" height="750" fill="#ffffff" />
+
+  <!-- ======================================================== -->
+  <!-- LEFT PAGE (PAGE 12): EAMES WIRE CHAIRS PHOTO ESSAY      -->
+  <!-- ======================================================== -->
+  <g id="left-page" transform="translate(60, 45)">
+
+    <!-- Top Left Header: Black Square + "Charles and Ray Eames" -->
+    <g transform="translate(0, 20)">
+      <!-- Black Accent Square -->
+      <rect x="0" y="24" width="30" height="38" fill="#18181b" />
+      
+      <!-- Text: Charles and Ray / Eames -->
+      <text x="40" y="18" font-size="20" font-weight="500" fill="#18181b" letter-spacing="-0.2">Charles and Ray</text>
+      <text x="38" y="58" font-size="52" font-weight="900" fill="#18181b" letter-spacing="-1.5">Eames</text>
+    </g>
+
+    <!-- Main Large Photo: Eames Wire Chairs (DKR) with Bird Figurine -->
+    <g transform="translate(0, 100)">
+      <rect width="520" height="490" fill="#ffffff" />
+      
+      <g clip-path="url(#leftChairClip)">
+        <!-- Clean Off-white Studio Background -->
+        <rect width="520" height="490" fill="#fafafa" />
+
+        <!-- Ambient Floor Contact Shadow -->
+        <ellipse cx="250" cy="460" rx="230" ry="18" fill="#e5e5e5" opacity="0.8" />
+        <ellipse cx="90" cy="455" rx="60" ry="12" fill="#d4d4d4" opacity="0.7" />
+        <ellipse cx="220" cy="458" rx="80" ry="14" fill="#d4d4d4" opacity="0.7" />
+        <ellipse cx="400" cy="458" rx="70" ry="14" fill="#d4d4d4" opacity="0.7" />
+
+        <!-- = -->
+        <!-- CHAIR 1: Leftmost Wire Chair (Profile Angle)         -->
+        <!-- = -->
+        <g stroke="#18181b" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Heavy Wire Perimeter Rim -->
+          <path d="M 50,160 C 90,80 180,60 230,120 C 260,160 250,240 210,310 C 160,380 60,370 40,290 C 25,230 30,190 50,160 Z" stroke-width="4.5" />
+          
+          <!-- Wire Grid Horizontal Contours -->
+          <path d="M 60,140 Q 140,90 215,120" stroke-width="2.2" />
+          <path d="M 52,175 Q 145,125 230,155" stroke-width="2.2" />
+          <path d="M 45,210 Q 145,160 240,195" stroke-width="2.2" />
+          <path d="M 40,245 Q 140,200 235,245" stroke-width="2.2" />
+          <path d="M 40,280 Q 135,240 220,290" stroke-width="2.2" />
+          <path d="M 55,315 Q 130,280 200,325" stroke-width="2.2" />
+          <path d="M 80,345 Q 130,320 175,345" stroke-width="2.2" />
+
+          <!-- Wire Grid Vertical Contours -->
+          <path d="M 80,105 Q 75,230 60,325" stroke-width="1.8" />
+          <path d="M 110,85 Q 105,230 90,350" stroke-width="1.8" />
+          <path d="M 140,75 Q 140,230 130,360" stroke-width="1.8" />
+          <path d="M 170,75 Q 175,230 165,360" stroke-width="1.8" />
+          <path d="M 200,85 Q 205,230 195,340" stroke-width="1.8" />
+          <path d="M 225,110 Q 230,230 215,305" stroke-width="1.8" />
+
+          <!-- Cross-Hatch Wire Lattice Lines -->
+          <path d="M 60,140 L 195,345 M 95,95 L 220,310 M 135,78 L 235,260 M 175,80 L 235,200" stroke-width="1.4" opacity="0.9" />
+          <path d="M 215,120 L 55,320 M 190,85 L 45,270 M 150,75 L 40,210 M 105,80 L 48,150" stroke-width="1.4" opacity="0.9" />
+
+          <!-- Eiffel Tower Wire Base Struts (Chair 1) -->
+          <g stroke-width="3.5">
+            <line x1="80" y1="355" x2="25" y2="455" />
+            <line x1="100" y1="355" x2="115" y2="455" />
+            <line x1="165" y1="355" x2="140" y2="455" />
+            <line x1="185" y1="355" x2="225" y2="455" />
+            <!-- Cross Wire Reinforcements -->
+            <line x1="45" y1="410" x2="200" y2="410" stroke-width="2" />
+            <line x1="60" y1="375" x2="185" y2="445" stroke-width="1.8" />
+            <line x1="175" y1="375" x2="45" y2="445" stroke-width="1.8" />
+          </g>
+          <!-- Protective Glides at Foot of Base -->
+          <circle cx="25" cy="455" r="4.5" fill="#18181b" />
+          <circle cx="115" cy="455" r="4.5" fill="#18181b" />
+          <circle cx="140" cy="455" r="4.5" fill="#18181b" />
+          <circle cx="225" cy="455" r="4.5" fill="#18181b" />
+        </g>
+
+        <!-- Eames House Bird Silhouette (Nestled Under Chair 1) -->
+        <g transform="translate(68, 385)">
+          <!-- Black Wood Bird Body, Beak & Tail -->
+          <path d="M 45,15 C 40,5 30,-2 20,2 C 15,4 12,8 5,12 L 0,14 L 6,18 C 12,22 18,30 22,45 C 26,60 30,75 35,90 L 38,98 L 44,82 C 48,70 52,50 50,35 C 48,25 48,20 45,15 Z" fill="#18181b" />
+          <!-- Fine Wire Legs of the Bird -->
+          <line x1="28" y1="65" x2="22" y2="82" stroke="#18181b" stroke-width="2" />
+          <line x1="34" y1="65" x2="36" y2="82" stroke="#18181b" stroke-width="2" />
+          <line x1="18" y1="82" x2="26" y2="82" stroke="#18181b" stroke-width="2" />
+          <line x1="32" y1="82" x2="40" y2="82" stroke="#18181b" stroke-width="2" />
+        </g>
+
+        <!-- = -->
+        <!-- CHAIR 2: Center-Left Wire Chair (Interlocking)       -->
+        <!-- = -->
+        <g stroke="#18181b" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(110, -15)">
+          <path d="M 60,190 C 90,130 180,110 230,160 C 260,200 250,270 215,330 C 170,390 80,380 60,310 C 45,250 50,220 60,190 Z" stroke-width="4.2" />
+          <path d="M 70,170 Q 150,130 215,160" stroke-width="2" />
+          <path d="M 65,205 Q 155,165 230,195" stroke-width="2" />
+          <path d="M 60,240 Q 155,200 235,235" stroke-width="2" />
+          <path d="M 60,275 Q 150,240 230,275" stroke-width="2" />
+          <path d="M 75,310 Q 145,275 210,315" stroke-width="2" />
+          <!-- Vertical Ribs -->
+          <path d="M 90,140 Q 90,260 80,340" stroke-width="1.6" />
+          <path d="M 120,125 Q 120,260 115,355" stroke-width="1.6" />
+          <path d="M 150,120 Q 150,260 145,360" stroke-width="1.6" />
+          <path d="M 180,125 Q 185,260 180,350" stroke-width="1.6" />
+          <path d="M 210,140 Q 215,260 205,325" stroke-width="1.6" />
+          <!-- Cross mesh -->
+          <path d="M 70,175 L 205,345 M 105,135 L 225,305 M 145,122 L 235,245" stroke-width="1.3" opacity="0.85" />
+          <path d="M 215,160 L 70,330 M 185,130 L 60,280 M 145,122 L 60,225" stroke-width="1.3" opacity="0.85" />
+          <!-- Eiffel Base -->
+          <g stroke-width="3.2">
+            <line x1="95" y1="365" x2="50" y2="470" />
+            <line x1="120" y1="365" x2="135" y2="470" />
+            <line x1="175" y1="365" x2="160" y2="470" />
+            <line x1="195" y1="365" x2="235" y2="470" />
+            <line x1="70" y1="420" x2="215" y2="420" stroke-width="1.8" />
+          </g>
+          <circle cx="50" cy="470" r="4.2" fill="#18181b" />
+          <circle cx="135" cy="470" r="4.2" fill="#18181b" />
+          <circle cx="160" cy="470" r="4.2" fill="#18181b" />
+          <circle cx="235" cy="470" r="4.2" fill="#18181b" />
+        </g>
+
+        <!-- = -->
+        <!-- CHAIR 3: Right Foreground Wire Chair (Full Front 3/4)-->
+        <!-- = -->
+        <g stroke="#18181b" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(230, 0)">
+          <!-- Perimeter Heavy Wire Rim -->
+          <path d="M 45,140 C 90,50 190,40 250,90 C 285,130 280,210 240,290 C 190,360 80,360 50,270 C 35,210 35,170 45,140 Z" stroke-width="4.8" />
+          
+          <!-- Horizontal Wire Contours -->
+          <path d="M 55,125 Q 150,70 235,100" stroke-width="2.3" />
+          <path d="M 45,160 Q 155,105 255,135" stroke-width="2.3" />
+          <path d="M 40,195 Q 160,145 265,175" stroke-width="2.3" />
+          <path d="M 36,230 Q 160,185 260,220" stroke-width="2.3" />
+          <path d="M 38,265 Q 155,225 245,265" stroke-width="2.3" />
+          <path d="M 50,300 Q 150,265 225,305" stroke-width="2.3" />
+          <path d="M 75,330 Q 145,305 195,335" stroke-width="2.3" />
+
+          <!-- Longitudinal Wire Ribs -->
+          <path d="M 75,90 Q 70,220 60,310" stroke-width="1.9" />
+          <path d="M 105,68 Q 105,220 90,335" stroke-width="1.9" />
+          <path d="M 140,55 Q 140,220 130,350" stroke-width="1.9" />
+          <path d="M 175,55 Q 175,220 170,350" stroke-width="1.9" />
+          <path d="M 210,65 Q 215,220 205,335" stroke-width="1.9" />
+          <path d="M 240,90 Q 250,220 235,295" stroke-width="1.9" />
+
+          <!-- Detailed Intersecting Diamonds (Eames Signature Mesh) -->
+          <path d="M 55,130 L 210,340 M 90,75 L 240,300 M 135,58 L 260,240 M 180,60 L 260,180" stroke-width="1.5" />
+          <path d="M 235,100 L 55,320 M 205,70 L 45,270 M 165,58 L 40,205 M 120,60 L 45,150" stroke-width="1.5" />
+
+          <!-- Eiffel Tower Wire Base (Chair 3) -->
+          <g stroke-width="3.6">
+            <line x1="85" y1="345" x2="35" y2="460" />
+            <line x1="110" y1="345" x2="115" y2="460" />
+            <line x1="175" y1="345" x2="160" y2="460" />
+            <line x1="200" y1="345" x2="245" y2="460" />
+            <!-- Strut Bracing -->
+            <line x1="55" y1="405" x2="225" y2="405" stroke-width="2.2" />
+            <line x1="70" y1="365" x2="210" y2="445" stroke-width="1.8" />
+            <line x1="195" y1="365" x2="55" y2="445" stroke-width="1.8" />
+          </g>
+          <circle cx="35" cy="460" r="4.5" fill="#18181b" />
+          <circle cx="115" cy="460" r="4.5" fill="#18181b" />
+          <circle cx="160" cy="460" r="4.5" fill="#18181b" />
+          <circle cx="245" cy="460" r="4.5" fill="#18181b" />
+        </g>
+      </g>
+    </g>
+
+    <!-- Photo Caption on Left Page (Under Left / Center) -->
+    <g transform="translate(525, 340)">
+      <text x="0" y="0" font-size="9.5" font-weight="800" fill="#18181b">Black metal frames</text>
+      <text x="0" y="12" font-size="9.5" font-weight="700" fill="#27272a">showing the progression</text>
+      <text x="0" y="24" font-size="9.5" font-weight="700" fill="#27272a">of the Eiffel Tower wire</text>
+      <text x="0" y="36" font-size="9.5" font-weight="700" fill="#27272a">bases, 1952</text>
+    </g>
+
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- CENTER BOOK GUTTER CREASE & BINDING FOLD (X = 850)       -->
+  <!-- ======================================================== -->
+  <rect x="836" y="0" width="28" height="750" fill="url(#gutterShadow)" />
+  <line x1="850" y1="0" x2="850" y2="750" stroke="#d4d4d8" stroke-width="0.8" opacity="0.6" />
+
+  <!-- ======================================================== -->
+  <!-- RIGHT PAGE (PAGE 13): EDITORIAL TYPOGRAPHY & PROTOTYPES -->
+  <!-- ======================================================== -->
+  <g id="right-page" transform="translate(885, 45)">
+
+    <!-- Top Left Editorial Pull Quote & Lead Paragraph -->
+    <g transform="translate(50, 45)">
+      <!-- Large Headline Quote -->
+      <text x="0" y="24" font-size="21" font-weight="500" fill="#18181b" letter-spacing="-0.2">Much of the Eameses’</text>
+      <text x="0" y="50" font-size="21" font-weight="500" fill="#18181b" letter-spacing="-0.2">work stands in the best</text>
+      <text x="0" y="76" font-size="21" font-weight="500" fill="#18181b" letter-spacing="-0.2">tradition of the design</text>
+      
+      <!-- Lead paragraph blending seamlessly into column text -->
+      <g font-size="9" fill="#27272a" line-height="1.5">
+        <text x="0" y="104"><tspan font-size="21" font-weight="500" fill="#18181b">reform movement </tspan><tspan font-size="8.5">(which argued for making high-quality everyday</tspan></text>
+        <text x="0" y="117">objects available at reasonable prices), and also</text>
+        <text x="0" y="129">in the best tradition of modernism (which, from</text>
+        <text x="0" y="141">the 1920’s on, offered a vision of harnessing</text>
+        <text x="0" y="153">new technologies, industrial production, and rel-</text>
+        <text x="0" y="165">evant design to the service of humankind).</text>
+        <text x="0" y="177">Charles and Ray Eames belonged to a genera-</text>
+        <text x="0" y="189">tion of designers who, before, during, and</text>
+        <text x="0" y="201">immediately after World War II, were deter-</text>
+        <text x="0" y="213">mined to make the world a better place in which</text>
+        <text x="0" y="225">to live but were not wedded to a narrow or sole-</text>
+        <text x="0" y="237">ly stylistic definition of modernism. Without</text>
+        <text x="0" y="249">ever losing sight of their serious objectives, the</text>
+        <text x="0" y="261">Eameses brought to their products a lightness</text>
+        <text x="0" y="273">of spirit that, to a degree, disguised their com-</text>
+        <text x="0" y="285">mitment and dedication. Their furniture, their</text>
+        <text x="0" y="297">films, and their exhibitions delighted the eye,</text>
+        <text x="0" y="309">the mind, and the spirit; they also worked well.</text>
+      </g>
+    </g>
+
+    <!-- Column 2 (Right Editorial Column) -->
+    <g transform="translate(330, 68)" font-size="9" fill="#27272a">
+      <text x="0" y="0">The Eameses’ work was often innovative,</text>
+      <text x="0" y="12">although they always insisted that designers</text>
+      <text x="0" y="24">should innovate only as a last resort.¹ They rev-</text>
+      <text x="0" y="36">eled in the particular constraints of specific</text>
+      <text x="0" y="48">briefs and in the rationalistic search for the best</text>
+      <text x="0" y="60">possible solution to the problem at hand, yet</text>
+      <text x="0" y="72">they produced work that has been described as</text>
+      <text x="0" y="84">poetic. If, as Frank Lloyd Wright said, the poetry</text>
+      <text x="0" y="96">of architecture is that which touches the heart,²</text>
+      <text x="0" y="108">then it is not difficult to understand why Paul</text>
+      <text x="0" y="120">Schrader and others have referred to the work</text>
+      <text x="0" y="132">of the Eameses in that way.³ It was not simply</text>
+      <text x="0" y="144">their liberal use of hearts and flowers, their</text>
+      <text x="0" y="156">direct appeal to what they perceived as univer-</text>
+      <text x="0" y="168">sal truths and the inner humanity of people the</text>
+      <text x="0" y="180">world over, or even the power of their ideas and</text>
+      <text x="0" y="192">the exquisiteness and affectivity of their compo-</text>
+      <text x="0" y="204">sitions and imagery that made many of their</text>
+      <text x="0" y="216">products so memorable; as in a symphony, the</text>
+      <text x="0" y="228">whole was much more than the sum of their</text>
+      <text x="0" y="240">parts. In their passion to convey their enthusiasm to</text>
+      <text x="0" y="252">others, the Eameses “shaped not only things</text>
+      <text x="0" y="264">but the way people thing about things.”⁴ Their</text>
+      <text x="0" y="276">films, exhibitions, and multi-screen presenta-</text>
+      <text x="0" y="288">tions show them to have been at the forefront of</text>
+      <text x="0" y="300">new thinking about the most effective and plea-</text>
+      <text x="0" y="312">surable ways of communicating knowledge to</text>
+      <text x="0" y="324">large numbers of people. Their exhibitions and</text>
+      <text x="0" y="336">multiple-image shows, in particular, reached</text>
+      <text x="0" y="348">large and largely appreciative audiences. Their</text>
+      <text x="0" y="360">design work was respected by the cognoscenti</text>
+      <text x="0" y="372">and, at the same time, popular in the sense of</text>
+      <text x="0" y="384">being seen, used, enjoyed, and admired by</text>
+      <text x="0" y="396">many. In this they achieved the modernist</text>
+      <text x="0" y="408">designer's dream of enriching the lives of ordi-</text>
+      <text x="0" y="420">nary people with quality objects produced by</text>
+      <text x="0" y="432">means of the most up-to-date technology.</text>
+    </g>
+
+    <!-- Top Right Footnotes & Citations Column -->
+    <g transform="translate(535, 55)" font-size="7.5" fill="#52525b">
+      <text x="0" y="0"><tspan font-weight="700">1</tspan> Charles Eames/Virginia</text>
+      <text x="8" y="10">Stith, 1977.</text>
+      
+      <text x="0" y="26"><tspan font-weight="700">2</tspan> Frank Lloyd Wright, <tspan font-style="italic">An</tspan></text>
+      <text x="8" y="36"><tspan font-style="italic">Autobiography</tspan> (London,</text>
+      <text x="8" y="46">1977), p. 362.</text>
+
+      <text x="0" y="62"><tspan font-weight="700">3</tspan> Paul Schrader, 'Poetry of</text>
+      <text x="8" y="72">Ideas,' <tspan font-style="italic">Film Quarterly,</tspan></text>
+      <text x="8" y="82">spring 1970, p. 10. See also</text>
+      <text x="8" y="92"><tspan font-style="italic">Blueprints for Modern</tspan></text>
+      <text x="8" y="102"><tspan font-style="italic">Living,</tspan> p. 52.</text>
+
+      <text x="0" y="118"><tspan font-weight="700">4</tspan> Walter McQuade, 'Charles</text>
+      <text x="8" y="128">Eames isn't resting on his</text>
+      <text x="8" y="138">chair,' <tspan font-style="italic">Fortune,</tspan> February</text>
+      <text x="8" y="148">1975, p. 98.</text>
+    </g>
+
+    <!-- Bottom Photographic Plate: 3 Progressive Wire Base Models -->
+    <g transform="translate(50, 395)">
+      <rect width="380" height="260" fill="#ffffff" />
+      <g clip-path="url(#rightProtoClip)">
+        <rect width="380" height="260" fill="#fcfcfc" />
+
+        <!-- Soft Contact Shadows of Base Models -->
+        <ellipse cx="140" cy="235" rx="120" ry="14" fill="#e7e5e4" opacity="0.6" />
+        <ellipse cx="280" cy="235" rx="80" ry="12" fill="#e7e5e4" opacity="0.6" />
+
+        <!-- PROTOTYPE MODEL 1 (Left: X-Fold Wire Strut Prototype) -->
+        <g stroke="#18181b" stroke-linecap="round" fill="none">
+          <!-- Cross Scissor Struts -->
+          <path d="M 20,80 L 150,225" stroke-width="3" />
+          <path d="M 150,80 L 20,225" stroke-width="3" />
+          <path d="M 35,90 L 165,220" stroke-width="2.5" />
+          <path d="M 135,90 L 35,220" stroke-width="2.5" />
+          <!-- Horizontal and diagonal cross loops -->
+          <line x1="20" y1="80" x2="135" y2="90" stroke-width="2.8" />
+          <line x1="35" y1="220" x2="150" y2="225" stroke-width="2.8" />
+          <path d="M 85,152 L 120,120 L 50,185" stroke-width="1.8" />
+        </g>
+
+        <!-- PROTOTYPE MODEL 2 (Center: Eiffel Radiating Wire Base Prototype) -->
+        <g stroke="#18181b" stroke-linecap="round" fill="none" transform="translate(130, 25)">
+          <line x1="85" y1="130" x2="45" y2="200" stroke-width="2.6" />
+          <line x1="85" y1="130" x2="70" y2="200" stroke-width="2.6" />
+          <line x1="85" y1="130" x2="100" y2="200" stroke-width="2.6" />
+          <line x1="85" y1="130" x2="125" y2="200" stroke-width="2.6" />
+          <!-- Cross web wire hoops -->
+          <ellipse cx="85" cy="180" rx="35" ry="6" stroke-width="1.6" />
+          <line x1="55" y1="175" x2="115" y2="185" stroke-width="1.4" />
+          <line x1="115" y1="175" x2="55" y2="185" stroke-width="1.4" />
+        </g>
+
+        <!-- PROTOTYPE MODEL 3 (Right: Low Wire Table LTR Base Structure) -->
+        <g stroke="#18181b" stroke-linecap="round" fill="none" transform="translate(230, 45)">
+          <!-- Cross Braced Wire Legs -->
+          <line x1="40" y1="125" x2="25" y2="180" stroke-width="2.5" />
+          <line x1="55" y1="125" x2="45" y2="180" stroke-width="2.5" />
+          <line x1="90" y1="125" x2="80" y2="180" stroke-width="2.5" />
+          <line x1="105" y1="125" x2="100" y2="180" stroke-width="2.5" />
+          <!-- Welded Perimeter Loops -->
+          <line x1="30" y1="125" x2="115" y2="125" stroke-width="2.5" />
+          <line x1="20" y1="180" x2="105" y2="180" stroke-width="2.5" />
+          <line x1="30" y1="125" x2="100" y2="180" stroke-width="1.4" />
+          <line x1="105" y1="125" x2="25" y2="180" stroke-width="1.4" />
+        </g>
+      </g>
+    </g>
+
+    <!-- Bottom Right Folio & Page Number -->
+    <g transform="translate(500, 395)">
+      <line x1="110" y1="0" x2="210" y2="0" stroke="#71717a" stroke-width="0.8" />
+      <text x="210" y="14" font-size="9" font-weight="700" fill="#27272a" text-anchor="end" letter-spacing="1">EAMES 13</text>
+    </g>
+
+  </g>
+</svg>

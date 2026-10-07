@@ -154,8 +154,8 @@ const graphicProjects: Project[] = [
     title: "Coffee Table Book",
     subtitle: "Personal Project — Editorial & Print Design",
     tag: "Print Design",
-    image:
-      "https://images.unsplash.com/photo-1651013542393-ced26a8bf656?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
+    image: "/Thumbnail_CoffeeTableBook.svg",
+    showStepPlaceholders: true,
     synopsis:
       "A personal project — designed a 16\" × 10\" hardcover coffee-table book inspired by a favorite furniture design company. Built around the principle of \"form follows function,\" the layout makes efficient use of every spread while maintaining a sharp, considered aesthetic.",
     steps: [
@@ -163,11 +163,15 @@ const graphicProjects: Project[] = [
         label: "Concept & Direction",
         description:
           "Grounded the entire book in the \"form follows function\" principle — every layout decision driven by purpose, with no decorative element without intention.",
+        image: "/Thumbnail_CoffeeTableBook.svg",
+        imageAlt: "Classic Herman Miller — 16\" × 10\" Hardcover Coffee Table Book Cover",
       },
       {
         label: "Editorial Layout Design",
         description:
           "Designed a 16\" × 10\" hardcover format, optimizing each spread for spatial efficiency while preserving a clean, gallery-quality aesthetic throughout.",
+        image: "/coffeetablebook_step1_spread.svg",
+        imageAlt: "Charles and Ray Eames Editorial Double-Page Spread — Eames Wire Chairs & Modernist Design Reform",
       },
     ],
   },
@@ -176,8 +180,8 @@ const graphicProjects: Project[] = [
     title: "Baker & McKenzie",
     subtitle: "Law Firm Rebrand — Print & Collateral",
     tag: "Brand Design",
-    image:
-      "https://images.unsplash.com/photo-1636247499180-13285c86be9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
+    image: "/Thumbnail_BakerMcKenzie.svg",
+    showStepPlaceholders: true,
     synopsis:
       "While at Zün Partners, tasked with creating the look and feel of a rebrand for the law firm Baker & McKenzie. Centered on the theme of \"flow of motion,\" the system used a restrained color palette and \"energy bars\" to convey the ever-evolving nature of the legal world they operated in.",
     steps: [
@@ -185,11 +189,15 @@ const graphicProjects: Project[] = [
         label: "Brand Concept",
         description:
           "Developed the \"flow of motion\" creative direction — translating a dynamic, global law firm's identity into a visual language built around movement and energy.",
+        image: "/Thumbnail_BakerMcKenzie.svg",
+        imageAlt: "Baker & McKenzie Visual Rebrand — Flow of Motion Energy Bars",
       },
       {
         label: "Folders, Brochures & Posters",
         description:
           "Designed a suite of print collateral including folders, brochures, and posters, all unified by the energy bar motif and a consistent color palette.",
+        image: "/bakermckenzie_step2_collateral.svg",
+        imageAlt: "Baker & McKenzie Folders, Brochures & Posters Suite — Global Antitrust Brochure, Deep Roots Poster & San Francisco Folder",
       },
     ],
   },
