@@ -24,21 +24,10 @@
   <!-- AMBIENT GALLERY CANVAS -->
   <rect width="1600" height="900" fill="#e8eaed" />
 
-  <!-- TOP PRESENTATION TITLE BAR -->
-  <g transform="translate(50, 24)">
-    <text x="0" y="24" font-size="20" font-weight="800" fill="#1e293b" letter-spacing="0.3">LO-FI WIREFRAMING &amp; RESPONSIVE PROTOTYPES</text>
-    <text x="480" y="24" font-size="13.5" font-weight="500" fill="#64748b">Desktop E-Commerce Architecture &amp; Mobile Adaptation • Step 10 Usability Blueprint</text>
-    <g transform="translate(1260, 4)">
-      <rect width="240" height="28" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-      <circle cx="16" cy="14" r="5" fill="#22c55e" />
-      <text x="30" y="18" font-size="11.5" font-weight="600" fill="#334155">Desktop &amp; Mobile Specifications</text>
-    </g>
-  </g>
-
   <!-- ======================================================== -->
   <!-- 1. DESKTOP WIREFRAME CANVAS (LEFT / MAIN, 1060 x 780)   -->
   <!-- ======================================================== -->
-  <g transform="translate(50, 75)" filter="url(#cardShadow)">
+  <g transform="translate(50, 60)" filter="url(#cardShadow)">
     <!-- Desktop Browser Window Frame -->
     <rect width="1060" height="780" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
 

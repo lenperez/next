@@ -48,20 +48,6 @@
     <line x1="1200" y1="0" x2="1200" y2="1000" />
   </g>
 
-  <!-- HEADER BRANDING BADGE (TOP) -->
-  <g transform="translate(80, 40)">
-    <rect width="420" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
-    <rect x="12" y="8" width="20" height="20" rx="3" fill="#dc2626" />
-    <text x="22" y="22" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">G</text>
-    <text x="42" y="22" font-size="12" font-weight="800" fill="#ffffff" letter-spacing="1">GRAINGER</text>
-    <text x="135" y="22" font-size="12" font-weight="400" fill="#94a3b8">• Enterprise Benefits Management</text>
-    <g transform="translate(1120, 0)">
-      <rect width="320" height="36" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1" />
-      <circle cx="18" cy="18" r="5" fill="#22c55e" />
-      <text x="34" y="22" font-size="11.5" font-weight="600" fill="#e2e8f0">Wireframe Blueprint to Production UI</text>
-    </g>
-  </g>
-
   <!-- ======================================================== -->
   <!-- LAYER 1: LO-FI WIREFRAME SPECIFICATION SHEET (LEFT LAYER)-->
   <!-- ======================================================== -->
@@ -521,12 +507,4 @@
       </g>
     </g>
   </g>
-
-  <!-- BOTTOM ACCENT CAPTION BAR -->
-  <g transform="translate(80, 945)">
-    <text x="0" y="20" font-size="13" font-weight="700" fill="#e2e8f0">GRAINGER CASE STUDY</text>
-    <text x="175" y="20" font-size="12" fill="#94a3b8">Enterprise Benefit Management System Scalability Upgrade • Form Architecture &amp; Production Design</text>
-    <text x="1440" y="20" font-size="12" font-weight="600" fill="#38bdf8" text-anchor="end">Interactive Prototype &amp; Documentation Asset</text>
-  </g>
-
 </svg>

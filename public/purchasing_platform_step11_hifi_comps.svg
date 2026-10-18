@@ -66,21 +66,10 @@
   <!-- AMBIENT GALLERY CANVAS -->
   <rect width="1600" height="900" fill="#e8eaed" />
 
-  <!-- TOP PRESENTATION TITLE BAR -->
-  <g transform="translate(50, 24)">
-    <text x="0" y="24" font-size="20" font-weight="800" fill="#1e293b" letter-spacing="0.3">HI-FI COMPS &amp; MULTI-PLATFORM DESIGN SYSTEM</text>
-    <text x="540" y="24" font-size="13.5" font-weight="500" fill="#64748b">Responsive Production Comps • Desktop, Tablet &amp; Mobile Breakpoints • Step 11</text>
-    <g transform="translate(1260, 4)">
-      <rect width="240" height="28" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-      <circle cx="16" cy="14" r="5" fill="#22c55e" />
-      <text x="30" y="18" font-size="11.5" font-weight="600" fill="#334155">Full-Fidelity Style Guide &amp; UI</text>
-    </g>
-  </g>
-
   <!-- ======================================================== -->
   <!-- 1. DESKTOP PRODUCTION COMP (LEFT, 940 x 780)             -->
   <!-- ======================================================== -->
-  <g transform="translate(50, 75)" filter="url(#deckShadow)">
+  <g transform="translate(50, 60)" filter="url(#deckShadow)">
     <!-- Desktop Window Frame -->
     <rect width="940" height="780" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
 
@@ -452,7 +441,7 @@
   <!-- ======================================================== -->
   <!-- 2. TABLET COMP (RIGHT TOP, 530 x 380)                    -->
   <!-- ======================================================== -->
-  <g transform="translate(1020, 75)" filter="url(#deviceShadow)">
+  <g transform="translate(1020, 60)" filter="url(#deviceShadow)">
     <rect width="530" height="380" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
     <rect x="4" y="4" width="522" height="372" rx="10" fill="#ffffff" />
 
@@ -574,7 +563,7 @@
   <!-- ======================================================== -->
   <!-- 3. MOBILE SMARTPHONE COMP (RIGHT BOTTOM, 530 x 375)      -->
   <!-- ======================================================== -->
-  <g transform="translate(1020, 480)" filter="url(#deviceShadow)">
+  <g transform="translate(1020, 465)" filter="url(#deviceShadow)">
     <rect width="530" height="375" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
     <rect x="4" y="4" width="522" height="367" rx="12" fill="#ffffff" />
 

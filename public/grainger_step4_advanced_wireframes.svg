@@ -1,0 +1,501 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1020" width="1440" height="1020" style="background:#0f172a; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Grid pattern for blueprint/wireframe background -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.75" />
+    </pattern>
+    <pattern id="dotgrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#334155" opacity="0.4" />
+    </pattern>
+
+    <!-- Filters & Shadows -->
+    <filter id="drop-shadow" x="-5%" y="-3%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+    <filter id="subtle-shadow" x="-3%" y="-2%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.12" />
+    </filter>
+    <filter id="badge-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#e11d48" flood-opacity="0.4" />
+    </filter>
+
+    <!-- Marker for annotation arrows -->
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#e11d48" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b" />
+    </marker>
+  </defs>
+
+  <!-- Dark Slate Workspace Canvas Background -->
+  <rect width="1440" height="1020" fill="#0b1120" />
+  <rect width="1440" height="1020" fill="url(#dotgrid)" />
+
+  <!-- MAIN ARTBOARD (White/Off-white Canvas Wireframe Document) -->
+  <g transform="translate(40, 60)" filter="url(#drop-shadow)">
+    <!-- Document Backdrop -->
+    <rect width="980" height="900" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Wireframe Header: Enterprise Tool Navigation & Client Selector -->
+    <g transform="translate(30, 24)">
+      <!-- Top Account / Ship To Header Grid -->
+      <g>
+        <text x="0" y="14" font-size="12" font-weight="700" fill="#1e293b" letter-spacing="0.5">CUSTOMER ACCOUNT</text>
+        <rect x="0" y="22" width="220" height="34" rx="4" fill="#f8fafc" stroke="#475569" stroke-width="1.4" />
+        <text x="14" y="44" font-size="13" font-family="monospace" font-weight="700" fill="#0f172a">#083748596</text>
+        <rect x="228" y="22" width="34" height="34" rx="4" fill="#f1f5f9" stroke="#475569" stroke-width="1.4" />
+        <circle cx="245" cy="39" r="5" fill="none" stroke="#1e293b" stroke-width="1.6" />
+        <line x1="248.5" y1="42.5" x2="254" y2="48" stroke="#1e293b" stroke-width="1.8" />
+        <text x="274" y="44" font-size="13" font-weight="700" fill="#1e293b">Honda Mfg of America</text>
+      </g>
+
+      <!-- Ship To / Sub-Location Selector -->
+      <g transform="translate(490, 0)">
+        <text x="0" y="14" font-size="12" font-weight="700" fill="#1e293b" letter-spacing="0.5">SHIP-TO / FACILITY</text>
+        <rect x="0" y="22" width="200" height="34" rx="4" fill="#f8fafc" stroke="#475569" stroke-width="1.4" />
+        <text x="14" y="44" font-size="12.5" font-family="monospace" fill="#334155">LOC-88204 (Marysville)</text>
+        <rect x="208" y="22" width="34" height="34" rx="4" fill="#f1f5f9" stroke="#475569" stroke-width="1.4" />
+        <path d="M 220 37 L 225 43 L 230 37" fill="none" stroke="#1e293b" stroke-width="2" />
+        <text x="254" y="44" font-size="12" font-weight="600" fill="#475569">Plant #2 Assembly</text>
+      </g>
+
+      <!-- Rule Scope Status Tag -->
+      <g transform="translate(810, 22)">
+        <rect width="110" height="34" rx="4" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2" />
+        <circle cx="16" cy="17" r="4" fill="#16a34a" />
+        <text x="28" y="21" font-size="11" font-weight="700" fill="#15803d">ACTIVE RULE</text>
+      </g>
+    </g>
+
+    <!-- Horizontal Wireframe Divider -->
+    <line x1="30" y1="96" x2="950" y2="96" stroke="#e2e8f0" stroke-width="1.5" />
+
+    <!-- Advanced Tabs Bar with States -->
+    <g transform="translate(30, 110)">
+      <!-- Tab 1: General (Inactive) -->
+      <rect x="0" y="6" width="130" height="36" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" />
+      <text x="65" y="28" font-size="13" font-weight="600" fill="#64748b" text-anchor="middle">General Setup</text>
+
+      <!-- Tab 2: Subsidy & Rules Engine (ACTIVE) -->
+      <rect x="140" y="0" width="190" height="42" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="2" />
+      <rect x="140" y="0" width="190" height="4" fill="#2563eb" />
+      <text x="235" y="26" font-size="13.5" font-weight="800" fill="#0f172a" text-anchor="middle">Subsidy &amp; Allowances</text>
+      <circle cx="310" cy="18" r="7" fill="#2563eb" />
+      <text x="310" y="22" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+
+      <!-- Tab 3: Catalog & Filters -->
+      <rect x="340" y="6" width="150" height="36" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" />
+      <text x="415" y="28" font-size="13" font-weight="600" fill="#64748b" text-anchor="middle">Safety Catalog</text>
+
+      <!-- Tab 4: Employee Roster -->
+      <rect x="500" y="6" width="150" height="36" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" />
+      <text x="575" y="28" font-size="13" font-weight="600" fill="#64748b" text-anchor="middle">Eligible Roster</text>
+
+      <!-- Tab 5: Exceptions & Overrides -->
+      <rect x="660" y="6" width="160" height="36" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" />
+      <text x="740" y="28" font-size="13" font-weight="600" fill="#64748b" text-anchor="middle">Exceptions Matrix</text>
+
+      <!-- Inherit from Parent Toggle Right -->
+      <g transform="translate(835, 12)">
+        <rect width="85" height="24" rx="12" fill="#e2e8f0" />
+        <circle cx="73" cy="12" r="10" fill="#2563eb" />
+        <text x="-8" y="16" font-size="10.5" font-weight="600" fill="#64748b" text-anchor="end">Inherit</text>
+      </g>
+    </g>
+
+    <!-- CONTENT BODY: 2-COLUMN WIREFRAME GRID -->
+    <g transform="translate(30, 172)">
+      <!-- LEFT COLUMN: Allowance Config & Calculation Model (Width: 440) -->
+      <g>
+        <!-- Panel 1: Allowance Allotment Type -->
+        <rect width="430" height="180" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" />
+        <rect width="430" height="34" rx="6" fill="#f1f5f9" />
+        <text x="16" y="22" font-size="12" font-weight="800" fill="#1e293b" letter-spacing="0.4">1. ALLOWANCE ALLOTMENT &amp; FREQUENCY</text>
+
+        <!-- Radio Buttons: Fixed Dollar vs Percentage vs Item Voucher -->
+        <g transform="translate(16, 48)">
+          <!-- Option A (Selected) -->
+          <circle cx="8" cy="8" r="7" fill="#ffffff" stroke="#2563eb" stroke-width="2" />
+          <circle cx="8" cy="8" r="3.5" fill="#2563eb" />
+          <text x="24" y="12" font-size="12" font-weight="700" fill="#0f172a">Fixed Amount Subsidy</text>
+
+          <!-- Option B -->
+          <circle cx="190" cy="8" r="7" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
+          <text x="206" y="12" font-size="12" fill="#64748b">Percentage Split</text>
+
+          <!-- Option C -->
+          <circle cx="330" cy="8" r="7" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
+          <text x="346" y="12" font-size="12" fill="#64748b">Voucher</text>
+        </g>
+
+        <!-- Input Fields: Amount + Reset Cycle -->
+        <g transform="translate(16, 80)">
+          <text x="0" y="12" font-size="11" font-weight="700" fill="#475569">Max Company Subsidy ($)</text>
+          <rect x="0" y="18" width="180" height="32" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.5" />
+          <text x="14" y="39" font-size="14" font-weight="800" fill="#0f172a">$ 150.00</text>
+          <text x="140" y="38" font-size="10" font-weight="600" fill="#64748b">/ YEAR</text>
+
+          <text x="210" y="12" font-size="11" font-weight="700" fill="#475569">Allowance Reset Cycle</text>
+          <rect x="210" y="18" width="188" height="32" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.2" />
+          <text x="224" y="38" font-size="12" fill="#1e293b">Rolling 12 Months</text>
+          <path d="M 378 32 L 383 37 L 388 32" fill="none" stroke="#1e293b" stroke-width="1.8" />
+        </g>
+
+        <!-- Co-Pay Rule Checkbox -->
+        <g transform="translate(16, 142)">
+          <rect width="16" height="16" rx="3" fill="#2563eb" />
+          <path d="M 3 8 L 7 12 L 13 4" fill="none" stroke="#ffffff" stroke-width="2" />
+          <text x="26" y="13" font-size="11.5" font-weight="600" fill="#1e293b">Allow employee payroll deduction for overages</text>
+        </g>
+      </g>
+
+      <!-- Panel 2: Product Class & Safety Compliance Rules -->
+      <g transform="translate(0, 196)">
+        <rect width="430" height="220" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" />
+        <rect width="430" height="34" rx="6" fill="#f1f5f9" />
+        <text x="16" y="22" font-size="12" font-weight="800" fill="#1e293b" letter-spacing="0.4">2. COMPLIANCE FILTERS &amp; CATEGORIES</text>
+
+        <!-- Compliance Requirement Tags -->
+        <g transform="translate(16, 46)">
+          <text x="0" y="12" font-size="11" font-weight="700" fill="#475569">Mandatory Safety Ratings (Lock Catalog)</text>
+          
+          <!-- Tag pills -->
+          <g transform="translate(0, 20)">
+            <rect width="90" height="24" rx="4" fill="#e0e7ff" stroke="#6366f1" stroke-width="1" />
+            <text x="45" y="16" font-size="10.5" font-weight="700" fill="#4338ca" text-anchor="middle">ASTM F2413</text>
+
+            <rect x="100" y="0" width="85" height="24" rx="4" fill="#e0e7ff" stroke="#6366f1" stroke-width="1" />
+            <text x="142" y="16" font-size="10.5" font-weight="700" fill="#4338ca" text-anchor="middle">Steel Toe</text>
+
+            <rect x="195" y="0" width="95" height="24" rx="4" fill="#e0e7ff" stroke="#6366f1" stroke-width="1" />
+            <text x="242" y="16" font-size="10.5" font-weight="700" fill="#4338ca" text-anchor="middle">Elec. Hazard</text>
+
+            <rect x="300" y="0" width="90" height="24" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1" />
+            <text x="345" y="16" font-size="10.5" font-weight="700" fill="#b91c1c" text-anchor="middle">Metatarsal</text>
+          </g>
+        </g>
+
+        <!-- Quantity Limit per period -->
+        <g transform="translate(16, 112)">
+          <text x="0" y="12" font-size="11" font-weight="700" fill="#475569">Max Pairs per Cycle</text>
+          <rect x="0" y="18" width="180" height="30" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.2" />
+          <text x="14" y="38" font-size="12" font-weight="700" fill="#0f172a">1 Pair per 12 Mo.</text>
+
+          <text x="210" y="12" font-size="11" font-weight="700" fill="#475569">Sub-category Add-ons</text>
+          <rect x="210" y="18" width="188" height="30" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.2" />
+          <text x="224" y="38" font-size="12" fill="#1e293b">Insoles + Heavy Socks</text>
+        </g>
+
+        <!-- Warning note on restriction -->
+        <g transform="translate(16, 174)">
+          <rect width="398" height="32" rx="4" fill="#fffbeb" stroke="#fcd34d" stroke-width="1" />
+          <path d="M 14 20 L 22 6 L 30 20 Z" fill="#f59e0b" />
+          <text x="22" y="18" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">!</text>
+          <text x="38" y="20" font-size="10.5" font-weight="600" fill="#92400e">Catalog automatically pruned to 42 matching SKUs</text>
+        </g>
+      </g>
+
+      <!-- Panel 3: PO Requisition & Fulfillment Route -->
+      <g transform="translate(0, 432)">
+        <rect width="430" height="230" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" />
+        <rect width="430" height="34" rx="6" fill="#f1f5f9" />
+        <text x="16" y="22" font-size="12" font-weight="800" fill="#1e293b" letter-spacing="0.4">3. FULFILLMENT ROUTING &amp; APPROVAL GATES</text>
+
+        <g transform="translate(16, 48)">
+          <text x="0" y="12" font-size="11" font-weight="700" fill="#475569">Customer PO Requirement</text>
+          <rect x="0" y="18" width="180" height="32" rx="4" fill="#ffffff" stroke="#e11d48" stroke-width="1.8" />
+          <text x="14" y="38" font-size="12" font-family="monospace" font-weight="700" fill="#e11d48">PO-MANDATORY</text>
+
+          <text x="210" y="12" font-size="11" font-weight="700" fill="#475569">Primary Distribution DC</text>
+          <rect x="210" y="18" width="188" height="32" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.2" />
+          <text x="224" y="38" font-size="12" fill="#1e293b">DC-04 (Chicago Regional)</text>
+        </g>
+
+        <!-- Fallback DC Checkbox -->
+        <g transform="translate(16, 110)">
+          <rect width="16" height="16" rx="3" fill="#2563eb" />
+          <path d="M 3 8 L 7 12 L 13 4" fill="none" stroke="#ffffff" stroke-width="2" />
+          <text x="26" y="13" font-size="11" font-weight="600" fill="#1e293b">Auto-route to Secondary DC if inventory &lt; 5 units</text>
+        </g>
+
+        <!-- Approval Gate for Exceptions -->
+        <g transform="translate(16, 142)">
+          <text x="0" y="12" font-size="11" font-weight="700" fill="#475569">Supervisor Approval Threshold</text>
+          <rect x="0" y="18" width="398" height="32" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.2" />
+          <text x="14" y="38" font-size="12" fill="#1e293b">Require Plant Mgr sign-off if cart total &gt; $225.00</text>
+          <path d="M 380 32 L 385 37 L 390 32" fill="none" stroke="#1e293b" stroke-width="1.8" />
+        </g>
+
+        <!-- Wireframe Action CTAs -->
+        <g transform="translate(16, 188)">
+          <rect width="140" height="30" rx="4" fill="#0f172a" />
+          <text x="70" y="20" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">SAVE RULESET</text>
+
+          <rect x="150" y="0" width="120" height="30" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+          <text x="210" y="20" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">TEST SIMULATION</text>
+        </g>
+      </g>
+
+      <!-- RIGHT COLUMN: Interactive Cart Simulation & Edge Case Preview (Width: 460) -->
+      <g transform="translate(460, 0)">
+        <!-- Simulation Panel Header -->
+        <rect width="460" height="662" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.6" />
+        
+        <!-- Live Calculation Preview Header -->
+        <rect width="460" height="42" rx="6" fill="#0f172a" />
+        <text x="18" y="26" font-size="13" font-weight="800" fill="#ffffff" letter-spacing="0.5">INTERACTION PREVIEW: EMPLOYEE CHECKOUT</text>
+        <rect x="360" y="10" width="85" height="22" rx="3" fill="#2563eb" />
+        <text x="402" y="25" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">EDGE CASE 2</text>
+
+        <!-- Employee Info Bar -->
+        <g transform="translate(18, 56)">
+          <rect width="424" height="48" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" />
+          <circle cx="28" cy="24" r="14" fill="#e2e8f0" />
+          <path d="M 23 29 C 23 24 33 24 33 29" fill="#94a3b8" />
+          <circle cx="28" cy="19" r="5" fill="#94a3b8" />
+          <text x="52" y="22" font-size="12" font-weight="700" fill="#0f172a">Johnathan Vance (ID: #HM-4829)</text>
+          <text x="52" y="38" font-size="10.5" fill="#64748b">Dept: Stamping Line B // Annual Allowance: $150.00 (Unused)</text>
+        </g>
+
+        <!-- Selected Product Card in Cart -->
+        <g transform="translate(18, 116)">
+          <text x="0" y="12" font-size="11" font-weight="700" fill="#475569">Selected Safety Footwear Item</text>
+          
+          <rect y="20" width="424" height="130" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+          
+          <!-- Product image placeholder box -->
+          <rect x="12" y="32" width="90" height="90" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+          <line x1="12" y1="32" x2="102" y2="122" stroke="#e2e8f0" stroke-width="1" />
+          <line x1="102" y1="32" x2="12" y2="122" stroke="#e2e8f0" stroke-width="1" />
+          <text x="57" y="82" font-size="10" font-weight="600" fill="#94a3b8" text-anchor="middle">SHOE IMG</text>
+
+          <!-- Product Details -->
+          <text x="116" y="44" font-size="13" font-weight="800" fill="#0f172a">Timberland PRO 6" Titan Steel Toe</text>
+          <text x="116" y="60" font-size="11" font-family="monospace" fill="#64748b">SKU: #TB-90248-BRN // Size: 10.5W</text>
+          
+          <!-- Badges -->
+          <g transform="translate(116, 72)">
+            <rect width="64" height="18" rx="3" fill="#dcfce7" stroke="#86efac" stroke-width="0.8" />
+            <text x="32" y="13" font-size="9.5" font-weight="700" fill="#166534" text-anchor="middle">APPROVED</text>
+
+            <rect x="72" y="0" width="80" height="18" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8" />
+            <text x="112" y="13" font-size="9.5" font-weight="600" fill="#475569" text-anchor="middle">ELECTRICAL</text>
+          </g>
+
+          <!-- Price -->
+          <text x="410" y="48" font-size="16" font-weight="900" fill="#0f172a" text-anchor="end">$ 189.99</text>
+        </g>
+
+        <!-- Split Cost Calculation Breakdown Table -->
+        <g transform="translate(18, 280)">
+          <text x="0" y="12" font-size="11" font-weight="700" fill="#475569">Subsidy Splitting Calculation</text>
+          
+          <rect y="20" width="424" height="154" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+          
+          <!-- Row 1: Retail Price -->
+          <text x="16" y="44" font-size="12" fill="#475569">Item Subtotal (Retail)</text>
+          <text x="408" y="44" font-size="12.5" font-weight="600" fill="#1e293b" text-anchor="end">$ 189.99</text>
+          <line x1="16" y1="54" x2="408" y2="54" stroke="#e2e8f0" stroke-width="1" />
+
+          <!-- Row 2: Company Subsidy Deduction -->
+          <text x="16" y="74" font-size="12" font-weight="700" fill="#15803d">Grainger Benefit Subsidy (Company Paid)</text>
+          <text x="408" y="74" font-size="13" font-weight="800" fill="#15803d" text-anchor="end">- $ 150.00</text>
+          <line x1="16" y1="84" x2="408" y2="84" stroke="#e2e8f0" stroke-width="1" />
+
+          <!-- Row 3: Employee Co-Pay Overage -->
+          <text x="16" y="104" font-size="12" font-weight="700" fill="#e11d48">Employee Co-Pay Overage (Payroll Deduct)</text>
+          <text x="408" y="104" font-size="13" font-weight="800" fill="#e11d48" text-anchor="end">$ 39.99</text>
+          <line x1="16" y1="114" x2="408" y2="114" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3" />
+
+          <!-- Row 4: Total & Status -->
+          <rect x="0" y="118" width="424" height="36" rx="0" fill="#f1f5f9" />
+          <text x="16" y="141" font-size="12" font-weight="800" fill="#0f172a">NET EMPLOYEE PAYROLL DEDUCTION</text>
+          <text x="408" y="142" font-size="15" font-weight="900" fill="#e11d48" text-anchor="end">$ 39.99</text>
+        </g>
+
+        <!-- Edge Case Warning Toast: Missing PO Exception -->
+        <g transform="translate(18, 460)">
+          <rect width="424" height="74" rx="4" fill="#fef2f2" stroke="#f87171" stroke-width="1.5" />
+          <circle cx="26" cy="28" r="10" fill="#ef4444" />
+          <text x="26" y="32" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">✕</text>
+          
+          <text x="48" y="24" font-size="12" font-weight="800" fill="#991b1b">SUBMISSION BLOCKED: PO CODE REQUIRED</text>
+          <text x="48" y="42" font-size="11" fill="#7f1d1d">Rule #3 requires an active departmental PO code before an employee</text>
+          <text x="48" y="58" font-size="11" fill="#7f1d1d">order can be routed to DC-04 Chicago warehouse.</text>
+        </g>
+
+        <!-- Final Checkout Action Buttons -->
+        <g transform="translate(18, 550)">
+          <rect width="424" height="42" rx="4" fill="#94a3b8" opacity="0.6" />
+          <text x="212" y="26" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">SUBMIT ORDER (DISABLED UNTIL PO ENTERED)</text>
+
+          <text x="212" y="60" font-size="11" font-weight="600" fill="#2563eb" text-anchor="middle">Switch to Supervisor Override Mode →</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ANNOTATION CALLOUT BADGES OVERLAY (ON WIREFRAME) -->
+  <!-- Callout 1: Rule Inheritance & Scope -->
+  <g transform="translate(860, 168)">
+    <line x1="0" y1="0" x2="-40" y2="0" stroke="#e11d48" stroke-width="1.8" stroke-dasharray="3,3" marker-start="url(#arrow-red)" />
+    <circle cx="0" cy="0" r="14" fill="#e11d48" filter="url(#badge-glow)" />
+    <text x="0" y="5" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">1</text>
+  </g>
+
+  <!-- Callout 2: Subsidy Cap Model -->
+  <g transform="translate(230, 318)">
+    <line x1="0" y1="0" x2="-35" y2="0" stroke="#e11d48" stroke-width="1.8" stroke-dasharray="3,3" />
+    <circle cx="0" cy="0" r="14" fill="#e11d48" filter="url(#badge-glow)" />
+    <text x="0" y="5" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">2</text>
+  </g>
+
+  <!-- Callout 3: Compliance Lock & Pruning -->
+  <g transform="translate(340, 412)">
+    <line x1="0" y1="0" x2="-30" y2="0" stroke="#e11d48" stroke-width="1.8" stroke-dasharray="3,3" />
+    <circle cx="0" cy="0" r="14" fill="#e11d48" filter="url(#badge-glow)" />
+    <text x="0" y="5" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">3</text>
+  </g>
+
+  <!-- Callout 4: Overage Split Deduction Engine -->
+  <g transform="translate(900, 496)">
+    <line x1="0" y1="0" x2="-40" y2="0" stroke="#e11d48" stroke-width="1.8" stroke-dasharray="3,3" />
+    <circle cx="0" cy="0" r="14" fill="#e11d48" filter="url(#badge-glow)" />
+    <text x="0" y="5" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">4</text>
+  </g>
+
+  <!-- Callout 5: Mandatory PO Exception Lock -->
+  <g transform="translate(900, 656)">
+    <line x1="0" y1="0" x2="-40" y2="0" stroke="#e11d48" stroke-width="1.8" stroke-dasharray="3,3" />
+    <circle cx="0" cy="0" r="14" fill="#e11d48" filter="url(#badge-glow)" />
+    <text x="0" y="5" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">5</text>
+  </g>
+
+  <!-- Callout 6: Multi-tier Approval Threshold -->
+  <g transform="translate(450, 746)">
+    <line x1="0" y1="0" x2="-30" y2="0" stroke="#e11d48" stroke-width="1.8" stroke-dasharray="3,3" />
+    <circle cx="0" cy="0" r="14" fill="#e11d48" filter="url(#badge-glow)" />
+    <text x="0" y="5" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">6</text>
+  </g>
+
+  <!-- RIGHT DEDICATED SPECIFICATION & ANNOTATION SIDEBAR -->
+  <g transform="translate(1045, 60)">
+    <!-- Sidebar Panel Background -->
+    <rect width="355" height="900" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5" filter="url(#drop-shadow)" />
+    
+    <!-- Sidebar Header -->
+    <rect width="355" height="52" rx="8" fill="#0f172a" />
+    <circle cx="28" cy="26" r="10" fill="#f59e0b" />
+    <text x="28" y="30" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">i</text>
+    <text x="48" y="27" font-size="13" font-weight="800" fill="#f8fafc" letter-spacing="0.5">INTERACTION ANNOTATIONS</text>
+    <text x="48" y="42" font-size="10" font-weight="600" fill="#94a3b8">EDGE CASES &amp; VALIDATION LOGIC</text>
+
+    <!-- Annotation Items Container -->
+    <g transform="translate(18, 68)">
+      
+      <!-- Item 1: Rule Inheritance -->
+      <g transform="translate(0, 0)">
+        <circle cx="12" cy="12" r="12" fill="#e11d48" />
+        <text x="12" y="16.5" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">1</text>
+        <text x="34" y="14" font-size="12" font-weight="700" fill="#f1f5f9">Hierarchical Rule Inheritance</text>
+        <text x="34" y="30" font-size="10.5" fill="#94a3b8">Facility LOC-88204 inherits enterprise parent rules by default. Toggling 'Inherit' off unlocks facility overrides with auditor logging.</text>
+      </g>
+      <line x1="0" y1="58" x2="319" y2="58" stroke="#334155" stroke-width="1" />
+
+      <!-- Item 2: Subsidy Cap Model -->
+      <g transform="translate(0, 72)">
+        <circle cx="12" cy="12" r="12" fill="#e11d48" />
+        <text x="12" y="16.5" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">2</text>
+        <text x="34" y="14" font-size="12" font-weight="700" fill="#f1f5f9">Rolling 12-Month Reset</text>
+        <text x="34" y="30" font-size="10.5" fill="#94a3b8">Prevents gaming year-end resets. Employee allowance tracks purchase date timestamp rather than calendar Jan 1.</text>
+      </g>
+      <line x1="0" y1="130" x2="319" y2="130" stroke="#334155" stroke-width="1" />
+
+      <!-- Item 3: Dynamic Catalog Pruning -->
+      <g transform="translate(0, 144)">
+        <circle cx="12" cy="12" r="12" fill="#e11d48" />
+        <text x="12" y="16.5" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">3</text>
+        <text x="34" y="14" font-size="12" font-weight="700" fill="#f1f5f9">Compliance Filter Enforcement</text>
+        <text x="34" y="30" font-size="10.5" fill="#94a3b8">Safety compliance locks catalog view. Uncertified items (e.g., standard composite toes) are strictly hidden from employee selection.</text>
+      </g>
+      <line x1="0" y1="202" x2="319" y2="202" stroke="#334155" stroke-width="1" />
+
+      <!-- Item 4: Co-Pay Deduction Splitting -->
+      <g transform="translate(0, 216)">
+        <circle cx="12" cy="12" r="12" fill="#e11d48" />
+        <text x="12" y="16.5" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">4</text>
+        <text x="34" y="14" font-size="12" font-weight="700" fill="#f1f5f9">Payroll Overage Deduction</text>
+        <text x="34" y="30" font-size="10.5" fill="#94a3b8">If shoe price ($189.99) exceeds subsidy cap ($150.00), the delta ($39.99) is automatically split and routed to employer payroll deduction API.</text>
+      </g>
+      <line x1="0" y1="274" x2="319" y2="274" stroke="#334155" stroke-width="1" />
+
+      <!-- Item 5: Mandatory PO Lock -->
+      <g transform="translate(0, 288)">
+        <circle cx="12" cy="12" r="12" fill="#e11d48" />
+        <text x="12" y="16.5" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">5</text>
+        <text x="34" y="14" font-size="12" font-weight="700" fill="#f1f5f9">Mandatory PO Pre-Validation</text>
+        <text x="34" y="30" font-size="10.5" fill="#94a3b8">Checkout CTA is locked in error state until an authorized Honda PO code is verified against Grainger ERP billing service.</text>
+      </g>
+      <line x1="0" y1="346" x2="319" y2="346" stroke="#334155" stroke-width="1" />
+
+      <!-- Item 6: Supervisor Threshold Gate -->
+      <g transform="translate(0, 360)">
+        <circle cx="12" cy="12" r="12" fill="#e11d48" />
+        <text x="12" y="16.5" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">6</text>
+        <text x="34" y="14" font-size="12" font-weight="700" fill="#f1f5f9">Multi-Tier Escalation Gate</text>
+        <text x="34" y="30" font-size="10.5" fill="#94a3b8">Orders exceeding $225 trigger an asynchronous approval hold sent to Plant Manager inbox before warehouse pick ticket is generated.</text>
+      </g>
+      <line x1="0" y1="418" x2="319" y2="418" stroke="#334155" stroke-width="1" />
+
+      <!-- EDGE CASE SCENARIOS MATRIX CARD -->
+      <g transform="translate(0, 436)">
+        <rect width="319" height="350" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1" />
+        <rect width="319" height="32" rx="6" fill="#1e293b" />
+        <text x="14" y="21" font-size="11" font-weight="800" fill="#38bdf8" letter-spacing="0.5">EDGE CASE VARIANTS TESTED</text>
+
+        <!-- Variant A -->
+        <g transform="translate(14, 46)">
+          <rect width="55" height="18" rx="3" fill="#334155" />
+          <text x="27.5" y="13" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">CASE A</text>
+          <text x="65" y="13" font-size="11" font-weight="700" fill="#e2e8f0">Exceeded Allowance Limit</text>
+          <text x="0" y="30" font-size="10" fill="#94a3b8">Employee orders 2nd pair within 12 mo: system displays allowance depleted banner with self-pay opt-in.</text>
+        </g>
+        <line x1="14" y1="92" x2="305" y2="92" stroke="#1e293b" stroke-width="1" />
+
+        <!-- Variant B -->
+        <g transform="translate(14, 106)">
+          <rect width="55" height="18" rx="3" fill="#334155" />
+          <text x="27.5" y="13" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">CASE B</text>
+          <text x="65" y="13" font-size="11" font-weight="700" fill="#e2e8f0">Multi-Channel Client Sync</text>
+          <text x="0" y="30" font-size="10" fill="#94a3b8">Legacy footwear channel synced with new industrial supply catalog with zero duplicate account IDs.</text>
+        </g>
+        <line x1="14" y1="152" x2="305" y2="152" stroke="#1e293b" stroke-width="1" />
+
+        <!-- Variant C -->
+        <g transform="translate(14, 166)">
+          <rect width="55" height="18" rx="3" fill="#334155" />
+          <text x="27.5" y="13" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">CASE C</text>
+          <text x="65" y="13" font-size="11" font-weight="700" fill="#e2e8f0">Backordered Primary DC</text>
+          <text x="0" y="30" font-size="10" fill="#94a3b8">Seamless failover routing to DC-09 (Dallas) with automatic ETA recalculation shown during cart review.</text>
+        </g>
+        <line x1="14" y1="212" x2="305" y2="212" stroke="#1e293b" stroke-width="1" />
+
+        <!-- Variant D -->
+        <g transform="translate(14, 226)">
+          <rect width="55" height="18" rx="3" fill="#334155" />
+          <text x="27.5" y="13" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">CASE D</text>
+          <text x="65" y="13" font-size="11" font-weight="700" fill="#e2e8f0">Contractor / Temp Badge</text>
+          <text x="0" y="30" font-size="10" fill="#94a3b8">Temporary worker accounts require pre-funded department allocation code with expiry date check.</text>
+        </g>
+
+        <!-- Spec Signoff Footnote -->
+        <g transform="translate(14, 290)">
+          <rect width="291" height="42" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.8" />
+          <text x="12" y="18" font-size="9.5" font-weight="700" fill="#38bdf8">UX LEAD SIGNOFF: LEN PEREZ</text>
+          <text x="12" y="32" font-size="9" fill="#94a3b8">Validated with Grainger Product Mgr &amp; Engineering leads</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,206 +1,707 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 950" width="1100" height="950" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <!-- Clean Canvas -->
-  <rect width="1100" height="950" fill="#ffffff" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 1280" width="1150" height="1280" style="background:#f8fafc; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Drop shadow for the overlapping wireframe cards -->
+    <filter id="card-shadow" x="-8%" y="-6%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.22" />
+    </filter>
+    <filter id="card-shadow-active" x="-8%" y="-6%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0f172a" flood-opacity="0.28" />
+    </filter>
+  </defs>
 
-  <!-- Wireframe Content -->
-  <g transform="translate(50, 40)">
-    <!-- Top Customer & Ship To -->
-    <g>
-      <text x="0" y="15" font-size="14" font-weight="600" fill="#1e293b">Customer</text>
-      <rect x="0" y="24" width="240" height="32" fill="#ffffff" stroke="#334155" stroke-width="1.4" />
-      <text x="15" y="46" font-size="14" font-family="monospace" fill="#334155">#########</text>
-      <rect x="255" y="24" width="32" height="32" rx="4" fill="#ffffff" stroke="#334155" stroke-width="1.4" />
-      <circle cx="269" cy="38" r="5" fill="none" stroke="#1e293b" stroke-width="1.8" />
-      <line x1="272.5" y1="41.5" x2="278" y2="47" stroke="#1e293b" stroke-width="1.8" />
-      <text x="305" y="46" font-size="14" fill="#334155">Customer Name</text>
-    </g>
+  <!-- Clean Canvas Background -->
+  <rect width="1150" height="1280" fill="#f8fafc" />
 
-    <g transform="translate(500, 0)">
-      <text x="0" y="15" font-size="14" font-weight="600" fill="#1e293b">Ship To:</text>
-      <rect x="0" y="24" width="240" height="32" fill="#ffffff" stroke="#334155" stroke-width="1.4" />
-      <text x="15" y="46" font-size="14" fill="#64748b">Location Code</text>
-      <rect x="255" y="24" width="32" height="32" rx="4" fill="#ffffff" stroke="#334155" stroke-width="1.4" />
-      <circle cx="269" cy="38" r="5" fill="none" stroke="#1e293b" stroke-width="1.8" />
-      <line x1="272.5" y1="41.5" x2="278" y2="47" stroke="#1e293b" stroke-width="1.8" />
-      <text x="305" y="46" font-size="14" fill="#334155">Location Name</text>
-    </g>
+  <!-- ========================================== -->
+  <!-- CARD 1: TOP RIGHT SCREEN (MAIN TAB)       -->
+  <!-- ========================================== -->
+  <g transform="translate(420, 25)" filter="url(#card-shadow)">
+    <!-- White Card Canvas -->
+    <rect width="690" height="580" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5" />
 
-    <!-- Navigation Tabs: [ Main ] [ Subsidy ] [ Shoes ] -->
-    <g transform="translate(0, 95)">
-      <rect x="0" y="0" width="170" height="46" fill="#ffffff" stroke="#334155" stroke-width="1.5" />
-      <rect x="0" y="0" width="170" height="5" fill="#0f172a" />
-      <text x="85" y="28" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Main</text>
-
-      <rect x="180" y="10" width="170" height="36" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-      <text x="265" y="33" font-size="14" fill="#334155" text-anchor="middle">Subsidy</text>
-
-      <rect x="360" y="10" width="170" height="36" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-      <text x="445" y="33" font-size="14" fill="#334155" text-anchor="middle">Shoes</text>
-    </g>
-
-    <!-- Company Info Section -->
-    <g transform="translate(0, 165)">
-      <text x="0" y="20" font-size="18" font-weight="800" fill="#0f172a">Company Info</text>
-      <rect x="750" y="4" width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
-      <path d="M 755,14 L 760,19 L 769,8" fill="none" stroke="#1e293b" stroke-width="2.5" />
-      <text x="782" y="20" font-size="14" fill="#1e293b">Same as Shipping</text>
-
-      <!-- Input Grid -->
-      <g transform="translate(0, 36)" font-size="12" fill="#334155">
-        <text x="0" y="12">Name</text>
-        <rect x="0" y="20" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="15" y="40" fill="#64748b">company name</text>
-
-        <text x="270" y="12">City</text>
-        <rect x="270" y="20" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="285" y="40" fill="#64748b">City</text>
-
-        <text x="540" y="12">State</text>
-        <rect x="540" y="20" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="555" y="40" fill="#64748b">drop down</text>
-        <path d="M 740,35 L 746,41 L 752,35" fill="none" stroke="#1e293b" stroke-width="2" />
-
-        <!-- Address lines -->
-        <text x="0" y="75">Address</text>
-        <rect x="0" y="83" width="230" height="26" fill="#ffffff" stroke="#334155" stroke-width="1" />
-        <text x="15" y="101" font-size="11" fill="#64748b">Address Line 1</text>
-        <rect x="0" y="114" width="230" height="26" fill="#ffffff" stroke="#334155" stroke-width="1" />
-        <text x="15" y="132" font-size="11" fill="#64748b">Address Line 2</text>
-        <rect x="0" y="145" width="230" height="26" fill="#ffffff" stroke="#334155" stroke-width="1" />
-        <text x="15" y="163" font-size="11" fill="#64748b">Address Line 3</text>
-        <rect x="0" y="176" width="230" height="26" fill="#ffffff" stroke="#334155" stroke-width="1" />
-        <text x="15" y="194" font-size="11" fill="#64748b">Address Line 14</text>
-
-        <text x="270" y="75">ZIP Code</text>
-        <rect x="270" y="83" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="285" y="103" font-family="monospace" fill="#64748b">######-####</text>
-
-        <text x="270" y="132">Tax Code</text>
-        <rect x="270" y="140" width="230" height="30" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="285" y="160" fill="#64748b">Code</text>
-        <rect x="510" y="140" width="30" height="30" rx="3" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <circle cx="522" cy="152" r="4.5" fill="none" stroke="#1e293b" stroke-width="1.5" />
-        <line x1="525.5" y1="155.5" x2="531" y2="161" stroke="#1e293b" stroke-width="1.5" />
-        <text x="555" y="160" font-size="13" fill="#334155">Tax Rate #</text>
-      </g>
-    </g>
-
-    <!-- Divider line -->
-    <line x1="0" y1="405" x2="980" y2="405" stroke="#334155" stroke-width="1.2" />
-
-    <!-- Contact Info & Shipping Info -->
-    <g transform="translate(0, 425)">
-      <text x="0" y="20" font-size="18" font-weight="800" fill="#0f172a">Contact Info</text>
-      <text x="500" y="20" font-size="18" font-weight="800" fill="#0f172a">Shipping Info</text>
-
-      <g transform="translate(0, 36)" font-size="12" fill="#334155">
-        <text x="0" y="12">Sched</text><text x="230" y="12">Phone</text>
-        <rect x="0" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="15" y="38" fill="#64748b">employee name</text>
-        <rect x="230" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="245" y="38" fill="#64748b">text field</text>
-
-        <text x="0" y="65">Arrival</text><text x="230" y="65">Phone</text>
-        <rect x="0" y="73" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="15" y="91" fill="#64748b">employee name</text>
-        <rect x="230" y="73" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="245" y="91" fill="#64748b">text field</text>
-
-        <text x="0" y="118">Billing</text><text x="230" y="118">Phone</text>
-        <rect x="0" y="126" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="15" y="144" fill="#64748b">employee name</text>
-        <rect x="230" y="126" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="245" y="144" fill="#64748b">text field</text>
+    <g transform="translate(24, 20)">
+      <!-- Top Customer & Ship To -->
+      <g>
+        <text x="0" y="11" font-size="11" font-weight="600" fill="#1e293b">Customer</text>
+        <rect x="0" y="18" width="165" height="22" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="10" y="33" font-size="11" font-family="monospace" fill="#334155">#########</text>
+        
+        <!-- Search icon -->
+        <rect x="175" y="18" width="22" height="22" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <circle cx="184" cy="27" r="3.5" fill="none" stroke="#1e293b" stroke-width="1.4" />
+        <line x1="186.5" y1="29.5" x2="191" y2="34" stroke="#1e293b" stroke-width="1.4" />
+        <text x="206" y="33" font-size="11.5" fill="#334155">Customer Name</text>
       </g>
 
-      <g transform="translate(500, 36)" font-size="12" fill="#334155">
-        <text x="0" y="12">Sent to</text><text x="230" y="12">Attention</text>
-        <rect x="0" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="15" y="38" fill="#64748b">drop down</text>
-        <path d="M 198,35 L 204,41 L 210,35" fill="none" stroke="#1e293b" stroke-width="2" />
-        <rect x="230" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="245" y="38" fill="#64748b">text field</text>
+      <g transform="translate(360, 0)">
+        <text x="0" y="11" font-size="11" font-weight="600" fill="#1e293b">Ship To:</text>
+        <rect x="0" y="18" width="165" height="22" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="10" y="33" font-size="11" fill="#64748b">Location Code</text>
+        
+        <rect x="175" y="18" width="22" height="22" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <circle cx="184" cy="27" r="3.5" fill="none" stroke="#1e293b" stroke-width="1.4" />
+        <line x1="186.5" y1="29.5" x2="191" y2="34" stroke="#1e293b" stroke-width="1.4" />
+        <text x="206" y="33" font-size="11.5" fill="#334155">Location Name</text>
       </g>
-    </g>
 
-    <!-- Divider line -->
-    <line x1="0" y1="630" x2="980" y2="630" stroke="#334155" stroke-width="1.2" />
+      <!-- Tabs: [ Main (Active) ] [ Subsidy ] [ Shoes ] -->
+      <g transform="translate(0, 56)">
+        <!-- Tab 1: Main (Active with prominent border) -->
+        <rect x="0" y="0" width="120" height="28" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+        <line x1="0" y1="28" x2="120" y2="28" stroke="#0f172a" stroke-width="3" />
+        <text x="60" y="18" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="middle">Main</text>
 
-    <!-- What is Required Section -->
-    <g transform="translate(0, 655)">
-      <text x="0" y="20" font-size="18" font-weight="800" fill="#0f172a">What is Required?</text>
-      
-      <!-- Checkbox grid -->
-      <g transform="translate(0, 36)" font-size="13" fill="#334155">
-        <!-- Row 1 -->
-        <g transform="translate(0, 0)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
-        </g>
-        <g transform="translate(160, 0)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
-        </g>
-        <g transform="translate(320, 0)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
-        </g>
-        <g transform="translate(480, 0)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
-        </g>
-        <g transform="translate(640, 0)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
+        <!-- Tab 2: Subsidy -->
+        <rect x="125" y="5" width="120" height="23" fill="#ffffff" stroke="#64748b" stroke-width="1" />
+        <text x="185" y="20" font-size="11" fill="#475569" text-anchor="middle">Subsidy</text>
+
+        <!-- Tab 3: Shoes -->
+        <rect x="250" y="5" width="120" height="23" fill="#ffffff" stroke="#64748b" stroke-width="1" />
+        <text x="310" y="20" font-size="11" fill="#475569" text-anchor="middle">Shoes</text>
+      </g>
+
+      <!-- Section: Company Info -->
+      <g transform="translate(0, 102)">
+        <text x="0" y="12" font-size="12" font-weight="800" fill="#0f172a">Company Info</text>
+        
+        <!-- Same as Shipping checkbox -->
+        <g transform="translate(500, 0)">
+          <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+          <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+          <text x="20" y="11" font-size="10.5" fill="#334155">Same as Shipping</text>
         </g>
 
-        <!-- Row 2 -->
-        <g transform="translate(0, 36)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
-        </g>
-        <g transform="translate(160, 36)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
-        </g>
-        <g transform="translate(320, 36)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
-        </g>
-        <g transform="translate(480, 36)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
-        </g>
-        <g transform="translate(640, 36)">
-          <rect width="22" height="22" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-          <path d="M 4,11 L 9,16 L 18,5" fill="none" stroke="#1e293b" stroke-width="2.5" />
-          <text x="32" y="16">check box</text>
+        <!-- Form fields -->
+        <g transform="translate(0, 20)" font-size="10.5" fill="#475569">
+          <!-- Left: Name & Address -->
+          <g>
+            <text x="0" y="10">Name</text>
+            <rect x="0" y="16" width="165" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="8" y="30" font-size="10" fill="#94a3b8">company name</text>
+
+            <text x="0" y="48">Address</text>
+            <rect x="0" y="54" width="165" height="17" fill="#ffffff" stroke="#475569" stroke-width="0.9" />
+            <text x="8" y="66" font-size="9" fill="#94a3b8">Address Line 1</text>
+            
+            <rect x="0" y="73" width="165" height="17" fill="#ffffff" stroke="#475569" stroke-width="0.9" />
+            <text x="8" y="85" font-size="9" fill="#94a3b8">Address Line 2</text>
+            
+            <rect x="0" y="92" width="165" height="17" fill="#ffffff" stroke="#475569" stroke-width="0.9" />
+            <text x="8" y="104" font-size="9" fill="#94a3b8">Address Line 3</text>
+            
+            <rect x="0" y="111" width="165" height="17" fill="#ffffff" stroke="#475569" stroke-width="0.9" />
+            <text x="8" y="123" font-size="9" fill="#94a3b8">Address Line 4</text>
+          </g>
+
+          <!-- Right: City, State, Zip, Tax Code -->
+          <g transform="translate(210, 0)">
+            <text x="0" y="10">City</text>
+            <rect x="0" y="16" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="8" y="30" font-size="10" fill="#94a3b8">City</text>
+
+            <text x="0" y="48">ZIP Code</text>
+            <rect x="0" y="54" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="8" y="68" font-size="10" font-family="monospace" fill="#94a3b8">#####-####</text>
+
+            <text x="0" y="86">Tax Code</text>
+            <rect x="0" y="92" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="8" y="106" font-size="10" fill="#94a3b8">Code</text>
+
+            <rect x="168" y="92" width="20" height="20" rx="2" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <circle cx="176" cy="100" r="3" fill="none" stroke="#1e293b" stroke-width="1.2" />
+            <line x1="178.5" y1="102.5" x2="183" y2="107" stroke="#1e293b" stroke-width="1.2" />
+            <text x="198" y="106" font-size="10.5" fill="#334155">Tax Rate #</text>
+          </g>
+
+          <!-- State Dropdown -->
+          <g transform="translate(390, 0)">
+            <text x="0" y="10">State</text>
+            <rect x="0" y="16" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="8" y="30" font-size="10" fill="#64748b">drop down</text>
+            <path d="M 144,24 L 149,29 L 154,24" fill="none" stroke="#1e293b" stroke-width="1.5" />
+          </g>
         </g>
       </g>
 
-      <!-- Customer PO & Fulfillment DC -->
-      <g transform="translate(0, 115)" font-size="12" fill="#334155">
-        <text x="0" y="12">Customer PO</text>
-        <rect x="0" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="15" y="38" fill="#64748b">Code</text>
+      <!-- Horizontal Divider Line -->
+      <line x1="0" y1="262" x2="642" y2="262" stroke="#475569" stroke-width="1" />
 
-        <text x="260" y="12">Fulfillment DC</text>
-        <rect x="260" y="20" width="215" height="28" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <text x="275" y="38" fill="#64748b">Code</text>
-        <rect x="490" y="20" width="28" height="28" rx="3" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
-        <circle cx="501" cy="31" r="4.5" fill="none" stroke="#1e293b" stroke-width="1.5" />
-        <line x1="504.5" y1="34.5" x2="510" y2="40" stroke="#1e293b" stroke-width="1.5" />
-        <text x="530" y="38" font-size="14" fill="#334155">Company Name</text>
+      <!-- Section: Contact Info & Shipping Info -->
+      <g transform="translate(0, 276)">
+        <text x="0" y="12" font-size="12" font-weight="800" fill="#0f172a">Contact Info</text>
+        <text x="380" y="12" font-size="12" font-weight="800" fill="#0f172a">Shipping Info</text>
+
+        <!-- Contact Rows -->
+        <g transform="translate(0, 20)" font-size="10" fill="#475569">
+          <!-- Sched -->
+          <text x="0" y="8">Sched</text><text x="170" y="8">Phone</text>
+          <rect x="0" y="14" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="8" y="27" fill="#94a3b8">employee name</text>
+          <rect x="170" y="14" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="178" y="27" fill="#94a3b8">text field</text>
+
+          <!-- Arrival -->
+          <text x="0" y="44">Arrival</text><text x="170" y="44">Phone</text>
+          <rect x="0" y="50" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="8" y="63" fill="#94a3b8">employee name</text>
+          <rect x="170" y="50" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="178" y="63" fill="#94a3b8">text field</text>
+
+          <!-- Billing -->
+          <text x="0" y="80">Billing</text><text x="170" y="80">Phone</text>
+          <rect x="0" y="86" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="8" y="99" fill="#94a3b8">employee name</text>
+          <rect x="170" y="86" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="178" y="99" fill="#94a3b8">text field</text>
+        </g>
+
+        <!-- Shipping Rows -->
+        <g transform="translate(380, 20)" font-size="10" fill="#475569">
+          <text x="0" y="8">Sent to</text><text x="160" y="8">Attention</text>
+          <rect x="0" y="14" width="150" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="8" y="27" fill="#64748b">drop down</text>
+          <path d="M 134,23 L 139,28 L 144,23" fill="none" stroke="#1e293b" stroke-width="1.4" />
+          
+          <rect x="160" y="14" width="102" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="168" y="27" fill="#94a3b8">text field</text>
+        </g>
+      </g>
+
+      <!-- Horizontal Divider Line -->
+      <line x1="0" y1="400" x2="642" y2="400" stroke="#475569" stroke-width="1" />
+
+      <!-- Section: What is Required? -->
+      <g transform="translate(0, 412)">
+        <text x="0" y="12" font-size="12" font-weight="800" fill="#0f172a">What is Required?</text>
+        
+        <!-- Checkbox grid: 2 rows of 5 checkboxes -->
+        <g transform="translate(0, 22)" font-size="10.5" fill="#334155">
+          <!-- Row 1 -->
+          <g transform="translate(10, 0)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+          <g transform="translate(130, 0)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+          <g transform="translate(250, 0)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+          <g transform="translate(370, 0)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+          <g transform="translate(490, 0)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+
+          <!-- Row 2 -->
+          <g transform="translate(10, 18)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+          <g transform="translate(130, 18)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+          <g transform="translate(250, 18)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+          <g transform="translate(370, 18)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+          <g transform="translate(490, 18)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11">check box</text>
+          </g>
+        </g>
+
+        <!-- Customer PO & Fulfillment DC -->
+        <g transform="translate(0, 68)" font-size="10.5" fill="#475569">
+          <text x="0" y="10">Customer PO</text>
+          <rect x="0" y="16" width="165" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="8" y="30" fill="#94a3b8">Code</text>
+
+          <text x="200" y="10">Fulfillment DC</text>
+          <rect x="200" y="16" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="208" y="30" fill="#94a3b8">Code</text>
+
+          <rect x="370" y="16" width="20" height="20" rx="2" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <circle cx="378" cy="24" r="3" fill="none" stroke="#1e293b" stroke-width="1.2" />
+          <line x1="380.5" y1="26.5" x2="385" y2="31" stroke="#1e293b" stroke-width="1.2" />
+          <text x="400" y="30" font-size="11" fill="#334155">Company Name</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- CARD 2: MIDDLE LEFT SCREEN (SHOES TAB)    -->
+  <!-- ========================================== -->
+  <g transform="translate(50, 340)" filter="url(#card-shadow)">
+    <!-- White Card Canvas -->
+    <rect width="660" height="540" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5" />
+
+    <g transform="translate(24, 20)">
+      <!-- Top Customer info -->
+      <g>
+        <text x="0" y="11" font-size="11" font-weight="600" fill="#1e293b">Customer</text>
+        <rect x="0" y="18" width="165" height="22" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="10" y="33" font-size="11" font-family="monospace" fill="#334155">#########</text>
+        
+        <rect x="175" y="18" width="22" height="22" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <circle cx="184" cy="27" r="3.5" fill="none" stroke="#1e293b" stroke-width="1.4" />
+        <line x1="186.5" y1="29.5" x2="191" y2="34" stroke="#1e293b" stroke-width="1.4" />
+        <text x="206" y="33" font-size="11.5" fill="#334155">Customer Name</text>
+      </g>
+
+      <!-- Tabs: [ Main ] [ Subsidy ] [ Shoes (Active) ] -->
+      <g transform="translate(0, 56)">
+        <rect x="0" y="5" width="120" height="23" fill="#ffffff" stroke="#64748b" stroke-width="1" />
+        <text x="60" y="20" font-size="11" fill="#475569" text-anchor="middle">Main</text>
+
+        <rect x="125" y="5" width="120" height="23" fill="#ffffff" stroke="#64748b" stroke-width="1" />
+        <text x="185" y="20" font-size="11" fill="#475569" text-anchor="middle">Subsidy</text>
+
+        <!-- Tab 3: Shoes (Active) -->
+        <rect x="250" y="0" width="120" height="28" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+        <line x1="250" y1="28" x2="370" y2="28" stroke="#0f172a" stroke-width="3" />
+        <text x="310" y="18" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="middle">Shoes</text>
+      </g>
+
+      <!-- Section: Shoe Details -->
+      <g transform="translate(0, 102)">
+        <text x="0" y="12" font-size="12" font-weight="800" fill="#0f172a">Shoe Details</text>
+        <text x="0" y="28" font-size="10.5" font-weight="600" fill="#475569">Selected Class</text>
+
+        <!-- Class row -->
+        <g transform="translate(0, 36)" font-size="10.5">
+          <text x="0" y="13" fill="#475569">Class</text>
+          <rect x="36" y="0" width="80" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="44" y="13" fill="#94a3b8">text field</text>
+
+          <rect x="124" y="0" width="20" height="20" rx="2" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <circle cx="132" cy="8" r="3" fill="none" stroke="#1e293b" stroke-width="1.2" />
+          <line x1="134.5" y1="10.5" x2="139" y2="15" stroke="#1e293b" stroke-width="1.2" />
+          <text x="152" y="14" fill="#334155">Category Name</text>
+
+          <!-- Sellable Checkbox -->
+          <g transform="translate(270, 0)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11" fill="#334155">Sellable</text>
+          </g>
+
+          <!-- Payroll Deduction Allowed Checkbox -->
+          <g transform="translate(350, 0)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11" fill="#334155">Payroll Deduction Allowed</text>
+          </g>
+
+          <!-- Save Changes Button -->
+          <g transform="translate(520, -2)">
+            <rect width="160" height="22" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.2" />
+            <text x="80" y="15" font-size="10" font-weight="600" fill="#1e293b" text-anchor="middle">Save Changes to This Case</text>
+          </g>
+        </g>
+
+        <!-- Selected Class Table row -->
+        <g transform="translate(40, 72)" font-size="10.5">
+          <rect width="450" height="38" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="14" y="15" font-size="9.5" fill="#64748b">Class</text>
+          <text x="14" y="30" font-weight="600" fill="#1e293b">text</text>
+
+          <text x="80" y="15" font-size="9.5" fill="#64748b">Sell</text>
+          <circle cx="90" cy="27" r="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+
+          <text x="160" y="15" font-size="9.5" fill="#64748b">PRD</text>
+          <circle cx="170" cy="27" r="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+
+          <!-- Add/remove buttons right -->
+          <g transform="translate(470, 0)">
+            <rect width="160" height="17" rx="3" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="80" y="12" font-size="9.5" fill="#1e293b" text-anchor="middle">add type</text>
+
+            <rect y="21" width="160" height="17" rx="3" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="80" y="33" font-size="9.5" fill="#1e293b" text-anchor="middle">remove type</text>
+          </g>
+        </g>
+
+        <!-- Type Restriction options -->
+        <g transform="translate(20, 132)" font-size="11">
+          <text x="0" y="11" font-weight="600" fill="#1e293b">Type Restriction</text>
+          
+          <circle cx="120" cy="8" r="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+          <text x="132" y="11" fill="#334155">No</text>
+
+          <circle cx="190" cy="8" r="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+          <text x="202" y="11" fill="#334155">Allow</text>
+
+          <circle cx="270" cy="8" r="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+          <text x="282" y="11" fill="#334155">Disallow</text>
+        </g>
+
+        <!-- Shuttle List Boxes -->
+        <g transform="translate(20, 156)">
+          <!-- Left Listbox -->
+          <rect width="250" height="135" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+          <g font-size="10" fill="#475569" transform="translate(14, 20)">
+            <text x="0" y="0">TypeRestriction</text>
+            <text x="0" y="16">TypeRestriction</text>
+            <text x="0" y="32">TypeRestriction</text>
+          </g>
+
+          <!-- Middle Transfer Buttons -->
+          <g transform="translate(265, 42)">
+            <rect width="180" height="20" rx="3" fill="#ffffff" stroke="#475569" stroke-width="1.2" />
+            <text x="90" y="14" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">&lt;&lt;</text>
+
+            <rect y="26" width="180" height="20" rx="3" fill="#ffffff" stroke="#475569" stroke-width="1.2" />
+            <text x="90" y="40" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">&gt;&gt;</text>
+          </g>
+
+          <!-- Right Listbox -->
+          <g transform="translate(460, 0)">
+            <rect width="240" height="135" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+            <g font-size="10" fill="#475569" transform="translate(14, 18)">
+              <text x="0" y="0">TypeRestriction</text>
+              <text x="0" y="14">TypeRestriction</text>
+              <text x="0" y="28">TypeRestriction</text>
+              <text x="0" y="42">TypeRestriction</text>
+              <text x="0" y="56">TypeRestriction</text>
+              <text x="0" y="70">TypeRestriction</text>
+              <text x="0" y="84">TypeRestriction</text>
+              <text x="0" y="98">TypeRestriction</text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- CARD 3: BOTTOM RIGHT SCREEN (SUBSIDY TAB) -->
+  <!-- ========================================== -->
+  <g transform="translate(230, 640)" filter="url(#card-shadow-active)">
+    <!-- White Card Canvas -->
+    <rect width="780" height="580" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.6" />
+
+    <g transform="translate(26, 20)">
+      <!-- Top Customer & Ship To -->
+      <g>
+        <text x="0" y="11" font-size="11" font-weight="600" fill="#1e293b">Customer</text>
+        <rect x="0" y="18" width="170" height="22" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="10" y="33" font-size="11" font-family="monospace" fill="#334155">#########</text>
+        
+        <rect x="180" y="18" width="22" height="22" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <circle cx="189" cy="27" r="3.5" fill="none" stroke="#1e293b" stroke-width="1.4" />
+        <line x1="191.5" y1="29.5" x2="196" y2="34" stroke="#1e293b" stroke-width="1.4" />
+        <text x="212" y="33" font-size="11.5" fill="#334155">Customer Name</text>
+      </g>
+
+      <g transform="translate(380, 0)">
+        <text x="0" y="11" font-size="11" font-weight="600" fill="#1e293b">Ship To:</text>
+        <rect x="0" y="18" width="170" height="22" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <text x="10" y="33" font-size="11" fill="#64748b">Location Code</text>
+        
+        <rect x="180" y="18" width="22" height="22" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+        <circle cx="189" cy="27" r="3.5" fill="none" stroke="#1e293b" stroke-width="1.4" />
+        <line x1="191.5" y1="29.5" x2="196" y2="34" stroke="#1e293b" stroke-width="1.4" />
+        <text x="212" y="33" font-size="11.5" fill="#334155">Location Name</text>
+      </g>
+
+      <!-- Tabs: [ Main ] [ Subsidy (Active) ] [ Shoes ] -->
+      <g transform="translate(0, 56)">
+        <rect x="0" y="5" width="125" height="23" fill="#ffffff" stroke="#64748b" stroke-width="1" />
+        <text x="62" y="20" font-size="11" fill="#475569" text-anchor="middle">Main</text>
+
+        <!-- Tab 2: Subsidy (Active) -->
+        <rect x="130" y="0" width="130" height="28" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+        <line x1="130" y1="28" x2="260" y2="28" stroke="#0f172a" stroke-width="3" />
+        <text x="195" y="18" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="middle">Subsidy</text>
+
+        <rect x="265" y="5" width="125" height="23" fill="#ffffff" stroke="#64748b" stroke-width="1" />
+        <text x="327" y="20" font-size="11" fill="#475569" text-anchor="middle">Shoes</text>
+      </g>
+
+      <!-- Section: Subsidy Details -->
+      <g transform="translate(0, 100)">
+        <text x="0" y="12" font-size="12" font-weight="800" fill="#0f172a">Subsidy Details</text>
+
+        <!-- Program Year row -->
+        <g transform="translate(0, 24)" font-size="10.5">
+          <text x="0" y="0" font-size="10" fill="#475569">Program Year</text>
+          <rect x="0" y="6" width="170" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <text x="10" y="19" fill="#334155">Calendar Year</text>
+          <path d="M 154,14 L 159,19 L 164,14" fill="none" stroke="#1e293b" stroke-width="1.4" />
+
+          <text x="185" y="20" fill="#475569">Fiscal Day / Month</text>
+          <rect x="305" y="6" width="22" height="20" rx="2" fill="#ffffff" stroke="#475569" stroke-width="1" />
+          <circle cx="313" cy="14" r="3" fill="none" stroke="#1e293b" stroke-width="1.2" />
+          <line x1="315.5" y1="16.5" x2="320" y2="21" stroke="#1e293b" stroke-width="1.2" />
+
+          <!-- Checkbox 1 -->
+          <g transform="translate(365, 9)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11" fill="#334155">Sub. Incl. Sales Tax</text>
+          </g>
+
+          <!-- Checkbox 2 -->
+          <g transform="translate(520, 9)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11" fill="#334155">Check Dept.</text>
+          </g>
+
+          <!-- Checkbox 3 -->
+          <g transform="translate(630, 9)">
+            <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+            <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            <text x="20" y="11" fill="#334155">Check Type</text>
+          </g>
+        </g>
+
+        <!-- Eligibility Table -->
+        <g transform="translate(0, 72)" font-size="10.5">
+          <text x="0" y="8" fill="#475569">Eligibility</text>
+          <text x="75" y="8" fill="#475569">MLP</text>
+          <text x="240" y="8" fill="#475569">Day Hiare</text>
+          <text x="410" y="8" fill="#475569">Pr Ded</text>
+
+          <!-- Hourly Row -->
+          <g transform="translate(0, 16)">
+            <text x="0" y="14" fill="#334155">Hourly</text>
+            <rect x="75" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="83" y="14" font-size="10" fill="#94a3b8">text field</text>
+
+            <rect x="240" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="248" y="14" font-size="10" fill="#94a3b8">text field</text>
+
+            <rect x="410" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="418" y="14" font-size="10" fill="#94a3b8">text field</text>
+
+            <g transform="translate(590, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+              <text x="20" y="11" fill="#334155">Shoe Sub.</text>
+            </g>
+          </g>
+
+          <!-- Salary Row -->
+          <g transform="translate(0, 40)">
+            <text x="0" y="14" fill="#334155">Salary</text>
+            <rect x="75" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="83" y="14" font-size="10" fill="#94a3b8">text field</text>
+
+            <rect x="240" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="248" y="14" font-size="10" fill="#94a3b8">text field</text>
+
+            <rect x="410" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="418" y="14" font-size="10" fill="#94a3b8">text field</text>
+
+            <g transform="translate(590, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+              <text x="20" y="11" fill="#334155">Shoe Sub.</text>
+            </g>
+          </g>
+        </g>
+
+        <!-- Divider line -->
+        <line x1="0" y1="146" x2="720" y2="146" stroke="#475569" stroke-width="1" />
+
+        <!-- Program Allowance Grid -->
+        <g transform="translate(0, 160)" font-size="10">
+          <!-- Column Headers -->
+          <text x="0" y="10" fill="#475569">Program</text>
+          <text x="80" y="10" fill="#475569">Allow</text>
+          <text x="125" y="10" fill="#475569">%</text>
+          <text x="205" y="10" fill="#475569">Cap. Amount</text>
+          <text x="370" y="10" fill="#475569">Shoes</text>
+          <text x="460" y="10" fill="#475569">Cap Type</text>
+          <text x="640" y="10" fill="#475569">Carry Over</text>
+
+          <!-- Row 1: All -->
+          <g transform="translate(0, 18)">
+            <text x="0" y="14" fill="#334155">All</text>
+            <g transform="translate(82, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+            <rect x="125" y="0" width="75" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="133" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="205" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="213" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="370" y="0" width="80" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="378" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="460" y="0" width="170" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="470" y="14" fill="#334155">Annual</text>
+            <path d="M 614,9 L 619,14 L 624,9" fill="none" stroke="#1e293b" stroke-width="1.4" />
+
+            <g transform="translate(645, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+          </g>
+
+          <!-- Row 2: Hourly -->
+          <g transform="translate(0, 42)">
+            <text x="0" y="14" fill="#334155">Hourly</text>
+            <g transform="translate(82, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+            <rect x="125" y="0" width="75" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="133" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="205" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="213" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="370" y="0" width="80" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="378" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="460" y="0" width="170" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="470" y="14" fill="#334155">Annual</text>
+            <path d="M 614,9 L 619,14 L 624,9" fill="none" stroke="#1e293b" stroke-width="1.4" />
+
+            <g transform="translate(645, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+          </g>
+
+          <!-- Row 3: Sal -->
+          <g transform="translate(0, 66)">
+            <text x="0" y="14" fill="#334155">Sal</text>
+            <g transform="translate(82, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+            <rect x="125" y="0" width="75" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="133" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="205" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="213" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="370" y="0" width="80" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="378" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="460" y="0" width="170" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="470" y="14" fill="#334155">Annual</text>
+            <path d="M 614,9 L 619,14 L 624,9" fill="none" stroke="#1e293b" stroke-width="1.4" />
+
+            <g transform="translate(645, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+          </g>
+
+          <!-- Row 4: Salary -->
+          <g transform="translate(0, 90)">
+            <text x="0" y="14" fill="#334155">Salary</text>
+            <g transform="translate(82, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+            <rect x="125" y="0" width="75" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="133" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="205" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="213" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="370" y="0" width="80" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="378" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="460" y="0" width="170" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="470" y="14" fill="#334155">Annual</text>
+            <path d="M 614,9 L 619,14 L 624,9" fill="none" stroke="#1e293b" stroke-width="1.4" />
+
+            <g transform="translate(645, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+          </g>
+
+          <!-- Shoe Type search line -->
+          <g transform="translate(0, 118)">
+            <text x="0" y="14" fill="#475569">Shoe Type</text>
+            <rect x="75" y="0" width="22" height="20" rx="2" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <circle cx="83" cy="8" r="3" fill="none" stroke="#1e293b" stroke-width="1.2" />
+            <line x1="85.5" y1="10.5" x2="90" y2="15" stroke="#1e293b" stroke-width="1.2" />
+
+            <rect x="490" y="-3" width="140" height="22" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.2" />
+            <text x="560" y="12" font-size="10" font-weight="600" fill="#1e293b" text-anchor="middle">save type</text>
+          </g>
+
+          <!-- Input row under Shoe Type -->
+          <g transform="translate(0, 142)">
+            <rect x="0" y="0" width="75" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="8" y="14" fill="#94a3b8">text field</text>
+
+            <g transform="translate(82, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+
+            <rect x="125" y="0" width="75" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="133" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="205" y="0" width="160" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="213" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="370" y="0" width="80" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="378" y="14" fill="#94a3b8">text field</text>
+
+            <rect x="460" y="0" width="170" height="20" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="470" y="14" fill="#334155">Annual</text>
+            <path d="M 614,9 L 619,14 L 624,9" fill="none" stroke="#1e293b" stroke-width="1.4" />
+
+            <g transform="translate(645, 3)">
+              <rect width="14" height="14" rx="2" fill="#ffffff" stroke="#1e293b" stroke-width="1.4" />
+              <path d="M 3,7 L 6,10 L 11,3" fill="none" stroke="#1e293b" stroke-width="1.8" />
+            </g>
+          </g>
+
+          <!-- Type summary box + Add/Remove buttons -->
+          <g transform="translate(0, 172)">
+            <rect width="460" height="36" fill="#ffffff" stroke="#475569" stroke-width="1" />
+            <text x="25" y="22" font-size="9.5" fill="#475569">Type</text>
+            <text x="90" y="22" font-size="9.5" fill="#475569">Sub %</text>
+            <text x="160" y="22" font-size="9.5" fill="#475569">Cap Amount</text>
+            <text x="260" y="22" font-size="9.5" fill="#475569">Shoes</text>
+            <text x="330" y="22" font-size="9.5" fill="#475569">Cap Type</text>
+            <text x="400" y="22" font-size="9.5" fill="#475569">Carry Over</text>
+
+            <!-- Buttons on right -->
+            <g transform="translate(475, 0)">
+              <rect width="160" height="16" rx="3" fill="#ffffff" stroke="#475569" stroke-width="1" />
+              <text x="80" y="11" font-size="9.5" fill="#1e293b" text-anchor="middle">add type</text>
+
+              <rect y="20" width="160" height="16" rx="3" fill="#ffffff" stroke="#475569" stroke-width="1" />
+              <text x="80" y="31" font-size="9.5" fill="#1e293b" text-anchor="middle">remove type</text>
+            </g>
+          </g>
+        </g>
       </g>
     </g>
   </g>

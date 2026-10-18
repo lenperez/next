@@ -124,18 +124,22 @@ const mainProjects: Project[] = [
         label: "Extrapolation & Simplification",
         description:
           "Whiteboarding sessions iterated through restructuring components so they could be interchangeable while simplifying the interactions.",
+        image: "/grainger_step2_extrapolation.svg",
+        imageAlt: "Grainger Extrapolation & Simplification — Whiteboard Component Restructuring & Modular Architecture",
       },
       {
         label: "Basic Wireframes",
         description:
           "Created initial wireframes for testing simple interactions with the team and stakeholders to ensure all scenarios were being addressed.",
         image: "/grainger_step3_wireframes.svg",
-        imageAlt: "Grainger Benefit Management Tool — Wireframe Blueprint Specification",
+        imageAlt: "Grainger Benefit Management Tool — Cascading Wireframe Specifications for Main, Shoes, and Subsidy Modules",
       },
       {
         label: "Advanced Wireframes",
         description:
           "Once the basic structure was agreed upon, detailed wireframes were created with annotations and variants for all edge cases.",
+        image: "/grainger_step4_advanced_wireframes.svg",
+        imageAlt: "Grainger Benefit Management Tool — Advanced Wireframes with Interaction Annotations & Edge Case Specifications",
       },
       {
         label: "Hi-Fi Comps",
@@ -163,7 +167,7 @@ const graphicProjects: Project[] = [
         label: "Concept & Direction",
         description:
           "Grounded the entire book in the \"form follows function\" principle — every layout decision driven by purpose, with no decorative element without intention.",
-        image: "/Thumbnail_CoffeeTableBook.svg",
+        image: "/coffeetablebook_cover.svg",
         imageAlt: "Classic Herman Miller — 16\" × 10\" Hardcover Coffee Table Book Cover",
       },
       {
@@ -232,28 +236,6 @@ const otherProjects: Project[] = [
     ],
   },
   {
-    id: "associated-bank",
-    title: "Associated Bank",
-    subtitle: "Homepage Redesign — Web",
-    tag: "UI Design",
-    image:
-      "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
-    synopsis:
-      "Tasked with creating a homepage comp for a redesign of the Associated Bank website. Given a pre-set amount of information, the goal was to highlight new marketing initiatives while showcasing the bank's existing offerings — guided by their established color system.",
-    steps: [
-      {
-        label: "Wireframe",
-        description:
-          "Created a quick set of wireframes to establish information hierarchy and page layout before committing to visual design.",
-      },
-      {
-        label: "Homepage Comps",
-        description:
-          "Using Associated Bank's color guides as a foundation, designed high-fidelity homepage comps that balanced new marketing initiatives with existing product offerings.",
-      },
-    ],
-  },
-  {
     id: "loislaw",
     title: "Loislaw",
     subtitle: "Mobile App — Checkout & Registration UX",
@@ -286,7 +268,7 @@ const otherProjects: Project[] = [
     subtitle: "Insulin Pump Instructional — Flash-Based Interactive App",
     tag: "UI / Interaction Design",
     image:
-      "https://images.unsplash.com/photo-1624454002429-40ed87a5ec04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
+      "/Thumbnail_Medtronic.svg",
     synopsis:
       "Tasked with redesigning the Medtronic Insulin Pump instructional DVD given to all patients receiving the updated Paradigm Insulin Pump — transforming it into a Flash-based interactive application.",
     steps: [
@@ -307,13 +289,38 @@ const otherProjects: Project[] = [
       },
     ],
   },
+];
+
+const visualDesignProjects: Project[] = [
+  {
+    id: "associated-bank",
+    title: "Associated Bank",
+    subtitle: "Homepage Redesign — Web",
+    tag: "UI Design",
+    image:
+      "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
+    synopsis:
+      "Tasked with creating a homepage comp for a redesign of the Associated Bank website. Given a pre-set amount of information, the goal was to highlight new marketing initiatives while showcasing the bank\x27s existing offerings — guided by their established color system.",
+    steps: [
+      {
+        label: "Wireframe",
+        description:
+          "Created a quick set of wireframes to establish information hierarchy and page layout before committing to visual design.",
+      },
+      {
+        label: "Homepage Comps",
+        description:
+          "Using Associated Bank\x27s color guides as a foundation, designed high-fidelity homepage comps that balanced new marketing initiatives with existing product offerings.",
+      },
+    ],
+  },
   {
     id: "press-ganey",
     title: "Press Ganey",
     subtitle: "Dashboard & Medical Community Suite",
     tag: "Design Systems",
     image:
-      "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
+      "/Thumbnail_PressGaney.svg",
     synopsis:
       "Press Ganey needed a Style Guide and Specification Document for their second-generation user dashboard and medical community web software suite. Using the corporate style guide as a starting point, a secondary color palette and grid system were created for the suite of applications.",
     steps: [
@@ -345,6 +352,7 @@ function PortfolioContent() {
   const [openSection, setOpenSection] = useState<string>("case-studies");
   const caseStudiesRef = useRef<HTMLDivElement>(null);
   const additionalRef = useRef<HTMLDivElement>(null);
+  const visualRef = useRef<HTMLDivElement>(null);
   const graphicRef = useRef<HTMLDivElement>(null);
   const { isDark } = useTheme();
 
@@ -487,6 +495,63 @@ function PortfolioContent() {
               </AnimatePresence>
             </motion.div>
 
+            {/* Visual Design panel */}
+            <motion.div
+              ref={visualRef}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "200px 0px" }}
+              transition={{ duration: 0.5, delay: 0.08 }}
+              className={`rounded-2xl overflow-hidden border transition-colors ${
+                isDark
+                  ? "border-white/10 bg-[#111318]/90"
+                  : "border-black/10 bg-white/95 shadow-sm"
+              }`}
+            >
+              <Tooltip content={openSection === "visual" ? "Collapse Visual Design" : "Expand Visual Design"} position="top">
+                <button
+                  id="accordion-visual"
+                  type="button"
+                  aria-expanded={openSection === "visual"}
+                  aria-controls="panel-visual"
+                  onClick={() => toggle("visual", visualRef)}
+                  className={`w-full flex items-center justify-between px-3 sm:px-8 py-5 sm:py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                    isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
+                  }`}
+                >
+                  <h2
+                    className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
+                    style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
+                  >
+                    Visual Design
+                  </h2>
+                  <motion.div animate={{ rotate: openSection === "visual" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                    <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
+                  </motion.div>
+                </button>
+              </Tooltip>
+              <AnimatePresence initial={false}>
+                {openSection === "visual" && (
+                  <motion.div
+                    id="panel-visual"
+                    role="region"
+                    aria-labelledby="accordion-visual"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
+                      {visualDesignProjects.map((project, i) => (
+                        <ProjectCard key={project.id} project={project} index={i} />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+
             {/* Graphic Designs panel */}
             <motion.div
               ref={graphicRef}
@@ -500,7 +565,7 @@ function PortfolioContent() {
                   : "border-black/10 bg-white/95 shadow-sm"
               }`}
             >
-              <Tooltip content={openSection === "graphic" ? "Collapse Visual Design Pieces" : "Expand Visual Design Pieces"} position="top">
+              <Tooltip content={openSection === "graphic" ? "Collapse Graphic Design" : "Expand Graphic Design"} position="top">
                 <button
                   id="accordion-graphic"
                   type="button"
@@ -515,7 +580,7 @@ function PortfolioContent() {
                     className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
                     style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
                   >
-                    Visual Design Pieces
+                    Graphic Design
                   </h2>
                   <motion.div animate={{ rotate: openSection === "graphic" ? 180 : 0 }} transition={{ duration: 0.3 }}>
                     <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />

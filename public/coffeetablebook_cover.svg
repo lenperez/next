@@ -1,0 +1,332 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" style="background:#0e1015; font-family:-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Studio Ambient Lighting Gradient -->
+    <radialGradient id="studioLighting" cx="45%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#1e2430" />
+      <stop offset="45%" stop-color="#141720" />
+      <stop offset="100%" stop-color="#0a0c10" />
+    </radialGradient>
+
+    <!-- Hardcover Book Subtle Matte Sheen -->
+    <linearGradient id="coverSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24262c" />
+      <stop offset="35%" stop-color="#1a1c21" />
+      <stop offset="70%" stop-color="#141518" />
+      <stop offset="100%" stop-color="#101114" />
+    </linearGradient>
+
+    <!-- Spine Hinge Crease Gradients -->
+    <linearGradient id="spineHingeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6" />
+      <stop offset="40%" stop-color="#000000" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Page Block Edges (Right and Bottom) -->
+    <linearGradient id="pageEdgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d6d3d1" />
+      <stop offset="50%" stop-color="#f5f5f4" />
+      <stop offset="100%" stop-color="#e7e5e4" />
+    </linearGradient>
+
+    <!-- Hardcover Board Depth Rim -->
+    <linearGradient id="boardRimGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27272a" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+
+    <!-- Multi-stage Realistic Book Drop Shadows -->
+    <filter id="bookShadow" x="-15%" y="-15%" width="135%" height="145%">
+      <!-- Deep Ambient Blur -->
+      <feDropShadow dx="15" dy="28" stdDeviation="30" flood-color="#000000" flood-opacity="0.75" />
+      <!-- Medium Directional Shadow -->
+      <feDropShadow dx="6" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity="0.5" />
+      <!-- Sharp Contact Shadow -->
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <!-- Wire Mesh Chair Pattern Defs -->
+    <clipPath id="photoPlateClip">
+      <rect width="880" height="380" />
+    </clipPath>
+  </defs>
+
+  <!-- ======================================================== -->
+  <!-- 1. STUDIO DISPLAY ENVIRONMENT                            -->
+  <!-- ======================================================== -->
+  <rect width="1600" height="1000" fill="url(#studioLighting)" />
+
+  <!-- Subtle Studio Grid Floor Accent -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="200" x2="1600" y2="200" />
+    <line x1="0" y1="400" x2="1600" y2="400" />
+    <line x1="0" y1="600" x2="1600" y2="600" />
+    <line x1="0" y1="800" x2="1600" y2="800" />
+    <line x1="400" y1="0" x2="400" y2="1000" />
+    <line x1="800" y1="0" x2="800" y2="1000" />
+    <line x1="1200" y1="0" x2="1200" y2="1000" />
+  </g>
+
+  <!-- Top Showcase Tag -->
+  <g transform="translate(130, 42)">
+    <rect width="360" height="30" rx="4" fill="#181a20" stroke="#272a34" stroke-width="1" />
+    <text x="14" y="19" font-size="11" font-weight="700" fill="#9ca3af" letter-spacing="1">16&quot; × 10&quot; HARDCOVER EDITORIAL MONOGRAPH</text>
+  </g>
+  <g transform="translate(1180, 42)" text-anchor="end">
+    <text x="290" y="20" font-size="11" font-weight="600" fill="#64748b" letter-spacing="0.5">ARCHIVAL MATTE LINEN BINDING</text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 2. 16" × 10" HARDCOVER BOOK OBJECT                       -->
+  <!-- ======================================================== -->
+  <!-- Book is positioned centered on canvas (x=130, y=95) with dimensions 1340 x 838 (~16:10 aspect ratio) -->
+  <g transform="translate(130, 95)" filter="url(#bookShadow)">
+    
+    <!-- 2A. REAR HARDCOVER BOARD & PAPER PAGE BLOCK -->
+    <!-- Lower board base extending slightly bottom and right -->
+    <rect x="0" y="0" width="1344" height="842" rx="4" fill="url(#boardRimGrad)" />
+    
+    <!-- Exposed High-Bulk Paper Block Edge (Right & Bottom Edges) -->
+    <!-- Right Page Block -->
+    <path d="M 1334,8 L 1342,12 L 1342,834 L 1334,830 Z" fill="url(#pageEdgeGrad)" stroke="#a8a29e" stroke-width="0.5" />
+    <!-- Fine Page Lines on Right Block -->
+    <g stroke="#a8a29e" stroke-width="0.5" opacity="0.6">
+      <line x1="1336" y1="20" x2="1340" y2="22" /><line x1="1336" y1="80" x2="1340" y2="82" />
+      <line x1="1336" y1="160" x2="1340" y2="162" /><line x1="1336" y1="260" x2="1340" y2="262" />
+      <line x1="1336" y1="380" x2="1340" y2="382" /><line x1="1336" y1="520" x2="1340" y2="522" />
+      <line x1="1336" y1="660" x2="1340" y2="662" /><line x1="1336" y1="780" x2="1340" y2="782" />
+    </g>
+
+    <!-- Bottom Page Block -->
+    <path d="M 30,830 L 1334,830 L 1342,838 L 30,838 Z" fill="url(#pageEdgeGrad)" stroke="#a8a29e" stroke-width="0.5" />
+    <!-- Fine Page Lines on Bottom Block -->
+    <g stroke="#a8a29e" stroke-width="0.5" opacity="0.6">
+      <line x1="80" y1="833" x2="80" y2="836" /><line x1="220" y1="833" x2="220" y2="836" />
+      <line x1="400" y1="833" x2="400" y2="836" /><line x1="620" y1="833" x2="620" y2="836" />
+      <line x1="850" y1="833" x2="850" y2="836" /><line x1="1080" y1="833" x2="1080" y2="836" />
+      <line x1="1240" y1="833" x2="1240" y2="836" />
+    </g>
+
+    <!-- 2B. FRONT HARDCOVER FACE -->
+    <rect x="0" y="0" width="1334" height="830" rx="3" fill="url(#coverSheen)" />
+
+    <!-- Hardcover Outer Border Trim (Beveled Edge) -->
+    <rect x="0.5" y="0.5" width="1333" height="829" rx="3" fill="none" stroke="#2c2e35" stroke-width="1" opacity="0.8" />
+    <line x1="0" y1="1" x2="1334" y2="1" stroke="#3f424c" stroke-width="1.2" opacity="0.6" />
+    <line x1="1" y1="0" x2="1" y2="830" stroke="#3f424c" stroke-width="1.2" opacity="0.6" />
+
+    <!-- 2C. SPINE HINGE DEBOSSED GROOVE (BOOK JOINT) -->
+    <!-- The physical groove where the front hardcover board flexes against the spine -->
+    <g transform="translate(42, 0)">
+      <rect width="8" height="830" fill="url(#spineHingeGrad)" />
+      <!-- Deep shadow line of the groove -->
+      <line x1="3" y1="0" x2="3" y2="830" stroke="#090a0d" stroke-width="2.5" />
+      <!-- Highlight ridge on outer side of groove -->
+      <line x1="7" y1="0" x2="7" y2="830" stroke="#383b44" stroke-width="1.2" opacity="0.5" />
+    </g>
+
+    <!-- ======================================================== -->
+    <!-- 3. COVER ARTWORK (FAITHFUL TO USER GRAPHIC)              -->
+    <!-- ======================================================== -->
+    <g id="cover-artwork">
+      
+      <!-- 3A. PHOTO PLATE: EAMES WIRE CHAIRS (LOWER LEFT QUADRANT) -->
+      <!-- Plate coordinates: starts slightly past spine, extends to middle right, flush with bottom -->
+      <g transform="translate(68, 450)">
+        <rect width="880" height="380" fill="#000000" />
+        <rect width="880" height="380" fill="none" stroke="#26272c" stroke-width="1" />
+
+        <g clip-path="url(#photoPlateClip)">
+          <!-- Pure Black Background Inside Plate -->
+          <rect width="880" height="380" fill="#030303" />
+
+          <!-- ===================================================== -->
+          <!-- DETAILED EAMES WIRE CHAIR (DKR) CROSS-MESH GEOMETRY   -->
+          <!-- ===================================================== -->
+          <!-- CHAIR 1: Left Foreground Wire Chair Shell (Angled Perspective) -->
+          <g transform="translate(20, -10)" stroke="#f1f5f9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Perimeter Heavy Wire Rim -->
+            <path d="M 30,110 C 60,60 140,40 220,50 C 270,55 300,90 280,160 C 260,230 240,290 190,320 C 130,350 40,320 20,240 C 5,180 10,140 30,110 Z" stroke-width="3.5" stroke="#ffffff" />
+            
+            <!-- Horizontal Wire Contours -->
+            <path d="M 40,85 Q 150,55 250,75" stroke-width="1.6" />
+            <path d="M 32,110 Q 150,75 270,105" stroke-width="1.6" />
+            <path d="M 25,135 Q 150,100 280,135" stroke-width="1.6" />
+            <path d="M 20,165 Q 150,125 285,165" stroke-width="1.6" />
+            <path d="M 18,195 Q 145,155 275,200" stroke-width="1.6" />
+            <path d="M 20,225 Q 140,190 260,235" stroke-width="1.6" />
+            <path d="M 28,255 Q 135,225 240,265" stroke-width="1.6" />
+            <path d="M 45,285 Q 130,260 215,295" stroke-width="1.6" />
+            <path d="M 75,310 Q 130,290 185,315" stroke-width="1.6" />
+
+            <!-- Vertical / Cross Longitudinal Wire Ribs -->
+            <path d="M 60,70 Q 55,180 40,270" stroke-width="1.4" />
+            <path d="M 85,60 Q 80,180 65,295" stroke-width="1.4" />
+            <path d="M 110,55 Q 110,180 95,315" stroke-width="1.4" />
+            <path d="M 135,52 Q 135,180 125,325" stroke-width="1.4" />
+            <path d="M 160,52 Q 160,180 155,325" stroke-width="1.4" />
+            <path d="M 185,55 Q 190,180 185,320" stroke-width="1.4" />
+            <path d="M 210,60 Q 215,180 210,305" stroke-width="1.4" />
+            <path d="M 235,70 Q 240,180 235,280" stroke-width="1.4" />
+            <path d="M 260,85 Q 265,180 255,245" stroke-width="1.4" />
+
+            <!-- Diagonal Cross Wire Diamonds & Reinforcements -->
+            <path d="M 40,90 L 180,310 M 70,60 L 220,290 M 110,55 L 250,250 M 150,55 L 275,200" stroke-width="1.1" stroke="#cbd5e1" opacity="0.85" />
+            <path d="M 250,75 L 45,280 M 230,60 L 30,240 M 190,52 L 20,190 M 140,50 L 20,135" stroke-width="1.1" stroke="#cbd5e1" opacity="0.85" />
+
+            <!-- Under-seat Welded Eiffel Wire Strut Base (Perspective) -->
+            <g stroke="#ffffff" stroke-width="2.4" opacity="0.95">
+              <line x1="85" y1="320" x2="35" y2="400" />
+              <line x1="165" y1="320" x2="195" y2="400" />
+              <line x1="60" y1="360" x2="180" y2="360" stroke-width="1.8" />
+              <line x1="70" y1="330" x2="175" y2="390" stroke-width="1.4" />
+              <line x1="165" y1="330" x2="50" y2="390" stroke-width="1.4" />
+            </g>
+          </g>
+
+          <!-- CHAIR 2: Center Wire Chair Shell (Foreground Dynamic Tilt) -->
+          <g transform="translate(240, 15)" stroke="#f8fafc" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Perimeter Heavy Wire Rim -->
+            <path d="M 40,80 C 80,20 180,10 270,30 C 330,45 370,100 350,180 C 320,270 280,340 210,365 C 130,390 40,340 20,240 C 10,180 20,130 40,80 Z" stroke-width="3.8" stroke="#ffffff" />
+
+            <!-- Horizontal Contour Wire Arcs -->
+            <path d="M 50,60 Q 180,25 295,50" stroke-width="1.7" />
+            <path d="M 40,90 Q 185,50 325,80" stroke-width="1.7" />
+            <path d="M 32,120 Q 190,75 345,115" stroke-width="1.7" />
+            <path d="M 26,155 Q 195,105 355,155" stroke-width="1.7" />
+            <path d="M 22,190 Q 195,140 350,200" stroke-width="1.7" />
+            <path d="M 22,225 Q 190,175 330,245" stroke-width="1.7" />
+            <path d="M 28,260 Q 185,215 305,290" stroke-width="1.7" />
+            <path d="M 45,295 Q 175,255 275,325" stroke-width="1.7" />
+            <path d="M 75,330 Q 165,300 240,355" stroke-width="1.7" />
+            <path d="M 120,360 Q 165,340 200,365" stroke-width="1.7" />
+
+            <!-- Longitudinal Radial Wire Ribs -->
+            <path d="M 75,45 Q 65,190 55,280" stroke-width="1.5" />
+            <path d="M 110,30 Q 100,190 90,315" stroke-width="1.5" />
+            <path d="M 145,20 Q 140,190 130,345" stroke-width="1.5" />
+            <path d="M 180,18 Q 180,190 170,365" stroke-width="1.5" />
+            <path d="M 215,20 Q 220,190 215,365" stroke-width="1.5" />
+            <path d="M 250,25 Q 260,190 255,345" stroke-width="1.5" />
+            <path d="M 285,35 Q 295,190 290,310" stroke-width="1.5" />
+            <path d="M 320,55 Q 330,190 320,265" stroke-width="1.5" />
+
+            <!-- Distinctive Cross-Lattice Diagonal Grid Lines (Signature Eames DKR Pattern) -->
+            <path d="M 50,65 L 240,360 M 85,35 L 280,330 M 130,22 L 315,290 M 175,18 L 340,240 M 225,22 L 355,180 M 275,30 L 350,120" stroke-width="1.2" stroke="#e2e8f0" />
+            <path d="M 295,50 L 55,310 M 265,30 L 35,260 M 220,20 L 25,205 M 170,18 L 22,150 M 120,22 L 28,100 M 80,35 L 40,65" stroke-width="1.2" stroke="#e2e8f0" />
+
+            <!-- Eiffel Wire Cross Strut Base Connection -->
+            <g stroke="#ffffff" stroke-width="2.6">
+              <path d="M 100,345 L 85,385 M 220,360 L 235,385" />
+              <line x1="90" y1="365" x2="230" y2="365" stroke-width="1.8" />
+              <line x1="100" y1="350" x2="225" y2="380" stroke-width="1.3" />
+              <line x1="215" y1="350" x2="90" y2="380" stroke-width="1.3" />
+            </g>
+          </g>
+
+          <!-- CHAIR 3: Upper Center / Background Mesh (Interlocking Wire Texture) -->
+          <g transform="translate(190, -90)" stroke="#94a3b8" fill="none" opacity="0.65" stroke-linecap="round">
+            <path d="M 40,80 C 100,20 220,20 300,50 C 350,80 370,140 340,220 C 300,300 240,350 160,360 C 80,365 20,300 10,210 Z" stroke-width="2.8" stroke="#cbd5e1" />
+            <path d="M 60,60 Q 180,30 280,60" stroke-width="1.2" />
+            <path d="M 45,95 Q 185,55 310,90" stroke-width="1.2" />
+            <path d="M 35,135 Q 190,85 330,130" stroke-width="1.2" />
+            <path d="M 25,180 Q 190,120 340,175" stroke-width="1.2" />
+            <path d="M 20,225 Q 185,165 330,225" stroke-width="1.2" />
+            <path d="M 25,270 Q 175,215 300,280" stroke-width="1.2" />
+            <!-- Vertical ribs -->
+            <line x1="80" y1="45" x2="60" y2="290" stroke-width="1.1" />
+            <line x1="130" y1="30" x2="110" y2="330" stroke-width="1.1" />
+            <line x1="180" y1="25" x2="170" y2="355" stroke-width="1.1" />
+            <line x1="230" y1="30" x2="230" y2="345" stroke-width="1.1" />
+            <line x1="280" y1="45" x2="280" y2="305" stroke-width="1.1" />
+            <!-- Diagonal Moiré -->
+            <path d="M 60,60 L 260,330 M 110,35 L 295,290 M 170,25 L 320,240 M 230,30 L 335,175" stroke-width="0.9" />
+            <path d="M 280,60 L 50,290 M 240,35 L 30,240 M 190,25 L 20,185 M 130,25 L 20,130" stroke-width="0.9" />
+          </g>
+
+          <!-- CHAIR 4: Right Side Perspective Wire Chair Shell -->
+          <g transform="translate(530, 20)" stroke="#f1f5f9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Perimeter Heavy Wire Rim -->
+            <path d="M 30,100 C 60,40 160,20 240,35 C 300,50 330,100 310,180 C 280,260 230,330 160,350 C 90,370 20,310 10,220 C 5,170 15,130 30,100 Z" stroke-width="3.6" stroke="#ffffff" />
+            
+            <!-- Horizontal Wire Contours -->
+            <path d="M 40,75 Q 150,35 250,55" stroke-width="1.6" />
+            <path d="M 30,110 Q 155,65 275,95" stroke-width="1.6" />
+            <path d="M 22,145 Q 160,95 290,140" stroke-width="1.6" />
+            <path d="M 18,185 Q 160,130 300,185" stroke-width="1.6" />
+            <path d="M 16,225 Q 155,165 295,235" stroke-width="1.6" />
+            <path d="M 20,265 Q 145,205 275,285" stroke-width="1.6" />
+            <path d="M 35,305 Q 135,250 240,325" stroke-width="1.6" />
+            <path d="M 70,340 Q 130,300 190,345" stroke-width="1.6" />
+
+            <!-- Longitudinal Ribs -->
+            <path d="M 70,55 Q 60,180 45,285" stroke-width="1.4" />
+            <path d="M 105,40 Q 95,180 80,320" stroke-width="1.4" />
+            <path d="M 140,30 Q 135,180 120,345" stroke-width="1.4" />
+            <path d="M 175,28 Q 175,180 165,355" stroke-width="1.4" />
+            <path d="M 210,30 Q 215,180 210,345" stroke-width="1.4" />
+            <path d="M 245,40 Q 255,180 250,315" stroke-width="1.4" />
+            <path d="M 280,60 Q 290,180 280,265" stroke-width="1.4" />
+
+            <!-- Diagonal Cross Mesh -->
+            <path d="M 40,75 L 210,345 M 75,45 L 250,315 M 120,30 L 280,270 M 165,28 L 295,215 M 215,32 L 305,160" stroke-width="1.1" stroke="#cbd5e1" />
+            <path d="M 250,55 L 40,305 M 220,35 L 25,255 M 180,28 L 18,200 M 130,28 L 18,145 M 85,40 L 22,95" stroke-width="1.1" stroke="#cbd5e1" />
+
+            <!-- Welded Wire Base Struts (Eiffel Base Silhouette) -->
+            <g stroke="#ffffff" stroke-width="2.5">
+              <line x1="85" y1="330" x2="55" y2="385" />
+              <line x1="175" y1="345" x2="205" y2="385" />
+              <line x1="70" y1="360" x2="195" y2="360" stroke-width="1.6" />
+              <line x1="80" y1="335" x2="190" y2="375" stroke-width="1.2" />
+              <line x1="180" y1="335" x2="65" y2="375" stroke-width="1.2" />
+            </g>
+          </g>
+
+          <!-- CHAIR 5: Far Right Wire Chair Fragment (Edge bleed) -->
+          <g transform="translate(735, 120)" stroke="#64748b" fill="none" opacity="0.6">
+            <path d="M 20,40 C 60,10 120,20 150,50 C 180,80 180,140 160,200 C 140,260 100,300 40,320" stroke-width="3" stroke="#94a3b8" />
+            <line x1="25" y1="60" x2="160" y2="70" stroke-width="1.4" />
+            <line x1="20" y1="100" x2="175" y2="120" stroke-width="1.4" />
+            <line x1="15" y1="145" x2="170" y2="175" stroke-width="1.4" />
+            <line x1="10" y1="190" x2="150" y2="230" stroke-width="1.4" />
+            <line x1="50" y1="40" x2="40" y2="280" stroke-width="1.2" />
+            <line x1="90" y1="30" x2="80" y2="300" stroke-width="1.2" />
+            <line x1="130" y1="35" x2="120" y2="290" stroke-width="1.2" />
+          </g>
+        </g>
+      </g>
+
+      <!-- 3B. TYPOGRAPHY (PRECISE POSITIONING FROM GRAPHIC) -->
+      <!-- Title Block Container: Right side of cover above and overlapping the photo plate line -->
+      <g transform="translate(500, 395)">
+        
+        <!-- "CLASSIC" (Tracked Uppercase Small Sans-Serif) -->
+        <text x="88" y="24" font-size="16" font-weight="500" fill="#cbd5e1" letter-spacing="5" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif">CLASSIC</text>
+
+        <!-- "Herman Miller" (Bold Hero Title) -->
+        <text x="0" y="85" font-size="74" font-weight="900" fill="#ffffff" letter-spacing="-1.5" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">Herman Miller</text>
+
+        <!-- "PAT KIRKHAM" (Tracked Author Subtitle Aligned to Right of Title) -->
+        <text x="790" y="112" font-size="15" font-weight="600" fill="#9ca3af" letter-spacing="3.2" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">PAT KIRKHAM</text>
+      </g>
+
+    </g>
+
+    <!-- 2D. TACTILE FINISH: SURFACE HIGHLIGHT ACCENT -->
+    <!-- Soft diagonal light wash indicating archival matte varnish / book jacket -->
+    <path d="M 50,0 L 450,0 L 0,450 L 0,50 Z" fill="#ffffff" opacity="0.015" />
+    <path d="M 600,0 L 1334,0 L 1334,300 L 300,830 L 150,830 Z" fill="#ffffff" opacity="0.012" />
+
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 4. BOTTOM CAPTION & DESIGN PROVENANCE                    -->
+  <!-- ======================================================== -->
+  <g transform="translate(130, 960)">
+    <text x="0" y="14" font-size="12" font-weight="700" fill="#94a3b8" letter-spacing="0.5">COFFEE TABLE BOOK</text>
+    <text x="160" y="14" font-size="11.5" fill="#64748b">• 16&quot; × 10&quot; Hardcover Monograph • Herman Miller Eames Wire Chair Editorial Design</text>
+    <text x="1340" y="14" font-size="11.5" font-weight="600" fill="#38bdf8" text-anchor="end">Form Follows Function</text>
+  </g>
+
+</svg>

@@ -36,22 +36,10 @@
   <!-- STUDIO WALL BACKGROUND -->
   <rect width="1700" height="1100" fill="#e2e8f0" />
 
-  <!-- TOP HEADER BANNER -->
-  <g transform="translate(40, 20)">
-    <rect width="1620" height="52" rx="8" fill="#0f172a" />
-    <text x="24" y="32" font-size="18" font-weight="700" fill="#ffffff" letter-spacing="0.5">WHITEBOARDING SESSIONS &amp; ARCHITECTURE WORKSHOPS</text>
-    <text x="630" y="32" font-size="13" font-weight="500" fill="#94a3b8">Purchasing Platform Ideation Wall • 5 Collaborative Discovery Tracks</text>
-    <g transform="translate(1330, 14)">
-      <rect width="265" height="24" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
-      <circle cx="14" cy="12" r="5" fill="#22c55e" />
-      <text x="28" y="16" font-size="11" font-weight="600" fill="#e2e8f0">Multi-Session Discovery Synthesis</text>
-    </g>
-  </g>
-
   <!-- ======================================================== -->
   <!-- BOARD 1: VENDOR WORKFLOW & SERVICE BLUEPRINT (TOP LEFT) -->
   <!-- ======================================================== -->
-  <g transform="translate(40, 90)" filter="url(#wbShadow)">
+  <g transform="translate(40, 60)" filter="url(#wbShadow)">
     <!-- Frame -->
     <rect width="910" height="475" rx="6" fill="url(#frameAlum)" />
     <rect x="5" y="5" width="900" height="465" rx="4" fill="url(#wbGloss)" />
@@ -275,7 +263,7 @@
   <!-- ======================================================== -->
   <!-- BOARD 2: PHASE 1 SHOPPING ARCHITECTURE MATRIX (TOP RIGHT) -->
   <!-- ======================================================== -->
-  <g transform="translate(970, 90)" filter="url(#wbShadow)">
+  <g transform="translate(970, 60)" filter="url(#wbShadow)">
     <rect width="690" height="475" rx="6" fill="url(#frameAlum)" />
     <rect x="5" y="5" width="680" height="465" rx="4" fill="url(#wbGloss)" />
 
@@ -377,7 +365,7 @@
   <!-- ======================================================== -->
   <!-- BOARD 3: SAME DAY CRITERIA & WIREFRAMES (BOTTOM LEFT)    -->
   <!-- ======================================================== -->
-  <g transform="translate(40, 580)" filter="url(#wbShadow)">
+  <g transform="translate(40, 560)" filter="url(#wbShadow)">
     <rect width="530" height="495" rx="6" fill="url(#frameAlum)" />
     <rect x="5" y="5" width="520" height="485" rx="4" fill="url(#wbGloss)" />
 
@@ -508,7 +496,7 @@
   <!-- ======================================================== -->
   <!-- BOARD 4: NOTES & PDP WIREFRAME SPECS (BOTTOM CENTER)     -->
   <!-- ======================================================== -->
-  <g transform="translate(590, 580)" filter="url(#wbShadow)">
+  <g transform="translate(590, 560)" filter="url(#wbShadow)">
     <rect width="530" height="495" rx="6" fill="url(#frameAlum)" />
     <rect x="5" y="5" width="520" height="485" rx="4" fill="url(#wbGloss)" />
 
@@ -641,7 +629,7 @@
   <!-- ======================================================== -->
   <!-- BOARD 5: PROPERTY HIERARCHY & ACCOUNTING (BOTTOM RIGHT)  -->
   <!-- ======================================================== -->
-  <g transform="translate(1140, 580)" filter="url(#wbShadow)">
+  <g transform="translate(1140, 560)" filter="url(#wbShadow)">
     <rect width="520" height="495" rx="6" fill="url(#frameAlum)" />
     <rect x="5" y="5" width="510" height="485" rx="4" fill="url(#wbGloss)" />
 

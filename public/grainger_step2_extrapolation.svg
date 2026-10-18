@@ -1,0 +1,406 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 1000" width="1480" height="1000" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Whiteboard Canvas Subtle Gradient -->
+    <linearGradient id="wbSurface2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="65%" stop-color="#fafafa" />
+      <stop offset="100%" stop-color="#f4f5f8" />
+    </linearGradient>
+
+    <!-- Drop Shadows for Taped Cards & Post-it Notes -->
+    <filter id="cardShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.14" />
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+    <filter id="stickyShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.16" />
+    </filter>
+
+    <!-- Blue Painter's Masking Tape -->
+    <linearGradient id="blueTapeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+
+    <!-- Markers -->
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#18181b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+  </defs>
+
+  <!-- PURE WHITEBOARD CANVAS -->
+  <rect width="1480" height="1000" fill="url(#wbSurface2)" />
+
+  <!-- TOP WHITEBOARD HEADER BANNER -->
+  <g transform="translate(45, 28)">
+    <text x="0" y="28" font-size="28" font-weight="800" fill="#18181b" letter-spacing="1.5">GRAINGER BENEFIT MGMT TOOL — STEP 2: EXTRAPOLATION &amp; SIMPLIFICATION</text>
+    <text x="0" y="52" font-size="14" font-weight="600" fill="#475569" letter-spacing="0.5">Whiteboard Ideation: Decoupling Monolithic Logic into Interchangeable, Scalable Multi-Channel Modules</text>
+    <line x1="0" y1="64" x2="1390" y2="64" stroke="#e2e8f0" stroke-width="2" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- COLUMN 1: DECONSTRUCTING THE MONOLITH (CURRENT STATE)    -->
+  <!-- ======================================================== -->
+  <g transform="translate(45, 115)">
+    <!-- Column Title -->
+    <rect width="360" height="34" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.2" />
+    <text x="180" y="22" font-size="14" font-weight="700" fill="#991b1b" text-anchor="middle" letter-spacing="1">1. DECONSTRUCTING THE MONOLITH</text>
+
+    <!-- Taped Diagram of Legacy Bottleneck -->
+    <g transform="translate(10, 52)" filter="url(#cardShadow)">
+      <rect width="340" height="235" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      
+      <!-- Blue Tape at Top -->
+      <rect x="140" y="-10" width="60" height="20" rx="1" fill="url(#blueTapeGrad)" transform="rotate(-1 170 0)" opacity="0.9" />
+
+      <!-- Content -->
+      <g transform="translate(18, 20)">
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#0f172a">Legacy Footwear-Only Architecture</text>
+        <text x="0" y="30" font-size="10.5" fill="#64748b">Single-channel hardcoded dependencies</text>
+
+        <!-- Monolith Stack Box -->
+        <g transform="translate(0, 42)">
+          <rect width="304" height="32" rx="3" fill="#f8fafc" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 2" />
+          <text x="152" y="20" font-size="11.5" font-weight="700" fill="#b91c1c" text-anchor="middle">Hardcoded Safety Footwear Logic</text>
+
+          <path d="M 152,32 L 152,48" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)" />
+
+          <rect y="48" width="304" height="32" rx="3" fill="#f8fafc" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 2" />
+          <text x="152" y="68" font-size="11" font-weight="600" fill="#b91c1c" text-anchor="middle">Fixed Subsidy Rules ($100 / $150 only)</text>
+
+          <path d="M 152,80 L 152,96" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)" />
+
+          <rect y="96" width="304" height="32" rx="3" fill="#f8fafc" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 2" />
+          <text x="152" y="116" font-size="11" font-weight="600" fill="#b91c1c" text-anchor="middle">Direct Vendor EDI Locked to Single DC</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Handwritten Marker Notes: Problems Identified -->
+    <g transform="translate(15, 360)" fill="#18181b">
+      <text x="0" y="20" font-size="18" font-weight="800" fill="#dc2626">✕ Core Limitations:</text>
+      
+      <g transform="translate(8, 38)" font-size="14.5" font-weight="600" line-height="24">
+        <text x="0" y="14">• Cannot scale to Eye Wear, Apparel,</text>
+        <text x="12" y="36">Uniforms, or Tool allowances</text>
+
+        <text x="0" y="70">• Rigid account hierarchy prevents</text>
+        <text x="12" y="92">subsidy overrides at branch level</text>
+
+        <text x="0" y="126">• Inflexible cadence (fixed Jan 1 reset)</text>
+        <text x="12" y="148">blocks rolling / anniversary renewal</text>
+
+        <text x="0" y="182">• Disjointed 14-screen admin maze</text>
+        <text x="12" y="204">causes high user configuration error</text>
+      </g>
+    </g>
+
+    <!-- Hand-drawn curly bracket connecting to Column 2 -->
+    <path d="M 375,440 C 395,440 395,470 415,470 C 395,470 395,500 375,500" fill="none" stroke="#2563eb" stroke-width="2.5" />
+    <text x="420" y="475" font-size="12" font-weight="700" fill="#2563eb">EXTRAPOLATE</text>
+  </g>
+
+  <!-- COLUMN DIVIDER 1 -->
+  <line x1="440" y1="115" x2="440" y2="950" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="6 4" />
+
+  <!-- ======================================================== -->
+  <!-- COLUMN 2: 4 INTERCHANGEABLE BUILDING BLOCKS (THE ENGINE) -->
+  <!-- ======================================================== -->
+  <g transform="translate(465, 115)">
+    <!-- Column Title -->
+    <rect width="470" height="34" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.2" />
+    <text x="235" y="22" font-size="14" font-weight="700" fill="#1e40af" text-anchor="middle" letter-spacing="1">2. INTERCHANGEABLE COMPONENT FRAMEWORK</text>
+
+    <!-- Introductory Callout -->
+    <text x="0" y="58" font-size="13" font-weight="700" fill="#0f172a">Extracted Core Modules — Standardized Interfaces for Any Benefit</text>
+
+    <!-- 4 MODULAR CARDS -->
+    <!-- Card A: Account & Hierarchy Module -->
+    <g transform="translate(0, 72)" filter="url(#cardShadow)">
+      <rect width="470" height="110" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
+      <rect width="8" height="110" rx="2" fill="#0284c7" />
+      
+      <!-- Module Header -->
+      <g transform="translate(24, 16)">
+        <rect width="24" height="24" rx="4" fill="#e0f2fe" />
+        <text x="12" y="17" font-size="13" font-weight="800" fill="#0284c7" text-anchor="middle">A</text>
+        <text x="36" y="17" font-size="14" font-weight="800" fill="#0f172a">Organization &amp; Eligibility Module</text>
+        <text x="320" y="17" font-size="11" font-weight="700" fill="#0284c7" letter-spacing="0.5">[ PLUG &amp; PLAY ]</text>
+        
+        <!-- Specs -->
+        <g transform="translate(0, 34)" font-size="11" fill="#475569">
+          <text x="0" y="14">• Multi-tier Account Tree: Corporate &gt; Region &gt; Plant &gt; Department</text>
+          <text x="0" y="32">• Dynamic Roster Import: Automated CSV/SFTP sync with employee badges</text>
+          <text x="0" y="50">• Scope Assignment: Tag specific rules to entire plants or individual roles</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Connection Arrow A -> B -->
+    <path d="M 235,182 L 235,198" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-black)" />
+
+    <!-- Card B: Subsidy & Rules Engine -->
+    <g transform="translate(0, 202)" filter="url(#cardShadow)">
+      <rect width="470" height="120" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
+      <rect width="8" height="120" rx="2" fill="#2563eb" />
+      
+      <!-- Module Header -->
+      <g transform="translate(24, 16)">
+        <rect width="24" height="24" rx="4" fill="#dbeafe" />
+        <text x="12" y="17" font-size="13" font-weight="800" fill="#2563eb" text-anchor="middle">B</text>
+        <text x="36" y="17" font-size="14" font-weight="800" fill="#0f172a">Subsidy &amp; Rules Calculation Engine</text>
+        <text x="320" y="17" font-size="11" font-weight="700" fill="#2563eb" letter-spacing="0.5">[ UNIVERSAL ]</text>
+        
+        <!-- Specs -->
+        <g transform="translate(0, 32)" font-size="11" fill="#475569">
+          <text x="0" y="14">• Subsidy Types: Fixed Dollar ($150, $200), Percentage (80%), or 100%</text>
+          <text x="0" y="32">• Renewal Timing: Annual, Bi-annual, Rolling 365, or Milestone-triggered</text>
+          <text x="0" y="50">• Rollover Engine: Unused allowance rollover or forfeit configuration</text>
+          <text x="0" y="68">• Employee Copay: Split-tender billing when item exceeds subsidy limit</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Connection Arrow B -> C -->
+    <path d="M 235,322 L 235,338" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-black)" />
+
+    <!-- Card C: Product & Catalog Filtering -->
+    <g transform="translate(0, 342)" filter="url(#cardShadow)">
+      <rect width="470" height="115" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
+      <rect width="8" height="115" rx="2" fill="#059669" />
+      
+      <!-- Module Header -->
+      <g transform="translate(24, 16)">
+        <rect width="24" height="24" rx="4" fill="#d1fae5" />
+        <text x="12" y="17" font-size="13" font-weight="800" fill="#059669" text-anchor="middle">C</text>
+        <text x="36" y="17" font-size="14" font-weight="800" fill="#0f172a">Catalog &amp; Safety Compliance Filter</text>
+        <text x="320" y="17" font-size="11" font-weight="700" fill="#059669" letter-spacing="0.5">[ MULTI-CHANNEL ]</text>
+        
+        <!-- Specs -->
+        <g transform="translate(0, 32)" font-size="11" fill="#475569">
+          <text x="0" y="14">• Multi-Category: Footwear, Eye/Face PPE, High-Vis Apparel, Fall Gear</text>
+          <text x="0" y="32">• OSHA/ANSI Compliance Flags: Steel/Composite Toe, EH, Slip, Met Guard</text>
+          <text x="0" y="50">• Curated Allow-Lists: Approved brands, maximum retail caps, exclusions</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Connection Arrow C -> D -->
+    <path d="M 235,457 L 235,473" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-black)" />
+
+    <!-- Card D: Fulfillment & Order Dispatch -->
+    <g transform="translate(0, 477)" filter="url(#cardShadow)">
+      <rect width="470" height="110" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
+      <rect width="8" height="110" rx="2" fill="#7c3aed" />
+      
+      <!-- Module Header -->
+      <g transform="translate(24, 16)">
+        <rect width="24" height="24" rx="4" fill="#ede9fe" />
+        <text x="12" y="17" font-size="13" font-weight="800" fill="#7c3aed" text-anchor="middle">D</text>
+        <text x="36" y="17" font-size="14" font-weight="800" fill="#0f172a">Fulfillment &amp; Order Dispatch Gateway</text>
+        <text x="320" y="17" font-size="11" font-weight="700" fill="#7c3aed" letter-spacing="0.5">[ ROUTING HUB ]</text>
+        
+        <!-- Specs -->
+        <g transform="translate(0, 32)" font-size="11" fill="#475569">
+          <text x="0" y="14">• Destination Matrix: Bulk plant dock delivery or employee home direct</text>
+          <text x="0" y="32">• Authorization Mode: Instant voucher, punchout EDI, or manager approval</text>
+          <text x="0" y="50">• Backorder Routing: Auto-substitute or ship-when-complete protocols</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Synthesis Sticky Note at Bottom -->
+    <g transform="translate(30, 620)" filter="url(#stickyShadow)">
+      <rect width="410" height="160" rx="2" fill="#fef08a" stroke="#facc15" stroke-width="1.2" transform="rotate(-1 205 80)" />
+      
+      <!-- Painter's Tape on sticky note -->
+      <rect x="170" y="-12" width="65" height="18" fill="url(#blueTapeGrad)" transform="rotate(2 200 0)" opacity="0.85" />
+
+      <g transform="translate(20, 18)" fill="#713f12">
+        <text x="0" y="16" font-size="14.5" font-weight="800">⚡ Breakthrough Discovery:</text>
+        <g transform="translate(5, 34)" font-size="13" font-weight="700">
+          <text x="0" y="16">"The entire tool isn't a 'shoe tool' — it's an</text>
+          <text x="0" y="36">allocation rule builder that outputs a voucher.</text>
+          <text x="0" y="60">By making these 4 cards interchangeable,</text>
+          <text x="0" y="80">Grainger can onboard ANY benefit channel in hours</text>
+          <text x="0" y="100">instead of months of custom code!"</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- COLUMN DIVIDER 2 -->
+  <line x1="965" y1="115" x2="965" y2="950" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="6 4" />
+
+  <!-- ======================================================== -->
+  <!-- COLUMN 3: SIMPLIFIED INTERACTION & UI ARCHITECTURE       -->
+  <!-- ======================================================== -->
+  <g transform="translate(990, 115)">
+    <!-- Column Title -->
+    <rect width="445" height="34" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="1.2" />
+    <text x="222" y="22" font-size="14" font-weight="700" fill="#166534" text-anchor="middle" letter-spacing="1">3. SIMPLIFIED INTERACTION MODEL</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="58" font-size="13" font-weight="700" fill="#0f172a">Sketched Admin UI Blueprint — 3-Step Guided Workflow</text>
+
+    <!-- TAPED SKETCH SHEET OF THE REDESIGNED UI -->
+    <g transform="translate(0, 72)" filter="url(#cardShadow)">
+      <rect width="445" height="420" rx="3" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
+      
+      <!-- Painter's Tape Corners -->
+      <rect x="-8" y="20" width="45" height="18" fill="url(#blueTapeGrad)" transform="rotate(-35 15 25)" opacity="0.85" />
+      <rect x="408" y="20" width="45" height="18" fill="url(#blueTapeGrad)" transform="rotate(35 430 25)" opacity="0.85" />
+
+      <!-- Browser / App Shell Wireframe Sketch -->
+      <g transform="translate(18, 20)">
+        <!-- App Title Bar -->
+        <rect width="409" height="26" rx="2" fill="#1e293b" />
+        <circle cx="14" cy="13" r="3.5" fill="#ef4444" />
+        <circle cx="26" cy="13" r="3.5" fill="#f59e0b" />
+        <circle cx="38" cy="13" r="3.5" fill="#10b981" />
+        <text x="56" y="17" font-size="10" font-weight="700" fill="#e2e8f0">Grainger Enterprise Benefits Manager — Program Builder</text>
+
+        <!-- Stepper Navigation Bar -->
+        <g transform="translate(0, 36)">
+          <rect width="409" height="32" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+          
+          <!-- Step 1 Active -->
+          <circle cx="28" cy="16" r="9" fill="#2563eb" />
+          <text x="28" y="20" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+          <text x="44" y="20" font-size="11" font-weight="700" fill="#1e293b">Account &amp; Scope</text>
+
+          <line x1="145" y1="16" x2="165" y2="16" stroke="#94a3b8" stroke-width="1.5" />
+
+          <!-- Step 2 Active -->
+          <circle cx="180" cy="16" r="9" fill="#2563eb" />
+          <text x="180" y="20" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+          <text x="196" y="20" font-size="11" font-weight="700" fill="#1e293b">Subsidy Rules</text>
+
+          <line x1="285" y1="16" x2="305" y2="16" stroke="#94a3b8" stroke-width="1.5" />
+
+          <!-- Step 3 Active -->
+          <circle cx="320" cy="16" r="9" fill="#2563eb" />
+          <text x="320" y="20" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+          <text x="336" y="20" font-size="11" font-weight="700" fill="#1e293b">Fulfillment</text>
+        </g>
+
+        <!-- Simplified Form Area Wireframe -->
+        <g transform="translate(0, 80)">
+          <!-- Left Configuration Pane -->
+          <rect width="245" height="235" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+          
+          <text x="12" y="22" font-size="11.5" font-weight="700" fill="#0f172a">Rule Card #1: Safety Footwear</text>
+          
+          <!-- Dropdown Field: Department -->
+          <text x="12" y="44" font-size="9" font-weight="600" fill="#64748b">Applied Hierarchy Node:</text>
+          <rect x="12" y="50" width="220" height="22" rx="2" fill="#ffffff" stroke="#94a3b8" stroke-width="1" />
+          <text x="20" y="65" font-size="10" fill="#1e293b">Gary, IN Plant — Assembly Line 4</text>
+          <path d="M 218,60 L 223,67 L 228,60 Z" fill="#64748b" />
+
+          <!-- Amount Input & Radio Buttons -->
+          <text x="12" y="92" font-size="9" font-weight="600" fill="#64748b">Subsidy Allowance:</text>
+          <rect x="12" y="98" width="105" height="22" rx="2" fill="#ffffff" stroke="#94a3b8" stroke-width="1" />
+          <text x="20" y="113" font-size="10" font-weight="700" fill="#1e293b">$ 175.00</text>
+          
+          <rect x="125" y="98" width="107" height="22" rx="2" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1" />
+          <text x="178" y="113" font-size="9.5" font-weight="700" fill="#0369a1" text-anchor="middle">Annual Cadence</text>
+
+          <!-- Toggle Switches -->
+          <g transform="translate(12, 134)">
+            <!-- Toggle 1 -->
+            <rect width="28" height="14" rx="7" fill="#2563eb" />
+            <circle cx="21" cy="7" r="5" fill="#ffffff" />
+            <text x="36" y="11" font-size="9.5" font-weight="600" fill="#334155">Allow Employee Co-Pay Overages</text>
+          </g>
+          <g transform="translate(12, 158)">
+            <!-- Toggle 2 -->
+            <rect width="28" height="14" rx="7" fill="#2563eb" />
+            <circle cx="21" cy="7" r="5" fill="#ffffff" />
+            <text x="36" y="11" font-size="9.5" font-weight="600" fill="#334155">Auto-Rollover Unused Funds (60 Days)</text>
+          </g>
+          <g transform="translate(12, 182)">
+            <!-- Toggle 3 -->
+            <rect width="28" height="14" rx="7" fill="#cbd5e1" />
+            <circle cx="7" cy="7" r="5" fill="#ffffff" />
+            <text x="36" y="11" font-size="9.5" font-weight="600" fill="#64748b">Require Supervisor Counter-Signature</text>
+          </g>
+
+          <rect x="12" y="206" width="220" height="20" rx="3" fill="#2563eb" />
+          <text x="122" y="219" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">+ Add Additional Category Rule</text>
+
+          <!-- Right Live Preview Pane -->
+          <g transform="translate(255, 0)">
+            <rect width="154" height="235" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+            <text x="12" y="20" font-size="10.5" font-weight="700" fill="#0f172a">Summary Preview</text>
+            
+            <line x1="12" y1="28" x2="142" y2="28" stroke="#cbd5e1" stroke-width="1" />
+
+            <g transform="translate(10, 36)" font-size="8.5" fill="#475569">
+              <text x="0" y="10" font-weight="700" fill="#1e293b">Target Employees:</text>
+              <text x="0" y="22">240 Active Roster</text>
+
+              <text x="0" y="42" font-weight="700" fill="#1e293b">Max Allocation:</text>
+              <text x="0" y="54">$42,000 / year</text>
+
+              <text x="0" y="74" font-weight="700" fill="#1e293b">Catalog Items:</text>
+              <text x="0" y="86">18 Approved Boots</text>
+
+              <text x="0" y="106" font-weight="700" fill="#1e293b">Fulfillment:</text>
+              <text x="0" y="118">Dock Deliveries (Bldg 4)</text>
+
+              <!-- Checkbox verification -->
+              <rect y="132" width="134" height="26" rx="2" fill="#dcfce7" stroke="#86efac" stroke-width="0.8" />
+              <text x="10" y="148" font-size="8.5" font-weight="700" fill="#15803d">✓ Zero Validation Errors</text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- Whiteboard Marker Handwritten Annotations Below Wireframe -->
+    <g transform="translate(10, 520)" fill="#18181b">
+      <!-- Marker Arrow pointing up to the simplified wireframe -->
+      <path d="M 60,70 L 60,10" stroke="#18181b" stroke-width="2.5" marker-end="url(#arrow-black)" />
+      
+      <g transform="translate(85, 20)">
+        <text x="0" y="18" font-size="16" font-weight="800" fill="#0284c7">★ UX Simplification Outcomes:</text>
+        
+        <g transform="translate(0, 32)" font-size="13.5" font-weight="600" fill="#1e293b">
+          <text x="0" y="16">1. Reduced 14 fragmented configuration</text>
+          <text x="16" y="36">screens into a single unified 3-step canvas.</text>
+
+          <text x="0" y="68">2. Immediate live preview eliminates</text>
+          <text x="16" y="88">costly configuration rollback cycles.</text>
+
+          <text x="0" y="120">3. Interchangeable cards support any merchandise</text>
+          <text x="16" y="140">category without touching backend schemas.</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Signature Stamp at bottom right of whiteboard -->
+    <g transform="translate(230, 770)">
+      <rect width="200" height="42" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3" />
+      <text x="100" y="18" font-size="10" font-weight="700" fill="#64748b" text-anchor="middle">STAKEHOLDER SIGN-OFF</text>
+      <text x="100" y="32" font-size="11" font-weight="800" fill="#15803d" text-anchor="middle">APPROVED FOR WIREFRAMING ✓</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- BOTTOM WHITEBOARD FOOTER / LEGEND TRAY                   -->
+  <!-- ======================================================== -->
+  <g transform="translate(45, 960)">
+    <line x1="0" y1="0" x2="1390" y2="0" stroke="#cbd5e1" stroke-width="1.5" />
+    <text x="0" y="22" font-size="12" font-weight="700" fill="#64748b">GRAINGER UX CASE STUDY</text>
+    <text x="210" y="22" font-size="12" fill="#94a3b8">|</text>
+    <text x="230" y="22" font-size="12" font-weight="600" fill="#64748b">STAGE 2 OF 5: EXTRAPOLATION &amp; SIMPLIFICATION WHITEBOARD AUDIT</text>
+    <text x="1220" y="22" font-size="12" font-weight="700" fill="#2563eb">CLICK IMAGE TO EXPAND LIGHTBOX</text>
+  </g>
+</svg>
