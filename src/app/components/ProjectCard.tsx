@@ -3,6 +3,8 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, ChevronDown, X, Image as ImageIcon, ZoomIn } from "lucide-react";
 import { ImageWithFallback } from "./ImageWithFallback";
+import { PurchasingPlatformAnimatedBanner } from "./PurchasingPlatformAnimatedBanner";
+import { GraingerAnimatedBanner } from "./GraingerAnimatedBanner";
 import { useTheme } from "../context/ThemeContext";
 import { Tooltip } from "./Tooltip";
 
@@ -196,11 +198,17 @@ function ProcessModal({
 
             {/* Image banner - flows flush to the very top */}
             <div className="w-full h-56 sm:h-72 lg:h-80 xl:h-96 shrink-0 relative overflow-hidden lg:rounded-t-2xl">
-              <ImageWithFallback
-                src={project.image}
-                alt={`Visual preview of ${project.title}`}
-                className="w-full h-full object-cover object-top lg:rounded-t-2xl"
-              />
+              {project.id === "purchasing-platform" ? (
+                <PurchasingPlatformAnimatedBanner />
+              ) : project.id === "grainger" ? (
+                <GraingerAnimatedBanner />
+              ) : (
+                <ImageWithFallback
+                  src={project.image}
+                  alt={`Visual preview of ${project.title}`}
+                  className="w-full h-full object-cover object-top lg:rounded-t-2xl"
+                />
+              )}
             </div>
 
             <div className="px-3 py-6 sm:px-8 lg:px-12 flex-1">
