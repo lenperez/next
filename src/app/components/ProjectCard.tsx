@@ -92,9 +92,14 @@ function ProcessModal({
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    // Focus close button initially
+    // Ensure modal content starts top-aligned
+    if (modalRef.current) {
+      modalRef.current.scrollTop = 0;
+    }
+
+    // Focus close button initially without shifting scroll
     const timer = setTimeout(() => {
-      closeBtnRef.current?.focus();
+      closeBtnRef.current?.focus({ preventScroll: true });
     }, 50);
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -194,7 +199,7 @@ function ProcessModal({
               <ImageWithFallback
                 src={project.image}
                 alt={`Visual preview of ${project.title}`}
-                className="w-full h-full object-cover lg:rounded-t-2xl"
+                className="w-full h-full object-cover object-top lg:rounded-t-2xl"
               />
             </div>
 
@@ -292,7 +297,7 @@ function ProcessModal({
                                 src={step.image}
                                 alt={step.imageAlt || `${step.label} artifact`}
                                 referrerPolicy="no-referrer"
-                                className="w-full h-auto aspect-video object-contain bg-white rounded-lg p-1.5"
+                                className="w-full h-auto aspect-video object-contain object-top bg-white rounded-lg p-1.5"
                               />
                               <div className="absolute inset-0 bg-black/0 group-hover/stepimg:bg-black/15 transition-colors flex items-end justify-end p-2 pointer-events-none">
                                 <span className="bg-black/85 text-white text-[10px] font-medium px-2 py-0.5 rounded backdrop-blur-xs flex items-center gap-1 opacity-0 group-hover/stepimg:opacity-100 transition-opacity shadow-sm">
@@ -450,7 +455,7 @@ export function ProjectCard({
                   <ImageWithFallback
                     src={project.image}
                     alt={`Visual representation of ${project.title}`}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/img:scale-105 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-105 group-hover:scale-105"
                   />
                 </div>
                 <span className="sr-only">Click to view project details</span>

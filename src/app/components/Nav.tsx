@@ -77,19 +77,19 @@ export function Nav() {
             <div
               role="group"
               aria-label="Portfolio navigation"
-              className={`inline-flex items-center p-1 rounded-full border transition-colors ${
+              className={`h-10 inline-flex items-center p-0.5 rounded-full border transition-colors ${
                 isDark
-                  ? "border-white/20 bg-white/[0.04]"
-                  : "border-black/15 bg-black/[0.03]"
+                  ? "border-white/20"
+                  : "border-black/15"
               }`}
             >
-              <ul className="flex items-center" role="list">
+              <ul className="h-full flex items-center" role="list">
                 {links.map((l, idx) => {
                   const Icon = l.icon;
                   const showDivider = idx < links.length - 1;
                   const hideDivider = hoveredIndex === idx || hoveredIndex === idx + 1;
                   return (
-                    <li key={l.href} className="flex items-center">
+                    <li key={l.href} className="h-full flex items-center">
                       <Tooltip content={`Navigate to ${l.label}`} position="bottom">
                         <a
                           href={l.href}
@@ -97,14 +97,14 @@ export function Nav() {
                           onMouseLeave={() => setHoveredIndex(null)}
                           onFocus={() => setHoveredIndex(idx)}
                           onBlur={() => setHoveredIndex(null)}
-                          className={`group inline-flex items-center gap-2 transition-all duration-200 text-sm tracking-wider uppercase font-medium px-4 py-2 rounded-full hover:bg-blue-100 hover:text-blue-900 focus-visible:bg-blue-100 focus-visible:text-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
+                          className={`group h-full inline-flex items-center justify-center gap-1.5 transition-all duration-200 text-xs sm:text-sm tracking-wider uppercase font-medium px-3.5 rounded-full hover:bg-blue-100 hover:text-blue-900 focus-visible:bg-blue-100 focus-visible:text-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                             isDark
                               ? "text-white/80"
                               : "text-neutral-700"
                           }`}
                         >
                           <Icon
-                            size={15}
+                            size={14}
                             aria-hidden="true"
                             className="shrink-0 transition-colors group-hover:text-blue-900 group-focus-visible:text-blue-900"
                           />
@@ -116,7 +116,7 @@ export function Nav() {
                       {showDivider && (
                         <span
                           aria-hidden="true"
-                          className={`w-px h-3.5 my-auto transition-opacity duration-200 ${
+                          className={`w-px h-3.5 self-center transition-opacity duration-200 ${
                             isDark ? "bg-white/20" : "bg-black/15"
                           } ${hideDivider ? "opacity-0" : "opacity-100"}`}
                         />
@@ -134,13 +134,13 @@ export function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open Len Perez UX Resume (PDF in new tab)"
-                className={`group inline-flex items-center gap-2 transition-all duration-200 text-sm tracking-wider uppercase font-medium px-4 py-2 rounded-full border hover:bg-blue-100 hover:text-blue-900 hover:border-blue-900 focus-visible:bg-blue-100 focus-visible:text-blue-900 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
+                className={`group h-10 inline-flex items-center justify-center gap-2 transition-all duration-200 text-xs sm:text-sm tracking-wider uppercase font-medium px-4 rounded-full border hover:bg-blue-100 hover:text-blue-900 hover:border-blue-900 focus-visible:bg-blue-100 focus-visible:text-blue-900 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                   isDark
                     ? "text-white/75 border-white/20"
                     : "text-neutral-700 border-black/15"
                 }`}
               >
-                <FileText size={15} aria-hidden="true" className="shrink-0 transition-colors group-hover:text-blue-900 group-focus-visible:text-blue-900" />
+                <FileText size={14} aria-hidden="true" className="shrink-0 transition-colors group-hover:text-blue-900 group-focus-visible:text-blue-900" />
                 <span className="transition-colors group-hover:text-blue-900 group-focus-visible:text-blue-900">RÉSUMÉ</span>
               </a>
             </Tooltip>
@@ -151,7 +151,7 @@ export function Nav() {
                 type="button"
                 onClick={toggleTheme}
                 aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-                className={`group p-2 rounded-full transition-all duration-200 flex items-center justify-center border hover:bg-blue-100 hover:border-blue-900 focus-visible:bg-blue-100 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
+                className={`group h-10 w-10 rounded-full transition-all duration-200 flex items-center justify-center border hover:bg-blue-100 hover:border-blue-900 focus-visible:bg-blue-100 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                   isDark
                     ? "border-white/20 text-white/80"
                     : "border-black/15 text-neutral-700"
@@ -228,7 +228,7 @@ export function Nav() {
                   role="group"
                   aria-label="Navigation Sections"
                   className={`p-1 rounded-2xl border transition-colors ${
-                    isDark ? "border-white/15 bg-white/[0.04]" : "border-black/10 bg-black/[0.03]"
+                    isDark ? "border-white/15" : "border-black/10"
                   }`}
                 >
                   <ul className="flex flex-col" role="list">

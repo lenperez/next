@@ -399,7 +399,9 @@ function PortfolioContent() {
                   aria-expanded={openSection === "case-studies"}
                   aria-controls="panel-case-studies"
                   onClick={() => toggle("case-studies", caseStudiesRef)}
-                  className={`w-full flex items-center justify-between px-3 sm:px-8 py-5 sm:py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  className={`w-full flex items-center justify-between px-3 sm:px-8 ${
+                    openSection === "case-studies" ? "py-5 sm:py-6" : "py-4 sm:py-5"
+                  } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
                     isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
                   }`}
                 >
@@ -457,7 +459,9 @@ function PortfolioContent() {
                   aria-expanded={openSection === "additional"}
                   aria-controls="panel-additional"
                   onClick={() => toggle("additional", additionalRef)}
-                  className={`w-full flex items-center justify-between px-3 sm:px-8 py-5 sm:py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  className={`w-full flex items-center justify-between px-3 sm:px-8 ${
+                    openSection === "additional" ? "py-5 sm:py-6" : "py-4 sm:py-5"
+                  } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
                     isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
                   }`}
                 >
@@ -515,7 +519,9 @@ function PortfolioContent() {
                   aria-expanded={openSection === "visual"}
                   aria-controls="panel-visual"
                   onClick={() => toggle("visual", visualRef)}
-                  className={`w-full flex items-center justify-between px-3 sm:px-8 py-5 sm:py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  className={`w-full flex items-center justify-between px-3 sm:px-8 ${
+                    openSection === "visual" ? "py-5 sm:py-6" : "py-4 sm:py-5"
+                  } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
                     isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
                   }`}
                 >
@@ -572,7 +578,9 @@ function PortfolioContent() {
                   aria-expanded={openSection === "graphic"}
                   aria-controls="panel-graphic"
                   onClick={() => toggle("graphic", graphicRef)}
-                  className={`w-full flex items-center justify-between px-3 sm:px-8 py-5 sm:py-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                  className={`w-full flex items-center justify-between px-3 sm:px-8 ${
+                    openSection === "graphic" ? "py-5 sm:py-6" : "py-4 sm:py-5"
+                  } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
                     isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
                   }`}
                 >
