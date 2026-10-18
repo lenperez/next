@@ -60,17 +60,17 @@ export function Hero() {
             <a
               href="#work"
               aria-label="View Work - navigate to featured projects section"
-              className={`group inline-flex items-center text-sm tracking-widest uppercase font-medium transition-all px-5 py-2.5 rounded-full ${
+              className={`group inline-flex items-center text-sm tracking-widest uppercase font-medium transition-all duration-200 px-5 py-2.5 rounded-full border hover:bg-blue-100 hover:text-blue-900 hover:border-blue-900 focus-visible:bg-blue-100 focus-visible:text-blue-900 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                 isDark
-                  ? "text-white/80 hover:text-white hover:bg-white/10"
-                  : "text-neutral-800 hover:text-black hover:bg-black/5"
+                  ? "text-white/80 border-white/20"
+                  : "text-neutral-800 border-black/15"
               }`}
             >
-              <span>View Work</span>
+              <span className="transition-colors group-hover:text-blue-900 group-focus-visible:text-blue-900">View Work</span>
               <span
                 className="inline-flex items-center transition-all duration-300 ease-out opacity-0 max-w-0 -translate-y-1 ml-0 overflow-hidden group-hover:opacity-100 group-hover:max-w-6 group-hover:translate-y-0 group-hover:ml-2 group-focus-visible:opacity-100 group-focus-visible:max-w-6 group-focus-visible:translate-y-0 group-focus-visible:ml-2"
               >
-                <ArrowDown size={16} aria-hidden="true" className="shrink-0" />
+                <ArrowDown size={16} aria-hidden="true" className="shrink-0 transition-colors group-hover:text-blue-900 group-focus-visible:text-blue-900" />
               </span>
             </a>
           </Tooltip>
