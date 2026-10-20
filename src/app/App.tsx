@@ -7,7 +7,7 @@ import type { Project } from "./components/ProjectCard";
 import { PuzzleBackground } from "./components/PuzzleBackground";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import { Tooltip } from "./components/Tooltip";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
 
@@ -347,23 +347,100 @@ const visualDesignProjects: Project[] = [
   },
 ];
 
+const ACCORDION_TRANSITION = {
+  duration: 0.45,
+  ease: [0.25, 0.1, 0.25, 1] as const,
+};
+
 function PortfolioContent() {
   const [openSection, setOpenSection] = useState<string>("case-studies");
   const caseStudiesRef = useRef<HTMLDivElement>(null);
   const additionalRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
   const graphicRef = useRef<HTMLDivElement>(null);
+  const isManualToggleRef = useRef(false);
+  const manualTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastScrollY = useRef(0);
+  const scrollDirection = useRef<"down" | "up">("down");
   const { isDark } = useTheme();
 
-  const toggle = (id: string, ref: React.RefObject<HTMLDivElement>) => {
-    setOpenSection(prev => prev === id ? "" : id);
+  const toggle = (id: string, ref: React.RefObject<HTMLDivElement | null>) => {
+    isManualToggleRef.current = true;
+    if (manualTimeoutRef.current) clearTimeout(manualTimeoutRef.current);
+
+    setOpenSection(prev => (prev === id ? "" : id));
+
     setTimeout(() => {
       if (ref.current) {
         ref.current.style.scrollMarginTop = "80px";
         ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 420);
+    }, 100);
+
+    manualTimeoutRef.current = setTimeout(() => {
+      isManualToggleRef.current = false;
+    }, 900);
   };
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      scrollDirection.current = currentScrollY >= lastScrollY.current ? "down" : "up";
+      lastScrollY.current = currentScrollY;
+
+      if (isManualToggleRef.current) return;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const vh = window.innerHeight;
+          const isDown = scrollDirection.current === "down";
+          // Symmetrical trigger distance with 4% viewport hysteresis buffer
+          const triggerPoint = isDown ? vh * 0.38 : vh * 0.42;
+
+          const caseRect = caseStudiesRef.current?.getBoundingClientRect();
+          const addRect = additionalRef.current?.getBoundingClientRect();
+          const visRect = visualRef.current?.getBoundingClientRect();
+          const graphRect = graphicRef.current?.getBoundingClientRect();
+
+          let targetSection = "";
+
+          // If scrolled up into Hero above the work section
+          if (caseRect && caseRect.top > (isDown ? vh * 0.72 : vh * 0.76)) {
+            targetSection = "";
+          } else if (graphRect && graphRect.top <= triggerPoint) {
+            targetSection = "graphic";
+          } else if (visRect && visRect.top <= triggerPoint) {
+            targetSection = "visual";
+          } else if (addRect && addRect.top <= triggerPoint) {
+            targetSection = "additional";
+          } else if (caseRect && caseRect.top <= (isDown ? vh * 0.72 : vh * 0.76)) {
+            targetSection = "case-studies";
+          }
+
+          setOpenSection(prev => {
+            if (prev !== targetSection) {
+              return targetSection;
+            }
+            return prev;
+          });
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once on mount to establish state matching scroll position
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (manualTimeoutRef.current) clearTimeout(manualTimeoutRef.current);
+    };
+  }, []);
 
   return (
     <div className={`relative w-full min-h-screen overflow-x-hidden transition-colors duration-300 ${
@@ -410,7 +487,7 @@ function PortfolioContent() {
                   >
                     Case Studies
                   </h2>
-                  <motion.div animate={{ rotate: openSection === "case-studies" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                  <motion.div animate={{ rotate: openSection === "case-studies" ? 180 : 0 }} transition={ACCORDION_TRANSITION}>
                     <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
                   </motion.div>
                 </button>
@@ -425,7 +502,7 @@ function PortfolioContent() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    transition={ACCORDION_TRANSITION}
                     className="overflow-hidden"
                   >
                     <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
@@ -470,7 +547,7 @@ function PortfolioContent() {
                   >
                     Interactive Pieces
                   </h2>
-                  <motion.div animate={{ rotate: openSection === "additional" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                  <motion.div animate={{ rotate: openSection === "additional" ? 180 : 0 }} transition={ACCORDION_TRANSITION}>
                     <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
                   </motion.div>
                 </button>
@@ -485,7 +562,7 @@ function PortfolioContent() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    transition={ACCORDION_TRANSITION}
                     className="overflow-hidden"
                   >
                     <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
@@ -530,7 +607,7 @@ function PortfolioContent() {
                   >
                     Visual Design
                   </h2>
-                  <motion.div animate={{ rotate: openSection === "visual" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                  <motion.div animate={{ rotate: openSection === "visual" ? 180 : 0 }} transition={ACCORDION_TRANSITION}>
                     <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
                   </motion.div>
                 </button>
@@ -544,7 +621,7 @@ function PortfolioContent() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    transition={ACCORDION_TRANSITION}
                     className="overflow-hidden"
                   >
                     <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
@@ -589,7 +666,7 @@ function PortfolioContent() {
                   >
                     Graphic Design
                   </h2>
-                  <motion.div animate={{ rotate: openSection === "graphic" ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                  <motion.div animate={{ rotate: openSection === "graphic" ? 180 : 0 }} transition={ACCORDION_TRANSITION}>
                     <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
                   </motion.div>
                 </button>
@@ -604,7 +681,7 @@ function PortfolioContent() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    transition={ACCORDION_TRANSITION}
                     className="overflow-hidden"
                   >
                     <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
@@ -626,12 +703,9 @@ function PortfolioContent() {
 
       {/* Footer */}
       <footer role="contentinfo" className={`border-t py-8 px-4 sm:px-7 relative ${isDark ? "border-white/10" : "border-black/10"}`} style={{ zIndex: 1 }}>
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className={`${isDark ? "text-white/70" : "text-neutral-700"} text-sm tracking-wider font-medium`}>
+        <div className="max-w-6xl mx-auto flex items-center justify-center">
+          <p className={`${isDark ? "text-white/70" : "text-neutral-700"} text-sm tracking-wider font-medium text-center`}>
             Len Perez - Product • UX • Designer
-          </p>
-          <p className={`${isDark ? "text-white/60" : "text-neutral-600"} text-xs`}>
-            Pieces – A Collection of My Work
           </p>
         </div>
       </footer>

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { ArrowUpRight, ChevronDown, X, Image as ImageIcon, ZoomIn } from "lucide-react";
 import { ImageWithFallback } from "./ImageWithFallback";
 import { PurchasingPlatformAnimatedBanner } from "./PurchasingPlatformAnimatedBanner";
@@ -422,7 +422,20 @@ export function ProjectCard({
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const imageTriggerRef = useRef<HTMLButtonElement | null>(null);
   const lastActiveTrigger = useRef<HTMLElement | null>(null);
+  const cardRef = useRef<HTMLElement | null>(null);
   const { isDark } = useTheme();
+
+  const shouldReduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"],
+  });
+
+  const imageY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? [0, 0] : [-22, 22]
+  );
 
   const handleOpenModal = (trigger: HTMLElement | null) => {
     lastActiveTrigger.current = trigger;
@@ -432,6 +445,7 @@ export function ProjectCard({
   return (
     <>
       <motion.article
+        ref={cardRef}
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
@@ -456,7 +470,7 @@ export function ProjectCard({
         >
           {/* Header */}
           <div className="flex flex-col md:flex-row gap-0 items-stretch">
-            {/* Image button — accessible click/keyboard trigger for modal */}
+            {/* Image button — accessible click/keyboard trigger for modal with parallax window depth */}
             <Tooltip content={`View ${project.title}`} position="top">
               <button
                 ref={imageTriggerRef}
@@ -466,13 +480,18 @@ export function ProjectCard({
                 className="w-full text-left md:w-2/5 overflow-hidden group/img relative cursor-pointer md:self-stretch block p-0 border-0 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
               >
                 <div className="w-full h-56 sm:h-64 md:h-full md:min-h-full md:absolute md:inset-0 overflow-hidden">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={`Visual representation of ${project.title}`}
-                    className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover/img:scale-105 group-hover:scale-105 ${
-                      project.id === "coffee-table-book" ? "object-bottom" : "object-top"
-                    }`}
-                  />
+                  <motion.div
+                    style={{ y: imageY }}
+                    className="w-full h-full will-change-transform"
+                  >
+                    <ImageWithFallback
+                      src={project.image}
+                      alt={`Visual representation of ${project.title}`}
+                      className={`w-full h-full object-cover scale-[1.10] transition-transform duration-700 ease-out group-hover/img:scale-[1.16] ${
+                        project.id === "coffee-table-book" ? "object-bottom" : "object-top"
+                      }`}
+                    />
+                  </motion.div>
                 </div>
                 <span className="sr-only">Click to view project details</span>
               </button>
