@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1000" width="1600" height="1000" style="background:#060a14; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1000" width="1600" height="1000" style="background:#173d72; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <defs>
-    <!-- Background Radial Gradients -->
+    <!-- Background Radial Gradients (Blue #173d72) -->
     <radialGradient id="afi_bg" cx="50%" cy="46%" r="65%">
-      <stop offset="0%" stop-color="#101a2e" />
-      <stop offset="50%" stop-color="#090f1d" />
-      <stop offset="100%" stop-color="#04060d" />
+      <stop offset="0%" stop-color="#2d66bd" />
+      <stop offset="50%" stop-color="#1e4a87" />
+      <stop offset="100%" stop-color="#122e57" />
     </radialGradient>
 
     <!-- American Family Blue Ambient Glow -->
     <radialGradient id="afi_blueGlow" cx="50%" cy="42%" r="55%">
-      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25" />
-      <stop offset="50%" stop-color="#1d4ed8" stop-opacity="0.12" />
-      <stop offset="100%" stop-color="#04060d" stop-opacity="0" />
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#122e57" stop-opacity="0" />
     </radialGradient>
 
     <!-- Subtle Red Accent Glow (AFI Brand Accent) -->
@@ -79,7 +79,7 @@
   <rect width="1600" height="1000" fill="url(#afi_redGlow)" />
 
   <!-- Subtle Architectural Blueprint Coordinate Grid -->
-  <g opacity="0.04" stroke="#ffffff" stroke-width="0.8">
+  <g opacity="0.08" stroke="#ffffff" stroke-width="0.8">
     <line x1="0" y1="150" x2="1600" y2="150" />
     <line x1="0" y1="350" x2="1600" y2="350" />
     <line x1="0" y1="550" x2="1600" y2="550" />

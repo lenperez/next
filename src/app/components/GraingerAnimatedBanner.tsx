@@ -4,24 +4,29 @@ export function GraingerAnimatedBanner() {
   const transitionCurve = [0.16, 1, 0.3, 1] as const;
 
   return (
-    <div className="w-full h-full relative overflow-hidden bg-[#0d1117]">
+    <div className="w-full h-full relative overflow-hidden bg-[#173d72]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1600 1000"
         preserveAspectRatio="xMidYMin slice"
         className="w-full h-full block object-cover object-top lg:rounded-t-2xl"
         style={{
-          background: "#0d1117",
+          background: "#173d72",
           fontFamily:
             "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
         }}
       >
         <defs>
-          {/* Background Radial Gradient */}
-          <radialGradient id="graingerBgGlow" cx="50%" cy="45%" r="70%">
-            <stop offset="0%" stopColor="#1e293b" />
-            <stop offset="50%" stopColor="#0f172a" />
-            <stop offset="100%" stopColor="#090d16" />
+          {/* Background Radial Gradient (Blue #173d72) */}
+          <radialGradient id="graingerBgGlow" cx="50%" cy="45%" r="65%">
+            <stop offset="0%" stopColor="#2d66bd" />
+            <stop offset="50%" stopColor="#1e4a87" />
+            <stop offset="100%" stopColor="#122e57" />
+          </radialGradient>
+          <radialGradient id="graingerNavyAmbient" cx="48%" cy="42%" r="55%">
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+            <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.14" />
+            <stop offset="100%" stopColor="#122e57" stopOpacity="0" />
           </radialGradient>
 
           {/* Deep Drop Shadows for Sheets */}
@@ -59,13 +64,21 @@ export function GraingerAnimatedBanner() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
         />
+        <motion.rect
+          width="1600"
+          height="1000"
+          fill="url(#graingerNavyAmbient)"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+        />
 
         {/* SUBTLE ARCHITECTURAL GRID BACKGROUND */}
         <motion.g
-          stroke="#94a3b8"
+          stroke="#ffffff"
           strokeWidth="1"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.05 }}
+          animate={{ opacity: 0.08 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
         >
           <line x1="0" y1="200" x2="1600" y2="200" />

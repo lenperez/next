@@ -4,30 +4,29 @@ export function PurchasingPlatformAnimatedBanner() {
   const transitionCurve = [0.16, 1, 0.3, 1] as const;
 
   return (
-    <div className="w-full h-full relative overflow-hidden bg-[#0a192f]">
+    <div className="w-full h-full relative overflow-hidden bg-[#173d72]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1200 900"
         preserveAspectRatio="xMidYMin slice"
         className="w-full h-full block object-cover object-top lg:rounded-t-2xl"
         style={{
-          background: "#0a192f",
-          fontFamily:
-            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+          background: "#173d72",
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
         }}
       >
         <defs>
           {/* Background Radial Gradient */}
           {/* Background Radial Gradient (Navy Blue Atmosphere) */}
           <radialGradient id="bgGlow" cx="50%" cy="45%" r="65%">
-            <stop offset="0%" stopColor="#142a4e" />
-            <stop offset="55%" stopColor="#0a192f" />
-            <stop offset="100%" stopColor="#050e1d" />
+            <stop offset="0%" stopColor="#2d66bd" />
+            <stop offset="50%" stopColor="#1e4a87" />
+            <stop offset="100%" stopColor="#122e57" />
           </radialGradient>
           <radialGradient id="navyAmbient" cx="48%" cy="42%" r="55%">
-            <stop offset="0%" stopColor="#1d4ed8" stopOpacity="0.2" />
-            <stop offset="50%" stopColor="#0284c7" stopOpacity="0.08" />
-            <stop offset="100%" stopColor="#050e1d" stopOpacity="0" />
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+            <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.14" />
+            <stop offset="100%" stopColor="#122e57" stopOpacity="0" />
           </radialGradient>
           {/* Drop Shadow for Desktop Paper */}
           <filter id="paperShadow" x="-20%" y="-20%" width="150%" height="150%">
@@ -58,7 +57,7 @@ export function PurchasingPlatformAnimatedBanner() {
           <rect width="1200" height="900" fill="url(#navyAmbient)" />
 
           {/* Subtle Blueprint Drafting Coordinate Grid */}
-          <g opacity="0.05" stroke="#ffffff" strokeWidth="0.8">
+          <g opacity="0.08" stroke="#ffffff" strokeWidth="0.8">
             <line x1="0" y1="150" x2="1200" y2="150" />
             <line x1="0" y1="300" x2="1200" y2="300" />
             <line x1="0" y1="450" x2="1200" y2="450" />
@@ -71,17 +70,17 @@ export function PurchasingPlatformAnimatedBanner() {
             <line x1="1050" y1="0" x2="1050" y2="900" />
           </g>
 
-          {/* Background Blueprint UX Wireframe Diagrams (White Lines) */}
-          <g opacity="0.82" stroke="#ffffff" strokeWidth="1.3" fill="none" filter="url(#chalkGlow)">
+          {/* Background Blueprint UX Wireframe Diagrams (White Lines & Handwritten) */}
+          <g id="blueprintDiagrams" opacity="0.82" stroke="#ffffff" strokeWidth="1.3" fill="none" filter="url(#chalkGlow)" style={{ fontFamily: "'Architects Daughter', 'Caveat', 'Chalkboard SE', 'Chalkboard', 'Bradley Hand', 'Segoe Print', cursive" }}>
             {/* Top Left Flowchart */}
             <g transform="translate(45, 75)">
-              <text x="0" y="16" fontSize="18" fill="#ffffff" fontFamily="monospace" fontWeight="bold" stroke="none">
+              <text x="0" y="16" fontSize="18" fill="#ffffff"  fontWeight="bold" stroke="none">
                 Home → Appliances → Kitchen
               </text>
               <line x1="18" y1="26" x2="18" y2="58" stroke="#ffffff" strokeWidth="1.5" />
               <path d="M 18,58 L 13,50 M 18,58 L 23,50" stroke="#ffffff" strokeWidth="1.5" />
 
-              <text x="0" y="80" fontSize="16" fill="#ffffff" fontFamily="monospace" stroke="none">
+              <text x="0" y="80" fontSize="16" fill="#ffffff"  stroke="none">
                 Range → Range Top
               </text>
               <rect x="0" y="130" width="70" height="46" rx="2" />
@@ -94,7 +93,7 @@ export function PurchasingPlatformAnimatedBanner() {
                 Product Details
               </text>
 
-              <text x="0" y="270" fontSize="16" fill="#ffffff" fontFamily="monospace" stroke="none">
+              <text x="0" y="270" fontSize="16" fill="#ffffff"  stroke="none">
                 Site → Appliances
               </text>
               <line x1="18" y1="280" x2="18" y2="310" />
@@ -155,10 +154,10 @@ export function PurchasingPlatformAnimatedBanner() {
 
             {/* Right Side Chalkboard Diagrams */}
             <g transform="translate(980, 100)">
-              <text x="0" y="20" fontSize="15" fill="#ffffff" stroke="none" fontFamily="monospace">
+              <text x="0" y="20" fontSize="15" fill="#ffffff" stroke="none" >
                 Whirlpool 30" Black, Gas
               </text>
-              <text x="0" y="38" fontSize="13" fill="#e2e8f0" stroke="none" fontFamily="monospace">
+              <text x="0" y="38" fontSize="13" fill="#e2e8f0" stroke="none" >
                 Range / Stove
               </text>
               <text x="0" y="65" fontSize="11" fill="#ffffff" stroke="none">

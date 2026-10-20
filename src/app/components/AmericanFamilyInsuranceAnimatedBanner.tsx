@@ -4,7 +4,7 @@ export function AmericanFamilyInsuranceAnimatedBanner() {
   const transitionCurve = [0.16, 1, 0.3, 1] as const;
 
   return (
-    <div className="w-full h-full relative overflow-hidden bg-[#060a14]">
+    <div className="w-full h-full relative overflow-hidden bg-[#173d72]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -12,24 +12,24 @@ export function AmericanFamilyInsuranceAnimatedBanner() {
         preserveAspectRatio="xMidYMid slice"
         className="w-full h-full block object-cover object-center lg:rounded-t-2xl"
         style={{
-          background: "#060a14",
+          background: "#173d72",
           fontFamily:
             "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
         }}
       >
         <defs>
-          {/* Background Radial Gradients */}
+          {/* Background Radial Gradients (Blue #173d72) */}
           <radialGradient id="afi_anim_bg" cx="50%" cy="46%" r="65%">
-            <stop offset="0%" stopColor="#101a2e" />
-            <stop offset="50%" stopColor="#090f1d" />
-            <stop offset="100%" stopColor="#04060d" />
+            <stop offset="0%" stopColor="#2d66bd" />
+            <stop offset="50%" stopColor="#1e4a87" />
+            <stop offset="100%" stopColor="#122e57" />
           </radialGradient>
 
           {/* American Family Blue Ambient Glow */}
           <radialGradient id="afi_anim_blueGlow" cx="50%" cy="42%" r="55%">
-            <stop offset="0%" stopColor="#0284c7" stopOpacity="0.25" />
-            <stop offset="50%" stopColor="#1d4ed8" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#04060d" stopOpacity="0" />
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+            <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.14" />
+            <stop offset="100%" stopColor="#122e57" stopOpacity="0" />
           </radialGradient>
 
           {/* Subtle Red Accent Glow */}
