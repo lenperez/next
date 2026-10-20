@@ -211,12 +211,11 @@ const otherProjects: Project[] = [
   {
     id: "american-family-insurance",
     title: "American Family Insurance",
-    subtitle: "Mobile App — UX Redesign",
-    tag: "Mobile UX",
-    image:
-      "https://images.unsplash.com/photo-1541560052-3744e48ab80b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
+    subtitle: "Coverage Assessment Tool — Interactive Web Experience",
+    tag: "Web UX",
+    image: "/Thumbnail_AmericanFamilyInsurance.svg",
     synopsis:
-      "Create a user-friendly interface to handle some of the more complex portions of the Check-out process and Registration on the mobile app.",
+      "Interactive coverage assessment tool designed for American Family Insurance to help customers visualize and tailor their policy needs through an engaging multi-step visual workflow.",
     steps: [
       {
         label: "Timeline Development",

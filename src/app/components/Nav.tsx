@@ -77,8 +77,10 @@ export function Nav() {
             <div
               role="group"
               aria-label="Portfolio navigation"
-              className={`h-10 inline-flex items-center p-0.5 rounded-full border transition-colors ${
-                isDark
+              className={`h-10 inline-flex items-center p-0.5 rounded-full border transition-colors duration-200 hover:border-blue-900 focus-within:border-blue-900 ${
+                hoveredIndex !== null
+                  ? "border-blue-900"
+                  : isDark
                   ? "border-white/20"
                   : "border-black/15"
               }`}
@@ -227,7 +229,7 @@ export function Nav() {
                 <div
                   role="group"
                   aria-label="Navigation Sections"
-                  className={`p-1 rounded-2xl border transition-colors ${
+                  className={`p-1 rounded-2xl border transition-colors duration-200 hover:border-blue-900 focus-within:border-blue-900 ${
                     isDark ? "border-white/15" : "border-black/10"
                   }`}
                 >

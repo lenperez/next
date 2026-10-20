@@ -4,24 +4,30 @@ export function PurchasingPlatformAnimatedBanner() {
   const transitionCurve = [0.16, 1, 0.3, 1] as const;
 
   return (
-    <div className="w-full h-full relative overflow-hidden bg-[#131518]">
+    <div className="w-full h-full relative overflow-hidden bg-[#0a192f]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1200 900"
         preserveAspectRatio="xMidYMin slice"
         className="w-full h-full block object-cover object-top lg:rounded-t-2xl"
         style={{
-          background: "#131518",
+          background: "#0a192f",
           fontFamily:
             "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
         }}
       >
         <defs>
           {/* Background Radial Gradient */}
+          {/* Background Radial Gradient (Navy Blue Atmosphere) */}
           <radialGradient id="bgGlow" cx="50%" cy="45%" r="65%">
-            <stop offset="0%" stopColor="#1e222a" />
-            <stop offset="60%" stopColor="#14161a" />
-            <stop offset="100%" stopColor="#0b0c0e" />
+            <stop offset="0%" stopColor="#142a4e" />
+            <stop offset="55%" stopColor="#0a192f" />
+            <stop offset="100%" stopColor="#050e1d" />
+          </radialGradient>
+          <radialGradient id="navyAmbient" cx="48%" cy="42%" r="55%">
+            <stop offset="0%" stopColor="#1d4ed8" stopOpacity="0.2" />
+            <stop offset="50%" stopColor="#0284c7" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="#050e1d" stopOpacity="0" />
           </radialGradient>
           {/* Drop Shadow for Desktop Paper */}
           <filter id="paperShadow" x="-20%" y="-20%" width="150%" height="150%">
@@ -49,18 +55,33 @@ export function PurchasingPlatformAnimatedBanner() {
           transition={{ duration: 0.35, ease: "easeOut" }}
         >
           <rect width="1200" height="900" fill="url(#bgGlow)" />
+          <rect width="1200" height="900" fill="url(#navyAmbient)" />
 
-          {/* Background Chalkboard UX Wireframe Diagrams */}
-          <g opacity="0.35" stroke="#d1d5db" strokeWidth="1.2" fill="none" filter="url(#chalkGlow)">
+          {/* Subtle Blueprint Drafting Coordinate Grid */}
+          <g opacity="0.05" stroke="#ffffff" strokeWidth="0.8">
+            <line x1="0" y1="150" x2="1200" y2="150" />
+            <line x1="0" y1="300" x2="1200" y2="300" />
+            <line x1="0" y1="450" x2="1200" y2="450" />
+            <line x1="0" y1="600" x2="1200" y2="600" />
+            <line x1="0" y1="750" x2="1200" y2="750" />
+            <line x1="150" y1="0" x2="150" y2="900" />
+            <line x1="300" y1="0" x2="300" y2="900" />
+            <line x1="600" y1="0" x2="600" y2="900" />
+            <line x1="900" y1="0" x2="900" y2="900" />
+            <line x1="1050" y1="0" x2="1050" y2="900" />
+          </g>
+
+          {/* Background Blueprint UX Wireframe Diagrams (White Lines) */}
+          <g opacity="0.82" stroke="#ffffff" strokeWidth="1.3" fill="none" filter="url(#chalkGlow)">
             {/* Top Left Flowchart */}
             <g transform="translate(45, 75)">
-              <text x="0" y="16" fontSize="18" fill="#e5e7eb" fontFamily="monospace" fontWeight="bold" stroke="none">
+              <text x="0" y="16" fontSize="18" fill="#ffffff" fontFamily="monospace" fontWeight="bold" stroke="none">
                 Home → Appliances → Kitchen
               </text>
-              <line x1="18" y1="26" x2="18" y2="58" stroke="#9ca3af" strokeWidth="1.5" />
-              <path d="M 18,58 L 13,50 M 18,58 L 23,50" stroke="#9ca3af" strokeWidth="1.5" />
+              <line x1="18" y1="26" x2="18" y2="58" stroke="#ffffff" strokeWidth="1.5" />
+              <path d="M 18,58 L 13,50 M 18,58 L 23,50" stroke="#ffffff" strokeWidth="1.5" />
 
-              <text x="0" y="80" fontSize="16" fill="#e5e7eb" fontFamily="monospace" stroke="none">
+              <text x="0" y="80" fontSize="16" fill="#ffffff" fontFamily="monospace" stroke="none">
                 Range → Range Top
               </text>
               <rect x="0" y="130" width="70" height="46" rx="2" />
@@ -69,11 +90,11 @@ export function PurchasingPlatformAnimatedBanner() {
               <line x1="70" y1="153" x2="100" y2="153" />
               <path d="M 100,153 L 94,149 M 100,153 L 94,157" />
               <rect x="100" y="130" width="80" height="46" rx="2" />
-              <text x="105" y="157" fontSize="10" fill="#9ca3af" stroke="none">
+              <text x="105" y="157" fontSize="10" fill="#e2e8f0" stroke="none">
                 Product Details
               </text>
 
-              <text x="0" y="270" fontSize="16" fill="#e5e7eb" fontFamily="monospace" stroke="none">
+              <text x="0" y="270" fontSize="16" fill="#ffffff" fontFamily="monospace" stroke="none">
                 Site → Appliances
               </text>
               <line x1="18" y1="280" x2="18" y2="310" />
@@ -90,11 +111,11 @@ export function PurchasingPlatformAnimatedBanner() {
                 <line x1="140" y1="0" x2="200" y2="45" />
                 <line x1="140" y1="45" x2="200" y2="0" />
                 <rect x="0" y="55" width="80" height="24" rx="2" />
-                <text x="8" y="71" fontSize="10" fill="#e5e7eb" stroke="none">
+                <text x="8" y="71" fontSize="10" fill="#ffffff" stroke="none">
                   Quantity: [ 1 ]
                 </text>
                 <rect x="90" y="55" width="90" height="24" rx="2" />
-                <text x="96" y="71" fontSize="10" fill="#e5e7eb" stroke="none">
+                <text x="96" y="71" fontSize="10" fill="#ffffff" stroke="none">
                   Add to Cart 4
                 </text>
               </g>
@@ -102,31 +123,31 @@ export function PurchasingPlatformAnimatedBanner() {
               <g transform="translate(0, 480)">
                 <rect x="0" y="0" width="160" height="85" rx="3" />
                 <line x1="0" y1="24" x2="160" y2="24" />
-                <text x="10" y="17" fontSize="11" fill="#9ca3af" stroke="none">
+                <text x="10" y="17" fontSize="11" fill="#e2e8f0" stroke="none">
                   Similar Info &amp; Specs
                 </text>
                 <line x1="20" y1="42" x2="140" y2="42" strokeDasharray="3,3" />
                 <line x1="20" y1="56" x2="110" y2="56" strokeDasharray="3,3" />
                 <line x1="20" y1="70" x2="130" y2="70" strokeDasharray="3,3" />
-                <text x="0" y="115" fontSize="13" fill="#e5e7eb" stroke="none" fontWeight="bold">
+                <text x="0" y="115" fontSize="13" fill="#ffffff" stroke="none" fontWeight="bold">
                   Services similar delivery
                 </text>
                 <rect x="0" y="130" width="45" height="45" />
                 <line x1="0" y1="130" x2="45" y2="175" />
                 <line x1="0" y1="175" x2="45" y2="130" />
-                <text x="0" y="190" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="0" y="190" fontSize="9" fill="#e2e8f0" stroke="none">
                   Whirlpool 30"
                 </text>
-                <text x="0" y="202" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="0" y="202" fontSize="9" fill="#e2e8f0" stroke="none">
                   $14.66
                 </text>
                 <rect x="55" y="130" width="45" height="45" />
                 <line x1="55" y1="130" x2="100" y2="175" />
                 <line x1="55" y1="175" x2="100" y2="130" />
-                <text x="55" y="190" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="55" y="190" fontSize="9" fill="#e2e8f0" stroke="none">
                   Standard 2BF
                 </text>
-                <text x="55" y="202" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="55" y="202" fontSize="9" fill="#e2e8f0" stroke="none">
                   $22.60
                 </text>
               </g>
@@ -134,22 +155,22 @@ export function PurchasingPlatformAnimatedBanner() {
 
             {/* Right Side Chalkboard Diagrams */}
             <g transform="translate(980, 100)">
-              <text x="0" y="20" fontSize="15" fill="#e5e7eb" stroke="none" fontFamily="monospace">
+              <text x="0" y="20" fontSize="15" fill="#ffffff" stroke="none" fontFamily="monospace">
                 Whirlpool 30" Black, Gas
               </text>
-              <text x="0" y="38" fontSize="13" fill="#9ca3af" stroke="none" fontFamily="monospace">
+              <text x="0" y="38" fontSize="13" fill="#e2e8f0" stroke="none" fontFamily="monospace">
                 Range / Stove
               </text>
-              <text x="0" y="65" fontSize="11" fill="#60a5fa" stroke="none">
+              <text x="0" y="65" fontSize="11" fill="#ffffff" stroke="none">
                 Qty 1 · $498.99
               </text>
               <rect x="0" y="75" width="85" height="22" rx="2" />
-              <text x="42.5" y="90" textAnchor="middle" fontSize="10" fill="#e5e7eb" stroke="none">
+              <text x="42.5" y="90" textAnchor="middle" fontSize="10" fill="#ffffff" stroke="none">
                 Add to Cart
               </text>
 
               <g transform="translate(0, 160)">
-                <text x="0" y="0" fontSize="14" fill="#e5e7eb" stroke="none" fontWeight="bold">
+                <text x="0" y="0" fontSize="14" fill="#ffffff" stroke="none" fontWeight="bold">
                   Product Details
                 </text>
                 <rect x="0" y="10" width="180" height="170" rx="2" />
@@ -159,45 +180,45 @@ export function PurchasingPlatformAnimatedBanner() {
                 <line x1="0" y1="125" x2="180" y2="125" />
                 <line x1="0" y1="155" x2="180" y2="155" />
                 <line x1="75" y1="10" x2="75" y2="180" />
-                <text x="8" y="26" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="8" y="26" fontSize="9" fill="#e2e8f0" stroke="none">
                   Product C Details
                 </text>
-                <text x="85" y="26" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="85" y="26" fontSize="9" fill="#e2e8f0" stroke="none">
                   Color / Specs
                 </text>
-                <text x="8" y="52" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="8" y="52" fontSize="9" fill="#e2e8f0" stroke="none">
                   Label
                 </text>
                 <rect x="90" y="44" width="20" height="12" rx="1" />
-                <text x="8" y="82" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="8" y="82" fontSize="9" fill="#e2e8f0" stroke="none">
                   Color
                 </text>
                 <line x1="85" y1="80" x2="140" y2="80" />
-                <text x="8" y="112" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="8" y="112" fontSize="9" fill="#e2e8f0" stroke="none">
                   Vendor
                 </text>
                 <rect x="85" y="104" width="70" height="12" rx="1" />
-                <text x="8" y="142" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="8" y="142" fontSize="9" fill="#e2e8f0" stroke="none">
                   Product Details
                 </text>
                 <line x1="85" y1="140" x2="160" y2="140" />
-                <text x="8" y="172" fontSize="9" fill="#9ca3af" stroke="none">
+                <text x="8" y="172" fontSize="9" fill="#e2e8f0" stroke="none">
                   Selected Info
                 </text>
               </g>
 
               <g transform="translate(0, 420)">
-                <text x="0" y="0" fontSize="14" fill="#e5e7eb" stroke="none" fontWeight="bold">
+                <text x="0" y="0" fontSize="14" fill="#ffffff" stroke="none" fontWeight="bold">
                   Frequently Bought Together
                 </text>
                 <g transform="translate(0, 15)">
                   <rect x="0" y="0" width="48" height="48" />
                   <line x1="0" y1="0" x2="48" y2="48" />
                   <line x1="0" y1="48" x2="48" y2="0" />
-                  <text x="0" y="62" fontSize="9" fill="#9ca3af" stroke="none">
+                  <text x="0" y="62" fontSize="9" fill="#e2e8f0" stroke="none">
                     Whirlpool 20"
                   </text>
-                  <text x="0" y="73" fontSize="9" fill="#e5e7eb" stroke="none">
+                  <text x="0" y="73" fontSize="9" fill="#ffffff" stroke="none">
                     $12.86
                   </text>
                 </g>
@@ -205,10 +226,10 @@ export function PurchasingPlatformAnimatedBanner() {
                   <rect x="0" y="0" width="48" height="48" />
                   <line x1="0" y1="0" x2="48" y2="48" />
                   <line x1="0" y1="48" x2="48" y2="0" />
-                  <text x="0" y="62" fontSize="9" fill="#9ca3af" stroke="none">
+                  <text x="0" y="62" fontSize="9" fill="#e2e8f0" stroke="none">
                     Black Cable
                   </text>
-                  <text x="0" y="73" fontSize="9" fill="#e5e7eb" stroke="none">
+                  <text x="0" y="73" fontSize="9" fill="#ffffff" stroke="none">
                     $19.60
                   </text>
                 </g>
@@ -216,10 +237,10 @@ export function PurchasingPlatformAnimatedBanner() {
                   <rect x="0" y="0" width="48" height="48" />
                   <line x1="0" y1="0" x2="48" y2="48" />
                   <line x1="0" y1="48" x2="48" y2="0" />
-                  <text x="0" y="62" fontSize="9" fill="#9ca3af" stroke="none">
+                  <text x="0" y="62" fontSize="9" fill="#e2e8f0" stroke="none">
                     Whirlpool Range
                   </text>
-                  <text x="0" y="73" fontSize="9" fill="#e5e7eb" stroke="none">
+                  <text x="0" y="73" fontSize="9" fill="#ffffff" stroke="none">
                     $11.80
                   </text>
                 </g>

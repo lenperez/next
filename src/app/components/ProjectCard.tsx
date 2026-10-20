@@ -5,6 +5,8 @@ import { ArrowUpRight, ChevronDown, X, Image as ImageIcon, ZoomIn } from "lucide
 import { ImageWithFallback } from "./ImageWithFallback";
 import { PurchasingPlatformAnimatedBanner } from "./PurchasingPlatformAnimatedBanner";
 import { GraingerAnimatedBanner } from "./GraingerAnimatedBanner";
+import { CoffeeTableBookAnimatedBanner } from "./CoffeeTableBookAnimatedBanner";
+import { AmericanFamilyInsuranceAnimatedBanner } from "./AmericanFamilyInsuranceAnimatedBanner";
 import { useTheme } from "../context/ThemeContext";
 import { Tooltip } from "./Tooltip";
 
@@ -202,6 +204,10 @@ function ProcessModal({
                 <PurchasingPlatformAnimatedBanner />
               ) : project.id === "grainger" ? (
                 <GraingerAnimatedBanner />
+              ) : project.id === "coffee-table-book" ? (
+                <CoffeeTableBookAnimatedBanner />
+              ) : project.id === "american-family-insurance" ? (
+                <AmericanFamilyInsuranceAnimatedBanner />
               ) : (
                 <ImageWithFallback
                   src={project.image}
@@ -463,7 +469,9 @@ export function ProjectCard({
                   <ImageWithFallback
                     src={project.image}
                     alt={`Visual representation of ${project.title}`}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-105 group-hover:scale-105"
+                    className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover/img:scale-105 group-hover:scale-105 ${
+                      project.id === "coffee-table-book" ? "object-bottom" : "object-top"
+                    }`}
                   />
                 </div>
                 <span className="sr-only">Click to view project details</span>

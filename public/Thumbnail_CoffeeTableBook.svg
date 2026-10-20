@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" style="background:#1a1c23; font-family:-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" preserveAspectRatio="xMidYMax slice" style="background:#1a1c23; font-family:-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;">
   <defs>
     <!-- ========================================== -->
     <!-- FILTERS FOR SHADOWS, BLUR, AND STEAM       -->
@@ -537,16 +537,5 @@
 
     <!-- Warm Reflection on Saucer Rim from Window -->
     <path d="M 85,160 Q 140,190 195,160" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.7" />
-  </g>
-
-  <!-- ======================================================== -->
-  <!-- 7. SUBTLE ELEGANT OVERLAY CAPTION / PROVENANCE           -->
-  <!-- ======================================================== -->
-  <g transform="translate(170, 935)">
-    <!-- Pill Backdrop for Readability -->
-    <rect x="-10" y="-8" width="480" height="34" rx="17" fill="#14171f" fill-opacity="0.82" stroke="#2a2e3d" stroke-width="1" />
-    <circle cx="12" cy="9" r="4.5" fill="#38bdf8" />
-    <text x="26" y="13" font-size="12" font-weight="700" fill="#f1f5f9" letter-spacing="0.8">COFFEE TABLE BOOK</text>
-    <text x="175" y="13" font-size="12" font-weight="400" fill="#94a3b8">• Hardcover Monograph in Living Room</text>
   </g>
 </svg>

@@ -1,10 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" style="background:#131518; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" style="background:#0a192f; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <defs>
     <!-- Background Radial Gradient -->
+    <!-- Background Radial Gradient (Navy Blue) -->
     <radialGradient id="bgGlow" cx="50%" cy="45%" r="65%">
-      <stop offset="0%" stop-color="#1e222a"/>
-      <stop offset="60%" stop-color="#14161a"/>
-      <stop offset="100%" stop-color="#0b0c0e"/>
+      <stop offset="0%" stop-color="#142a4e"/>
+      <stop offset="55%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#050e1d"/>
+    </radialGradient>
+    <radialGradient id="navyAmbient" cx="48%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#050e1d" stop-opacity="0"/>
     </radialGradient>
 
     <!-- Drop Shadow for Desktop Paper -->
@@ -28,19 +34,34 @@
     </filter>
   </defs>
 
-  <!-- BACKGROUND CANVAS -->
+  <!-- BACKGROUND CANVAS (Navy Blue Blueprint) -->
   <rect width="1200" height="900" fill="url(#bgGlow)"/>
+  <rect width="1200" height="900" fill="url(#navyAmbient)"/>
 
-  <!-- BACKGROUND CHALKBOARD UX WIREFRAME DIAGRAMS -->
-  <g opacity="0.35" stroke="#d1d5db" stroke-width="1.2" fill="none" filter="url(#chalkGlow)">
+  <!-- Subtle Blueprint Drafting Coordinate Grid -->
+  <g opacity="0.05" stroke="#ffffff" stroke-width="0.8">
+    <line x1="0" y1="150" x2="1200" y2="150" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="450" x2="1200" y2="450" />
+    <line x1="0" y1="600" x2="1200" y2="600" />
+    <line x1="0" y1="750" x2="1200" y2="750" />
+    <line x1="150" y1="0" x2="150" y2="900" />
+    <line x1="300" y1="0" x2="300" y2="900" />
+    <line x1="600" y1="0" x2="600" y2="900" />
+    <line x1="900" y1="0" x2="900" y2="900" />
+    <line x1="1050" y1="0" x2="1050" y2="900" />
+  </g>
+
+  <!-- BACKGROUND BLUEPRINT UX WIREFRAME DIAGRAMS (White Lines) -->
+  <g opacity="0.82" stroke="#ffffff" stroke-width="1.3" fill="none" filter="url(#chalkGlow)">
     <!-- Top Left Flowchart -->
     <g transform="translate(45, 75)">
       <!-- Home -> Appliances -> Range -->
-      <text x="0" y="16" font-size="18" fill="#e5e7eb" font-family="monospace" font-weight="bold" stroke="none">Home → Appliances → Kitchen</text>
-      <line x1="18" y1="26" x2="18" y2="58" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow)"/>
-      <path d="M 18,58 L 13,50 M 18,58 L 23,50" stroke="#9ca3af" stroke-width="1.5"/>
+      <text x="0" y="16" font-size="18" fill="#ffffff" font-family="monospace" font-weight="bold" stroke="none">Home → Appliances → Kitchen</text>
+      <line x1="18" y1="26" x2="18" y2="58" stroke="#ffffff" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <path d="M 18,58 L 13,50 M 18,58 L 23,50" stroke="#ffffff" stroke-width="1.5"/>
       
-      <text x="0" y="80" font-size="16" fill="#e5e7eb" font-family="monospace" stroke="none">Range → Range Top</text>
+      <text x="0" y="80" font-size="16" fill="#ffffff" font-family="monospace" stroke="none">Range → Range Top</text>
 
       <!-- Flowchart Boxes -->
       <rect x="0" y="130" width="70" height="46" rx="2"/>
@@ -50,10 +71,10 @@
       <path d="M 100,153 L 94,149 M 100,153 L 94,157"/>
 
       <rect x="100" y="130" width="80" height="46" rx="2"/>
-      <text x="105" y="157" font-size="10" fill="#9ca3af" stroke="none">Product Details</text>
+      <text x="105" y="157" font-size="10" fill="#e2e8f0" stroke="none">Product Details</text>
 
       <!-- Site -> Appliances tree -->
-      <text x="0" y="270" font-size="16" fill="#e5e7eb" font-family="monospace" stroke="none">Site → Appliances</text>
+      <text x="0" y="270" font-size="16" fill="#ffffff" font-family="monospace" stroke="none">Site → Appliances</text>
       <line x1="18" y1="280" x2="18" y2="310"/>
       <path d="M 18,310 L 14,302 M 18,310 L 22,302"/>
 
@@ -73,49 +94,49 @@
 
         <!-- Add to cart button sketch -->
         <rect x="0" y="55" width="80" height="24" rx="2"/>
-        <text x="8" y="71" font-size="10" fill="#e5e7eb" stroke="none">Quantity: [ 1 ]</text>
+        <text x="8" y="71" font-size="10" fill="#ffffff" stroke="none">Quantity: [ 1 ]</text>
         
         <rect x="90" y="55" width="90" height="24" rx="2"/>
-        <text x="96" y="71" font-size="10" fill="#e5e7eb" stroke="none">Add to Cart 4</text>
+        <text x="96" y="71" font-size="10" fill="#ffffff" stroke="none">Add to Cart 4</text>
       </g>
 
       <!-- Bottom chalkboard sketches -->
       <g transform="translate(0, 480)">
         <rect x="0" y="0" width="160" height="85" rx="3"/>
         <line x1="0" y1="24" x2="160" y2="24"/>
-        <text x="10" y="17" font-size="11" fill="#9ca3af" stroke="none">Similar Info &amp; Specs</text>
+        <text x="10" y="17" font-size="11" fill="#e2e8f0" stroke="none">Similar Info &amp; Specs</text>
         <line x1="20" y1="42" x2="140" y2="42" stroke-dasharray="3,3"/>
         <line x1="20" y1="56" x2="110" y2="56" stroke-dasharray="3,3"/>
         <line x1="20" y1="70" x2="130" y2="70" stroke-dasharray="3,3"/>
 
         <!-- Service delivery icons -->
-        <text x="0" y="115" font-size="13" fill="#e5e7eb" stroke="none" font-weight="bold">Services similar delivery</text>
+        <text x="0" y="115" font-size="13" fill="#ffffff" stroke="none" font-weight="bold">Services similar delivery</text>
         <rect x="0" y="130" width="45" height="45"/>
         <line x1="0" y1="130" x2="45" y2="175"/>
         <line x1="0" y1="175" x2="45" y2="130"/>
-        <text x="0" y="190" font-size="9" fill="#9ca3af" stroke="none">Whirlpool 30"</text>
-        <text x="0" y="202" font-size="9" fill="#9ca3af" stroke="none">$14.66</text>
+        <text x="0" y="190" font-size="9" fill="#e2e8f0" stroke="none">Whirlpool 30"</text>
+        <text x="0" y="202" font-size="9" fill="#e2e8f0" stroke="none">$14.66</text>
 
         <rect x="55" y="130" width="45" height="45"/>
         <line x1="55" y1="130" x2="100" y2="175"/>
         <line x1="55" y1="175" x2="100" y2="130"/>
-        <text x="55" y="190" font-size="9" fill="#9ca3af" stroke="none">Standard 2BF</text>
-        <text x="55" y="202" font-size="9" fill="#9ca3af" stroke="none">$22.60</text>
+        <text x="55" y="190" font-size="9" fill="#e2e8f0" stroke="none">Standard 2BF</text>
+        <text x="55" y="202" font-size="9" fill="#e2e8f0" stroke="none">$22.60</text>
       </g>
     </g>
 
     <!-- Right Side Chalkboard Diagrams -->
     <g transform="translate(980, 100)">
       <!-- Whirlpool Specs -->
-      <text x="0" y="20" font-size="15" fill="#e5e7eb" stroke="none" font-family="monospace">Whirlpool 30" Black, Gas</text>
-      <text x="0" y="38" font-size="13" fill="#9ca3af" stroke="none" font-family="monospace">Range / Stove</text>
-      <text x="0" y="65" font-size="11" fill="#60a5fa" stroke="none">Qty 1 · $498.99</text>
+      <text x="0" y="20" font-size="15" fill="#ffffff" stroke="none" font-family="monospace">Whirlpool 30" Black, Gas</text>
+      <text x="0" y="38" font-size="13" fill="#e2e8f0" stroke="none" font-family="monospace">Range / Stove</text>
+      <text x="0" y="65" font-size="11" fill="#ffffff" stroke="none">Qty 1 · $498.99</text>
       <rect x="0" y="75" width="85" height="22" rx="2"/>
-      <text x="42.5" y="90" text-anchor="middle" font-size="10" fill="#e5e7eb" stroke="none">Add to Cart</text>
+      <text x="42.5" y="90" text-anchor="middle" font-size="10" fill="#ffffff" stroke="none">Add to Cart</text>
 
       <!-- Product Details Specs Table Sketch -->
       <g transform="translate(0, 160)">
-        <text x="0" y="0" font-size="14" fill="#e5e7eb" stroke="none" font-weight="bold">Product Details</text>
+        <text x="0" y="0" font-size="14" fill="#ffffff" stroke="none" font-weight="bold">Product Details</text>
         <rect x="0" y="10" width="180" height="170" rx="2"/>
         <line x1="0" y1="35" x2="180" y2="35"/>
         <line x1="0" y1="65" x2="180" y2="65"/>
@@ -123,42 +144,42 @@
         <line x1="0" y1="125" x2="180" y2="125"/>
         <line x1="0" y1="155" x2="180" y2="155"/>
         <line x1="75" y1="10" x2="75" y2="180"/>
-        <text x="8" y="26" font-size="9" fill="#9ca3af" stroke="none">Product C Details</text>
-        <text x="85" y="26" font-size="9" fill="#9ca3af" stroke="none">Color / Specs</text>
-        <text x="8" y="52" font-size="9" fill="#9ca3af" stroke="none">Label</text>
+        <text x="8" y="26" font-size="9" fill="#e2e8f0" stroke="none">Product C Details</text>
+        <text x="85" y="26" font-size="9" fill="#e2e8f0" stroke="none">Color / Specs</text>
+        <text x="8" y="52" font-size="9" fill="#e2e8f0" stroke="none">Label</text>
         <rect x="90" y="44" width="20" height="12" rx="1"/>
-        <text x="8" y="82" font-size="9" fill="#9ca3af" stroke="none">Color</text>
+        <text x="8" y="82" font-size="9" fill="#e2e8f0" stroke="none">Color</text>
         <line x1="85" y1="80" x2="140" y2="80"/>
-        <text x="8" y="112" font-size="9" fill="#9ca3af" stroke="none">Vendor</text>
+        <text x="8" y="112" font-size="9" fill="#e2e8f0" stroke="none">Vendor</text>
         <rect x="85" y="104" width="70" height="12" rx="1"/>
-        <text x="8" y="142" font-size="9" fill="#9ca3af" stroke="none">Product Details</text>
+        <text x="8" y="142" font-size="9" fill="#e2e8f0" stroke="none">Product Details</text>
         <line x1="85" y1="140" x2="160" y2="140"/>
-        <text x="8" y="172" font-size="9" fill="#9ca3af" stroke="none">Selected Info</text>
+        <text x="8" y="172" font-size="9" fill="#e2e8f0" stroke="none">Selected Info</text>
       </g>
 
       <!-- Frequently Bought Together Sketch -->
       <g transform="translate(0, 420)">
-        <text x="0" y="0" font-size="14" fill="#e5e7eb" stroke="none" font-weight="bold">Frequently Bought Together</text>
+        <text x="0" y="0" font-size="14" fill="#ffffff" stroke="none" font-weight="bold">Frequently Bought Together</text>
         <g transform="translate(0, 15)">
           <rect x="0" y="0" width="48" height="48"/>
           <line x1="0" y1="0" x2="48" y2="48"/>
           <line x1="0" y1="48" x2="48" y2="0"/>
-          <text x="0" y="62" font-size="9" fill="#9ca3af" stroke="none">Whirlpool 20"</text>
-          <text x="0" y="73" font-size="9" fill="#e5e7eb" stroke="none">$12.86</text>
+          <text x="0" y="62" font-size="9" fill="#e2e8f0" stroke="none">Whirlpool 20"</text>
+          <text x="0" y="73" font-size="9" fill="#ffffff" stroke="none">$12.86</text>
         </g>
         <g transform="translate(58, 15)">
           <rect x="0" y="0" width="48" height="48"/>
           <line x1="0" y1="0" x2="48" y2="48"/>
           <line x1="0" y1="48" x2="48" y2="0"/>
-          <text x="0" y="62" font-size="9" fill="#9ca3af" stroke="none">Black Cable</text>
-          <text x="0" y="73" font-size="9" fill="#e5e7eb" stroke="none">$19.60</text>
+          <text x="0" y="62" font-size="9" fill="#e2e8f0" stroke="none">Black Cable</text>
+          <text x="0" y="73" font-size="9" fill="#ffffff" stroke="none">$19.60</text>
         </g>
         <g transform="translate(116, 15)">
           <rect x="0" y="0" width="48" height="48"/>
           <line x1="0" y1="0" x2="48" y2="48"/>
           <line x1="0" y1="48" x2="48" y2="0"/>
-          <text x="0" y="62" font-size="9" fill="#9ca3af" stroke="none">Whirlpool Range</text>
-          <text x="0" y="73" font-size="9" fill="#e5e7eb" stroke="none">$11.80</text>
+          <text x="0" y="62" font-size="9" fill="#e2e8f0" stroke="none">Whirlpool Range</text>
+          <text x="0" y="73" font-size="9" fill="#ffffff" stroke="none">$11.80</text>
         </g>
       </g>
     </g>
