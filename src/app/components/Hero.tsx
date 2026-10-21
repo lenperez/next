@@ -20,8 +20,6 @@ export function Hero() {
   const yParagraph = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, -25]);
   const yCta = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, -15]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.75], shouldReduceMotion ? [1, 1] : [1, 0.15]);
-  const yBottomLabel = useTransform(scrollYProgress, [0, 0.5], shouldReduceMotion ? [0, 0] : [0, 25]);
-  const opacityBottom = useTransform(scrollYProgress, [0, 0.35], shouldReduceMotion ? [1, 1] : [1, 0]);
 
   return (
     <section
@@ -36,9 +34,9 @@ export function Hero() {
       >
         <motion.div style={{ y: yKicker }}>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
+            transition={{ delay: 1.0, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             className={`${isDark ? "text-blue-400" : "text-blue-700"} tracking-[0.35em] uppercase text-xs mb-6 font-semibold transition-colors leading-relaxed sm:leading-normal`}
           >
             <span className="block sm:inline">UX • Product</span>
@@ -49,9 +47,9 @@ export function Hero() {
 
         <motion.div style={{ y: yTitle }}>
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
             className={`${isDark ? "text-white" : "text-neutral-900"} leading-none mb-6 transition-colors`}
             style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)", fontWeight: 700, letterSpacing: "-0.03em" }}
           >
@@ -61,9 +59,9 @@ export function Hero() {
 
         <motion.div style={{ y: yDivider }}>
           <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            initial={{ opacity: 0, y: -12, scaleX: 0 }}
+            animate={{ opacity: 1, y: 0, scaleX: 1 }}
+            transition={{ delay: 1.08, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             aria-hidden="true"
             className="h-px w-24 bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto mb-6"
           />
@@ -71,9 +69,9 @@ export function Hero() {
 
         <motion.div style={{ y: yParagraph }}>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.7 }}
+            transition={{ delay: 1.16, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             className={`${isDark ? "text-white/80" : "text-neutral-700"} text-lg leading-relaxed max-w-xl mx-auto transition-colors`}
           >
             Some of the work of Len Perez, spanning: user research,{" "}
@@ -84,9 +82,9 @@ export function Hero() {
 
         <motion.div style={{ y: yCta }}>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.4, duration: 0.8 }}
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.24, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             className="mt-12"
           >
             <Tooltip content="Explore featured case studies and work" position="top">
@@ -110,21 +108,6 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </motion.div>
-
-      {/* Bottom label */}
-      <motion.p
-        style={{ y: yBottomLabel, opacity: opacityBottom }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6 }}
-        aria-hidden="true"
-        className={`absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 w-full max-w-[92vw] text-center text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase font-medium transition-colors leading-relaxed sm:leading-normal ${
-          isDark ? "text-white/40" : "text-neutral-600"
-        }`}
-      >
-        <span className="block sm:inline">Pieces –</span>{" "}
-        <span className="block sm:inline">A Collection of My Work</span>
-      </motion.p>
     </section>
   );
 }

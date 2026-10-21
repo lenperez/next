@@ -353,78 +353,129 @@ const ACCORDION_TRANSITION = {
 };
 
 function PortfolioContent() {
-  const [openSection, setOpenSection] = useState<string>("case-studies");
+  const [openSection, setOpenSection] = useState<string>("");
   const caseStudiesRef = useRef<HTMLDivElement>(null);
   const additionalRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
   const graphicRef = useRef<HTMLDivElement>(null);
-  const isManualToggleRef = useRef(false);
-  const manualTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const lastScrollY = useRef(0);
-  const scrollDirection = useRef<"down" | "up">("down");
+  const closedByClickSectionRef = useRef<string | null>(null);
+  const scrollRafRef = useRef<number | null>(null);
   const { isDark } = useTheme();
 
-  const toggle = (id: string, ref: React.RefObject<HTMLDivElement | null>) => {
-    isManualToggleRef.current = true;
-    if (manualTimeoutRef.current) clearTimeout(manualTimeoutRef.current);
+  const pinAccordionToClick = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (!ref.current) return;
+    if (scrollRafRef.current !== null) {
+      cancelAnimationFrame(scrollRafRef.current);
+      scrollRafRef.current = null;
+    }
 
-    setOpenSection(prev => (prev === id ? "" : id));
+    const headerBtn = ref.current.querySelector("button");
+    const targetElement = headerBtn || ref.current;
+    const targetY = targetElement.getBoundingClientRect().top;
 
-    setTimeout(() => {
-      if (ref.current) {
-        ref.current.style.scrollMarginTop = "80px";
-        ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    const startTime = performance.now();
+    const duration = 550; // Match 450ms transition + buffer for complete settling
+
+    const step = () => {
+      if (!targetElement) return;
+      const currentY = targetElement.getBoundingClientRect().top;
+      const delta = currentY - targetY;
+
+      if (Math.abs(delta) > 0.5) {
+        window.scrollBy({ top: delta, behavior: "instant" as ScrollBehavior });
       }
-    }, 100);
 
-    manualTimeoutRef.current = setTimeout(() => {
-      isManualToggleRef.current = false;
-    }, 900);
+      if (performance.now() - startTime < duration) {
+        scrollRafRef.current = requestAnimationFrame(step);
+      } else {
+        const finalY = targetElement.getBoundingClientRect().top;
+        const finalDelta = finalY - targetY;
+        if (Math.abs(finalDelta) > 0.5) {
+          window.scrollBy({ top: finalDelta, behavior: "instant" as ScrollBehavior });
+        }
+        scrollRafRef.current = null;
+      }
+    };
+
+    scrollRafRef.current = requestAnimationFrame(step);
   };
 
+  const handleTitleRollover = (id: string, ref: React.RefObject<HTMLDivElement | null>) => {
+    if (openSection === id) return;
+    if (closedByClickSectionRef.current === id) return;
+
+    if (ref.current) {
+      pinAccordionToClick(ref);
+    }
+    setOpenSection(id);
+  };
+
+  const handleTitleMouseLeave = (id: string) => {
+    if (closedByClickSectionRef.current === id) {
+      closedByClickSectionRef.current = null;
+    }
+  };
+
+  const toggle = (id: string, ref: React.RefObject<HTMLDivElement | null>) => {
+    if (openSection === id) {
+      // User clicked the open accordion to close it
+      closedByClickSectionRef.current = id;
+      setOpenSection("");
+    } else {
+      closedByClickSectionRef.current = null;
+      if (ref.current) {
+        pinAccordionToClick(ref);
+      }
+      setOpenSection(id);
+    }
+  };
+
+  // Cursor rollover / proximity detection: open accordion on title rollover,
+  // keeping the accordion title in the exact same vertical location as the cursor
   useEffect(() => {
     let ticking = false;
 
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      scrollDirection.current = currentScrollY >= lastScrollY.current ? "down" : "up";
-      lastScrollY.current = currentScrollY;
+    const sections = [
+      { id: "case-studies", ref: caseStudiesRef },
+      { id: "additional", ref: additionalRef },
+      { id: "visual", ref: visualRef },
+      { id: "graphic", ref: graphicRef },
+    ];
 
-      if (isManualToggleRef.current) return;
-
+    const handleMouseMove = (e: MouseEvent) => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const vh = window.innerHeight;
-          const isDown = scrollDirection.current === "down";
-          // Symmetrical trigger distance with 4% viewport hysteresis buffer
-          const triggerPoint = isDown ? vh * 0.38 : vh * 0.42;
+          const mouseX = e.clientX;
+          const mouseY = e.clientY;
 
-          const caseRect = caseStudiesRef.current?.getBoundingClientRect();
-          const addRect = additionalRef.current?.getBoundingClientRect();
-          const visRect = visualRef.current?.getBoundingClientRect();
-          const graphRect = graphicRef.current?.getBoundingClientRect();
+          for (const section of sections) {
+            if (!section.ref.current) continue;
+            const containerRect = section.ref.current.getBoundingClientRect();
 
-          let targetSection = "";
+            // Check horizontal alignment with accordion header
+            if (mouseX >= containerRect.left - 24 && mouseX <= containerRect.right + 24) {
+              const headerBtn = section.ref.current.querySelector("button");
+              const targetRect = headerBtn ? headerBtn.getBoundingClientRect() : containerRect;
 
-          // If scrolled up into Hero above the work section
-          if (caseRect && caseRect.top > (isDown ? vh * 0.72 : vh * 0.76)) {
-            targetSection = "";
-          } else if (graphRect && graphRect.top <= triggerPoint) {
-            targetSection = "graphic";
-          } else if (visRect && visRect.top <= triggerPoint) {
-            targetSection = "visual";
-          } else if (addRect && addRect.top <= triggerPoint) {
-            targetSection = "additional";
-          } else if (caseRect && caseRect.top <= (isDown ? vh * 0.72 : vh * 0.76)) {
-            targetSection = "case-studies";
-          }
+              let dist = 0;
+              if (mouseY < targetRect.top) {
+                dist = targetRect.top - mouseY; // approaching from above
+              } else if (mouseY > targetRect.bottom) {
+                dist = mouseY - targetRect.bottom; // approaching from below
+              } else {
+                dist = 0; // directly inside title header
+              }
 
-          setOpenSection(prev => {
-            if (prev !== targetSection) {
-              return targetSection;
+              if (dist <= 12) {
+                if (openSection !== section.id && closedByClickSectionRef.current !== section.id) {
+                  pinAccordionToClick(section.ref);
+                  setOpenSection(section.id);
+                }
+              } else if (dist > 40 && closedByClickSectionRef.current === section.id) {
+                closedByClickSectionRef.current = null;
+              }
             }
-            return prev;
-          });
+          }
 
           ticking = false;
         });
@@ -432,15 +483,14 @@ function PortfolioContent() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    // Run once on mount to establish state matching scroll position
-    handleScroll();
-
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (manualTimeoutRef.current) clearTimeout(manualTimeoutRef.current);
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (scrollRafRef.current !== null) {
+        cancelAnimationFrame(scrollRafRef.current);
+      }
     };
-  }, []);
+  }, [openSection]);
 
   return (
     <div className={`relative w-full min-h-screen overflow-x-hidden transition-colors duration-300 ${
@@ -475,6 +525,9 @@ function PortfolioContent() {
                   aria-expanded={openSection === "case-studies"}
                   aria-controls="panel-case-studies"
                   onClick={() => toggle("case-studies", caseStudiesRef)}
+                  onMouseEnter={() => handleTitleRollover("case-studies", caseStudiesRef)}
+                  onPointerEnter={() => handleTitleRollover("case-studies", caseStudiesRef)}
+                  onMouseLeave={() => handleTitleMouseLeave("case-studies")}
                   className={`w-full flex items-center justify-between px-3 sm:px-8 ${
                     openSection === "case-studies" ? "py-5 sm:py-6" : "py-4 sm:py-5"
                   } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
@@ -535,6 +588,9 @@ function PortfolioContent() {
                   aria-expanded={openSection === "additional"}
                   aria-controls="panel-additional"
                   onClick={() => toggle("additional", additionalRef)}
+                  onMouseEnter={() => handleTitleRollover("additional", additionalRef)}
+                  onPointerEnter={() => handleTitleRollover("additional", additionalRef)}
+                  onMouseLeave={() => handleTitleMouseLeave("additional")}
                   className={`w-full flex items-center justify-between px-3 sm:px-8 ${
                     openSection === "additional" ? "py-5 sm:py-6" : "py-4 sm:py-5"
                   } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
@@ -595,6 +651,9 @@ function PortfolioContent() {
                   aria-expanded={openSection === "visual"}
                   aria-controls="panel-visual"
                   onClick={() => toggle("visual", visualRef)}
+                  onMouseEnter={() => handleTitleRollover("visual", visualRef)}
+                  onPointerEnter={() => handleTitleRollover("visual", visualRef)}
+                  onMouseLeave={() => handleTitleMouseLeave("visual")}
                   className={`w-full flex items-center justify-between px-3 sm:px-8 ${
                     openSection === "visual" ? "py-5 sm:py-6" : "py-4 sm:py-5"
                   } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
@@ -654,6 +713,9 @@ function PortfolioContent() {
                   aria-expanded={openSection === "graphic"}
                   aria-controls="panel-graphic"
                   onClick={() => toggle("graphic", graphicRef)}
+                  onMouseEnter={() => handleTitleRollover("graphic", graphicRef)}
+                  onPointerEnter={() => handleTitleRollover("graphic", graphicRef)}
+                  onMouseLeave={() => handleTitleMouseLeave("graphic")}
                   className={`w-full flex items-center justify-between px-3 sm:px-8 ${
                     openSection === "graphic" ? "py-5 sm:py-6" : "py-4 sm:py-5"
                   } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
