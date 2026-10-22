@@ -13,12 +13,14 @@ Add subtle, high-craft scroll parallax depth to the Hero section and Project Car
 
 - **Confirmed Decision 1**: Apply scroll-linked differential vertical movement to the Hero headline, kicker, and supporting text so foreground elements peel back gracefully as the user scrolls into the work section.
 - **Confirmed Decision 2**: Introduce window-depth parallax to Project Cards by gently translating the thumbnail imagery inside its `overflow-hidden` container relative to the card's scroll progress (`[-18px, 18px]` delta), creating tactile dimensionality without moving text or breaking reading flow.
+- **Confirmed Decision 3 (Accordion Viewport Positioning & Click Activation)**: Accordions activate strictly on user click (all hover/rollover triggers removed for deliberate interaction). When any accordion opens (via user click or by clicking "View Work" / "Work" in nav), the page smoothly scrolls using requestAnimationFrame tracking with cubic ease-out so that the opened accordion card lands directly beneath the fixed header at `HEADER_TARGET_TOP = 80px` (64px fixed header + 16px breathing room matching `gap-4`). Manual wheel or touch gestures immediately yield control back to the user.
 
 ---
 
 ## 1. Overview & Core Concept
 
-- **What It Does**: Enhances Len Perez's portfolio with silky, scroll-driven vertical parallax depth. As the user scrolls through the portfolio:
+- **What It Does**: Enhances Len Perez's portfolio with silky, scroll-driven vertical parallax depth and smooth top-of-viewport accordion navigation:
+  - The **Accordion Sections** activate intentionally on user click and automatically glide smoothly to the top of the viewport (80px, directly beneath the fixed 64px header with 16px top spacing) upon opening, providing immediate focus on the expanded case study or work gallery.
   - The **Hero Section** separates into subtle depth planes: the ambient background elements stay anchored, the large "Pieces" title glides upward at an offset rate, and the descriptive lead copy gently floats, giving an architectural sense of space.
   - The **Project Cards** gain a tactile "window into the work" effect: as each card scrolls past the viewport, the showcase artwork/vector diagram moves smoothly within its frame, rewarding scroll discovery with fluid physical depth.
 - **Target Audience / Persona**: Design directors, hiring managers, and prospective clients reviewing high-level UX and product design work who appreciate understated, production-grade micro-craft over gaudy effects.

@@ -4,7 +4,11 @@ import { ArrowDown } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { Tooltip } from "./Tooltip";
 
-export function Hero() {
+interface HeroProps {
+  onNavigateToWork?: () => void;
+}
+
+export function Hero({ onNavigateToWork }: HeroProps = {}) {
   const { isDark } = useTheme();
   const heroRef = useRef<HTMLElement>(null);
   const shouldReduceMotion = useReducedMotion();
@@ -90,6 +94,12 @@ export function Hero() {
             <Tooltip content="Explore featured case studies and work" position="top">
               <a
                 href="#work"
+                onClick={(e) => {
+                  if (onNavigateToWork) {
+                    e.preventDefault();
+                    onNavigateToWork();
+                  }
+                }}
                 aria-label="View Work - navigate to featured projects section"
                 className={`group inline-flex items-center text-sm tracking-widest uppercase font-medium transition-all duration-200 px-5 py-2.5 rounded-full border hover:bg-blue-100 hover:text-blue-900 hover:border-transparent focus-visible:bg-blue-100 focus-visible:text-blue-900 focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                   isDark

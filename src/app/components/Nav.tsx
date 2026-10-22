@@ -10,7 +10,11 @@ const links = [
   { label: "Contact", href: "#contact", icon: Mail },
 ];
 
-export function Nav() {
+interface NavProps {
+  onNavigateToWork?: () => void;
+}
+
+export function Nav({ onNavigateToWork }: NavProps = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -112,6 +116,12 @@ export function Nav() {
                       <Tooltip content={`Navigate to ${l.label}`} position="bottom">
                         <a
                           href={l.href}
+                          onClick={(e) => {
+                            if (l.href === "#work" && onNavigateToWork) {
+                              e.preventDefault();
+                              onNavigateToWork();
+                            }
+                          }}
                           onMouseEnter={() => setHoveredIndex(idx)}
                           onMouseLeave={() => setHoveredIndex(null)}
                           onFocus={() => setHoveredIndex(idx)}
@@ -288,7 +298,13 @@ export function Nav() {
                                   ? "text-white/80"
                                   : "text-neutral-800"
                               }`}
-                              onClick={() => setMenuOpen(false)}
+                              onClick={(e) => {
+                                setMenuOpen(false);
+                                if (l.href === "#work" && onNavigateToWork) {
+                                  e.preventDefault();
+                                  onNavigateToWork();
+                                }
+                              }}
                             >
                               <Icon size={18} aria-hidden="true" className="shrink-0 transition-colors group-hover:text-blue-900" />
                               <span className="transition-colors group-hover:text-blue-900">{l.label}</span>
