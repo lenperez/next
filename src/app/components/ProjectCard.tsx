@@ -29,6 +29,7 @@ export interface Project {
   year?: string;
   steps: ProcessStep[];
   showStepPlaceholders?: boolean;
+  hidden?: boolean;
 }
 
 interface ProjectCardProps {
@@ -294,7 +295,11 @@ function ProcessModal({
 
                         {/* Step Visual Artifact (Rendered only in modal) */}
                         {hasImage ? (
-                          <div className="my-3 overflow-hidden rounded-lg border border-black/10 dark:border-white/15 bg-white group/stepimg relative shadow-xs">
+                          <div
+                            className={`my-3 overflow-hidden rounded-lg border transition-colors ${
+                              isDark ? "border-white/15 bg-white/[0.03]" : "border-black/10 bg-black/[0.02]"
+                            } group/stepimg relative shadow-xs`}
+                          >
                             <button
                               type="button"
                               onClick={() =>
@@ -311,7 +316,7 @@ function ProcessModal({
                                 src={step.image}
                                 alt={step.imageAlt || `${step.label} artifact`}
                                 referrerPolicy="no-referrer"
-                                className="w-full h-auto aspect-video object-contain object-top bg-white rounded-lg p-1.5"
+                                className="w-full h-auto aspect-video object-contain object-top rounded-lg p-1.5"
                               />
                               <div className="absolute inset-0 bg-black/0 group-hover/stepimg:bg-black/15 transition-colors flex items-end justify-end p-2 pointer-events-none">
                                 <span className="bg-black/85 text-white text-[10px] font-medium px-2 py-0.5 rounded backdrop-blur-xs flex items-center gap-1 opacity-0 group-hover/stepimg:opacity-100 transition-opacity shadow-sm">
@@ -395,7 +400,9 @@ function ProcessModal({
               </button>
             </div>
             <div
-              className="max-w-6xl max-h-[85vh] w-full bg-white rounded-xl overflow-y-auto modal-scrollable shadow-2xl p-2 sm:p-4 flex items-center justify-center"
+              className={`max-w-6xl max-h-[85vh] w-full ${
+                isDark ? "bg-[#14171f] border border-white/15" : "bg-white"
+              } rounded-xl overflow-y-auto modal-scrollable shadow-2xl p-2 sm:p-4 flex items-center justify-center`}
               onClick={(e) => e.stopPropagation()}
             >
               <img

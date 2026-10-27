@@ -35,70 +35,70 @@ const mainProjects: Project[] = [
         label: "Heuristic Analysis",
         description:
           "Identified current site pain-points and technical challenges. Evaluated usability against established heuristics to surface interaction gaps.",
-        image: "/purchasing_platform_step2_heuristics.svg",
+        image: "/assets/aistudio/pp-heuristic_27498d01.png",
         imageAlt: "Heuristic Evaluation Deck & Usability Audit — Purchasing Platform",
       },
       {
         label: "Competitive / Comparative Analysis",
         description:
           "Gathered insights from market competitors and like-minded establishments to glean best practices and proof-in-practice methodologies.",
-        image: "/purchasing_platform_step3_competitive.svg",
+        image: "/assets/aistudio/pp-competitive_d294c01e.png",
         imageAlt: "Competitive & Comparative Analysis Deck — Home Depot, Lowes & General Findings",
       },
       {
         label: "Persona Development",
         description:
           "Built evolving personas to understand different user groups' needs. These informed reasoning behind interaction and layout decisions.",
-        image: "/purchasing_platform_step4_personas.svg",
+        image: "/assets/aistudio/pp-personas_3ee47985.png",
         imageAlt: "User Persona Sheets — Property Managers, Maintenance Technicians & Executive Leadership",
       },
       {
         label: "Storymapping",
         description:
           "Created storymaps showing streamlined user-flows through the site, indicating which back-end components would be needed at each step.",
-        image: "/purchasing_platform_step5_storymapping.svg",
+        image: "/assets/aistudio/pp-storymap_e668e447.png",
         imageAlt: "Storymapping Whiteboard Session — Browse & Search Agile Story Maps",
       },
       {
         label: "Heat Mapping",
         description:
           "Used heat maps to see how users navigated the current structure — what was most used and what portions were essential for task completion.",
-        image: "/purchasing_platform_step6_heatmap.svg",
+        image: "/assets/aistudio/pp-heatmap_2161d847.png",
         imageAlt: "Purchasing Platform Desktop Clickstream & Attention Heatmap Analysis",
       },
       {
         label: "Analytics",
         description:
           "Dove into numbers to inform decisions: screen sizes in use, bounce rates, drop-off points, and purchasing habits for marketing optimization.",
-        image: "/purchasing_platform_step7_analytics.svg",
+        image: "/assets/aistudio/pp-analytics_73b8c47e.png",
         imageAlt: "Visitor Insights Dashboard — Traffic, Screen Resolutions & Browser Bounce Rates",
       },
       {
         label: "User Flow",
         description:
           "Generated user flows highlighting challenges and identifying where processes could be streamlined for the quickest route to conversion.",
-        image: "/purchasing_platform_step8_userflow.svg",
+        image: "/assets/aistudio/pp-userflow_9f2d8eef.png",
         imageAlt: "Purchasing Platform User Flow Diagram & Architecture Blueprint",
       },
       {
         label: "Whiteboarding",
         description:
           "Heavy use of whiteboard sketching to rapidly iterate through ideas, facilitating group discussion around design decisions.",
-        image: "/purchasing_platform_step9_whiteboarding.svg",
+        image: "/assets/aistudio/pp-whiteboard_4286b7c6.png",
         imageAlt: "Purchasing Platform Whiteboard Ideation Wall — Vendor Workflow, Architecture Matrix, Shipping Wireframes & Cart Accounting",
       },
       {
         label: "Lo-Fi Wireframing",
         description:
           "Created lo-fidelity wireframes and prototypes to understand page structure and user interactions, hammering out limitations early.",
-        image: "/purchasing_platform_step10_lofi_wireframes.svg",
+        image: "/assets/aistudio/pp-lofi_bcaeb446.png",
         imageAlt: "Purchasing Platform Lo-Fi Wireframes — Responsive Desktop & Mobile Product Detail Page Prototype",
       },
       {
         label: "Hi-Fi Comps",
         description:
           "Produced high-fidelity comps using the established style-guide, giving the team a real feel for look and behavior across platforms.",
-        image: "/purchasing_platform_step11_hifi_comps.svg",
+        image: "/assets/aistudio/pp-hifi_7e3fd050.png",
         imageAlt: "Purchasing Platform Hi-Fi Comps — Production Desktop, Tablet & Mobile Product Detail Page Comps",
       },
     ],
@@ -117,14 +117,14 @@ const mainProjects: Project[] = [
         label: "Heuristic Review",
         description:
           "Got a thorough understanding of the system's components and the purpose each item served in completing the process.",
-        image: "/grainger_step1_heuristic_review.svg",
+        image: "/assets/aistudio/gr-heuristic-clean_a63eb6eb.png",
         imageAlt: "Grainger Heuristic Review — Whiteboard Audit of System Components (Main, Required, Subsidy, Send)",
       },
       {
         label: "Extrapolation & Simplification",
         description:
           "Whiteboarding sessions iterated through restructuring components so they could be interchangeable while simplifying the interactions.",
-        image: "/grainger_step2_extrapolation.svg",
+        image: "/assets/aistudio/gr-extrapolation-clean_c1c168a0.png",
         imageAlt: "Grainger Extrapolation & Simplification — Whiteboard Component Restructuring & Modular Architecture",
       },
       {
@@ -145,7 +145,7 @@ const mainProjects: Project[] = [
         label: "Hi-Fi Comps",
         description:
           "In conjunction with advanced wireframes, hi-fi comps provided a 'real-world' view of visual hierarchy, ensuring information clarity.",
-        image: "/grainger_step5_hifi.svg",
+        image: "/assets/aistudio/gr-hifi_11e915db.png",
         imageAlt: "Grainger Benefit Management Tool — Production UI Comps",
       },
     ],
@@ -239,6 +239,7 @@ const otherProjects: Project[] = [
     title: "Loislaw",
     subtitle: "Mobile App — Checkout & Registration UX",
     tag: "Mobile UX",
+    hidden: true,
     image:
       "https://images.unsplash.com/photo-1757301714935-c8127a21abc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
     synopsis:
@@ -267,7 +268,8 @@ const otherProjects: Project[] = [
     subtitle: "Insulin Pump Instructional — Flash-Based Interactive App",
     tag: "UI / Interaction Design",
     image:
-      "/Thumbnail_Medtronic.svg",
+      "/assets/aistudio/Thumbnail_Medtronic.png",
+    showStepPlaceholders: true,
     synopsis:
       "Tasked with redesigning the Medtronic Insulin Pump instructional DVD given to all patients receiving the updated Paradigm Insulin Pump — transforming it into a Flash-based interactive application.",
     steps: [
@@ -275,41 +277,22 @@ const otherProjects: Project[] = [
         label: "Wireframe & User Flow",
         description:
           "Working with IAs, created a basic site structure that closely followed the existing app while allowing for a new interactive timeline at the bottom for advanced navigation.",
+        image: "/assets/aistudio/ui-md-wireframe-upload_576e97fc.png",
+        imageAlt: "Medtronic Insulin Pump Instructional App — Table of Contents Wireframe & Information Architecture",
       },
       {
         label: "Ideation",
         description:
           "Went through multiple rounds of ideation, ultimately settling on a minimal gray theme that kept the Pump itself as the visual highlight of each page.",
+        image: "/assets/aistudio/image_d91bb46a.png",
+        imageAlt: "Medtronic Insulin Pump Instructional App — Multiple Rounds of Visual Ideation and Interface Explorations",
       },
       {
         label: "Flash-Based Interactive App",
         description:
           "Designed and built a fully interactive Flash application allowing patients to navigate instructions freely, with an advanced timeline for non-linear exploration.",
-      },
-    ],
-  },
-];
-
-const visualDesignProjects: Project[] = [
-  {
-    id: "associated-bank",
-    title: "Associated Bank",
-    subtitle: "Homepage Redesign — Web",
-    tag: "UI Design",
-    image:
-      "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
-    synopsis:
-      "Tasked with creating a homepage comp for a redesign of the Associated Bank website. Given a pre-set amount of information, the goal was to highlight new marketing initiatives while showcasing the bank\x27s existing offerings — guided by their established color system.",
-    steps: [
-      {
-        label: "Wireframe",
-        description:
-          "Created a quick set of wireframes to establish information hierarchy and page layout before committing to visual design.",
-      },
-      {
-        label: "Homepage Comps",
-        description:
-          "Using Associated Bank\x27s color guides as a foundation, designed high-fidelity homepage comps that balanced new marketing initiatives with existing product offerings.",
+        image: "/assets/aistudio/ui-md-design-upload_807aff7c.png",
+        imageAlt: "Medtronic Paradigm Insulin Pump Instructional — Interactive Flash Application Interface & Lesson Timeline",
       },
     ],
   },
@@ -320,6 +303,7 @@ const visualDesignProjects: Project[] = [
     tag: "Design Systems",
     image:
       "/Thumbnail_PressGaney.svg",
+    showStepPlaceholders: true,
     synopsis:
       "Press Ganey needed a Style Guide and Specification Document for their second-generation user dashboard and medical community web software suite. Using the corporate style guide as a starting point, a secondary color palette and grid system were created for the suite of applications.",
     steps: [
@@ -327,6 +311,8 @@ const visualDesignProjects: Project[] = [
         label: "Style Guide",
         description:
           "Using the corporate style guide as a starting point, created a secondary color palette for the suite. Worked with UXAs to establish a grid system for all components.",
+        image: "/assets/aistudio/pg-styleguide-upload_c3c957a7.png",
+        imageAlt: "Press Ganey Style Guide — Header & Navigation and Widget Creation Specifications",
       },
       {
         label: "Spec. Documentation",
@@ -347,6 +333,31 @@ const visualDesignProjects: Project[] = [
   },
 ];
 
+const visualDesignProjects: Project[] = [
+  {
+    id: "associated-bank",
+    title: "Associated Bank",
+    subtitle: "Homepage Redesign — Web",
+    tag: "UI Design",
+    image:
+      "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80",
+    synopsis:
+      "Tasked with creating a homepage comp for a redesign of the Associated Bank website. Given a pre-set amount of information, the goal was to highlight new marketing initiatives while showcasing the bank's existing offerings — guided by their established color system.",
+    steps: [
+      {
+        label: "Wireframe",
+        description:
+          "Created a quick set of wireframes to establish information hierarchy and page layout before committing to visual design.",
+      },
+      {
+        label: "Homepage Comps",
+        description:
+          "Using Associated Bank's color guides as a foundation, designed high-fidelity homepage comps that balanced new marketing initiatives with existing product offerings.",
+      },
+    ],
+  },
+];
+
 const ACCORDION_TRANSITION = {
   duration: 0.45,
   ease: [0.25, 0.1, 0.25, 1] as const,
@@ -356,8 +367,6 @@ function PortfolioContent() {
   const [openSection, setOpenSection] = useState<string>("");
   const caseStudiesRef = useRef<HTMLDivElement>(null);
   const additionalRef = useRef<HTMLDivElement>(null);
-  const visualRef = useRef<HTMLDivElement>(null);
-  const graphicRef = useRef<HTMLDivElement>(null);
   const scrollRafRef = useRef<number | null>(null);
   const { isDark } = useTheme();
 
@@ -569,7 +578,7 @@ function PortfolioContent() {
               </AnimatePresence>
             </motion.div>
 
-            {/* Additional Interactive Designs panel */}
+            {/* UI / UX Design panel */}
             <motion.div
               ref={additionalRef}
               initial={{ opacity: 0, y: 30 }}
@@ -582,7 +591,7 @@ function PortfolioContent() {
                   : "border-black/10 bg-white/95 shadow-sm"
               }`}
             >
-              <Tooltip content={openSection === "additional" ? "Collapse Interactive Pieces" : "Expand Interactive Pieces"} position="top">
+              <Tooltip content={openSection === "additional" ? "Collapse UI / UX Design" : "Expand UI / UX Design"} position="top">
                 <button
                   id="accordion-additional"
                   type="button"
@@ -599,7 +608,7 @@ function PortfolioContent() {
                     className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
                     style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
                   >
-                    Interactive Pieces
+                    UI / UX Design
                   </h2>
                   <motion.div animate={{ rotate: openSection === "additional" ? 180 : 0 }} transition={ACCORDION_TRANSITION}>
                     <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
@@ -620,128 +629,11 @@ function PortfolioContent() {
                     className="overflow-hidden"
                   >
                     <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
-                      {otherProjects.map((project, i) => (
-                        <ProjectCard key={project.id} project={project} index={i} />
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-
-            {/* Visual Design panel */}
-            <motion.div
-              ref={visualRef}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "200px 0px" }}
-              transition={{ duration: 0.5, delay: 0.08 }}
-              className={`rounded-2xl overflow-hidden border transition-colors ${
-                isDark
-                  ? "border-white/10 bg-[#111318]/90"
-                  : "border-black/10 bg-white/95 shadow-sm"
-              }`}
-            >
-              <Tooltip content={openSection === "visual" ? "Collapse Visual Design" : "Expand Visual Design"} position="top">
-                <button
-                  id="accordion-visual"
-                  type="button"
-                  aria-expanded={openSection === "visual"}
-                  aria-controls="panel-visual"
-                  onClick={() => toggle("visual", visualRef)}
-                  className={`w-full flex items-center justify-between px-3 sm:px-8 ${
-                    openSection === "visual" ? "py-5 sm:py-6" : "py-4 sm:py-5"
-                  } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
-                    isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
-                  }`}
-                >
-                  <h2
-                    className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
-                    style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
-                  >
-                    Visual Design
-                  </h2>
-                  <motion.div animate={{ rotate: openSection === "visual" ? 180 : 0 }} transition={ACCORDION_TRANSITION}>
-                    <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
-                  </motion.div>
-                </button>
-              </Tooltip>
-              <AnimatePresence initial={false}>
-                {openSection === "visual" && (
-                  <motion.div
-                    id="panel-visual"
-                    role="region"
-                    aria-labelledby="accordion-visual"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={ACCORDION_TRANSITION}
-                    className="overflow-hidden"
-                  >
-                    <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
-                      {visualDesignProjects.map((project, i) => (
-                        <ProjectCard key={project.id} project={project} index={i} />
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-
-            {/* Graphic Designs panel */}
-            <motion.div
-              ref={graphicRef}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "200px 0px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className={`rounded-2xl overflow-hidden border transition-colors ${
-                isDark
-                  ? "border-white/10 bg-[#111318]/90"
-                  : "border-black/10 bg-white/95 shadow-sm"
-              }`}
-            >
-              <Tooltip content={openSection === "graphic" ? "Collapse Graphic Design" : "Expand Graphic Design"} position="top">
-                <button
-                  id="accordion-graphic"
-                  type="button"
-                  aria-expanded={openSection === "graphic"}
-                  aria-controls="panel-graphic"
-                  onClick={() => toggle("graphic", graphicRef)}
-                  className={`w-full flex items-center justify-between px-3 sm:px-8 ${
-                    openSection === "graphic" ? "py-5 sm:py-6" : "py-4 sm:py-5"
-                  } text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
-                    isDark ? "hover:bg-white/[0.04]" : "hover:bg-black/[0.03]"
-                  }`}
-                >
-                  <h2
-                    className={`${isDark ? "text-white" : "text-neutral-900"} transition-colors font-bold`}
-                    style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", letterSpacing: "-0.02em" }}
-                  >
-                    Graphic Design
-                  </h2>
-                  <motion.div animate={{ rotate: openSection === "graphic" ? 180 : 0 }} transition={ACCORDION_TRANSITION}>
-                    <ChevronDown size={22} aria-hidden="true" className={isDark ? "text-white/70" : "text-neutral-700"} />
-                  </motion.div>
-                </button>
-              </Tooltip>
-
-              <AnimatePresence initial={false}>
-                {openSection === "graphic" && (
-                  <motion.div
-                    id="panel-graphic"
-                    role="region"
-                    aria-labelledby="accordion-graphic"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={ACCORDION_TRANSITION}
-                    className="overflow-hidden"
-                  >
-                    <div className="flex flex-col gap-6 px-3 sm:px-8 pb-6 sm:pb-8">
-                      {graphicProjects.map((project, i) => (
-                        <ProjectCard key={project.id} project={project} index={i} />
-                      ))}
+                      {otherProjects
+                        .filter((project) => !project.hidden)
+                        .map((project, i) => (
+                          <ProjectCard key={project.id} project={project} index={i} />
+                        ))}
                     </div>
                   </motion.div>
                 )}

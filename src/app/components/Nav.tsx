@@ -191,7 +191,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                   type="button"
                   onClick={toggleTheme}
                   aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-                  className={`group h-10 w-10 rounded-full transition-all duration-200 flex items-center justify-center border hover:bg-blue-100 hover:border-blue-900 focus-visible:bg-blue-100 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
+                  className={`group h-10 w-10 rounded-full transition-all duration-200 flex items-center justify-center border hover:bg-blue-100 hover:border-transparent focus-visible:bg-blue-100 focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                     isDark
                       ? "border-white/20 text-white/80"
                       : "border-black/15 text-neutral-700"
@@ -219,7 +219,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                   type="button"
                   onClick={toggleTheme}
                   aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-                  className={`group p-2 rounded-full transition-all duration-200 border hover:bg-blue-100 hover:border-blue-900 focus-visible:bg-blue-100 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
+                  className={`group p-2 rounded-full transition-all duration-200 border hover:bg-blue-100 hover:border-transparent focus-visible:bg-blue-100 focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                     isDark
                       ? "border-white/20 text-white/80"
                       : "border-black/15 text-neutral-700"
