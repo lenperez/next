@@ -90,9 +90,9 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
               transition={{ duration: 0.55, delay: 1.16, ease: [0.16, 1, 0.3, 1] }}
               role="group"
               aria-label="Portfolio navigation"
-              className={`h-10 inline-flex items-center p-0.5 rounded-full border transition-colors duration-200 hover:border-blue-900 focus-within:border-blue-900 ${
+              className={`group/nav h-10 inline-flex items-center p-0.5 rounded-full border transition-colors duration-200 hover:border-transparent focus-within:border-transparent ${
                 hoveredIndex !== null
-                  ? "border-blue-900"
+                  ? "border-transparent"
                   : isDark
                   ? "border-white/20"
                   : "border-black/15"
@@ -102,7 +102,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                 {links.map((l, idx) => {
                   const Icon = l.icon;
                   const showDivider = idx < links.length - 1;
-                  const hideDivider = hoveredIndex === idx || hoveredIndex === idx + 1;
+                  const hideDivider = hoveredIndex !== null;
                   // Right-to-left delay calculation: Contact (idx 2) -> About (idx 1) -> Work (idx 0)
                   const linkDelay = 1.16 + (links.length - 1 - idx) * 0.06;
                   return (
@@ -147,7 +147,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                           aria-hidden="true"
                           className={`w-px h-3.5 self-center transition-opacity duration-200 ${
                             isDark ? "bg-white/20" : "bg-black/15"
-                          } ${hideDivider ? "opacity-0" : "opacity-100"}`}
+                          } ${hideDivider ? "opacity-0" : "opacity-100"} group-hover/nav:opacity-0`}
                         />
                       )}
                     </motion.li>
@@ -280,7 +280,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                 <div
                   role="group"
                   aria-label="Navigation Sections"
-                  className={`p-1 rounded-2xl border transition-colors duration-200 hover:border-blue-900 focus-within:border-blue-900 ${
+                  className={`p-1 rounded-2xl border transition-colors duration-200 hover:border-transparent focus-within:border-transparent ${
                     isDark ? "border-white/15" : "border-black/10"
                   }`}
                 >

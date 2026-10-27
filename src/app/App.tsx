@@ -138,7 +138,7 @@ const mainProjects: Project[] = [
         label: "Advanced Wireframes",
         description:
           "Once the basic structure was agreed upon, detailed wireframes were created with annotations and variants for all edge cases.",
-        image: "/grainger_step4_advanced_wireframes.svg",
+        image: "/assets/aistudio/gr-advanced_1907e4c7.png",
         imageAlt: "Grainger Benefit Management Tool — Advanced Wireframes with Interaction Annotations & Edge Case Specifications",
       },
       {
