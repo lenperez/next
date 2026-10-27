@@ -10,7 +10,7 @@
 
 ---
 
-## 🌟 Features
+## Features
 
 - **Interactive Case Study Explorer**: Collapsible accordion panels organizing work into **Case Studies**, **Interactive Pieces**, and **Visual Design Pieces**.
 - **Process Breakdown**: In-depth project walkthroughs detailing methodologies including heuristic analysis, competitive audits, storymapping, persona development, user flows, lo-fi wireframing, and hi-fi design systems.
@@ -22,7 +22,7 @@
 
 ---
 
-## 💼 Featured Work
+## Featured Work
 
 ### 1. In-Depth Case Studies
 - **Purchasing Platform (eProcurement Redesign — End-to-End)**:
@@ -45,7 +45,7 @@
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Core**: [React 18](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
 - **Bundler & Tooling**: [Vite 6](https://vitejs.dev/)
@@ -56,7 +56,7 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 ├── public/
@@ -90,7 +90,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -144,7 +144,7 @@ npm run lint
 
 ---
 
-## 📬 Contact
+## Contact
 
 **Len Perez**  
 - Email: [me@lenperez.com](mailto:me@lenperez.com)  
