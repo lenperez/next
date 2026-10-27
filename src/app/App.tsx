@@ -311,23 +311,29 @@ const otherProjects: Project[] = [
         label: "Style Guide",
         description:
           "Using the corporate style guide as a starting point, created a secondary color palette for the suite. Worked with UXAs to establish a grid system for all components.",
-        image: "/assets/aistudio/pg-styleguide-upload_c3c957a7.png",
-        imageAlt: "Press Ganey Style Guide — Header & Navigation and Widget Creation Specifications",
+        image: "/assets/aistudio/pg-synopsis-upload_2bc0d73f.png",
+        imageAlt: "Press Ganey Style Guide — Grid System, Typography & Color Palette Guidelines",
       },
       {
         label: "Spec. Documentation",
         description:
           "Designed the look and feel of the widget creator, dashboard, widgets, and web pages. Working with UXAs and Development to produce thorough specification docs.",
+        image: "/assets/aistudio/pg-styleguide-upload_c3c957a7.png",
+        imageAlt: "Press Ganey Specification Documentation — Header & Navigation and Widget Creation Specifications",
       },
       {
         label: "Dashboard Widgets",
         description:
           "Designed widgets to be distinctive, crisp, and clear — displaying an abundant amount of information concisely and in quick bites.",
+        image: "/assets/aistudio/pg-specdocs-upload_6fdc5294.png",
+        imageAlt: "Press Ganey Dashboard Widgets — Widgets Scorecard & Main Content Specifications",
       },
       {
         label: "Community Web Pages",
         description:
           "The Communities portion followed a more traditional layout but remained flexible enough to handle a variety of components and scalable scenarios.",
+        image: "/assets/aistudio/pg-community_ee58e405.png",
+        imageAlt: "Press Ganey Community Web Pages — Driving Targeted Performance Improvement & Groups Layouts",
       },
     ],
   },
