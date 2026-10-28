@@ -18,6 +18,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [justClicked, setJustClicked] = useState(false);
   const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -90,8 +91,12 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
               transition={{ duration: 0.55, delay: 1.16, ease: [0.16, 1, 0.3, 1] }}
               role="group"
               aria-label="Portfolio navigation"
-              className={`group/nav h-10 inline-flex items-center p-0.5 rounded-full border transition-colors duration-200 hover:border-transparent focus-within:border-transparent ${
-                hoveredIndex !== null
+              onMouseLeave={() => {
+                setHoveredIndex(null);
+                setJustClicked(false);
+              }}
+              className={`h-10 inline-flex items-center p-0.5 rounded-full border transition-colors duration-200 ${
+                !justClicked && hoveredIndex !== null
                   ? "border-transparent"
                   : isDark
                   ? "border-white/20"
@@ -102,7 +107,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                 {links.map((l, idx) => {
                   const Icon = l.icon;
                   const showDivider = idx < links.length - 1;
-                  const hideDivider = hoveredIndex !== null;
+                  const hideDivider = !justClicked && hoveredIndex !== null;
                   // Right-to-left delay calculation: Contact (idx 2) -> About (idx 1) -> Work (idx 0)
                   const linkDelay = 1.16 + (links.length - 1 - idx) * 0.06;
                   return (
@@ -117,15 +122,28 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                         <a
                           href={l.href}
                           onClick={(e) => {
+                            setJustClicked(true);
+                            setHoveredIndex(null);
+                            (e.currentTarget as HTMLElement).blur();
                             if (l.href === "#work" && onNavigateToWork) {
                               e.preventDefault();
                               onNavigateToWork();
                             }
                           }}
-                          onMouseEnter={() => setHoveredIndex(idx)}
+                          onMouseEnter={() => {
+                            setJustClicked(false);
+                            setHoveredIndex(idx);
+                          }}
                           onMouseLeave={() => setHoveredIndex(null)}
-                          onFocus={() => setHoveredIndex(idx)}
-                          onBlur={() => setHoveredIndex(null)}
+                          onFocus={() => {
+                            if (!justClicked) {
+                              setHoveredIndex(idx);
+                            }
+                          }}
+                          onBlur={() => {
+                            setHoveredIndex(null);
+                            setJustClicked(false);
+                          }}
                           className={`group h-full inline-flex items-center justify-center gap-1.5 transition-all duration-200 text-xs sm:text-sm tracking-wider uppercase font-medium px-3.5 rounded-full hover:bg-blue-100 hover:text-blue-900 focus-visible:bg-blue-100 focus-visible:text-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                             isDark
                               ? "text-white/80"
@@ -147,7 +165,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                           aria-hidden="true"
                           className={`w-px h-3.5 self-center transition-opacity duration-200 ${
                             isDark ? "bg-white/20" : "bg-black/15"
-                          } ${hideDivider ? "opacity-0" : "opacity-100"} group-hover/nav:opacity-0`}
+                          } ${hideDivider ? "opacity-0" : "opacity-100"}`}
                         />
                       )}
                     </motion.li>
@@ -280,7 +298,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                 <div
                   role="group"
                   aria-label="Navigation Sections"
-                  className={`p-1 rounded-2xl border transition-colors duration-200 hover:border-transparent focus-within:border-transparent ${
+                  className={`p-1 rounded-2xl border transition-colors duration-200 ${
                     isDark ? "border-white/15" : "border-black/10"
                   }`}
                 >
