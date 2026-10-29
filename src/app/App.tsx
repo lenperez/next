@@ -235,6 +235,7 @@ const otherProjects: Project[] = [
     title: "American Family Insurance",
     subtitle: "Coverage Assessment Tool — Interactive Web Experience",
     tag: "Web UX",
+    hidden: true,
     image: "/Thumbnail_AmericanFamilyInsurance.svg",
     synopsis:
       "Interactive coverage assessment tool designed for American Family Insurance to help customers visualize and tailor their policy needs through an engaging multi-step visual workflow.",
