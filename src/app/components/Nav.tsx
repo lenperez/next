@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Briefcase, User, Mail, FileText, Sun, Moon } from "lucide-react";
+import { Menu, X, Briefcase, User, Mail, FileText, Sun, Moon, ExternalLink } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { Tooltip } from "./Tooltip";
 
@@ -18,7 +18,6 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [justClicked, setJustClicked] = useState(false);
   const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -84,30 +83,23 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
 
           {/* Desktop links, Resume & Theme Switcher (fading in from right to left) */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Unified Segmented Control for Navigation Links */}
+            {/* Unified Segmented Control for Navigation Links — stroke brought back permanently */}
             <motion.div
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 1.16, ease: [0.16, 1, 0.3, 1] }}
               role="group"
               aria-label="Portfolio navigation"
-              onMouseLeave={() => {
-                setHoveredIndex(null);
-                setJustClicked(false);
-              }}
+              onMouseLeave={() => setHoveredIndex(null)}
               className={`h-10 inline-flex items-center p-0.5 rounded-full border transition-colors duration-200 ${
-                !justClicked && hoveredIndex !== null
-                  ? "border-transparent"
-                  : isDark
-                  ? "border-white/20"
-                  : "border-black/15"
+                isDark ? "border-white/20" : "border-black/15"
               }`}
             >
               <ul className="h-full flex items-center" role="list">
                 {links.map((l, idx) => {
                   const Icon = l.icon;
                   const showDivider = idx < links.length - 1;
-                  const hideDivider = !justClicked && hoveredIndex !== null;
+                  const hideDivider = hoveredIndex !== null;
                   // Right-to-left delay calculation: Contact (idx 2) -> About (idx 1) -> Work (idx 0)
                   const linkDelay = 1.16 + (links.length - 1 - idx) * 0.06;
                   return (
@@ -122,7 +114,6 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                         <a
                           href={l.href}
                           onClick={(e) => {
-                            setJustClicked(true);
                             setHoveredIndex(null);
                             (e.currentTarget as HTMLElement).blur();
                             if (l.href === "#work" && onNavigateToWork) {
@@ -130,20 +121,10 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                               onNavigateToWork();
                             }
                           }}
-                          onMouseEnter={() => {
-                            setJustClicked(false);
-                            setHoveredIndex(idx);
-                          }}
+                          onMouseEnter={() => setHoveredIndex(idx)}
                           onMouseLeave={() => setHoveredIndex(null)}
-                          onFocus={() => {
-                            if (!justClicked) {
-                              setHoveredIndex(idx);
-                            }
-                          }}
-                          onBlur={() => {
-                            setHoveredIndex(null);
-                            setJustClicked(false);
-                          }}
+                          onFocus={() => setHoveredIndex(idx)}
+                          onBlur={() => setHoveredIndex(null)}
                           className={`group h-full inline-flex items-center justify-center gap-1.5 transition-all duration-200 text-xs sm:text-sm tracking-wider uppercase font-medium px-3.5 rounded-full hover:bg-blue-100 hover:text-blue-900 focus-visible:bg-blue-100 focus-visible:text-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                             isDark
                               ? "text-white/80"
@@ -174,13 +155,13 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
               </ul>
             </motion.div>
 
-            {/* Standalone Résumé Action Button */}
+            {/* Standalone Résumé Action Button with open new window icon on rollover */}
             <motion.div
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 1.08, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Tooltip content="View résumé (PDF)" position="bottom">
+              <Tooltip content="View résumé (PDF in new tab)" position="bottom">
                 <a
                   href="/LenPerez_UXresume.pdf"
                   target="_blank"
@@ -194,11 +175,14 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                 >
                   <FileText size={14} aria-hidden="true" className="shrink-0 transition-colors group-hover:text-blue-900 group-focus-visible:text-blue-900" />
                   <span className="transition-colors group-hover:text-blue-900 group-focus-visible:text-blue-900">RÉSUMÉ</span>
+                  <span className="inline-flex items-center transition-all duration-200 ease-out opacity-0 max-w-0 -translate-x-1 ml-0 overflow-hidden group-hover:opacity-100 group-hover:max-w-5 group-hover:translate-x-0 group-hover:ml-0.5 group-focus-visible:opacity-100 group-focus-visible:max-w-5 group-focus-visible:translate-x-0 group-focus-visible:ml-0.5">
+                    <ExternalLink size={13} aria-hidden="true" className="shrink-0 transition-colors group-hover:text-blue-900 group-focus-visible:text-blue-900" />
+                  </span>
                 </a>
               </Tooltip>
             </motion.div>
 
-            {/* Theme Toggle Button (rightmost on desktop, fades in first) */}
+            {/* Theme Toggle Button (stroke brought back on hover) */}
             <motion.div
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -209,7 +193,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                   type="button"
                   onClick={toggleTheme}
                   aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-                  className={`group h-10 w-10 rounded-full transition-all duration-200 flex items-center justify-center border hover:bg-blue-100 hover:border-transparent focus-visible:bg-blue-100 focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
+                  className={`group h-10 w-10 rounded-full transition-all duration-200 flex items-center justify-center border hover:bg-blue-100 hover:border-blue-900 focus-visible:bg-blue-100 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                     isDark
                       ? "border-white/20 text-white/80"
                       : "border-black/15 text-neutral-700"
@@ -237,7 +221,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                   type="button"
                   onClick={toggleTheme}
                   aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-                  className={`group p-2 rounded-full transition-all duration-200 border hover:bg-blue-100 hover:border-transparent focus-visible:bg-blue-100 focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
+                  className={`group p-2 rounded-full transition-all duration-200 border hover:bg-blue-100 hover:border-blue-900 focus-visible:bg-blue-100 focus-visible:border-blue-900 focus-visible:ring-2 focus-visible:ring-blue-900/40 focus-visible:outline-none ${
                     isDark
                       ? "border-white/20 text-white/80"
                       : "border-black/15 text-neutral-700"
@@ -355,6 +339,7 @@ export function Nav({ onNavigateToWork }: NavProps = {}) {
                   >
                     <FileText size={18} aria-hidden="true" className="shrink-0 transition-colors group-hover:text-blue-900" />
                     <span className="transition-colors group-hover:text-blue-900">RÉSUMÉ</span>
+                    <ExternalLink size={15} aria-hidden="true" className="shrink-0 transition-colors opacity-60 group-hover:opacity-100 group-hover:text-blue-900" />
                   </a>
                 </Tooltip>
               </div>

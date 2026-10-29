@@ -34,7 +34,7 @@ export function About() {
               Designing experiences that are purposeful &amp; human.
             </h2>
             <p className={`${isDark ? "text-white/80" : "text-neutral-700"} leading-relaxed mb-4 transition-colors`}>
-              I'm a UX designer with a process-first approach — every decision is grounded in research, validated through data, and refined through collaboration.
+              I'm a Product/UX Designer with a process-first approach — every decision is grounded in research, validated through data, and refined through collaboration.
             </p>
             <p className={`${isDark ? "text-white/80" : "text-neutral-700"} leading-relaxed transition-colors`}>
               From redesigning enterprise eProcurement platforms to building style guides for medical community dashboards, I thrive where complexity meets clarity.
