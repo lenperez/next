@@ -30,6 +30,7 @@ export interface Project {
   steps: ProcessStep[];
   showStepPlaceholders?: boolean;
   hidden?: boolean;
+  comingSoon?: boolean;
 }
 
 interface ProjectCardProps {
@@ -477,14 +478,11 @@ export function ProjectCard({
         >
           {/* Header */}
           <div className="flex flex-col md:flex-row gap-0 items-stretch">
-            {/* Image button — accessible click/keyboard trigger for modal with parallax window depth */}
-            <Tooltip content={`View ${project.title}`} position="top">
-              <button
-                ref={imageTriggerRef}
-                type="button"
-                onClick={() => handleOpenModal(imageTriggerRef.current)}
-                aria-label={`Open details for ${project.title}`}
-                className="w-full text-left md:w-2/5 overflow-hidden group/img relative cursor-pointer md:self-stretch block p-0 border-0 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+            {/* Image display / button */}
+            {project.comingSoon ? (
+              <div
+                className="w-full md:w-2/5 overflow-hidden relative md:self-stretch block p-0 select-none"
+                aria-hidden="true"
               >
                 <div className="w-full h-56 sm:h-64 md:h-full md:min-h-full md:absolute md:inset-0 overflow-hidden">
                   <motion.div
@@ -494,15 +492,38 @@ export function ProjectCard({
                     <ImageWithFallback
                       src={project.image}
                       alt={`Visual representation of ${project.title}`}
-                      className={`w-full h-full object-cover scale-[1.10] transition-transform duration-700 ease-out group-hover/img:scale-[1.16] ${
-                        project.id === "coffee-table-book" ? "object-bottom" : "object-top"
-                      }`}
+                      className="w-full h-full object-cover scale-[1.05]"
                     />
                   </motion.div>
                 </div>
-                <span className="sr-only">Click to view project details</span>
-              </button>
-            </Tooltip>
+              </div>
+            ) : (
+              <Tooltip content={`View ${project.title}`} position="top">
+                <button
+                  ref={imageTriggerRef}
+                  type="button"
+                  onClick={() => handleOpenModal(imageTriggerRef.current)}
+                  aria-label={`Open details for ${project.title}`}
+                  className="w-full text-left md:w-2/5 overflow-hidden group/img relative cursor-pointer md:self-stretch block p-0 border-0 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+                >
+                  <div className="w-full h-56 sm:h-64 md:h-full md:min-h-full md:absolute md:inset-0 overflow-hidden">
+                    <motion.div
+                      style={{ y: imageY }}
+                      className="w-full h-full will-change-transform"
+                    >
+                      <ImageWithFallback
+                        src={project.image}
+                        alt={`Visual representation of ${project.title}`}
+                        className={`w-full h-full object-cover scale-[1.10] transition-transform duration-700 ease-out group-hover/img:scale-[1.16] ${
+                          project.id === "coffee-table-book" ? "object-bottom" : "object-top"
+                        }`}
+                      />
+                    </motion.div>
+                  </div>
+                  <span className="sr-only">Click to view project details</span>
+                </button>
+              </Tooltip>
+            )}
 
             {/* Content */}
             <div className="md:w-3/5 px-3 py-6 sm:p-8 flex flex-col justify-between">
@@ -539,48 +560,65 @@ export function ProjectCard({
               </div>
 
               <div className="flex items-center justify-between mt-6">
-                {/* Quick Overview — accessible interactive button */}
-                <Tooltip content={expanded ? "Collapse overview" : "Expand quick overview"} position="top">
+                {project.comingSoon ? (
                   <button
                     type="button"
-                    onClick={() => setExpanded(!expanded)}
-                    aria-expanded={expanded}
-                    aria-controls={`process-steps-${project.id}`}
-                    aria-label={`${expanded ? "Collapse" : "Expand"} quick overview for ${project.title}`}
-                    className={`text-sm font-semibold flex items-center gap-2 px-4 py-2 rounded-full transition-all cursor-pointer ${
+                    disabled
+                    aria-disabled="true"
+                    className={`text-sm font-semibold flex items-center px-4 py-2 rounded-full border cursor-not-allowed opacity-60 select-none ${
                       isDark
-                        ? "text-blue-400 hover:bg-blue-500/15 hover:text-blue-300"
-                        : "text-blue-700 hover:bg-blue-100 hover:text-blue-900"
+                        ? "text-neutral-400 bg-white/5 border-white/10"
+                        : "text-neutral-500 bg-black/5 border-black/10"
                     }`}
                   >
-                    <span>{expanded ? "Collapse" : "Quick Overview"}</span>
-                    <motion.div
-                      animate={{ rotate: expanded ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <ChevronDown size={16} aria-hidden="true" />
-                    </motion.div>
+                    Coming Soon
                   </button>
-                </Tooltip>
+                ) : (
+                  <>
+                    {/* Quick Overview — accessible interactive button */}
+                    <Tooltip content={expanded ? "Collapse overview" : "Expand quick overview"} position="top">
+                      <button
+                        type="button"
+                        onClick={() => setExpanded(!expanded)}
+                        aria-expanded={expanded}
+                        aria-controls={`process-steps-${project.id}`}
+                        aria-label={`${expanded ? "Collapse" : "Expand"} quick overview for ${project.title}`}
+                        className={`text-sm font-semibold flex items-center gap-2 px-4 py-2 rounded-full transition-all cursor-pointer ${
+                          isDark
+                            ? "text-blue-400 hover:bg-blue-500/15 hover:text-blue-300"
+                            : "text-blue-700 hover:bg-blue-100 hover:text-blue-900"
+                        }`}
+                      >
+                        <span>{expanded ? "Collapse" : "Quick Overview"}</span>
+                        <motion.div
+                          animate={{ rotate: expanded ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <ChevronDown size={16} aria-hidden="true" />
+                        </motion.div>
+                      </button>
+                    </Tooltip>
 
-                {/* Arrow — opens modal */}
-                <Tooltip content={`Open details for ${project.title}`} position="top">
-                  <button
-                    ref={triggerRef}
-                    type="button"
-                    onClick={() => handleOpenModal(triggerRef.current)}
-                    aria-label={`Open details modal for ${project.title}`}
-                    className={`p-2.5 rounded-full transition-all cursor-pointer ${
-                      isDark ? "hover:bg-white/10 text-white/60 hover:text-white" : "hover:bg-black/5 text-neutral-600 hover:text-black"
-                    }`}
-                  >
-                    <ArrowUpRight
-                      size={20}
-                      aria-hidden="true"
-                      className="transition-colors"
-                    />
-                  </button>
-                </Tooltip>
+                    {/* Arrow — opens modal */}
+                    <Tooltip content={`Open details for ${project.title}`} position="top">
+                      <button
+                        ref={triggerRef}
+                        type="button"
+                        onClick={() => handleOpenModal(triggerRef.current)}
+                        aria-label={`Open details modal for ${project.title}`}
+                        className={`p-2.5 rounded-full transition-all cursor-pointer ${
+                          isDark ? "hover:bg-white/10 text-white/60 hover:text-white" : "hover:bg-black/5 text-neutral-600 hover:text-black"
+                        }`}
+                      >
+                        <ArrowUpRight
+                          size={20}
+                          aria-hidden="true"
+                          className="transition-colors"
+                        />
+                      </button>
+                    </Tooltip>
+                  </>
+                )}
               </div>
             </div>
           </div>

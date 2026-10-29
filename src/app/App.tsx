@@ -150,6 +150,28 @@ const mainProjects: Project[] = [
       },
     ],
   },
+  {
+    id: "cdk-customer-details",
+    tag: "Product Design",
+    title: "CDK Global",
+    subtitle: "CRM Redesign [Customer Details]",
+    synopsis:
+      "I lead an update Opportunity Details page in the CRM application to optimize it for workflows to be able to reduce time on task, and increase confidence in our products.",
+    image: "/Thumbnail_CDK_CustomerDetails.jpg",
+    comingSoon: true,
+    steps: [],
+  },
+  {
+    id: "cdk-communication-interface",
+    tag: "Product Design",
+    title: "CDK Global",
+    subtitle: "CRM Redesign [Communication Interface]",
+    synopsis:
+      "I created an application that would act as the sole method of interfacing with the client, digitally. Tying Text, Email, Phone, Social (video) into one interface that would be used across multiple channels.",
+    image: "/Thumbnail_CDK_CommunicationInterface.jpg",
+    comingSoon: true,
+    steps: [],
+  },
 ];
 
 const graphicProjects: Project[] = [
