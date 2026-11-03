@@ -44,6 +44,19 @@ interface LightboxData {
   title: string;
 }
 
+// Grainger Card Thumbnail Blue Background & Architectural Grid style
+const graingerStepBgStyle: React.CSSProperties = {
+  backgroundColor: "#173d72",
+  backgroundImage: `
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 48% 42%, rgba(59, 130, 246, 0.3) 0%, rgba(14, 165, 233, 0.14) 50%, rgba(18, 46, 87, 0) 100%),
+    radial-gradient(circle at 50% 45%, #2d66bd 0%, #1e4a87 50%, #122e57 100%)
+  `,
+  backgroundSize: "25% 20%, 25% 20%, 100% 100%, 100% 100%",
+  backgroundPosition: "0 0, 0 0, 0 0, 0 0",
+};
+
 function ProcessModal({
   project,
   onClose,
@@ -294,12 +307,11 @@ function ProcessModal({
                           </h4>
                         </div>
 
-                        {/* Step Visual Artifact (Rendered only in modal) */}
+                        {/* Step Visual Artifact (Rendered with Grainger Blue Background) */}
                         {hasImage ? (
                           <div
-                            className={`my-3 overflow-hidden rounded-lg border transition-colors ${
-                              isDark ? "border-white/15 bg-white/[0.03]" : "border-black/10 bg-black/[0.02]"
-                            } group/stepimg relative shadow-xs`}
+                            style={graingerStepBgStyle}
+                            className="my-3 overflow-hidden rounded-lg border border-[#2d66bd]/40 relative group/stepimg shadow-md transition-all hover:border-blue-400/60"
                           >
                             <button
                               type="button"
@@ -317,9 +329,9 @@ function ProcessModal({
                                 src={step.image}
                                 alt={step.imageAlt || `${step.label} artifact`}
                                 referrerPolicy="no-referrer"
-                                className="w-full h-auto aspect-video object-contain object-top rounded-lg p-1.5"
+                                className="w-full h-auto aspect-video object-contain object-center rounded-lg p-2 relative z-10 transition-transform duration-300 group-hover/stepimg:scale-[1.02]"
                               />
-                              <div className="absolute inset-0 bg-black/0 group-hover/stepimg:bg-black/15 transition-colors flex items-end justify-end p-2 pointer-events-none">
+                              <div className="absolute inset-0 bg-black/0 group-hover/stepimg:bg-black/20 transition-colors flex items-end justify-end p-2 pointer-events-none z-20">
                                 <span className="bg-black/85 text-white text-[10px] font-medium px-2 py-0.5 rounded backdrop-blur-xs flex items-center gap-1 opacity-0 group-hover/stepimg:opacity-100 transition-opacity shadow-sm">
                                   <ZoomIn size={11} aria-hidden="true" />
                                   <span>Expand</span>
@@ -329,36 +341,19 @@ function ProcessModal({
                           </div>
                         ) : hasPlaceholder ? (
                           <div
-                            className={`my-3 h-32 rounded-lg border border-dashed flex flex-col items-center justify-center text-center p-3 transition-colors ${
-                              isDark
-                                ? "bg-white/[0.02] border-white/15 text-white/40"
-                                : "bg-black/[0.02] border-black/15 text-neutral-400"
-                            }`}
+                            style={graingerStepBgStyle}
+                            className="my-3 h-32 rounded-lg border border-dashed border-blue-400/40 flex flex-col items-center justify-center text-center p-3 transition-colors relative shadow-md"
                             aria-label={`Placeholder for ${step.label} artifact`}
                           >
-                            <div
-                              className={`w-8 h-8 rounded-full flex items-center justify-center mb-1.5 ${
-                                isDark
-                                  ? "bg-white/[0.06] text-white/60"
-                                  : "bg-black/[0.04] text-neutral-500"
-                              }`}
-                            >
+                            <div className="w-8 h-8 rounded-full flex items-center justify-center mb-1.5 bg-blue-500/25 border border-blue-400/30 text-blue-200 relative z-10 shadow-sm">
                               <ImageIcon size={15} aria-hidden="true" />
                             </div>
-                            <span
-                              className={`text-[11px] font-semibold tracking-wide uppercase ${
-                                isDark ? "text-white/65" : "text-neutral-700"
-                              }`}
-                            >
+                            <span className="text-[11px] font-semibold tracking-wide uppercase text-white/95 relative z-10">
                               {typeof step.placeholder === "string"
                                 ? step.placeholder
                                 : step.placeholderText || "Artifact Placeholder"}
                             </span>
-                            <span
-                              className={`text-[10px] mt-0.5 ${
-                                isDark ? "text-white/40" : "text-neutral-400"
-                              }`}
-                            >
+                            <span className="text-[10px] mt-0.5 text-blue-200/80 relative z-10">
                               Documentation asset
                             </span>
                           </div>
@@ -401,16 +396,15 @@ function ProcessModal({
               </button>
             </div>
             <div
-              className={`max-w-6xl max-h-[85vh] w-full ${
-                isDark ? "bg-[#14171f] border border-white/15" : "bg-white"
-              } rounded-xl overflow-y-auto modal-scrollable shadow-2xl p-2 sm:p-4 flex items-center justify-center`}
+              style={graingerStepBgStyle}
+              className="max-w-6xl max-h-[85vh] w-full rounded-xl overflow-y-auto modal-scrollable shadow-2xl p-3 sm:p-5 flex items-center justify-center relative border border-blue-400/30"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={lightboxImage.src}
                 alt={lightboxImage.alt}
                 referrerPolicy="no-referrer"
-                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                className="w-full h-auto max-h-[78vh] object-contain rounded-lg relative z-10 shadow-lg"
               />
             </div>
           </div>
@@ -644,35 +638,83 @@ export function ProjectCard({
                     Process &amp; Approach
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {project.steps.map((step, i) => (
-                      <div
-                        key={step.label}
-                        className={`border rounded-xl p-4 transition-colors ${
-                          isDark
-                            ? "bg-black/60 border-white/10 hover:border-blue-500/30"
-                            : "bg-neutral-50 border-black/10 hover:border-blue-600/30 shadow-xs"
-                        }`}
-                      >
-                        <div className="flex items-center gap-2 mb-2">
-                          <span
-                            className={`w-5 h-5 rounded-full text-[10px] flex items-center justify-center font-bold shrink-0 ${
-                              isDark ? "bg-blue-600/30 text-blue-300" : "bg-blue-600 text-white"
-                            }`}
-                            aria-hidden="true"
-                          >
-                            {i + 1}
-                          </span>
-                          <h4
-                            className={`${isDark ? "text-white" : "text-neutral-900"} text-xs tracking-wider uppercase font-semibold`}
-                          >
-                            {step.label}
-                          </h4>
+                    {project.steps.map((step, i) => {
+                      const hasImage = Boolean(step.image);
+                      const hasPlaceholder = Boolean(
+                        step.placeholder ||
+                        (project.id === "purchasing-platform" && !hasImage) ||
+                        (project.showStepPlaceholders && !hasImage)
+                      );
+
+                      return (
+                        <div
+                          key={step.label}
+                          className={`border rounded-xl p-4 transition-colors flex flex-col justify-between ${
+                            isDark
+                              ? "bg-black/60 border-white/10 hover:border-blue-500/30"
+                              : "bg-neutral-50 border-black/10 hover:border-blue-600/30 shadow-xs"
+                          }`}
+                        >
+                          <div>
+                            <div className="flex items-center gap-2 mb-2">
+                              <span
+                                className={`w-5 h-5 rounded-full text-[10px] flex items-center justify-center font-bold shrink-0 ${
+                                  isDark ? "bg-blue-600/30 text-blue-300" : "bg-blue-600 text-white"
+                                }`}
+                                aria-hidden="true"
+                              >
+                                {i + 1}
+                              </span>
+                              <h4
+                                className={`${isDark ? "text-white" : "text-neutral-900"} text-xs tracking-wider uppercase font-semibold`}
+                              >
+                                {step.label}
+                              </h4>
+                            </div>
+
+                            {/* Step Thumbnail with Grainger Blue Background */}
+                            {hasImage ? (
+                              <div
+                                style={graingerStepBgStyle}
+                                className="my-2.5 overflow-hidden rounded-lg border border-[#2d66bd]/40 relative group/stepimg shadow-sm"
+                              >
+                                <button
+                                  type="button"
+                                  onClick={() => handleOpenModal(triggerRef.current)}
+                                  className="w-full text-left block relative cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg group-hover/stepimg:opacity-95 transition-opacity"
+                                  aria-label={`View ${step.label} in ${project.title} case study`}
+                                >
+                                  <img
+                                    src={step.image}
+                                    alt={step.imageAlt || `${step.label} artifact`}
+                                    referrerPolicy="no-referrer"
+                                    className="w-full h-auto aspect-video object-contain object-center rounded p-1.5 relative z-10"
+                                  />
+                                </button>
+                              </div>
+                            ) : hasPlaceholder ? (
+                              <div
+                                style={graingerStepBgStyle}
+                                className="my-2.5 h-20 rounded-lg border border-dashed border-blue-400/40 flex flex-col items-center justify-center text-center p-2 relative shadow-sm"
+                              >
+                                <div className="w-6 h-6 rounded-full flex items-center justify-center mb-1 bg-blue-500/25 border border-blue-400/30 text-blue-200 relative z-10">
+                                  <ImageIcon size={12} aria-hidden="true" />
+                                </div>
+                                <span className="text-[10px] font-semibold tracking-wide uppercase text-white/90 relative z-10">
+                                  {typeof step.placeholder === "string"
+                                    ? step.placeholder
+                                    : step.placeholderText || "Artifact Placeholder"}
+                                </span>
+                              </div>
+                            ) : null}
+
+                            <p className={`${isDark ? "text-white/75" : "text-neutral-700"} text-xs leading-relaxed`}>
+                              {step.description}
+                            </p>
+                          </div>
                         </div>
-                        <p className={`${isDark ? "text-white/75" : "text-neutral-700"} text-xs leading-relaxed`}>
-                          {step.description}
-                        </p>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               </motion.div>

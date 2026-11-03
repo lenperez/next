@@ -215,7 +215,7 @@ const graphicProjects: Project[] = [
         label: "Brand Concept",
         description:
           "Developed the \"flow of motion\" creative direction — translating a dynamic, global law firm's identity into a visual language built around movement and energy.",
-        image: "/Thumbnail_BakerMcKenzie.svg",
+        image: "/bakermckenzie_step1_brandconcept.svg",
         imageAlt: "Baker & McKenzie Visual Rebrand — Flow of Motion Energy Bars",
       },
       {
